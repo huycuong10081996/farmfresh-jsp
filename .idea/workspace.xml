@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/Servlet.java" afterDir="false" />
-    </list>
+    <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +133,7 @@
       <updated>1573552487611</updated>
       <workItem from="1573552490686" duration="1012000" />
       <workItem from="1573811235333" duration="601000" />
-      <workItem from="1573816978011" duration="883000" />
+      <workItem from="1573816978011" duration="995000" />
     </task>
     <servers />
   </component>
