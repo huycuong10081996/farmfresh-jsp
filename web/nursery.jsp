@@ -142,13 +142,13 @@
                             </ul>
                         </li>
                         <li><a href="chemical-free.jsp">Chemical Free</a></li>
-                        <li><a href="Fruits.jsp">Fruits</a>
+                        <li><a href="fruits.jsp">Fruits</a>
                             <ul class="sub__main__menu">
-                                <li><a href="Fruits.jsp">Skinny Food</a></li>
-                                <li><a href="Fruits.jsp">Low-calorie</a></li>
-                                <li><a href="Fruits.jsp">Lite Food</a></li>
-                                <li><a href="Fruits.jsp">Non-Fat</a></li>
-                                <li><a href="Fruits.jsp">Peanut</a></li>
+                                <li><a href="fruits.jsp">Skinny Food</a></li>
+                                <li><a href="fruits.jsp">Low-calorie</a></li>
+                                <li><a href="fruits.jsp">Lite Food</a></li>
+                                <li><a href="fruits.jsp">Non-Fat</a></li>
+                                <li><a href="fruits.jsp">Peanut</a></li>
                             </ul>
                         </li>
                         <li><a href="nursery.jsp">Nursery</a></li>

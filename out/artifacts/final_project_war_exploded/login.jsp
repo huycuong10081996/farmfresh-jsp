@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.nlu.fit.Utils.Utils" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -142,13 +143,13 @@
                             </ul>
                         </li>
                         <li><a href="chemical-free.jsp">Chemical Free</a></li>
-                        <li><a href="Fruits.jsp">Fruits</a>
+                        <li><a href="fruits.jsp">Fruits</a>
                             <ul class="sub__main__menu">
-                                <li><a href="Fruits.jsp">Skinny Food</a></li>
-                                <li><a href="Fruits.jsp">Low-calorie</a></li>
-                                <li><a href="Fruits.jsp">Lite Food</a></li>
-                                <li><a href="Fruits.jsp">Non-Fat</a></li>
-                                <li><a href="Fruits.jsp">Peanut</a></li>
+                                <li><a href="fruits.jsp">Skinny Food</a></li>
+                                <li><a href="fruits.jsp">Low-calorie</a></li>
+                                <li><a href="fruits.jsp">Lite Food</a></li>
+                                <li><a href="fruits.jsp">Non-Fat</a></li>
+                                <li><a href="fruits.jsp">Peanut</a></li>
                             </ul>
                         </li>
                         <li><a href="nursery.jsp">Nursery</a></li>
@@ -348,7 +349,7 @@
                         </div>
 
                         <div class="returning__customer">
-                            <form action="" class="returning__customer__form">
+                            <form action="<%=Utils.fullPath("loginServlet")%>" class="returning__customer__form" method="post">
                                 <div>
                                     <h5>Returning Customer</h5>
                                 </div>
@@ -357,18 +358,18 @@
                                 </div>
                                 <div>
                                     <p>Email Address</p>
-                                    <input type="text" name="" id="" placeholder="E-Mail Address...">
+                                    <input type="text" name="emailLogin" id="emailLogin" placeholder="E-Mail Address...">
                                 </div>
                                 <div>
                                     <p>Password</p>
-                                    <input type="text" name="" id="" placeholder="Password...">
+                                    <input type="text" name="passLogin" id="passLogin" placeholder="Password...">
                                 </div>
                                 <div class="forgot">
                                     <a href="#">Forgotten Password</a>
                                 </div>
-                                <div class="button__level2">
-                                    <a href="">Login</a>
-                                </div>
+                                <button class="button__level2" type="submit">
+                                    <!--<a href="#">Login</a>-->
+                                </button>
                             </form>
                         </div>
                     </div>
