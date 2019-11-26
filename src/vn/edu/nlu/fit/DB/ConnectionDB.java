@@ -5,25 +5,18 @@ import java.sql.*;
 public class ConnectionDB {
     static Connection con;
 
-    public static Statement connect() throws ClassNotFoundException, SQLException {
-        if (con==null||con.isClosed()) {
+    public static Connection connect()  {
+        try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/farmfresh?useUnicode=true&characterEncoding=utf-8", "root", "");
-            return con.createStatement();
-        } else {
-            return con.createStatement();
+            con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/farmfresh?useUnicode=true&characterEncoding=utf-8", "root", "" );
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
+        return con;
     }
 
     public static void main(String[] args) throws Exception {
-        Statement s = ConnectionDB.connect();
-        ResultSet rs = s.executeQuery("select * from category");
-        rs.last();
-        System.out.println(rs.getRow());
-        rs.beforeFirst();
-        while (rs.next()) {
-            System.out.println(rs.getString(2));
-        }
+        System.out.println(connect());
     }
 }

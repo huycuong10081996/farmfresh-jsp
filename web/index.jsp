@@ -131,7 +131,7 @@
                             </div>
 
                             <div class="product-item__content">
-                                <p><%=homeResultSet.getString(2)%>></p>
+                                <p><%=homeResultSet.getString(2)%></p>
                                 <p><strong><%=homeResultSet.getString(5)%>
                                 </strong>
                                     <span class="price--line-through"><%=homeResultSet.getString(4)%></span>

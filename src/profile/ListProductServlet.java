@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 import java.io.IOException;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,12 +23,12 @@ public class ListProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String category = request.getParameter("category");
         try {
-            Statement statement = ConnectionDB.connect();
+            PreparedStatement statement = (PreparedStatement) ConnectionDB.connect();
             String sql = "select category_id, category_title from category";
             ResultSet resultSet = statement.executeQuery(sql);
             request.setAttribute("resultSet", resultSet);
 
-            Statement statement1 = ConnectionDB.connect();
+            PreparedStatement statement1 = (PreparedStatement) ConnectionDB.connect();
             sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title from product p inner join category c on c.category_id = p.product_categoryId where product_status = 1 ";
             if (category != null) {
                 sql += "and p.product_categoryId = '" + category + "'";
@@ -36,7 +37,7 @@ public class ListProductServlet extends HttpServlet {
             request.setAttribute("p", resultSetProduct);
 
             request.getRequestDispatcher("category.jsp").forward(request, response);
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
