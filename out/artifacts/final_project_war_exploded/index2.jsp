@@ -1,4 +1,5 @@
 <%@page import="Model.User"%>
+<%@ page import="vn.edu.nlu.fit.Utils.Utils" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,6 +14,7 @@
 	    if (u != null) {
 	%>
 	<%="Xin chào " + u.getFullName()%>
+	<br/> <a href="<%=Utils.fullPath("logoutServlet")%>">Log out</a>
 	<%
 	    } else {
 	%>

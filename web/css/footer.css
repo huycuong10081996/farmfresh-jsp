@@ -23,7 +23,7 @@ footer {
     flex-flow: column nowrap;
 }
 
-.footer__item>h1 {
+.footer__item > h1 {
     text-align: center;
 }
 
@@ -34,8 +34,14 @@ ul.store__item {
     align-items: flex-start;
 }
 
-ul.store__item>li {
+ul.store__item > li {
     padding: 4px 0;
+    color: #262626;
+    transition: all .35s;
+}
+
+ul.store__item > li:hover i {
+    color: #7fba00;
 }
 
 .footer__input {
@@ -43,24 +49,24 @@ ul.store__item>li {
     position: relative;
 }
 
-.footer__input>input {
+.footer__input > input {
     width: 100%;
     border-radius: 20px;
     padding: 8px 12px;
     border: none;
 }
 
-.footer__input>i {
+.footer__input > i {
     position: absolute;
     right: 8px;
-    top: 32px;
+    top: 36px;
 }
 
 ul.list-icon__footer {
     display: flex;
 }
 
-ul.list-icon__footer>li {
+ul.list-icon__footer > li {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,11 +74,21 @@ ul.list-icon__footer>li {
     height: 45px;
     border-radius: 50%;
     background-color: white;
+    margin-right: 10px;
 }
 
-ul.list-icon__footer>li>a {
+ul.list-icon__footer > li:hover {
+    background-color: #7fba00;
+}
+
+ul.list-icon__footer > li > a {
     text-decoration: none;
-    color: #696969;
+    color: #969696;
+    transition: color .35s;
+}
+
+ul.list-icon__footer>li:hover i {
+    color: #fff;
 }
 
 .footer-bottom {

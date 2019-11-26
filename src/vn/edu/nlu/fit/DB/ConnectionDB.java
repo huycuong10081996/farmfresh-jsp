@@ -18,7 +18,7 @@ public class ConnectionDB {
 
     public static void main(String[] args) throws Exception {
         Statement s = ConnectionDB.connect();
-        ResultSet rs = s.executeQuery("select * from user");
+        ResultSet rs = s.executeQuery("select * from category");
         rs.last();
         System.out.println(rs.getRow());
         rs.beforeFirst();
@@ -26,5 +26,4 @@ public class ConnectionDB {
             System.out.println(rs.getString(2));
         }
     }
-
 }
