@@ -114,10 +114,11 @@
     justify-content: space-between;
 }
 
-.continue__shopping.apply__coupon__button.get__quotes>a {
+.apply__coupon__button.get__quotes>a {
     background-color: #7fba00;
 }
 
-.continue__shopping.apply__coupon__button.get__quotes>a:hover {
-    background-color: #4d4d4d;
+.apply__coupon__button.get__quotes>a:hover {
+    background-color: #5f5f5f;
+    color: #fff;
 }

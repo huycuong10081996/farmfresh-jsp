@@ -6,44 +6,58 @@
 
 /* 1. global css */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  padding: 0;
-  font-family: "Titillium Web", sans-serif;
+    padding: 0;
+    font-family: "Titillium Web", sans-serif;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
+}
+
+a {
+    color: #262626;
+}
+
+a:hover {
+    color: #7fba00;
+    text-decoration: none;
 }
 
 /* 2. container */
 .container {
-  max-width: 1140px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* 3. scroll to top button */
 .scroll-to-top {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
 }
 
 .scroll-to-top .scroll-to-top__btn {
-  padding: 4px 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  color: white;
-  opacity: 0;
-  background: #7fba00;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: white;
+    opacity: 0;
+    background: #7fba00;
+}
+
+.list__category ul li a:hover {
+    color: #7fba00 !important;
+    text-decoration: none;
 }

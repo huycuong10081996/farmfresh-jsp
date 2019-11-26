@@ -55,22 +55,22 @@ form>h5 {
 
 .button__level2>a {
     padding: 8px 24px;
-    background-color: #4d4d4d;
+    background-color: #7fba00;
     color: #ffffff;
     border-radius: 40px;
     transition: all .35s;
 }
 
+.button__level21:hover {
+    background-color: #212529;
+}
+
 .button__level2>a:hover {
     text-decoration: none;
-    background-color: #7fba00;
+    background-color: #212529;
 }
 
 .list__category ul li a {
     text-decoration: none;
     transition: all .35s;
-}
-
-.list__category ul li a:hover {
-    color: #7fba00 !important;
 }

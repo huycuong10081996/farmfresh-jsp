@@ -1,0 +1,56 @@
+.customer__service__container {
+    width: 100%;
+}
+
+.customer__service__section {
+    border-bottom: 2px solid #eee;
+}
+
+.customer__service__titles {
+    padding: 20px 0 0 0;
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+    color: #7fba00;
+    font-size: 22px;
+    line-height: 1.5;
+    letter-spacing: 0;}
+
+.customer__service__des {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.customer__service__half {
+    display: flex;
+}
+
+.customer__service__content {
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+    color: #212529;
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    padding: 30px 0;
+}
+
+
+.customer__service__title > span {
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+    color: #7fba00;
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+.customer__service__title > i {
+    padding: 0 15px 0 0;
+    color: #7fba00;
+    font-size: 20px
+}

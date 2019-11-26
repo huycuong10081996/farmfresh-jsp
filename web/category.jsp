@@ -25,145 +25,8 @@
 </head>
 
 <body>
-<header>
 
-    <!-- content small menu in the top -->
-    <section class="top-nav">
-        <div class="container">
-            <div class="top-nav__container">
-                <div class="language-currency">
-                    <ul class="language-currency__ul">
-                        <li>Language
-                            <ul class="sub-menu menu">
-                                <li>Việt Nam</li>
-                                <li>English</li>
-                            </ul>
-                        </li>
-                        <li>Currency
-                            <ul class="sub-menu">
-                                <li>VNĐ</li>
-                                <li>Euro</li>
-                                <li>Dollar</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="top-nav__logo">
-                    <a href="index.jsp">
-                        <img src="img/logo.png" alt="Fram Fresh">
-                    </a>
-                </div>
-
-                <div class="user-login-search">
-                    <ul class="user-login-search__ul">
-                        <li class="search__header"><i class="fas fa-search"></i>
-                            <div class="sub__input"><input type="text"></div>
-                        </li>
-                        <li class="user"><i class="fas fa-user"></i>
-                            <ul class="sub-menu">
-                                <li><a href="register.jsp">Register</a></li>
-                                <li><a href="login.jsp">Login</a></li>
-                            </ul>
-                        </li>
-                        <li id="clickCart"><i class="fas fa-shopping-cart"></i><span class="cart__quantity">0</span>
-                        </li>
-                    </ul>
-                    <div class="cart__container" id="cartContainer">
-                        <div class="cart__wrapper">
-                            <div class="cart__image">
-                                <img src="img/06-85x85.jpg" alt="">
-                            </div>
-                            <div class="cart-info">
-                                <div class="cart-info__name">
-                                    <p>Accusantium Doloremque</p>
-                                </div>
-                                <div class="cart-info__quantity">X 1</div>
-                                <div class="cart-info__price">$10</div>
-                            </div>
-                            <div class="cart__button--remove">
-                                <button>X</button>
-                            </div>
-                        </div>
-                        <div class="cart__wrapper">
-                            <div class="cart__image">
-                                <img src="img/06-85x85.jpg" alt="">
-                            </div>
-                            <div class="cart-info">
-                                <div class="cart-info__name">
-                                    <p>Accusantium Doloremque</p>
-                                </div>
-                                <div class="cart-info__quantity">X 1</div>
-                                <div class="cart-info__price">$10</div>
-                            </div>
-                            <div class="cart__button--remove">
-                                <button>X</button>
-                            </div>
-                        </div>
-
-
-                        <hr>
-                        <div class="sub-total__container">
-                            <div class="sub-total__content">
-                                <div class="sub-total__info">
-                                    <p>Sub-Total</p>
-                                    <p>Eco Tax (-2.00)</p>
-                                    <p>VAT(20%)</p>
-                                    <p>Total</p>
-                                </div>
-                                <div class="sub-total__price">
-                                    <p>$215.00</p>
-                                    <p>$2.00</p>
-                                    <p>$20.00</p>
-                                    <p>$237.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="total-button__wrapper">
-                            <button id="viewCartHeader" class="active">View Cart</button>
-                            <button id="checkoutButtonHeader">Checkout</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main menu -->
-    <section class="main-nav">
-        <div class="container">
-            <nav class="main-nav__container">
-                <ul class="main-nav__menu">
-                    <li><a href="category.jsp">Organic Food</a>
-                        <ul class="sub__main__menu">
-                            <li><a href="category.jsp">Healthful Food</a></li>
-                            <li><a href="category.jsp">Super Food</a></li>
-                            <li><a href="category.jsp">Lite Food</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="chemical-free.jsp">Chemical Free</a></li>
-                    <li><a href="fruits.html">Fruits</a>
-                        <ul class="sub__main__menu">
-                            <li><a href="fruits.html">Skinny Food</a></li>
-                            <li><a href="fruits.html">Low-calorie</a></li>
-                            <li><a href="fruits.html">Lite Food</a></li>
-                            <li><a href="fruits.html">Non-Fat</a></li>
-                            <li><a href="fruits.html">Peanut</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="nursery.jsp">Nursery</a></li>
-                    <li><a href="vegetables.jsp">Vegetables</a></li>
-                    <li><a href="#">More</a>
-                        <ul class="sub__main__menu">
-                            <li><a href="blog.jsp">Blogs</a></li>
-                            <li><a href="about-us.jsp">About Us</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </section>
-</header>
+<%@ include file="header.jsp" %>
 
 <main>
     <section class="wrapper-category">
@@ -171,10 +34,15 @@
             <div class="breadcrumb__icon">
                 <i class="fa fa-home"></i>
             </div>
+            <%
+                ResultSet resultSetProduct = (ResultSet) request.getAttribute("p");
+                int count = 0;
+                while (resultSetProduct.next()) {
+            %>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb non-bg">
                     <li class="breadcrumb-item"><a class="color-green" href="index.jsp">Home</a></li>
-                    <li class="breadcrumb-item" aria-current="page">Organic Food</li>
+                    <li class="breadcrumb-item" aria-current="page"><%=resultSetProduct.getString(6)%></li>
 
                 </ol>
             </nav>
@@ -187,41 +55,20 @@
                     </div>
                     <div class="list__category">
                         <ul>
+                            <%
+                                ResultSet resultSet = (ResultSet) request.getAttribute("resultSet");
+                                while (resultSet.next()) {
+                            %>
+
                             <li>
-                                <a>
-                                    organic food (15)
+                                <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSet.getString(1))%>">
+                                    <%=resultSet.getString(2)%>
                                 </a>
                             </li>
-                            <li>
-                                <a>
-                                    organic food (15)
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    organic food (15)
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    organic food (15)
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    organic food (15)
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    organic food (15)
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    organic food (15)
-                                </a>
-                            </li>
+                            <%
+                                }
+                            %>
+                            <!---------------------------------------------------->
                         </ul>
                     </div>
                 </div>
@@ -235,10 +82,10 @@
                         </div>
                         <div class="list__item">
                             <form action="">
-                                <input type="checkbox"/> Green(9) <br/>
-                                <input type="checkbox"/> Green(9) <br/>
-                                <input type="checkbox"/> Green(9) <br/>
-                                <input type="checkbox"/> Green(9) <br/>
+                                <input type="checkbox"/> Green <br/>
+                                <input type="checkbox"/> Blue <br/>
+                                <input type="checkbox"/> Yellow <br/>
+                                <input type="checkbox"/> Black <br/>
                             </form>
                         </div>
                     </div>
@@ -248,9 +95,9 @@
                         </div>
                         <div class="list__item">
                             <form action="">
-                                <input type="checkbox"/> small(9) <br/>
-                                <input type="checkbox"/> small(9) <br/>
-                                <input type="checkbox"/> small(9) <br/>
+                                <input type="checkbox"/> Small <br/>
+                                <input type="checkbox"/> Medium <br/>
+                                <input type="checkbox"/> Large <br/>
                             </form>
                         </div>
                     </div>
@@ -348,9 +195,21 @@
                     </div>
                 </div>
             </div>
+
             <div class="category__item__container">
                 <div class="banner__main__wrapper">
-                    <h3>ORGANIC FOOD</h3>
+
+                    <h3>
+                        <%=resultSetProduct.getString(6)%>
+                    </h3>
+
+                    <%
+                            count++;
+                            if (count == 1) {
+                                break;
+                            }
+                        }
+                    %>
                     <div class="image__banner__main">
                         <img src="img/bannermain.jpg" alt=""/>
                     </div>
@@ -359,36 +218,29 @@
                 <div class="refine__search__container">
                     <h4>Refine Search</h4>
                     <ul class="search__list">
-                        <li><a href="">healthfull food (15)</a></li>
-                        <li><a href="">Superfoods (15)</a></li>
+                        <li><a href="">healthful food (15)</a></li>
+                        <li><a href="">Superfood (15)</a></li>
                         <li><a href="">lite food (15)</a></li>
                     </ul>
                 </div>
 
 
                 <div class="shortItem__container">
-                    <div class="gridview__icon">
-                        <i class="fas fa-th-large"></i>
-                        <i class="fa fa-th-list"></i>
-                        <span>Product Compare(0)</span>
-                    </div>
+
                     <div class="short__by">
                         <div class="short__by__default">
                             <span>Sort by</span>
                             <select class="custom-select" id="inputGroupSelect03">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="name" selected>Name</option>
+                                <option value="price">Price</option>
                             </select>
                         </div>
                         <div class="short__show">
                             <span>Show</span>
-                            <select class="custom-select" id="inputGroupSelect03">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select class="custom-select" id="inputGroupSelect04">
+                                <option value="9" selected>9</option>
+                                <option value="12">12</option>
+                                <option value="15">15</option>
                             </select>
                         </div>
                     </div>
@@ -399,14 +251,22 @@
                     <div class="product-list">
                         <div class="product-list__container">
 
+                            <%
+                                resultSetProduct.beforeFirst();
+                                while (resultSetProduct.next()) {
+                            %>
                             <div class="product-item">
                                 <div class="product-item__image">
-                                    <img src="img/06-275x275.jpg" alt="Guava">
+                                    <img src="<%=resultSetProduct.getString(3)%>">
                                 </div>
 
                                 <div class="product-item__content">
-                                    <p>Guava</p>
-                                    <p><strong>$120</strong> <span class="price__line__through">$140</span></p>
+                                    <p><%=resultSetProduct.getString(2)%>
+                                    </p>
+                                    <p><strong>$<%=resultSetProduct.getString(5)%>
+                                    </strong>
+                                        <span class="price__line__through">$<%=resultSetProduct.getString(4)%></span>
+                                    </p>
                                     <ul class="star-rank">
                                         <li><i class="fas fa-star"></i></li>
                                         <li><i class="fas fa-star"></i></li>
@@ -414,167 +274,14 @@
                                         <li><i class="fas fa-star"></i></li>
                                         <li><i class="fas fa-star"></i></li>
                                     </ul>
-                                    <a class="add-to-cart__btn" href="#">add to cart</a>
+                                    <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
                                 </div>
                             </div>
 
+                            <%
+                                }
+                            %>
 
-                            <div class="product-item">
-                                <div class="product-item__image">
-                                    <img src="img/06-275x275.jpg" alt="Guava">
-                                </div>
-
-                                <div class="product-item__content">
-                                    <p>Guava</p>
-                                    <p><strong>$120</strong> <span class="price__line__through">$140</span></p>
-                                    <ul class="star-rank">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                    <a class="add-to-cart__btn" href="#">add to cart</a>
-                                </div>
-                            </div>
-
-
-                            <div class="product-item">
-                                <div class="product-item__image">
-                                    <img src="img/06-275x275.jpg" alt="Guava">
-                                </div>
-
-                                <div class="product-item__content">
-                                    <p>Guava</p>
-                                    <p><strong>$120</strong> <span class="price__line__through">$140</span></p>
-                                    <ul class="star-rank">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                    <a class="add-to-cart__btn" href="#">add to cart</a>
-                                </div>
-                            </div>
-
-
-                            <div class="product-item">
-                                <div class="product-item__image">
-                                    <img src="img/06-275x275.jpg" alt="Guava">
-                                </div>
-
-                                <div class="product-item__content">
-                                    <p>Guava</p>
-                                    <p><strong>$120</strong> <span class="price__line__through">$140</span></p>
-                                    <ul class="star-rank">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                    <a class="add-to-cart__btn" href="#">add to cart</a>
-                                </div>
-                            </div>
-
-
-                            <div class="product-item">
-                                <div class="product-item__image">
-                                    <img src="img/06-275x275.jpg" alt="Guava">
-                                </div>
-
-                                <div class="product-item__content">
-                                    <p>Guava</p>
-                                    <p><strong>$120</strong> <span class="price__line__through">$140</span></p>
-                                    <ul class="star-rank">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                    <a class="add-to-cart__btn" href="#">add to cart</a>
-                                </div>
-                            </div>
-
-
-                            <div class="product-item">
-                                <div class="product-item__image">
-                                    <img src="img/06-275x275.jpg" alt="Guava">
-                                </div>
-
-                                <div class="product-item__content">
-                                    <p>Guava</p>
-                                    <p><strong>$120</strong> <span class="price__line__through">$140</span></p>
-                                    <ul class="star-rank">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                    <a class="add-to-cart__btn" href="#">add to cart</a>
-                                </div>
-                            </div>
-
-
-                            <div class="product-item">
-                                <div class="product-item__image">
-                                    <img src="img/06-275x275.jpg" alt="Guava">
-                                </div>
-
-                                <div class="product-item__content">
-                                    <p>Guava</p>
-                                    <p><strong>$120</strong> <span class="price__line__through">$140</span></p>
-                                    <ul class="star-rank">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                    <a class="add-to-cart__btn" href="#">add to cart</a>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="product-item__image">
-                                    <img src="img/06-275x275.jpg" alt="Guava">
-                                </div>
-
-                                <div class="product-item__content">
-                                    <p>Guava</p>
-                                    <p><strong>$120</strong> <span class="price__line__through">$140</span></p>
-                                    <ul class="star-rank">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                    <a class="add-to-cart__btn" href="#">add to cart</a>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="product-item__image">
-                                    <img src="img/06-275x275.jpg" alt="Guava">
-                                </div>
-
-                                <div class="product-item__content">
-                                    <p>Guava</p>
-                                    <p><strong>$120</strong> <span class="price__line__through">$140</span></p>
-                                    <ul class="star-rank">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                    <a class="add-to-cart__btn" href="#">add to cart</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -601,99 +308,10 @@
     </section>
 </main>
 
-<footer>
-    <section class="footer__main">
-        <div class="container">
-            <div class="footer__container">
-                <div class="footer__item">
-                    <h2>Store Information</h2>
-                    <ul class="store__item">
-                        <li><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Farm Fresh Fruits</li>
-                        <li><i class="fas fa-phone"></i>&nbsp;(+84) 0123892029</li>
-                        <li><i class="fa fa-fax"></i>&nbsp;123456</li>
-                        <li><i class="fas fa-envelope"></i>&nbsp;abc@gmail.com</li>
-                    </ul>
+<%@ include file="footer.jsp" %>
 
-                </div>
+<%@ include file="scroll-to-top.jsp"%>
 
-                <div class="footer__item">
-                    <h2>Information</h2>
-                    <ul class="store__item">
-                        <li>About Us</li>
-                        <li>Delivery Information</li>
-                        <li>Privacy Policy</li>
-                        <li>Term & Conditions</li>
-                        <li>Site Map</li>
-                    </ul>
-                </div>
-
-                <div class="footer__item">
-                    <h2>My Account</h2>
-                    <ul class="store__item">
-                        <li>My Account</li>
-                        <li>Order History</li>
-                        <li>Wish List</li>
-                        <li>Newsletter</li>
-                        <li>Returns</li>
-                    </ul>
-                </div>
-
-                <div class="footer__item">
-                    <h2>Subscribe now</h2>
-                    <ul class="store__item">
-                        <li>Join us for get latest updates.</li>
-                    </ul>
-                    <div class="footer__input">
-                        <input type="text" placeholder="Enter your email...">
-                        <i class="fas fa-angle-right"></i>
-                    </div>
-                    <ul class="list-icon__footer">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fas fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="footer-bottom">
-        <div class="container">
-            <div class="footer-bottom__container">
-
-                <div class="footer__powered">Powered By <a href="">Vbros Team</a>&nbsp;&copy; 2019</div>
-
-                <div class="bank-card__list">
-                    <ul class="bank-card__list__container">
-                        <li>
-                            <div class="bank__image"><img src="img/visa.png" alt=""></div>
-                        </li>
-                        <li>
-                            <div class="bank__image"><img src="img/discover.png" alt=""></div>
-                        </li>
-                        <li>
-                            <div class="bank__image"><img src="img/american_express.png" alt=""></div>
-                        </li>
-                        <li>
-                            <div class="bank__image"><img src="img/google_wallet.png" alt=""></div>
-                        </li>
-                        <li>
-                            <div class="bank__image"><img src="img/paypal.png" alt=""></div>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-</footer>
-
-<div class="scroll-to-top">
-    <p class="scroll-to-top__btn" id="scrollToTopBtn"><i class="fas fa-angle-up"></i></p>
-</div>
 <!-- Javascript -->
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
