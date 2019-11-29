@@ -112,41 +112,6 @@
                                     The standard Lorem Ipsum passage, used since the 1500s"Lorem...
                                 </div>
                                 <div class="read__more__blog__btn">
-                                    <a href="">Read More</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="blog__item">
-                            <div class="blog__item__title">
-                                <a href="">Necessitatibus Saepe</a>
-                            </div>
-                            <div class="blog__item__image">
-                                <img src="img/blog-6-890x620.jpg" alt="">
-                            </div>
-                            <div class="blog__item__description">
-                                <div class="blog__item__datetime">
-                                    <i class="far fa-calendar-alt"></i>&nbsp;22 May, 2019
-                                </div>
-
-                                <div class="blog__item__comment">
-                                    <div class="comment">
-                                        0&nbsp;Comment
-                                    </div>
-
-                                    <div class="leave__comment">
-                                        <a href="">
-                                            <i class="far fa-comment"></i>&nbsp;Leave Comment
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog__item__content">
-                                <div class="content__item">
-                                    The standard Lorem Ipsum passage, used since the 1500s"Lorem...
-                                </div>
-                                <div class="read__more__blog__btn">
                                     <a href="blog-detail.jsp">Read More</a>
                                 </div>
                             </div>

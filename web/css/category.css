@@ -380,8 +380,72 @@
 /* 2.2.4 listItem__container */
 .listItem__container {}
 
-.listItem__container .product-item {
-    width: 33.333333%;
+.product-list {}
+
+.product-list__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    margin: 0 -8px;
+}
+
+.product-list__container .product-item {
+    width: 33.33%;
+    padding: 0 8px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all 0.35s;
+}
+
+.product-item>.product-item__image {
+    width: 265.5px;
+    height: 265.5px;
+}
+
+.product-item>.product-item__image>img {
+    width: 265.5px;
+    height: 265.5px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.product-item__content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.price--line-through {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* 2.2.1 star rank */
+ul.star-rank {
+    display: flex;
+    justify-content: center;
+}
+
+ul.star-rank>li {
+    color: yellow;
+}
+
+.product-item:hover ul.star-rank {
+    display: none;
+}
+
+/* 2.2.2 add to cart button */
+.add-to-cart__btn {
+    display: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #7fba00;
+}
+
+.product-item:hover .add-to-cart__btn {
+    display: block;
 }
 
 /* 2.2.5 pagination */

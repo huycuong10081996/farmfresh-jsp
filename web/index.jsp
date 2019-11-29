@@ -21,9 +21,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/category.css"/>
     <link rel="stylesheet" href="css/footer.css">
-    <!-- <link rel="stylesheet" href="libs/Hover-master/css/hover.css"> -->
 </head>
 
 <body>
@@ -80,7 +78,7 @@
                                 count++;
                         %>
 
-                        <div class="product-item">
+                        <div class="product-item" id="<%=homeResultSet.getString(1)%>">
                             <div class="product-item__image">
                                 <img src="<%=homeResultSet.getString(3)%>">
                             </div>
@@ -99,7 +97,7 @@
                                     <li><i class="fas fa-star"></i></li>
                                     <li><i class="fas fa-star"></i></li>
                                 </ul>
-                                <a class="add-to-cart__btn" href="#">add to cart</a>
+                                <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
                             </div>
                         </div>
 
@@ -119,19 +117,19 @@
 
                 <div id="productList" class="product-list product-list__none">
                     <div class="product-list__container">
-
                         <%
                             homeResultSet.absolute(9);
                             while (homeResultSet.next()) {
                         %>
 
-                        <div class="product-item">
+                        <div class="product-item" id="<%=homeResultSet.getString(1)%>">
                             <div class="product-item__image">
                                 <img src="<%=homeResultSet.getString(3)%>">
                             </div>
 
                             <div class="product-item__content">
-                                <p><%=homeResultSet.getString(2)%>></p>
+                                <p><%=homeResultSet.getString(2)%>
+                                </p>
                                 <p><strong><%=homeResultSet.getString(5)%>
                                 </strong>
                                     <span class="price--line-through"><%=homeResultSet.getString(4)%></span>
@@ -143,10 +141,9 @@
                                     <li><i class="fas fa-star"></i></li>
                                     <li><i class="fas fa-star"></i></li>
                                 </ul>
-                                <a class="add-to-cart__btn" href="#">add to cart</a>
+                                <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
                             </div>
                         </div>
-
                         <%
                             }
                         %>
@@ -159,6 +156,28 @@
 
         </div>
 
+    </section>
+
+    <section class="list__icon__wrapper">
+        <div class="container">
+
+            <div class="list__icon__container">
+                <h1>shop by category</h1>
+                <div class="list__icon__main">
+                    <ul class="list__icon__hover">
+                        <li><img src="img/category-icon1.png" alt="" aria-hidden="true"></li>
+                        <li><img src="img/category-icon2.png" alt="" aria-hidden="true"></li>
+                        <li><img src="img/category-icon3.png" alt="" aria-hidden="true"></li>
+                        <li><img src="img/category-icon4.png" alt="" aria-hidden="true"></li>
+                        <li><img src="img/category-icon5.png" alt="" aria-hidden="true"></li>
+                        <li><img src="img/category-icon6.png" alt="" aria-hidden="true"></li>
+                        <li><img src="img/category-icon7.png" alt="" aria-hidden="true"></li>
+                        <li><img src="img/category-icon8.png" alt="" aria-hidden="true"></li>
+                        <li><img src="img/category-icon9.png" alt="" aria-hidden="true"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="customer__review">
@@ -269,11 +288,21 @@
 
 <%@ include file="footer.jsp" %>
 
-<%@include file="scroll-to-top.jsp"%>
+<%@include file="scroll-to-top.jsp" %>
 
 <!-- Javascript -->
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
+
+<script>
+    const productItem = document.querySelectorAll(".product-item");
+    for (let i = 0; i < productItem.length; i++) {
+        productItem[i].addEventListener("click", function () {
+            window.location.href = "http://localhost:8080/final_project/ProductDetailServlet?productDetailId=" + productItem[i].getAttribute('id').trim();
+        });
+    }
+</script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>
@@ -289,17 +318,6 @@
     AOS.init();
 </script>
 
-<script async>
-    const productItem = document.querySelectorAll(".product-item");
-    for (let i = 0; i < productItem.length; i++) {
-        productItem[i].addEventListener("click", () => {
-            window.location.href = "product-detail.jsp";
-            // console.log("a");
-        })
-    }
-</script>
-
 </body>
-
 
 </html>

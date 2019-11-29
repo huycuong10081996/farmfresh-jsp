@@ -1,3 +1,4 @@
+<%@ page import="java.util.Random" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +19,8 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/header.css"/>
-    <link rel="stylesheet" href="css/home.css"/>
     <link rel="stylesheet" href="css/category.css"/>
     <link rel="stylesheet" href="css/footer.css">
-
 </head>
 
 <body>
@@ -42,7 +41,8 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb non-bg">
                     <li class="breadcrumb-item"><a class="color-green" href="index.jsp">Home</a></li>
-                    <li class="breadcrumb-item" aria-current="page"><%=resultSetProduct.getString(6)%></li>
+                    <li class="breadcrumb-item" aria-current="page"><%=resultSetProduct.getString(6)%>
+                    </li>
 
                 </ol>
             </nav>
@@ -72,74 +72,84 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="search__by__refine">
-                    <div class="search__title hvr-bounce-to-right">
-                        <h3>REFINE SEARCH</h3>
+                    <div class="search__title">
+                        <h3>INFORMATIONS</h3>
                     </div>
-                    <div class=" list__search">
-                        <div class="title">
-                            <h4>COLOR</h4>
-                        </div>
-                        <div class="list__item">
-                            <form action="">
-                                <input type="checkbox"/> Green <br/>
-                                <input type="checkbox"/> Blue <br/>
-                                <input type="checkbox"/> Yellow <br/>
-                                <input type="checkbox"/> Black <br/>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="list__search">
-                        <div class="title">
-                            <h4>SIZE</h4>
-                        </div>
-                        <div class="list__item">
-                            <form action="">
-                                <input type="checkbox"/> Small <br/>
-                                <input type="checkbox"/> Medium <br/>
-                                <input type="checkbox"/> Large <br/>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="list__search">
-                        <div class="title">
-                            <h4>WEIGHT</h4>
-                        </div>
-                        <div class="list__item">
-                            <form action="">
-                                <input type="checkbox"/> 5(9) <br/>
-                                <input type="checkbox"/> 12(9) <br/>
-                                <input type="checkbox"/> 32(9) <br/>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="button__search">
-                        <a href="">Refine Search</a>
+                    <div class="list__category">
+                        <ul>
+                            <li>
+                                <a href="about-us.jsp" style="color:#212529">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="delivery.jsp" style="color:#212529">
+                                    Delivery & Shipping
+                                </a>
+                            </li>
+                            <li>
+                                <a href="privacy-policy.jsp" style="color:#212529">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="terms-and-condition.jsp" style="color:#212529">
+                                    Terms and Conditions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact-us.jsp" style="color:#212529">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="secure-payment.jsp" style="color:#212529">
+                                    Secure Payment
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+
                 <div class="banner__container">
                     <img src="img/left-banner.jpg" alt=""/>
                 </div>
                 <div class="specials__container">
                     <div class="search__title">
-                        <h3>SPECIALS</h3>
+                        <h3>MAY BE YOU WANT</h3>
                     </div>
                     <div class="product-list">
                         <ul>
+                            <%
+                                ResultSet special = (ResultSet) request.getAttribute("special");
+                                int listProductSize = 0;
+                                while (special.next()) {
+                                    listProductSize++;
+                                }
+                                special.beforeFirst();
+                                Random r = new Random();
+                                int counter = 0;
+                                while (special.next()) {
+                                    counter++;
+                                    int random = r.nextInt(listProductSize - 1);
+                                    special.absolute(random);
+                            %>
                             <li>
-                                <div class="product-item">
+                                <div class="product-item" id="<%=special.getString(1)%>">
                                     <div class="image">
-                                        <img src="img/dudu.jpg" alt=""/>
+                                        <img src="<%=special.getString(3)%>" alt=""/>
                                     </div>
                                     <div class="content__wrapper">
                                         <div class="content">
-                                            <span class="hover">Exercitat Virginia</span>
+                                            <span class="hover"><%=special.getString(2)%></span>
                                             <div class="price">
                                                 <div class="price__sale">
-                                                    <span>$100</span>
+                                                    <span>$<%=special.getString(5)%></span>
                                                 </div>
                                                 <div class="price__cost">
-                                                    <span>$119</span>
+                                                    <span>$<%=special.getString(4)%></span>
                                                 </div>
                                             </div>
                                             <a class="hover">Add To Cart</a>
@@ -147,50 +157,12 @@
                                     </div>
                                 </div>
                             </li>
-
-                            <li>
-                                <div class="product-item">
-                                    <div class="image">
-                                        <img src="img/dudu.jpg" alt=""/>
-                                    </div>
-                                    <div class="content__wrapper">
-                                        <div class="content">
-                                            <span class="hover">Exercitat Virginia</span>
-                                            <div class="price">
-                                                <div class="price__sale">
-                                                    <span>$100</span>
-                                                </div>
-                                                <div class="price__cost">
-                                                    <span>$119</span>
-                                                </div>
-                                            </div>
-                                            <a class="hover">Add To Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="product-item">
-                                    <div class="image">
-                                        <img src="img/dudu.jpg" alt=""/>
-                                    </div>
-                                    <div class="content__wrapper">
-                                        <div class="content">
-                                            <span class="hover">Exercitat Virginia</span>
-                                            <div class="price">
-                                                <div class="price__sale">
-                                                    <span>$100</span>
-                                                </div>
-                                                <div class="price__cost">
-                                                    <span>$119</span>
-                                                </div>
-                                            </div>
-                                            <a class="hover">Add To Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            <%
+                                    if (counter == 3) {
+                                        break;
+                                    }
+                                }
+                            %>
                         </ul>
                     </div>
                 </div>
@@ -214,16 +186,6 @@
                         <img src="img/bannermain.jpg" alt=""/>
                     </div>
                 </div>
-
-                <div class="refine__search__container">
-                    <h4>Refine Search</h4>
-                    <ul class="search__list">
-                        <li><a href="">healthful food (15)</a></li>
-                        <li><a href="">Superfood (15)</a></li>
-                        <li><a href="">lite food (15)</a></li>
-                    </ul>
-                </div>
-
 
                 <div class="shortItem__container">
 
@@ -250,16 +212,14 @@
 
                     <div class="product-list">
                         <div class="product-list__container">
-
                             <%
                                 resultSetProduct.beforeFirst();
                                 while (resultSetProduct.next()) {
                             %>
-                            <div class="product-item">
+                            <div class="product-item" style="height: 385px" id="<%=resultSetProduct.getString(1)%>">
                                 <div class="product-item__image">
                                     <img src="<%=resultSetProduct.getString(3)%>">
                                 </div>
-
                                 <div class="product-item__content">
                                     <p><%=resultSetProduct.getString(2)%>
                                     </p>
@@ -274,14 +234,14 @@
                                         <li><i class="fas fa-star"></i></li>
                                         <li><i class="fas fa-star"></i></li>
                                     </ul>
-                                    <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
+                                    <a class="add-to-cart__btn"
+                                       href="<%=Utils.fullPath("CartServlet?productId="+resultSetProduct.getString(1))%>">add
+                                        to cart</a>
                                 </div>
                             </div>
-
                             <%
                                 }
                             %>
-
                         </div>
                     </div>
 
@@ -310,12 +270,21 @@
 
 <%@ include file="footer.jsp" %>
 
-<%@ include file="scroll-to-top.jsp"%>
+<%@ include file="scroll-to-top.jsp" %>
 
 <!-- Javascript -->
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
-<script src="js/categories.js"></script>
+
+<script>
+    const productItem = document.querySelectorAll(".product-item");
+    for (let i = 0; i < productItem.length; i++) {
+        productItem[i].addEventListener("click", function () {
+            window.location.href = "http://localhost:8080/final_project/ProductDetailServlet?productDetailId=" + productItem[i].getAttribute('id').trim();
+        });
+    }
+</script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>

@@ -11,8 +11,8 @@
     border-radius: .35rem;
 }
 
-.new__customer__form>div,
-.returning__customer__form>div {
+.new__customer__form > div,
+.returning__customer__form > div {
     padding: 8px 0;
 }
 
@@ -31,17 +31,17 @@
     border-radius: .35rem;
 }
 
-.returning__customer__form>div.forgot>a {
+.returning__customer__form > div.forgot > a {
     color: #000000;
     text-decoration: none;
     transition: all .35s;
 }
 
-.returning__customer__form>div.forgot>a:hover {
+.returning__customer__form > div.forgot > a:hover {
     color: #7fba00;
 }
 
-form>h5 {
+form > h5 {
     font-weight: 600;
 }
 
@@ -53,7 +53,7 @@ form>h5 {
     padding: 8px 0;
 }
 
-.button__level2>a {
+.button__level2 > a {
     padding: 8px 24px;
     background-color: #7fba00;
     color: #ffffff;
@@ -61,11 +61,7 @@ form>h5 {
     transition: all .35s;
 }
 
-.button__level21:hover {
-    background-color: #212529;
-}
-
-.button__level2>a:hover {
+.button__level2 > a:hover {
     text-decoration: none;
     background-color: #212529;
 }

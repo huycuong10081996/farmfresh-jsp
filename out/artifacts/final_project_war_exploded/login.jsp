@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="returning__customer">
-                        <form action="<%=Utils.fullPath("loginServlet")%>" class="returning__customer__form"
+                        <form action="<%=Utils.fullPath("LoginServlet")%>" class="returning__customer__form"
                               method="post">
                             <div>
                                 <h5>Returning Customer</h5>
@@ -107,6 +107,7 @@
 
 <!-- Javascript -->
 <script src="js/main.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>

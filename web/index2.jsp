@@ -14,11 +14,11 @@
 	    if (u != null) {
 	%>
 	<%="Xin chào " + u.getFullName()%>
-	<br/> <a href="<%=Utils.fullPath("logoutServlet")%>">Log out</a>
+	<br/> <a href="<%=Utils.fullPath("LogoutServlet")%>">Log out</a>
 	<%
 	    } else {
 	%>
-	<%="Bạn chưa đăng nhập."%>
+	<%="Bạn chưa đăng nhập." %>
 	<%
 	    }
 	%>

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/category.css"/>
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/cart-page.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
@@ -41,7 +42,7 @@
             </nav>
         </div>
         <div class="main__category__container">
-            <%@include file="menu-main.jsp" %>
+            <%@include file="nav-menu.jsp" %>
 
             <div class="cart__body__wrapper">
                 <div class="cart__body">

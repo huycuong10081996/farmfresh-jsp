@@ -1,32 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: nhath
-  Date: 11/22/2019
-  Time: 2:46 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com/6b4959f5c2.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/footer.css">
-</head>
-<body>
 
 <footer>
     <section class="footer__main">
@@ -40,7 +13,7 @@
                         <li><a href="customer-service.jsp">Customer Service</a></li>
                         <li><a href="contact-us.jsp">Contact Us</a></li>
                         <li><a href="privacy-policy.jsp">Privacy Policy</a></li>
-                        <li><a href="blog.jsp">Blog</a></li>
+                        <li><a href="blog.jsp">Blogs</a></li>
                     </ul>
                 </div>
 
@@ -116,6 +89,3 @@
     </section>
 
 </footer>
-
-</body>
-</html>

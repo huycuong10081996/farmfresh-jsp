@@ -1,3 +1,4 @@
+<%@ page import="java.util.Random" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,15 +21,28 @@
     <link rel="stylesheet" href="css/category.css"/>
     <link rel="stylesheet" href="css/product-detail.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
+
 <%@ include file="header.jsp" %>
 
 <main>
 
     <section class="register__title__wrapper">
         <div class="container">
+            <%
+                ResultSet resultSetproductDetail = (ResultSet) request.getAttribute("rSPD");
+                int reviewQuantity = 0;
+                while ( (resultSetproductDetail.next())) {
+                    reviewQuantity++;
+                }
+                resultSetproductDetail.beforeFirst();
+                int count = 0;
+                while (resultSetproductDetail.next()) {
+                    count ++;
+            %>
             <div class="breadcrumb__container row align-items-center">
                 <div class="breadcrumb__icon">
                     <i class="fa fa-home"></i>
@@ -37,7 +51,8 @@
                     <ol class="breadcrumb non-bg">
                         <li class="breadcrumb-item"><a class="color-green" href="index.jsp">Home</a></li>
                         <li class="breadcrumb-item"><a class="color-green" href="index.jsp">Organic Food</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Accusantium Doloremque</li>
+                        <li class="breadcrumb-item" aria-current="page"><%=resultSetproductDetail.getString(2)%>
+                        </li>
                     </ol>
                 </nav>
             </div>
@@ -47,9 +62,10 @@
     <section class="product__detail__wrapper">
         <div class="container">
             <div class="row product__detail">
+
                 <div class="product__detail__image">
                     <div class="detail__image">
-                        <img src="img/01-700x700.jpg" alt="">
+                        <img src="<%=resultSetproductDetail.getString(3)%>" alt="">
                     </div>
                 </div>
 
@@ -57,7 +73,8 @@
                     <div class="pd__content">
                         <div class="product__detail__title">
                             <div>
-                                <h4 class="title__section">Accusantium Doloremque</h4>
+                                <h4 class="title__section"><%=resultSetproductDetail.getString(2)%>
+                                </h4>
                             </div>
                             <div class="rating">
 
@@ -71,7 +88,7 @@
 
 
                                 <div class="review">
-                                    <a href="#categoriesList">1 reviews</a>
+                                    <a href="#categoriesList"><%=String.valueOf(reviewQuantity)%> reviews</a>
                                 </div>
 
                                 <div class="write__review">
@@ -84,19 +101,17 @@
 
                         <div class="status">
                             <div class="row align-items-center">
-                                <p>Brand:&nbsp;</p>
-                                <p>Hewlett-Packard</p>
+                                <p>Category type:&nbsp;</p>
+                                <p><%=resultSetproductDetail.getString(9)%>
+                                </p>
                             </div>
 
                             <div class="row align-items-center">
-                                <p>Product Code:&nbsp;</p>
-                                <p>Product 21</p>
+                                <p>Product Quantity:&nbsp;</p>
+                                <p><%=resultSetproductDetail.getString(6)%>
+                                </p>
                             </div>
 
-                            <div class="row align-items-center">
-                                <p>Availability:&nbsp;</p>
-                                <p>In Stock</p>
-                            </div>
                         </div>
 
                         <div class="option">
@@ -104,12 +119,18 @@
                             <div class="option__item">
                                 <h6 class="row"><span>*</span>&nbsp;Delivery Date</h6>
                                 <div class="calendar row">
-                                    <input type="date">
+                                    <span><%=resultSetproductDetail.getString(7)%></span>
                                 </div>
                             </div>
 
                             <div class="price row">
-                                <h4>$104.00</h4>
+                                <h4>$<%=resultSetproductDetail.getString(5)%>
+                                </h4>
+                            </div>
+
+                            <div class="row align-items-center">
+                                <h6><strike>$<%=resultSetproductDetail.getString(4)%>
+                                </strike></h6>
                             </div>
 
                             <div class="more__props row align-items-center">
@@ -120,7 +141,7 @@
                                     <input type="text" name="" value="1" id="">
                                 </div>
                                 <div class="add__to__cart">
-                                    <a href="">Add to cart</a>
+                                    <a href="cart-page.jsp">Add to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +158,7 @@
                     <li id="description" onclick="openCity(event, 'descriptionContent')" class="tab__link active"><a
                             href="">Description</a></li>
                     <li id="review" onclick="openCity(event, 'reviewContent')" class="tab__link"><a href="">Reviews
-                        (1)</a>
+                        (<%=String.valueOf(reviewQuantity)%>)</a>
                     </li>
                 </ul>
             </div>
@@ -146,51 +167,60 @@
         <div class="description__content__wrapper" id="desciptions">
             <div class="container">
                 <div id="descriptionContent" class="show description__content">
-                    <p>
-                        Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat
-                        Panel
-                        Monitor. This flagship monitor features best-in-class performance and presentation features
-                        on a
-                        huge wide-aspect screen while letting you work as comfortably as possible - you might even
-                        forget
-                        you're at the office
+                    <p><%=resultSetproductDetail.getString(8)%>
                     </p>
                 </div>
-
+                <%
+                        if (count == 1) {
+                            break;
+                        }
+                    }
+                %>
                 <div id="reviewContent" style="display: none;" class="show review__content">
                     <div class="review__content__wrapper">
+                        <%
+                            resultSetproductDetail.beforeFirst();
+                            while (resultSetproductDetail.next()) {
+                        %>
                         <div class="review__content">
                             <table>
                                 <tr>
                                     <td>
                                         <div class="author">
-                                            <h6>Matthew Wade</h6>
+                                            <h6><%=resultSetproductDetail.getString(12)%></h6>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="time__review">
-                                            <h6>09/03/2019</h6>
+                                            <h6><%=resultSetproductDetail.getString(11)%></h6>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <div>
-                                            Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                        <div><%=resultSetproductDetail.getString(10)%>
                                         </div>
                                         <div>
                                             <ul class="rating__star row">
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
+                                                <li>
+                                                    <%
+                                                        for (int i = 0; i < resultSetproductDetail.getInt(13); i++) {
+                                                    %>
+                                                    <i class="fas fa-star"></i>
+                                                    <%
+                                                        }
+                                                    %>
+                                                </li>
                                             </ul>
                                         </div>
                                     </td>
                                 </tr>
                             </table>
                         </div>
+
+                        <%
+                            }
+                        %>
 
                         <div class="add__review">
                             <h4>Write a review</h4>
@@ -238,15 +268,29 @@
 
             <div class="related__product row">
 
-                <div class="product-item col-lg-3">
+                <%
+                    ResultSet otherResultSet = (ResultSet) request.getAttribute("other");
+                    int listSize = 0;
+                    while (otherResultSet.next()) {
+                        listSize++;
+                    }
+                    otherResultSet.beforeFirst();
+                    int counter = 0;
+                    Random r = new Random();
+                    while (otherResultSet.next()) {
+                        int random = r.nextInt(listSize - 1);
+                        counter++;
+                        otherResultSet.absolute(random);
+                %>
+                <div class="product-item col-lg-3" id="<%=otherResultSet.getString(1)%>">
                     <div class="product-item__image">
-                        <img src="img/06-275x275.jpg" alt="Guava">
+                        <img src="<%=otherResultSet.getString(3)%>" alt="">
                     </div>
 
                     <div class="product-item__content">
-                        <p>Guava</p>
-                        <p><strong>$120</strong>
-                            <span class="price--line-through">$140</span>
+                        <p><%=otherResultSet.getString(2)%></p>
+                        <p><strong>$<%=otherResultSet.getString(4)%></strong>
+                            <span class="price--line-through">$<%=otherResultSet.getString(5)%></span>
                         </p>
                         <ul class="star-rank">
                             <li><i class="fas fa-star"></i></li>
@@ -255,74 +299,16 @@
                             <li><i class="fas fa-star"></i></li>
                             <li><i class="fas fa-star"></i></li>
                         </ul>
-                        <a class="add-to-cart__btn" href="#">add to cart</a>
+                        <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
                     </div>
                 </div>
 
-
-                <div class="product-item col-lg-3">
-                    <div class="product-item__image">
-                        <img src="img/06-275x275.jpg" alt="Guava">
-                    </div>
-
-                    <div class="product-item__content">
-                        <p>Guava</p>
-                        <p><strong>$120</strong>
-                            <span class="price--line-through">$140</span>
-                        </p>
-                        <ul class="star-rank">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <a class="add-to-cart__btn" href="#">add to cart</a>
-                    </div>
-                </div>
-
-
-                <div class="product-item col-lg-3">
-                    <div class="product-item__image">
-                        <img src="img/06-275x275.jpg" alt="Guava">
-                    </div>
-
-                    <div class="product-item__content">
-                        <p>Guava</p>
-                        <p><strong>$120</strong>
-                            <span class="price--line-through">$140</span>
-                        </p>
-                        <ul class="star-rank">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <a class="add-to-cart__btn" href="#">add to cart</a>
-                    </div>
-                </div>
-
-                <div class="product-item col-lg-3">
-                    <div class="product-item__image">
-                        <img src="img/06-275x275.jpg" alt="Guava">
-                    </div>
-
-                    <div class="product-item__content">
-                        <p>Guava</p>
-                        <p><strong>$120</strong>
-                            <span class="price--line-through">$140</span>
-                        </p>
-                        <ul class="star-rank">
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <a class="add-to-cart__btn" href="#">add to cart</a>
-                    </div>
-                </div>
+                <%
+                        if (counter == 4) {
+                            break;
+                        }
+                    }
+                %>
 
             </div>
         </div>
@@ -330,14 +316,23 @@
 
 </main>
 
-<%@include file="footer.jsp"%>
+<%@include file="footer.jsp" %>
 
-<%@ include file="scroll-to-top.jsp"%>
+<%@ include file="scroll-to-top.jsp" %>
 
 <!-- Javascript -->
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
 <script src="js/productDetail.js"></script>
+
+<script>
+    const productItem = document.querySelectorAll(".product-item");
+    for (let i = 0; i < productItem.length; i++) {
+        productItem[i].addEventListener("click", function () {
+            window.location.href = "http://localhost:8080/final_project/ProductDetailServlet?productDetailId=" + productItem[i].getAttribute('id').trim();
+        });
+    }
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>

@@ -94,17 +94,17 @@
   text-align: center;
 }
 
-.add__to__cart>a {
+.align-items-center .add__to__cart>a {
   padding: 8px 12px;
-  background-color: #4d4d4d;
+  background-color: #7fba00;
   color: white;
   border-radius: 40px;
   text-decoration: none;
   transition: all 0.35s;
 }
 
-.add__to__cart>a:hover {
-  background-color: #7fba00;
+.align-items-center .add__to__cart>a:hover {
+  background-color: #262626;
 }
 
 /* ********************* */
@@ -122,7 +122,7 @@
   font-weight: 600;
 }
 
-.calendar>input {
+.calendar>span {
   border: 1px solid #ededed;
 }
 

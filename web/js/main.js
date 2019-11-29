@@ -17,14 +17,6 @@ if (cartItem && cartContainer) {
   })
 }
 
-const productItem = document.querySelectorAll(".product-item");
-for (let i = 0; i < productItem.length; i++) {
-  productItem[i].addEventListener("click", () => {
-    window.location.href = "product-detail.jsp";
-    // console.log("a");
-  })
-}
-
 const viewCartButtonHeader = document.querySelector('#viewCartHeader');
 const checkoutButtonHeader = document.querySelector('#checkoutButtonHeader');
 viewCartButtonHeader.addEventListener('click', (e) => {
