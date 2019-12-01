@@ -62,33 +62,49 @@ ul.store__item > li:hover i {
     top: 36px;
 }
 
-ul.list-icon__footer {
+.list-icon__footer {
     display: flex;
 }
 
-ul.list-icon__footer > li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.list-icon__footer .icon__item {
+    position: relative;
+    display: inline-block;
+    float: left;
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: white;
-    margin-right: 10px;
+    box-shadow: 3px 3px 3px gray;
+    margin: 10px;
+    overflow: hidden;
 }
 
-ul.list-icon__footer > li:hover {
-    background-color: #7fba00;
+.list-icon__footer .icon__item > i {
+    color: #262626;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all .5s ease;
 }
 
-ul.list-icon__footer > li > a {
-    text-decoration: none;
-    color: #969696;
-    transition: color .35s;
+.list-icon__footer .icon__item:hover > i {
+    transform: translate(-50%, -50%) scale(1.5);
+    color: white;
 }
 
-ul.list-icon__footer>li:hover i {
-    color: #fff;
+.list-icon__footer .icon__item:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: all .5s ease;
+    background: #7fba00;
+}
+
+.list-icon__footer .icon__item:hover:before {
+    left: 0;
 }
 
 .footer-bottom {

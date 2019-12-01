@@ -111,24 +111,24 @@
             <nav class="main-nav__container">
 
                 <ul class="main-nav__menu">
-                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C100")%>">Organic Food</a>
+                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C100&pages=1")%>">Organic Food</a>
                         <ul class="sub__main__menu">
-                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C101")%>">Healthful Food</a></li>
-                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C103")%>">Super Food</a></li>
-                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C102")%>">Lite Food</a></li>
+                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C101&pages=1")%>">Healthful Food</a></li>
+                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C103&pages=1")%>">Super Food</a></li>
+                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C102&pages=1")%>">Lite Food</a></li>
                         </ul>
                     </li>
-                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C200")%>">Chemical Free</a></li>
-                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C300")%>">Fruits</a>
+                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C200&pages=1")%>">Chemical Free</a></li>
+                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C300&pages=1")%>">Fruits</a>
                         <ul class="sub__main__menu">
-                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C301")%>">Skinny Food</a></li>
-                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C302")%>">Low-calorie</a></li>
-                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C304")%>">Non-Fat</a></li>
-                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C305")%>">Peanut</a></li>
+                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C301&pages=1")%>">Skinny Food</a></li>
+                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C302&pages=1")%>">Low-calorie</a></li>
+                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C304&pages=1")%>">Non-Fat</a></li>
+                            <li><a href="<%=Utils.fullPath("ListProductServlet?category=C305&pages=1")%>">Peanut</a></li>
                         </ul>
                     </li>
-                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C400")%>">Nursery</a></li>
-                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C500")%>">Vegetables</a></li>
+                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C400&pages=1")%>">Nursery</a></li>
+                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C500&pages=1")%>">Vegetables</a></li>
                     <li><a href="#">More</a>
                         <ul class="sub__main__menu">
                             <li><a href="blog.jsp">Blogs</a></li>

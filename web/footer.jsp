@@ -46,12 +46,12 @@
                         <input type="text" placeholder="Enter your email..." style="outline: none">
                         <i class="fas fa-angle-right"></i>
                     </div>
-                    <ul class="list-icon__footer">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fas fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                    </ul>
+                    <div class="list-icon__footer">
+                        <div class="icon__item"><i class="fab fa-facebook-f" aria-hidden="true"></i></div>
+                        <div class="icon__item"><i class="fab fa-twitter" aria-hidden="true"></i></div>
+                        <div class="icon__item"><i class="fas fa-rss" aria-hidden="true"></i></div>
+                        <div class="icon__item"><i class="fab fa-google-plus-g" aria-hidden="true"></i></div>
+                    </div>
                 </div>
 
             </div>

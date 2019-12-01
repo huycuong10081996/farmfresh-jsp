@@ -33,7 +33,7 @@
     <section class="register__title__wrapper">
         <div class="container">
             <%
-                ResultSet resultSetproductDetail = (ResultSet) request.getAttribute("rSPD");
+                ResultSet resultSetproductDetail = (ResultSet) request.getAttribute("resultSetProductDetail");
                 int reviewQuantity = 0;
                 while ( (resultSetproductDetail.next())) {
                     reviewQuantity++;

@@ -118,7 +118,7 @@
                 <div id="productList" class="product-list product-list__none">
                     <div class="product-list__container">
                         <%
-                            homeResultSet.absolute(9);
+                            homeResultSet.absolute(8);
                             while (homeResultSet.next()) {
                         %>
 

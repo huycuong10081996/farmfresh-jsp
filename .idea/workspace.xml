@@ -7,251 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Admin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Category.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Product.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/541699.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/Kohlrabi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/acerola.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/almond.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/avatar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/avocado.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/banana.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/basil.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/blueberry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/breastmilk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/broccoly.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/cabbage.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/cana.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/carrot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/cashew.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/category-icon1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/category-icon2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/category-icon3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/category-icon4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/category-icon5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/category-icon6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/category-icon7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/category-icon8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/category-icon9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/cherries.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/chestnut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/chili.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/citrus.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/coconut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/corn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/cucumber.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/discharge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/dragon-fruits.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/durian.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/fish-lettuce.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/grape.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/guava.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/jackfruit.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/kiwi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/lemon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/longan.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/lychee.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/mango.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/mangosteen.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/melon-fruit.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/melon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/nipa.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/okra.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/orange.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/otaheite-apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/papaya.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/passion.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/peach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/peanut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/pear-shaped-melon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/pear.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/pistachio.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/plum.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/pomegrenade.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/pomelo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/potato.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/presimmon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/pumpkin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/rambutan.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/sake.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/sapodilla.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/scallion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/small-apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/soursop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/spinach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/sprouts.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/startfruit.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/strawberry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/tamarind.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/taro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/tomato.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/walnut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/water-dropwort.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/water-spinach.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/watermelon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/xoay.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/final_project/Model/Admin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/final_project/Model/Category.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/final_project/Model/Product.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profile/CartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profile/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profile/ProductDetailServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/541699.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/Kohlrabi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/acerola.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/almond.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/avatar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/avocado.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/banana.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/basil.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/blueberry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/breastmilk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/broccoly.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/cabbage.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/cana.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/carrot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/cashew.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/category-icon1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/category-icon2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/category-icon3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/category-icon4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/category-icon5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/category-icon6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/category-icon7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/category-icon8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/category-icon9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/cherries.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/chestnut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/chili.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/citrus.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/coconut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/corn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/cucumber.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/discharge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/dragon-fruits.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/durian.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/fish-lettuce.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/grape.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/guava.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/jackfruit.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/kiwi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/lemon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/longan.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/lychee.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/mango.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/mangosteen.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/melon-fruit.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/melon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/nipa.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/okra.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/orange.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/otaheite-apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/papaya.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/passion.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/peach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/peanut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/pear-shaped-melon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/pear.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/pistachio.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/plum.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/pomegrenade.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/pomelo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/potato.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/presimmon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/pumpkin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/rambutan.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/sake.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/sapodilla.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/scallion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/small-apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/soursop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/spinach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/sprouts.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/startfruit.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/strawberry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/tamarind.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/taro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/tomato.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/walnut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/water-dropwort.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/water-spinach.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/watermelon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/xoay.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CategoryDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/UserDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/addressdetail.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/admin.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/blogs.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/category.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/district.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/orderitem.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/orders.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/product.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/province.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Databse/user.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/Fruits.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ListProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ListProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/homeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/homeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ProductDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ProductDetailServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/loginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/loginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/logoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/logoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/DB/ConnectionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/DB/ConnectionDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/blog.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/blog.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/cart-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/cart-page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/category.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/chemical-free.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/product-detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/footer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/index2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/index2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/js/categories.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/menu-main.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/nav-menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/nav-menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/nursery.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/vegetables.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Model/Product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/ListProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/ListProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/homeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/homeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/ProductDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/ProductDetailServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/loginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/loginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/logoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/logoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/vn/edu/nlu/fit/DB/ConnectionDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/vn/edu/nlu/fit/DB/ConnectionDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/profile/ListProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/ListProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/homeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/HomeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/loginServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/logoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/DB/ConnectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/DB/ConnectionDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/blog.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/blog.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cart-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/ProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/ProductDetailServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/category.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/chemical-free.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/product-detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/footer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/fruits.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/categories.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/menu-main.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/nav-menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/nav-menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/nursery.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/product-detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/vegetables.jsp" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -278,6 +61,7 @@
       <list>
         <option value="CSS File" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -311,6 +95,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -450,7 +235,8 @@
       <workItem from="1574931902921" duration="15378000" />
       <workItem from="1574947712311" duration="1520000" />
       <workItem from="1574996080829" duration="675000" />
-      <workItem from="1574997055434" duration="9477000" />
+      <workItem from="1574997055434" duration="16819000" />
+      <workItem from="1575170641968" duration="27242000" />
     </task>
     <servers />
   </component>
@@ -469,6 +255,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="pages.hashIsZero" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/farmfresh_jsp$Tomcat.ic" NAME="Tomcat Coverage Results" MODIFIED="1574948456209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

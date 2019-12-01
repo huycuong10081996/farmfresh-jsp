@@ -34,7 +34,7 @@ public class ProductDetailServlet extends HttpServlet {
             statements.setString(1, id);
             response.getWriter().println(sql);
             ResultSet resultSetProductDetail = statements.executeQuery();
-            request.setAttribute("rSPD", resultSetProductDetail);
+            request.setAttribute("resultSetProductDetail", resultSetProductDetail);
 
             request.getRequestDispatcher("product-detail.jsp").forward(request, response);
         } catch (ClassNotFoundException | SQLException e) {

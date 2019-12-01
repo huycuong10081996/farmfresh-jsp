@@ -19,8 +19,18 @@ public class Product {
     private Admin productCreateBy;
     private int productQuantity;
     private String productCreateAt;
+    private String categoryId;
 
     public Product() {
+    }
+
+    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String productCategory) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productImageURL = productImageURL;
+        this.productPrice = productPrice;
+        this.productSalePrice = productSalePrice;
+        this.categoryId = productCategory;
     }
 
     public Product(String productId, String productName, String productImageURL, int productStatus, double productPrice, double productSalePrice, String productDescription, Category productCategory, Admin productCreateBy) {
@@ -148,5 +158,21 @@ public class Product {
 
     public void setProductQuantity(int productQuantity) {
         this.productQuantity = productQuantity;
+    }
+
+    public String getProductCreateAt() {
+        return productCreateAt;
+    }
+
+    public void setProductCreateAt(String productCreateAt) {
+        this.productCreateAt = productCreateAt;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
     }
 }

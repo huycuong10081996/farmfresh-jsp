@@ -45,8 +45,7 @@ public class LoginServlet extends HttpServlet {
             preparedStatement.setString(1, userEmail);
             preparedStatement.setString(2, passWord);
             response.getWriter().println(sql);
-            ResultSet resultSet;
-            resultSet = preparedStatement.executeQuery();
+            ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.last();
             int i = resultSet.getRow();
             if (resultSet != null && i == 1) {

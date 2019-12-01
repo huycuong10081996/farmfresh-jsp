@@ -22,22 +22,50 @@ public class ListProductServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String category = request.getParameter("category");
+        String pages = request.getParameter("pages");
+        int page = Integer.parseInt(pages);
         try {
             String sql = "select category_id, category_title from category";
             PreparedStatement statement = ConnectionDB.getPreparedStatement(sql);
             ResultSet resultSet = statement.executeQuery();
             request.setAttribute("resultSet", resultSet);
 
-            sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title from product p inner join category c on c.category_id = p.product_categoryId where product_status = 1 ";
+            sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title, c.category_id from product p inner join category c on c.category_id = p.product_categoryId where product_status = 1 ";
             PreparedStatement specialStatement = ConnectionDB.getPreparedStatement(sql);
             ResultSet specialResultSet = specialStatement.executeQuery();
             request.setAttribute("special", specialResultSet);
 
             if (category != null) {
-                sql += "and p.product_categoryId = ?";
+                sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title, c.category_id from product p inner join category c on c.category_id = p.product_categoryId where product_status = 1 and p.product_categoryId = ?";
             }
+            PreparedStatement statement2 = ConnectionDB.getPreparedStatement(sql);
+            statement2.setString(1, category);
+            ResultSet resultSet2 = statement2.executeQuery();
+            int listSize = 0;
+            while (resultSet2.next()) {
+                listSize++;
+            }
+            resultSet2.beforeFirst();
+            request.setAttribute("ps", resultSet2);
+
+            sql += " limit ? , ?";
             PreparedStatement statement1 = ConnectionDB.getPreparedStatement(sql);
             statement1.setString(1, category);
+
+            if (page == 1) {
+                if (listSize <= 9) {
+                    statement1.setInt(2, 0);
+                    statement1.setInt(3, listSize);
+                } else {
+                    statement1.setInt(2, 0);
+                    statement1.setInt(3, 9);
+                }
+            } else {
+                statement1.setInt(2, Math.max(page * 9 - 9,9));
+                statement1.setInt(3, Math.min(listSize - (page * 9 - 9) ,9));
+            }
+
+
             response.getWriter().println(sql);
             ResultSet resultSetProduct = statement1.executeQuery();
             request.setAttribute("p", resultSetProduct);

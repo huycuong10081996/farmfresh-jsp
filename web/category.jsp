@@ -1,4 +1,8 @@
 <%@ page import="java.util.Random" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Model.Product" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="Controller.CategoryDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +65,7 @@
                             %>
 
                             <li>
-                                <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSet.getString(1))%>">
+                                <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSet.getString(1)+"&pages=1")%>">
                                     <%=resultSet.getString(2)%>
                                 </a>
                             </li>
@@ -213,19 +217,30 @@
                     <div class="product-list">
                         <div class="product-list__container">
                             <%
+                                ArrayList<Product> list = new ArrayList<>();
                                 resultSetProduct.beforeFirst();
                                 while (resultSetProduct.next()) {
+                                    String productId = resultSetProduct.getString(1);
+                                    String productName = resultSetProduct.getString(2);
+                                    String productImage = resultSetProduct.getString(3);
+                                    double productPrice = resultSetProduct.getDouble(4);
+                                    double productSalePrice = resultSetProduct.getDouble(5);
+                                    String categoryId = resultSetProduct.getString(6);
+                                    Product product = new Product(productId, productName, productImage, productPrice, productSalePrice, categoryId);
+                                    list.add(product);
+                                }
+                                for (Product p : list) {
                             %>
-                            <div class="product-item" style="height: 385px" id="<%=resultSetProduct.getString(1)%>">
+                            <div class="product-item" style="height: 385px" id="<%=p.getProductId()%>">
                                 <div class="product-item__image">
-                                    <img src="<%=resultSetProduct.getString(3)%>">
+                                    <img src="<%=p.getProductImageURL()%>">
                                 </div>
                                 <div class="product-item__content">
-                                    <p><%=resultSetProduct.getString(2)%>
+                                    <p><%=p.getProductName()%>
                                     </p>
-                                    <p><strong>$<%=resultSetProduct.getString(5)%>
+                                    <p><strong>$<%=p.getProductPrice()%>
                                     </strong>
-                                        <span class="price__line__through">$<%=resultSetProduct.getString(4)%></span>
+                                        <span class="price__line__through">$<%=p.getProductSalePrice()%></span>
                                     </p>
                                     <ul class="star-rank">
                                         <li><i class="fas fa-star"></i></li>
@@ -235,7 +250,7 @@
                                         <li><i class="fas fa-star"></i></li>
                                     </ul>
                                     <a class="add-to-cart__btn"
-                                       href="<%=Utils.fullPath("CartServlet?productId="+resultSetProduct.getString(1))%>">add
+                                       href="<%=Utils.fullPath("CartServlet?productId="+p.getProductId())%>">add
                                         to cart</a>
                                 </div>
                             </div>
@@ -247,21 +262,55 @@
 
                 </div>
                 <hr>
+
                 <div class="show__page__container">
+                    <%
+                        ResultSet resultSetSize = (ResultSet) request.getAttribute("ps");
+                        int counter = 0;
+                        while (resultSetSize.next()) {
+                            int size = new CategoryDAO().getCount(resultSetSize.getString(7));
+                            int numPager = 1;
+                            int show = 9;
+                            if (size <= 9) {
+                                numPager = 1;
+                                show = size;
+                            } else  {
+                                numPager = size / 9 + 1;
+                            }
+                            counter++;
+                    %>
                     <div class="show__page">
-                        <p>Showing 1 to 9 of 14 (2 Pages)</p>
+                        <p>Showing 1 to <%=show%> of <%=size%>
+                            (<%=numPager%> Pages)</p>
                     </div>
                     <div class="show__pagination">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-end">
-                                <li><a href="">Previous</a></li>
-                                <li><a href="" class="color-green">1</a></li>
-                                <li><a href="">2</a></li>
-                                <li><a href="">3</a></li>
-                                <li><a href="">Next</a></li>
+
+                                <li>
+                                    <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages=1")%>">First</a>
+                                </li>
+                                <%
+                                    for (int i = 1; i <= numPager; i++) {
+                                %>
+                                <li>
+                                    <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages="+i)%>"><%=i%>
+                                    </a></li>
+                                <%
+                                    }
+                                %>
+                                <li>
+                                    <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages="+numPager)%>">Last</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
+                    <%
+                            if (counter == 1) {
+                                break;
+                            }
+                        }
+                    %>
                 </div>
             </div>
         </div>
