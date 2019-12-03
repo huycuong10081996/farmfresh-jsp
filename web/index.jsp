@@ -242,44 +242,32 @@
             </div>
 
             <div class="blog__list__wrapper row justify-content-between">
-                <div class="blog__home__item">
+
+                <%
+                    ResultSet resultSetBlog = (ResultSet) request.getAttribute("blogHome");
+                    int counter = 0;
+                    while (resultSetBlog.next()) {
+                        counter++;
+                %>
+                <div class="blog__home__item" style=" background-image: url(<%=resultSetBlog.getString(4)%>)">
                     <div class="blog__content">
-                        <div class="blog__date"><i class="far fa-calendar-alt"></i>&nbsp;20/11/2019</div>
-                        <div class="blog__title">Urna Curabitur</div>
-                        <div class="blog__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-                            ipsa
+                        <div class="blog__date"><i class="far fa-calendar-alt"></i>&nbsp;<%=resultSetBlog.getString(5)%></div>
+                        <div class="blog__title"><%=resultSetBlog.getString(2)%></div>
+                        <div class="blog__desc"><%=resultSetBlog.getString(3)%>
                         </div>
                         <div class="read__more__blog">
-                            <a href="blog-detail.jsp">Read more</a>
+                            <a href="<%=Utils.fullPath("BlogDetailServlet?blogId="+resultSetBlog.getString(1))%>">Read more</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="blog__home__item">
-                    <div class="blog__content">
-                        <div class="blog__date"><i class="far fa-calendar-alt"></i>&nbsp;20/11/2019</div>
-                        <div class="blog__title">Urna Curabitur</div>
-                        <div class="blog__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-                            ipsa
-                        </div>
-                        <div class="read__more__blog">
-                            <a href="blog-detail.jsp">Read more</a>
-                        </div>
-                    </div>
-                </div>
+                <%
+                        if (counter == 3) {
+                            break;
+                        }
+                    }
+                %>
 
-                <div class="blog__home__item">
-                    <div class="blog__content">
-                        <div class="blog__date"><i class="far fa-calendar-alt"></i>&nbsp;20/11/2019</div>
-                        <div class="blog__title">Urna Curabitur</div>
-                        <div class="blog__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-                            ipsa
-                        </div>
-                        <div class="read__more__blog">
-                            <a href="blog-detail.jsp">Read more</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

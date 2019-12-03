@@ -1,3 +1,4 @@
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,14 +29,20 @@
 
 <main>
     <section class="wrapper-category">
+        <%
+            ResultSet blogDetail = (ResultSet) request.getAttribute("blogDetail");
+            while (blogDetail.next()) {
+        %>
         <div class="breadcrumb__container row align-items-center">
             <div class="breadcrumb__icon">
                 <i class="fa fa-home"></i>
             </div>
+
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb non-bg">
-                    <li class="breadcrumb-item"><a class="color-green" href="blog.jsp">Blogs</a></li>
-                    <li class="breadcrumb-item" aria-current="page">Necessitatibus Saepe</li>
+                    <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a></li>
+                    <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("BlogServlet?blogPages=1")%>">Blogs</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><%=blogDetail.getString(1)%></li>
                 </ol>
             </nav>
         </div>
@@ -43,35 +50,36 @@
             <%@ include file="nav-menu.jsp" %>
 
             <div class="blog__wrapper">
+
                 <div class="blog">
                     <div class="blog__titles">
-                        <h3>Necessitatibus Saepe</h3>
+                        <h3><%=blogDetail.getString(1)%></h3>
                     </div>
 
                     <div class="blog__container">
                         <div class="blog__detail__image">
-                            <img src="img/blog-6-890x620.jpg" alt="">
+                            <img src="<%=blogDetail.getString(2)%>" alt="">
                         </div>
 
                         <div class="blog__item__description">
                             <div class="blog__item__datetime">
-                                <i class="far fa-calendar-alt"></i>&nbsp;22 May, 2019
+                                <i class="far fa-calendar-alt"></i>&nbsp;<%=blogDetail.getString(3)%>
                             </div>
                         </div>
 
+                        <%
+                            ResultSet resultSetParagraph = (ResultSet) request.getAttribute("rsPR");
+                            while (resultSetParagraph.next()) {
+                        %>
                         <div class="blog__detail__content">
-                            <h6>1914 translation by H. Rackham</h6>
-                            <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and
-                                praising pain was born and I will give you a complete account of the system, and
-                                expound the actual teachings of the great explorer of the truth, the master-builder
-                                of human happiness. No one rejects</p>
 
-                            <h6>Section 1.10.33 of "de Finibus Bonorum et Malorum"</h6>
-                            <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                                praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
-                                officia deserunt mollitia animi, id est laborum et dolorum fuga."</p>
+                            <h6><%=resultSetParagraph.getString(1)%></h6>
+                            <p><%=resultSetParagraph.getString(2)%></p>
+
                         </div>
+                        <%
+                            }
+                        %>
 
                         <div class="blog__detail__comment">
                             <div class="add__comment">
@@ -94,10 +102,15 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
+        <%
+            }
+        %>
     </section>
 </main>
 

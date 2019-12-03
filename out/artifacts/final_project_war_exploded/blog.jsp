@@ -1,3 +1,6 @@
+<%@ page import="Controller.BlogDAO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Model.Blog" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +37,8 @@
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb non-bg">
-                    <li class="breadcrumb-item"><a class="color-green" href="blog.jsp">Blogs</a></li>
+                    <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Blogs</a></li>
                 </ol>
             </nav>
         </div>
@@ -48,16 +52,32 @@
                     </div>
 
                     <div class="blog__container">
-                        <div class="blog__item">
+                        <%
+                            ResultSet resultSetBlog = (ResultSet) request.getAttribute("blogList");
+                            ArrayList<Blog> list = new ArrayList<>();
+                            while (resultSetBlog.next()) {
+                                String blogId = resultSetBlog.getString(1);
+                                String blogCreateBy = resultSetBlog.getString(2);
+                                String blogTitle = resultSetBlog.getString(3);
+                                String blogImage = resultSetBlog.getString(4);
+                                String blogCreateAt = resultSetBlog.getString(5);
+                                String blogContent = resultSetBlog.getString(6);
+                                list.add(new Blog(blogId, blogCreateBy, blogTitle, blogImage, blogCreateAt, blogContent));
+                            }
+                            for (Blog b : list) {
+                        %>
+
+                        <div class="blog__item" id="<%=b.getBlogId()%>">
                             <div class="blog__item__title">
-                                <a href="">Necessitatibus Saepe</a>
+                                <a href="<%=Utils.fullPath("BlogDetailServlet?blogId="+b.getBlogId())%>"><%=b.getBlogTitle()%>
+                                </a>
                             </div>
                             <div class="blog__item__image">
-                                <img src="img/blog-6-890x620.jpg" alt="">
+                                <img src="<%=b.getBlogImage()%>" alt="">
                             </div>
                             <div class="blog__item__description">
                                 <div class="blog__item__datetime">
-                                    <i class="far fa-calendar-alt"></i>&nbsp;22 May, 2019
+                                    <i class="far fa-calendar-alt"></i>&nbsp;<%=b.getBlogCreateAt()%>
                                 </div>
 
                                 <div class="blog__item__comment">
@@ -74,49 +94,61 @@
                             </div>
                             <div class="blog__item__content">
                                 <div class="content__item">
-                                    The standard Lorem Ipsum passage, used since the 1500s"Lorem...
+                                    <%=b.getBlogContent()%>
                                 </div>
                                 <div class="read__more__blog__btn">
-                                    <a href="">Read More</a>
+                                    <a href="<%=Utils.fullPath("BlogDetailServlet?blogId="+b.getBlogId())%>">Read More</a>
                                 </div>
                             </div>
-
                         </div>
 
-                        <div class="blog__item">
-                            <div class="blog__item__title">
-                                <a href="">Necessitatibus Saepe</a>
-                            </div>
-                            <div class="blog__item__image">
-                                <img src="img/blog-6-890x620.jpg" alt="">
-                            </div>
-                            <div class="blog__item__description">
-                                <div class="blog__item__datetime">
-                                    <i class="far fa-calendar-alt"></i>&nbsp;22 May, 2019
-                                </div>
+                        <%
+                            }
+                        %>
 
-                                <div class="blog__item__comment">
-                                    <div class="comment">
-                                        0&nbsp;Comment
-                                    </div>
-
-                                    <div class="leave__comment">
-                                        <a href="">
-                                            <i class="far fa-comment"></i>&nbsp;Leave Comment
-                                        </a>
-                                    </div>
-                                </div>
+                        <div class="show__page__container">
+                            <%
+                                    int size = new BlogDAO().getCount();
+                                    int numPager = 1;
+                                    int show = 2;
+                                    if (size <= 2) {
+                                        show = size;
+                                    } else {
+                                        if (size % 2 == 0) {
+                                            numPager = size / 2;
+                                        } else {
+                                            numPager = size / 2 + 1;
+                                        }
+                                    }
+                            %>
+                            <div class="show__page">
+                                <p>Showing 1 to <%=show%> of <%=size%>
+                                    (<%=numPager%> Pages)</p>
                             </div>
-                            <div class="blog__item__content">
-                                <div class="content__item">
-                                    The standard Lorem Ipsum passage, used since the 1500s"Lorem...
-                                </div>
-                                <div class="read__more__blog__btn">
-                                    <a href="blog-detail.jsp">Read More</a>
-                                </div>
-                            </div>
+                            <div class="show__pagination">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-end">
 
+                                        <li>
+                                            <a href="<%=Utils.fullPath("BlogServlet?blogPages=1")%>">First</a>
+                                        </li>
+                                        <%
+                                            for (int i = 1; i <= numPager; i++) {
+                                        %>
+                                        <li>
+                                            <a href="<%=Utils.fullPath("BlogServlet?blogPages="+i)%>"><%=i%>
+                                            </a></li>
+                                        <%
+                                            }
+                                        %>
+                                        <li>
+                                            <a href="<%=Utils.fullPath("BlogServlet?blogPages="+numPager)%>">Last</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -126,7 +158,7 @@
 
 <%@ include file="footer.jsp" %>
 
-<%@ include file="scroll-to-top.jsp"%>
+<%@ include file="scroll-to-top.jsp" %>
 
 <!-- Javascript -->
 <script src="js/main.js"></script>

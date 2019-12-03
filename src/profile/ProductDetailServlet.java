@@ -28,7 +28,7 @@ public class ProductDetailServlet extends HttpServlet {
             request.setAttribute("other", otherProduct);
 
             if (id != null) {
-                sql =  "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, p.product_quantity, p.product_createAt, p.product_description, c.category_title, rv.review_content, rv.review_createAt, us.user_fullName, rv.review_ratingStar   from product p inner join category c on p.product_categoryId = c.category_id inner join review rv on rv.review_productId = p.product_id inner join `user` us on rv.review_createBy = us.user_id where product_status = 1 and product_id = ?";
+                sql =  "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, p.product_quantity, p.product_createAt, p.product_description, c.category_title, rv.review_content, rv.review_createAt, us.user_fullName, rv.review_ratingStar, rv.review_id, c.category_id from product p left join category c on p.product_categoryId = c.category_id left join review rv on rv.review_productId = p.product_id left join `user` us on rv.review_createBy = us.user_id where product_status = 1 and product_id = ?";
             }
             PreparedStatement statements = ConnectionDB.getPreparedStatement(sql);
             statements.setString(1, id);

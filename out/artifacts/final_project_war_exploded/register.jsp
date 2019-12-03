@@ -35,7 +35,7 @@
                 </div>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb non-bg">
-                        <li class="breadcrumb-item"><a class="color-green" href="index.jsp">Home</a></li>
+                        <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a></li>
                         <li class="breadcrumb-item" aria-current="page">Register</li>
                     </ol>
                 </nav>

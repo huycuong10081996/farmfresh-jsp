@@ -13,7 +13,7 @@
                         <li><a href="customer-service.jsp">Customer Service</a></li>
                         <li><a href="contact-us.jsp">Contact Us</a></li>
                         <li><a href="privacy-policy.jsp">Privacy Policy</a></li>
-                        <li><a href="blog.jsp">Blogs</a></li>
+                        <li><a href="<%=Utils.fullPath("BlogServlet?blogPages=1")%>">Blogs</a></li>
                     </ul>
                 </div>
 

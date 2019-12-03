@@ -35,13 +35,15 @@
             <%
                 ResultSet resultSetproductDetail = (ResultSet) request.getAttribute("resultSetProductDetail");
                 int reviewQuantity = 0;
-                while ( (resultSetproductDetail.next())) {
-                    reviewQuantity++;
+                while ((resultSetproductDetail.next())) {
+                    if (resultSetproductDetail.getString(14) != null) {
+                        reviewQuantity++;
+                    }
                 }
                 resultSetproductDetail.beforeFirst();
                 int count = 0;
                 while (resultSetproductDetail.next()) {
-                    count ++;
+                    count++;
             %>
             <div class="breadcrumb__container row align-items-center">
                 <div class="breadcrumb__icon">
@@ -49,8 +51,8 @@
                 </div>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb non-bg">
-                        <li class="breadcrumb-item"><a class="color-green" href="index.jsp">Home</a></li>
-                        <li class="breadcrumb-item"><a class="color-green" href="index.jsp">Organic Food</a></li>
+                        <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a></li>
+                        <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("ListProductServlet?category="+resultSetproductDetail.getString(15)+"&pages=1")%>"><%=resultSetproductDetail.getString(9)%>></a></li>
                         <li class="breadcrumb-item" aria-current="page"><%=resultSetproductDetail.getString(2)%>
                         </li>
                     </ol>
@@ -85,7 +87,6 @@
                                     <li><i class="fas fa-star"></i></li>
                                     <li><i class="fas fa-star"></i></li>
                                 </ul>
-
 
                                 <div class="review">
                                     <a href="#categoriesList"><%=String.valueOf(reviewQuantity)%> reviews</a>
@@ -123,6 +124,18 @@
                                 </div>
                             </div>
 
+
+                            <%
+                                if (resultSetproductDetail.getString(5) == null) {
+                            %>
+                            <div class="price row">
+                                <h4>$<%=resultSetproductDetail.getString(4)%>
+                                </h4>
+                            </div>
+
+                            <%
+                            } else {
+                            %>
                             <div class="price row">
                                 <h4>$<%=resultSetproductDetail.getString(5)%>
                                 </h4>
@@ -132,6 +145,9 @@
                                 <h6><strike>$<%=resultSetproductDetail.getString(4)%>
                                 </strike></h6>
                             </div>
+                            <%
+                                }
+                            %>
 
                             <div class="more__props row align-items-center">
                                 <div class="quantity">
@@ -181,18 +197,22 @@
                         <%
                             resultSetproductDetail.beforeFirst();
                             while (resultSetproductDetail.next()) {
+                                if (resultSetproductDetail.getString(14) != null) {
                         %>
+
                         <div class="review__content">
                             <table>
                                 <tr>
                                     <td>
                                         <div class="author">
-                                            <h6><%=resultSetproductDetail.getString(12)%></h6>
+                                            <h6><%=resultSetproductDetail.getString(12)%>
+                                            </h6>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="time__review">
-                                            <h6><%=resultSetproductDetail.getString(11)%></h6>
+                                            <h6><%=resultSetproductDetail.getString(11)%>
+                                            </h6>
                                         </div>
                                     </td>
                                 </tr>
@@ -218,10 +238,6 @@
                             </table>
                         </div>
 
-                        <%
-                            }
-                        %>
-
                         <div class="add__review">
                             <h4>Write a review</h4>
                             <form action="">
@@ -232,7 +248,7 @@
 
                                 <div class="review__main">
                                     <p><span>*</span>&nbsp;Your Review</p>
-                                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="" id="yourReview" cols="30" rows="10"></textarea>
                                 </div>
 
                                 <div class="review__rate">
@@ -251,6 +267,46 @@
                                 </div>
                             </form>
                         </div>
+
+                        <%
+                        } else {
+                        %>
+
+                        <div class="add__review">
+                            <h4>Write a review</h4>
+                            <form action="">
+                                <div class="review__name">
+                                    <p><span>*</span>&nbsp;Your Name</p>
+                                    <input type="text">
+                                </div>
+
+                                <div class="review__main">
+                                    <p><span>*</span>&nbsp;Your Review</p>
+                                    <textarea name="" cols="30" rows="10"></textarea>
+                                </div>
+
+                                <div class="review__rate">
+                                    <label class="review__rate__lbl"><span>*</span>&nbsp;Rating</label>
+                                    <label for="">Bad</label>
+                                    <input type="radio" name="rate1">
+                                    <input type="radio" name="rate1">
+                                    <input type="radio" name="rate1">
+                                    <input type="radio" name="rate1">
+                                    <input type="radio" name="rate1">
+                                    <label for="">Good</label>
+                                </div>
+
+                                <div class="continue__btn">
+                                    <a href="">Continue</a>
+                                </div>
+                            </form>
+                        </div>
+
+                        <%
+                                }
+                            }
+                        %>
+
                     </div>
                 </div>
             </div>
@@ -288,8 +344,10 @@
                     </div>
 
                     <div class="product-item__content">
-                        <p><%=otherResultSet.getString(2)%></p>
-                        <p><strong>$<%=otherResultSet.getString(4)%></strong>
+                        <p><%=otherResultSet.getString(2)%>
+                        </p>
+                        <p><strong>$<%=otherResultSet.getString(4)%>
+                        </strong>
                             <span class="price--line-through">$<%=otherResultSet.getString(5)%></span>
                         </p>
                         <ul class="star-rank">

@@ -54,6 +54,7 @@ ul.store__item > li:hover i {
     border-radius: 20px;
     padding: 8px 12px;
     border: none;
+    box-shadow: 3px 3px 3px gray;
 }
 
 .footer__input > i {

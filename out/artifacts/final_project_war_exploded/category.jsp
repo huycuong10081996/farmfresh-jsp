@@ -1,7 +1,6 @@
 <%@ page import="java.util.Random" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Model.Product" %>
-<%@ page import="java.sql.SQLException" %>
 <%@ page import="Controller.CategoryDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -44,7 +43,7 @@
             %>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb non-bg">
-                    <li class="breadcrumb-item"><a class="color-green" href="index.jsp">Home</a></li>
+                    <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a></li>
                     <li class="breadcrumb-item" aria-current="page"><%=resultSetProduct.getString(6)%>
                     </li>
 
@@ -194,11 +193,25 @@
                 <div class="shortItem__container">
 
                     <div class="short__by">
+                        <%
+                            ArrayList<Product> list = new ArrayList<>();
+                            resultSetProduct.beforeFirst();
+                            while (resultSetProduct.next()) {
+                                String productId = resultSetProduct.getString(1);
+                                String productName = resultSetProduct.getString(2);
+                                String productImage = resultSetProduct.getString(3);
+                                double productPrice = resultSetProduct.getDouble(4);
+                                double productSalePrice = resultSetProduct.getDouble(5);
+                                String categoryId = resultSetProduct.getString(6);
+                                Product product = new Product(productId, productName, productImage, productPrice, productSalePrice, categoryId);
+                                list.add(product);
+                            }
+                        %>
                         <div class="short__by__default">
                             <span>Sort by</span>
-                            <select class="custom-select" id="inputGroupSelect03">
+                            <select class="custom-select" name="sortSelect" id="inputGroupSelect03">
                                 <option value="name" selected>Name</option>
-                                <option value="price">Price</option>
+                                <option value="price">Sale Price</option>
                             </select>
                         </div>
                         <div class="short__show">
@@ -217,20 +230,9 @@
                     <div class="product-list">
                         <div class="product-list__container">
                             <%
-                                ArrayList<Product> list = new ArrayList<>();
-                                resultSetProduct.beforeFirst();
-                                while (resultSetProduct.next()) {
-                                    String productId = resultSetProduct.getString(1);
-                                    String productName = resultSetProduct.getString(2);
-                                    String productImage = resultSetProduct.getString(3);
-                                    double productPrice = resultSetProduct.getDouble(4);
-                                    double productSalePrice = resultSetProduct.getDouble(5);
-                                    String categoryId = resultSetProduct.getString(6);
-                                    Product product = new Product(productId, productName, productImage, productPrice, productSalePrice, categoryId);
-                                    list.add(product);
-                                }
                                 for (Product p : list) {
                             %>
+
                             <div class="product-item" style="height: 385px" id="<%=p.getProductId()%>">
                                 <div class="product-item__image">
                                     <img src="<%=p.getProductImageURL()%>">
@@ -254,9 +256,11 @@
                                         to cart</a>
                                 </div>
                             </div>
+
                             <%
                                 }
                             %>
+
                         </div>
                     </div>
 
@@ -274,7 +278,7 @@
                             if (size <= 9) {
                                 numPager = 1;
                                 show = size;
-                            } else  {
+                            } else {
                                 numPager = size / 9 + 1;
                             }
                             counter++;
@@ -333,6 +337,22 @@
         });
     }
 </script>
+
+<!--
+<script>
+    function sortBy(obj) {
+        var value = obj.value;
+        if (value === 'name') {
+            <%--<%
+            Utils.sortByName(list);
+            %>--%>
+        } else if (value === 'price') {
+           <%-- <%
+            Utils.sortByPrice(list);
+            %>--%>
+        }
+    }
+</script> -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

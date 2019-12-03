@@ -354,11 +354,19 @@
 #inputGroupSelect03 {
     width: 100px;
     height: 31px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #inputGroupSelect04 {
     width: 100px;
     height: 31px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .short__by {
@@ -467,32 +475,23 @@ ul.star-rank>li {
 }
 
 .show__pagination ul>li {
-    padding-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .show__page__container ul>li>a {
+    margin: 3px;
+    padding: 5px 12px;
+    border: 1px solid #292929;
+    background: #7fb300;
     text-decoration: none;
-    color: #212529;
+    color: white;
     transition: all .35s;
 }
 
-.show__page__container ul>li>a.color-green {
-    color: #7fba00;
-}
-
-.show__pagination ul>li>a:hover {
-    color: #7fba00;
-}
-
-.show__pagination>ul>li>a {
-    text-decoration: none;
-    background: black;
-    color: white;
-    padding: 5px 15px;
-}
-
-.show__pagination>ul {
-    display: flex;
+.show__page__container ul>li>a:hover {
+    background: #292929;
 }
 
 .active {

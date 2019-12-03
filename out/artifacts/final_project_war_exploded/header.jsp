@@ -111,7 +111,7 @@
             <nav class="main-nav__container">
 
                 <ul class="main-nav__menu">
-                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C100&pages=1")%>">Organic Food</a>
+                    <li><a href="#">Organic Food</a>
                         <ul class="sub__main__menu">
                             <li><a href="<%=Utils.fullPath("ListProductServlet?category=C101&pages=1")%>">Healthful Food</a></li>
                             <li><a href="<%=Utils.fullPath("ListProductServlet?category=C103&pages=1")%>">Super Food</a></li>
@@ -119,7 +119,7 @@
                         </ul>
                     </li>
                     <li><a href="<%=Utils.fullPath("ListProductServlet?category=C200&pages=1")%>">Chemical Free</a></li>
-                    <li><a href="<%=Utils.fullPath("ListProductServlet?category=C300&pages=1")%>">Fruits</a>
+                    <li><a href="#">Fruits</a>
                         <ul class="sub__main__menu">
                             <li><a href="<%=Utils.fullPath("ListProductServlet?category=C301&pages=1")%>">Skinny Food</a></li>
                             <li><a href="<%=Utils.fullPath("ListProductServlet?category=C302&pages=1")%>">Low-calorie</a></li>
@@ -131,7 +131,7 @@
                     <li><a href="<%=Utils.fullPath("ListProductServlet?category=C500&pages=1")%>">Vegetables</a></li>
                     <li><a href="#">More</a>
                         <ul class="sub__main__menu">
-                            <li><a href="blog.jsp">Blogs</a></li>
+                            <li><a href="<%=Utils.fullPath("BlogServlet?blogPages=1")%>">Blogs</a></li>
                             <li><a href="about-us.jsp">About Us</a></li>
                         </ul>
                     </li>

@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Product {
+public class Product implements  Comparable<Product> {
 
     private String productId;
     private String productName;
@@ -174,5 +174,14 @@ public class Product {
 
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        int value = this.productName.compareTo(o.getProductName());
+        if (value != 0) {
+            return value;
+        }
+        return 0;
     }
 }
