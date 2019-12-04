@@ -22,8 +22,10 @@ public class ProductDetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("productDetailId");
         try {
-            String sql = "select product_id, product_name, product_image, product_price, product_salePrice from product where product_status = 1";
+            String sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, rv.review_ratingStar from product p left join review rv on rv.review_productId = p.product_id where product_status = 1";
             PreparedStatement statement = ConnectionDB.getPreparedStatement(sql);
+            response.getWriter().println("sai");
+
             ResultSet otherProduct = statement.executeQuery();
             request.setAttribute("other", otherProduct);
 

@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.StringTokenizer;
 
 
 @WebServlet("/ListProductServlet")
@@ -39,8 +40,9 @@ public class ListProductServlet extends HttpServlet {
 
             //Dùng PreparedStatement để lấy được số lượng sản phẩm của categoryId = ?
             if (category != null) {
-                sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title, c.category_id from product p inner join category c on c.category_id = p.product_categoryId where product_status = 1 and p.product_categoryId = ? order by (p.product_name)";
+                sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title, c.category_id, rv.review_ratingStar from product p inner join category c on c.category_id = p.product_categoryId left join review rv on rv.review_productId = p.product_id where product_status = 1 and p.product_categoryId = ? group by (product_id) order by (p.product_name)";
             }
+
             PreparedStatement statement2 = ConnectionDB.getPreparedStatement(sql);
             statement2.setString(1, category);
             ResultSet resultSet2 = statement2.executeQuery();

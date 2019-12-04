@@ -63,17 +63,15 @@
 .read__more__blog__btn>a {
     padding: 8px 16px;
     /* border: 1px solid #4d4d4d; */
-    background-color: #7fba00;
+    background: #7fba00;
     color: #ffffff;
     border-radius: 40px;
     text-decoration: none;
     transition: all 0.35s;
-    color: #ffffff;
 }
 
 .read__more__blog__btn>a:hover {
-    background-color: #4d4d4d;
-
+    background: #4d4d4d;
 }
 
 .show__page__container {

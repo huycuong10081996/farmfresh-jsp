@@ -1,3 +1,4 @@
+<%@ page import="java.util.Random" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -86,16 +87,41 @@
                             <div class="product-item__content">
                                 <p><%=homeResultSet.getString(2)%>
                                 </p>
+                                <%
+                                    if (homeResultSet.getString(5) == null) {
+                                %>
+
+                                <p><strong>$<%=homeResultSet.getString(4)%></strong></p>
+
+                                <%
+                                    } else {
+                                %>
+
                                 <p><strong>$<%=homeResultSet.getString(5)%>
                                 </strong>
                                     <span class="price--line-through">$<%=homeResultSet.getString(4)%></span>
                                 </p>
+
+                                <%
+                                    }
+                                %>
                                 <ul class="star-rank">
+                                    <%
+                                        int ratingStart = homeResultSet.getInt(6);
+                                        if (ratingStart == 0) {
+                                            for (int i = 1; i <= 5; i++) {
+                                    %>
                                     <li><i class="fas fa-star"></i></li>
+                                    <%
+                                        }
+                                    } else {
+                                        for (int i = 1; i <= ratingStart; i++) {
+                                    %>
                                     <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
+                                    <%
+                                            }
+                                        }
+                                    %>
                                 </ul>
                                 <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
                             </div>
@@ -246,7 +272,15 @@
                 <%
                     ResultSet resultSetBlog = (ResultSet) request.getAttribute("blogHome");
                     int counter = 0;
+                    int size = 0;
+                    Random random = new Random();
                     while (resultSetBlog.next()) {
+                        size++;
+                    }
+                    resultSetBlog.beforeFirst();
+                    while (resultSetBlog.next()) {
+                        int r = random.nextInt(size);
+                        resultSetBlog.absolute(r);
                         counter++;
                 %>
                 <div class="blog__home__item" style=" background-image: url(<%=resultSetBlog.getString(4)%>)">

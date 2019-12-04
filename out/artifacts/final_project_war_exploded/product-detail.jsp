@@ -35,11 +35,19 @@
             <%
                 ResultSet resultSetproductDetail = (ResultSet) request.getAttribute("resultSetProductDetail");
                 int reviewQuantity = 0;
+                int numcount = 0;
+                int ratingStarAverage = 0;
+                int totalRatingStart = 0;
                 while ((resultSetproductDetail.next())) {
                     if (resultSetproductDetail.getString(14) != null) {
                         reviewQuantity++;
+                        totalRatingStart += resultSetproductDetail.getInt(13);
+                    } else {
+                        numcount = 1;
+                        totalRatingStart += 5;
                     }
                 }
+                ratingStarAverage = totalRatingStart / (reviewQuantity - numcount);
                 resultSetproductDetail.beforeFirst();
                 int count = 0;
                 while (resultSetproductDetail.next()) {
@@ -51,8 +59,11 @@
                 </div>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb non-bg">
-                        <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a></li>
-                        <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("ListProductServlet?category="+resultSetproductDetail.getString(15)+"&pages=1")%>"><%=resultSetproductDetail.getString(9)%>></a></li>
+                        <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a>
+                        </li>
+                        <li class="breadcrumb-item"><a class="color-green"
+                                                       href="<%=Utils.fullPath("ListProductServlet?category="+resultSetproductDetail.getString(15)+"&pages=1")%>"><%=resultSetproductDetail.getString(9)%>
+                            ></a></li>
                         <li class="breadcrumb-item" aria-current="page"><%=resultSetproductDetail.getString(2)%>
                         </li>
                     </ol>
@@ -81,11 +92,15 @@
                             <div class="rating">
 
                                 <ul class="rating__star row">
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
+                                    <li>
+                                        <%
+                                            for (int i = 0; i < ratingStarAverage; i++) {
+                                        %>
+                                        <i class="fas fa-star"></i>
+                                        <%
+                                            }
+                                        %>
+                                    </li>
                                 </ul>
 
                                 <div class="review">
@@ -238,38 +253,12 @@
                             </table>
                         </div>
 
-                        <div class="add__review">
-                            <h4>Write a review</h4>
-                            <form action="">
-                                <div class="review__name">
-                                    <p><span>*</span>&nbsp;Your Name</p>
-                                    <input type="text">
-                                </div>
-
-                                <div class="review__main">
-                                    <p><span>*</span>&nbsp;Your Review</p>
-                                    <textarea name="" id="yourReview" cols="30" rows="10"></textarea>
-                                </div>
-
-                                <div class="review__rate">
-                                    <label class="review__rate__lbl"><span>*</span>&nbsp;Rating</label>
-                                    <label for="">Bad</label>
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <label for="">Good</label>
-                                </div>
-
-                                <div class="continue__btn">
-                                    <a href="">Continue</a>
-                                </div>
-                            </form>
-                        </div>
+                        <%
+                            }
+                        %>
 
                         <%
-                        } else {
+                            }
                         %>
 
                         <div class="add__review">
@@ -301,11 +290,6 @@
                                 </div>
                             </form>
                         </div>
-
-                        <%
-                                }
-                            }
-                        %>
 
                     </div>
                 </div>
@@ -346,16 +330,38 @@
                     <div class="product-item__content">
                         <p><%=otherResultSet.getString(2)%>
                         </p>
+                        <%
+                            if (otherResultSet.getString(5) == null) {
+                        %>
                         <p><strong>$<%=otherResultSet.getString(4)%>
+                                <%
+                            } else {
+                        %>
+                        <p><strong>$<%=otherResultSet.getString(5)%>
                         </strong>
-                            <span class="price--line-through">$<%=otherResultSet.getString(5)%></span>
+                            <span class="price--line-through">$<%=otherResultSet.getString(4)%></span>
                         </p>
+                        <%
+                            }
+                        %>
                         <ul class="star-rank">
+
+                            <%
+                                if (otherResultSet.getInt(6) == 0) {
+                                    for (int i = 1; i <= 5; i++) {
+                            %>
                             <li><i class="fas fa-star"></i></li>
+                                    <%
+                                    }
+                                } else {
+                                    for (int i = 1; i <= otherResultSet.getInt(6); i++) {
+                                %>
                             <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
+                            <%
+                                    }
+                                }
+                            %>
+
                         </ul>
                         <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
                     </div>

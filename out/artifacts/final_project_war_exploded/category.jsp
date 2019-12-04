@@ -71,7 +71,6 @@
                             <%
                                 }
                             %>
-                            <!---------------------------------------------------->
                         </ul>
                     </div>
                 </div>
@@ -148,12 +147,24 @@
                                         <div class="content">
                                             <span class="hover"><%=special.getString(2)%></span>
                                             <div class="price">
+                                                <%
+                                                    if (special.getString(5) == null) {
+                                                %>
+                                                <div class="price__sale">
+                                                    <span>$<%=special.getString(4)%></span>
+                                                </div>
+                                                <%
+                                                    } else {
+                                                %>
                                                 <div class="price__sale">
                                                     <span>$<%=special.getString(5)%></span>
                                                 </div>
                                                 <div class="price__cost">
                                                     <span>$<%=special.getString(4)%></span>
                                                 </div>
+                                                <%
+                                                    }
+                                                %>
                                             </div>
                                             <a class="hover">Add To Cart</a>
                                         </div>
@@ -195,6 +206,7 @@
                     <div class="short__by">
                         <%
                             ArrayList<Product> list = new ArrayList<>();
+                            int ratingStart = 0;
                             resultSetProduct.beforeFirst();
                             while (resultSetProduct.next()) {
                                 String productId = resultSetProduct.getString(1);
@@ -203,6 +215,7 @@
                                 double productPrice = resultSetProduct.getDouble(4);
                                 double productSalePrice = resultSetProduct.getDouble(5);
                                 String categoryId = resultSetProduct.getString(6);
+                                ratingStart = resultSetProduct.getInt(8);
                                 Product product = new Product(productId, productName, productImage, productPrice, productSalePrice, categoryId);
                                 list.add(product);
                             }
@@ -240,16 +253,41 @@
                                 <div class="product-item__content">
                                     <p><%=p.getProductName()%>
                                     </p>
-                                    <p><strong>$<%=p.getProductPrice()%>
+                                    <%
+                                        if (p.getProductSalePrice() == 0.0) {
+                                    %>
+
+                                    <p><strong>$<%=p.getProductPrice()%></strong></p>
+
+                                    <%
+                                    } else {
+                                    %>
+
+                                    <p><strong>$<%=p.getProductSalePrice()%>
                                     </strong>
-                                        <span class="price__line__through">$<%=p.getProductSalePrice()%></span>
+                                        <span class="price--line-through">$<%=p.getProductPrice()%></span>
                                     </p>
+
+                                    <%
+                                        }
+                                    %>
+
                                     <ul class="star-rank">
+                                        <%
+                                            if (ratingStart == 0) {
+                                                for (int i = 1; i <= 5; i++) {
+                                        %>
                                         <li><i class="fas fa-star"></i></li>
+                                        <%
+                                            }
+                                        } else {
+                                            for (int i = 1; i <= ratingStart; i++) {
+                                        %>
                                         <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
+                                        <%
+                                                }
+                                            }
+                                        %>
                                     </ul>
                                     <a class="add-to-cart__btn"
                                        href="<%=Utils.fullPath("CartServlet?productId="+p.getProductId())%>">add

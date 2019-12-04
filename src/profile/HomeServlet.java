@@ -22,7 +22,7 @@ public class HomeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String sql = "select product_id, product_name, product_image, product_price, product_salePrice from product where product_status = 1 ";
+            String sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, rv.review_ratingStar from product p left outer join review rv on rv.review_productId = p.product_id where product_status = 1 group by (product_id)";
             PreparedStatement homeStatement = ConnectionDB.getPreparedStatement(sql);
             ResultSet resultSet = homeStatement.executeQuery();
             request.setAttribute("homeResultSet", resultSet);
