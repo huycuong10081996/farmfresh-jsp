@@ -1,5 +1,10 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="vn.edu.nlu.fit.Utils.Utils" %>
+<%@ page import="Model.Orders" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Model.Item" %>
+<%@ page import="Model.Product" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header>
 
@@ -32,6 +37,10 @@
                 </div>
 
                 <div class="user-login-search">
+                    <%
+                        Orders orders = (Orders) session.getAttribute("order");
+                        int ordersQuantity = orders == null ? 0 : orders.getItems().size();
+                    %>
                     <ul class="user-login-search__ul">
                         <li class="search__header"><i class="fas fa-search"></i>
                             <div class="sub__input"><input type="text"></div>
@@ -42,56 +51,46 @@
                                 <li><a href="login.jsp">Login</a></li>
                             </ul>
                         </li>
-                        <li id="clickCart"><i class="fas fa-shopping-cart"></i><span class="cart__quantity">0</span>
+                        <li id="clickCart"><i class="fas fa-shopping-cart"></i><span class="cart__quantity"><%=ordersQuantity%></span>
                         </li>
                     </ul>
+
+                    <%
+                        if (orders != null) {
+                    %>
                     <div class="cart__container" id="cartContainer">
+                        <%
+                            List<Item> items = (List<Item>) orders.getItems();
+                            for (Item item : items) {
+                        %>
+
                         <div class="cart__wrapper">
-                            <div class="cart__image">
-                                <img src="img/06-85x85.jpg" alt="">
+                            <div class="cart__image" style="height:100px; width: 100px">
+                                <img src="<%=item.getProduct().getProductImageURL()%>" alt="">
                             </div>
                             <div class="cart-info">
                                 <div class="cart-info__name">
-                                    <p>Accusantium Doloremque</p>
+                                    <p><%=item.getProduct().getProductName()%></p>
                                 </div>
-                                <div class="cart-info__quantity">X 1</div>
-                                <div class="cart-info__price">$10</div>
+                                <div class="cart-info__quantity"><%=item.getQuantity()%></div>
+                                <div class="cart-info__price">$<%=item.getPrice()%></div>
                             </div>
                             <div class="cart__button--remove">
-                                <button>X</button>
-                            </div>
-                        </div>
-                        <div class="cart__wrapper">
-                            <div class="cart__image">
-                                <img src="img/06-85x85.jpg" alt="">
-                            </div>
-                            <div class="cart-info">
-                                <div class="cart-info__name">
-                                    <p>Accusantium Doloremque</p>
-                                </div>
-                                <div class="cart-info__quantity">X 1</div>
-                                <div class="cart-info__price">$10</div>
-                            </div>
-                            <div class="cart__button--remove">
-                                <button>X</button>
+                                <button>✖</button>
                             </div>
                         </div>
 
-
+                        <%
+                            }
+                        %>
                         <hr>
                         <div class="sub-total__container">
                             <div class="sub-total__content">
                                 <div class="sub-total__info">
-                                    <p>Sub-Total</p>
-                                    <p>Eco Tax (-2.00)</p>
-                                    <p>VAT(20%)</p>
                                     <p>Total</p>
                                 </div>
                                 <div class="sub-total__price">
-                                    <p>$215.00</p>
-                                    <p>$2.00</p>
-                                    <p>$20.00</p>
-                                    <p>$237.00</p>
+                                    <p>$<%=orders.totalOrder()%></p>
                                 </div>
                             </div>
                         </div>
@@ -100,6 +99,9 @@
                             <button id="checkoutButtonHeader">Checkout</button>
                         </div>
                     </div>
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </div>

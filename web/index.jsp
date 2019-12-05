@@ -123,7 +123,7 @@
                                         }
                                     %>
                                 </ul>
-                                <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
+                                <a class="add-to-cart__btn" href="<%=Utils.fullPath("AddCartServlet?productId="+homeResultSet.getString(1))%>">add to cart</a>
                             </div>
                         </div>
 
@@ -161,13 +161,24 @@
                                     <span class="price--line-through"><%=homeResultSet.getString(4)%></span>
                                 </p>
                                 <ul class="star-rank">
+                                    <%
+                                        int ratingStart = homeResultSet.getInt(6);
+                                        if (ratingStart == 0) {
+                                            for (int i = 1; i <= 5; i++) {
+                                    %>
                                     <li><i class="fas fa-star"></i></li>
+                                    <%
+                                        }
+                                    } else {
+                                        for (int i = 1; i <= ratingStart; i++) {
+                                    %>
                                     <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
+                                    <%
+                                            }
+                                        }
+                                    %>
                                 </ul>
-                                <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
+                                <a class="add-to-cart__btn" href="<%=Utils.fullPath("AddCartServlet?productId="+homeResultSet.getString(1))%>">add to cart</a>
                             </div>
                         </div>
                         <%

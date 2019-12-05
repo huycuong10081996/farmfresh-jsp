@@ -7,28 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Model/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Orders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/Cart/AddCartServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/Cart/CartControllerServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ListProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ListProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ProductDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ProductDetailServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/category.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/blog-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/blog-detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/blog.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/blog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/CartServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/asparagus.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/ListProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/ListProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/ProductDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/ProductDetailServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/HomeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/ListProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/ListProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/ProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/ProductDetailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/category.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/blog-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/blog-detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/blog.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/blog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/secure-payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/secure-payment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/CartServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/CartServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img/asparagus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/asbaragus.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/secure-payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/secure-payment.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,12 +89,15 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\farmfresh-jsp\web" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\farmfresh-jsp\web\img" />
       <recent name="D:\farmfresh-jsp\web\css" />
+      <recent name="D:\farmfresh-jsp\web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\farmfresh-jsp\web" />
     </key>
   </component>
@@ -240,6 +236,7 @@
       <workItem from="1575387764433" duration="6021000" />
       <workItem from="1575436181271" duration="6362000" />
       <workItem from="1575463078225" duration="7174000" />
+      <workItem from="1575511050974" duration="12019000" />
     </task>
     <servers />
   </component>
