@@ -37,6 +37,7 @@ public class AddCartServlet extends HttpServlet {
                     item.setQuantity(quantity);
                     item.setProduct(product);
                     item.setPrice(product.getProductPrice());
+                    item.setSalePrice(product.getProductSalePrice());
                     listItem.add(item);
                     orders.setItems(listItem);
                     session.setAttribute("order", orders);
@@ -55,6 +56,7 @@ public class AddCartServlet extends HttpServlet {
                         item.setQuantity(quantity);
                         item.setProduct(product);
                         item.setPrice(product.getProductPrice());
+                        item.setSalePrice(product.getProductSalePrice());
                         listItem.add(item);
                     }
                     session.setAttribute("order", orders);

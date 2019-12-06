@@ -2,6 +2,7 @@ package profile;
 
 import Model.User;
 import vn.edu.nlu.fit.DB.ConnectionDB;
+import vn.edu.nlu.fit.Utils.Utils;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -60,7 +61,7 @@ public class LoginServlet extends HttpServlet {
                     user.setUserPassword(resultSet.getString(6));
                     HttpSession session = request.getSession();
                     session.setAttribute("user", user);
-                    response.sendRedirect("index2.jsp");
+                    response.sendRedirect(Utils.fullPath("HomeServlet"));
                 }
             } else {
                 request.setAttribute("err", "Sai Username hoặc mật khẩu");
@@ -70,7 +71,7 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
             System.out.println("Lỗi kết nối tới CSDL");
             request.setAttribute("err", "Sai Email hoặc mật khẩu");
-            request.getRequestDispatcher("index2.jsp").forward(request, response);
+            request.getRequestDispatcher(Utils.fullPath("HomeServlet")).forward(request, response);
         }
     }
 }

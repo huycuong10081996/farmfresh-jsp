@@ -51,37 +51,97 @@
                     </div>
 
                     <div class="cart__body__container">
+                        <%
+                            Orders order = (Orders) request.getAttribute("order");
+                            List<Item> list = order.getItems();
+                        %>
+
                         <div class="cart__body__list">
+
+                            <%
+                                if (order != null) {
+                                    if (list.size() != 0) {
+                            %>
+
                             <table>
+
                                 <tr>
                                     <th>Image</th>
                                     <th>Product Name</th>
-                                    <th>Model</th>
+                                    <th>Category</th>
                                     <th class="quantity__table">Quantity</th>
                                     <th>Unit Price</th>
                                     <th>Total</th>
                                 </tr>
 
+                                <%
+                                    for (Item item : list) {
+
+                                %>
+
                                 <tr>
                                     <td>
-                                        <img src="img/01-85x85.jpg" alt="">
+                                        <img src="<%=item.getProduct().getProductImageURL()%>" alt="" width="100px">
                                     </td>
-
-                                    <td>Accusantium Doloremque</td>
-                                    <td>Product 21</td>
+                                    <td><%=item.getProduct().getProductName()%>
+                                    </td>
+                                    <td><%=item.getProduct().getProductCategoryTitle()%>
+                                    </td>
                                     <td class="quantity__tablerow">
-                                        <div>
-                                            <input type="text" value="1">
+                                        <form action="<%=Utils.fullPath("UpdateCartServlet?productId="+item.getProduct().getProductId())%>"
+                                              method="post">
+                                            <%
+                                                String err = "The input character must be a number and be less than " + item.getProduct().getProductQuantity();
+                                            %>
+                                            <input name="quantityItem" type="text" value="<%=item.getQuantity()%>"
+                                                   pattern="[1-9]" min="1"
+                                                   max="<%=item.getProduct().getProductQuantity()%>" required="required"
+                                                   oninvalid="setCustomValidity('The input character must be a number, larger than 0 and less than ' + <%=item.getProduct().getProductQuantity()%>)"
+                                                   oninput="setCustomValidity('')"/>
 
-                                            <i class="fa fa-times-circle"></i>
-                                        </div>
+                                            <button type="submit" class="update__cart"><i
+                                                    class="fas fa-sync-alt"></i></button>
+
+                                            <a class="delete__cart"
+                                               href="<%=Utils.fullPath("DeleteServlet?productIdDelete="+item.getProduct().getProductId())%>"><i
+                                                    class="fa fa-times-circle"></i></a>
+
+                                        </form>
                                     </td>
 
-                                    <td>$104.00</td>
+                                    <td>$<%=item.getProduct().getProductPrice()%>
+                                    </td>
 
-                                    <td>$104.00</td>
+                                    <td>$<%=item.totalPrice()%>
+                                    </td>
                                 </tr>
+
+                                <%
+                                    }
+                                %>
+
                             </table>
+
+                            <%
+                            } else {
+                            %>
+
+                            <div class="list_is__empty" style="display: flex; justify-content: center; padding: 24px 0">
+                                <h3>Your Shopping Cart is Empty</h3>
+                            </div>
+
+                            <%
+                                }
+                            } else {
+                            %>
+
+                            <div class="cart_empty">
+                                <h3>Your Shopping Cart is Empty</h3>
+                            </div>
+
+                            <%
+                                }
+                            %>
                         </div>
 
                         <div class="cart__body__options">
@@ -180,20 +240,30 @@
                             <div class="summarize">
                                 <table>
                                     <tr>
-                                        <th>Sub-Total :</th>
-                                        <td>$85.00</td>
-                                    </tr>
-
-                                    <tr>
+                                        <%
+                                            if (order != null) {
+                                        %>
                                         <th>Total :</th>
-                                        <td>$85.00</td>
+                                        <td>$<%=order.totalOrder()%>
+                                        </td>
+                                        <%
+                                        } else {
+                                        %>
+
+                                        <th>Total :</th>
+                                        <td>$00.0
+                                        </td>
+
+                                        <%
+                                            }
+                                        %>
                                     </tr>
                                 </table>
                             </div>
 
                             <div class="checkout__cart">
                                 <div class="continue__shopping apply__coupon__button get__quotes">
-                                    <a href="index.jsp">Continue Shopping</a>
+                                    <a href="<%=Utils.fullPath("HomeServlet")%>">Continue Shopping</a>
                                 </div>
 
                                 <div class="to__checkout apply__coupon__button get__quotes">
@@ -201,6 +271,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -210,7 +281,7 @@
 
 <%@ include file="footer.jsp" %>
 
-<%@ include file="scroll-to-top.jsp"%>
+<%@ include file="scroll-to-top.jsp" %>
 
 <!-- Javascript -->
 <script src="js/main.js"></script>
@@ -226,7 +297,7 @@
 </script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script>
+<script async>
     AOS.init();
 </script>
 </body>

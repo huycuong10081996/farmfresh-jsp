@@ -7,21 +7,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Orders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profile/Cart/AddCartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profile/Cart/CartControllerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/Cart/DeleteServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/Cart/ShowCartServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/Cart/UpdateCartServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/CartServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/img/asparagus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Orders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/AddCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/AddCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/CartControllerServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/loginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/loginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/logoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/logoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/cart-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/cart-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/cart-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/cart-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/secure-payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/secure-payment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/CartServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/CartServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/Model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Model/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/Model/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Model/Orders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Cart/AddCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Cart/AddCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Cart/CartControllerServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/loginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/loginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/logoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/logoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Cart/AddCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Cart/AddCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Cart/CartControllerServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/cart-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/cart-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/cart-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img/asparagus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/asbaragus.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/secure-payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/secure-payment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/product-detail.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,7 +260,10 @@
       <workItem from="1575387764433" duration="6021000" />
       <workItem from="1575436181271" duration="6362000" />
       <workItem from="1575463078225" duration="7174000" />
-      <workItem from="1575511050974" duration="12019000" />
+      <workItem from="1575511050974" duration="12804000" />
+      <workItem from="1575531641456" duration="3706000" />
+      <workItem from="1575550360678" duration="7793000" />
+      <workItem from="1575618611668" duration="8391000" />
     </task>
     <servers />
   </component>

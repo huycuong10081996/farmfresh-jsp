@@ -8,16 +8,18 @@ public class Item implements Serializable {
     private Product product;
     private int quantity;
     private double price;
+    private double salePrice;
 
     public Item () {
         super();
     }
 
-    public Item(String itemID, Product product, int quantity, double price) {
+    public Item(String itemID, Product product, int quantity, double price, double salePrice) {
         this.itemID = itemID;
         this.product = product;
         this.quantity = quantity;
         this.price = price;
+        this.salePrice = salePrice;
     }
 
     public String getItemID() {
@@ -52,7 +54,20 @@ public class Item implements Serializable {
         this.price = price;
     }
 
+    public double getSalePrice() {
+        return salePrice;
+    }
+
+    public void setSalePrice(double salePrice) {
+        this.salePrice = salePrice;
+    }
+
     public double totalPrice () {
         return this.price * this.quantity;
     }
+
+    public double totalSalePrice () {
+        return this.salePrice * this.quantity;
+    }
+
 }

@@ -63,7 +63,7 @@
                         </li>
                         <li class="breadcrumb-item"><a class="color-green"
                                                        href="<%=Utils.fullPath("ListProductServlet?category="+resultSetproductDetail.getString(15)+"&pages=1")%>"><%=resultSetproductDetail.getString(9)%>
-                            ></a></li>
+                            </a></li>
                         <li class="breadcrumb-item" aria-current="page"><%=resultSetproductDetail.getString(2)%>
                         </li>
                     </ol>

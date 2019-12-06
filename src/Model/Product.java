@@ -20,6 +20,7 @@ public class Product implements  Comparable<Product> {
     private int productQuantity;
     private String productCreateAt;
     private String categoryId;
+    private String productCategoryTitle;
 
     public Product() {
     }
@@ -57,7 +58,7 @@ public class Product implements  Comparable<Product> {
 
     public static Product findById(String productId) {
         try {
-            PreparedStatement preparedStatement = ConnectionDB.getPreparedStatement("select product_id, product_name, product_image, product_price, product_salePrice, product_quantity, product_createAt, product_description from product where product_id = ? and product_status = 1");
+            PreparedStatement preparedStatement = ConnectionDB.getPreparedStatement("select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, p.product_quantity, p.product_createAt, p.product_description, c.category_title from product p inner join category c on p.product_categoryId = c.category_id where product_id = ? and product_status = 1");
             preparedStatement.setString(1, productId);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -70,7 +71,8 @@ public class Product implements  Comparable<Product> {
                 product.productSalePrice = resultSet.getDouble(5);
                 product.productQuantity = resultSet.getInt(6);
                 product.productCreateAt = resultSet.getString(7);
-                product.productDescription = resultSet.getString(7);
+                product.productDescription = resultSet.getString(8);
+                product.productCategoryTitle = resultSet.getString(9);
                 return product;
             }
             return null;
@@ -176,12 +178,17 @@ public class Product implements  Comparable<Product> {
         this.categoryId = categoryId;
     }
 
+    public String getProductCategoryTitle() {
+        return productCategoryTitle;
+    }
+
+    public void setProductCategoryTitle(String productCategoryTitle) {
+        this.productCategoryTitle = productCategoryTitle;
+    }
+
     @Override
     public int compareTo(Product o) {
         int value = this.productName.compareTo(o.getProductName());
-        if (value != 0) {
-            return value;
-        }
-        return 0;
+        return value;
     }
 }

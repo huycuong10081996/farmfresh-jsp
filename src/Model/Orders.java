@@ -60,4 +60,12 @@ public class Orders implements Serializable {
         }
         return total;
     }
+
+    public int totalSaleOrder () {
+        int total = 0;
+        for (Item item :  this.items) {
+            total += item.totalSalePrice();
+        }
+        return total;
+    }
 }

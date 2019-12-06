@@ -5,6 +5,7 @@
 <%@ page import="Model.Item" %>
 <%@ page import="Model.Product" %>
 <%@ page import="java.util.List" %>
+<%@ page import="Model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header>
 
@@ -47,8 +48,20 @@
                         </li>
                         <li class="user"><i class="fas fa-user"></i>
                             <ul class="sub-menu">
+                                <%
+                                    User u = (User) session.getAttribute("user");
+                                    if (u != null) {
+                                %>
+                                <li><a href="#"><%=u.getFullName()%></a></li>
+                                <li><a href="<%=Utils.fullPath("LogoutServlet")%>">Logout</a></li>
+                                <%
+                                    } else {
+                                %>
                                 <li><a href="register.jsp">Register</a></li>
                                 <li><a href="login.jsp">Login</a></li>
+                                <%
+                                    }
+                                %>
                             </ul>
                         </li>
                         <li id="clickCart"><i class="fas fa-shopping-cart"></i><span class="cart__quantity"><%=ordersQuantity%></span>
@@ -76,7 +89,7 @@
                                 <div class="cart-info__price">$<%=item.getPrice()%></div>
                             </div>
                             <div class="cart__button--remove">
-                                <button>✖</button>
+                                <a href="<%=Utils.fullPath("DeleteServlet")%>">✖</a>
                             </div>
                         </div>
 
@@ -95,10 +108,18 @@
                             </div>
                         </div>
                         <div class="total-button__wrapper">
-                            <button id="viewCartHeader" class="active">View Cart</button>
-                            <button id="checkoutButtonHeader">Checkout</button>
+                            <a class="go__to view__cart" href="<%=Utils.fullPath("shopping-cart")%>" style="padding: 6px 12px; background: #7fba00; color: #fff">View Cart</a>
+                            <a class="go__to" href="#">Checkout</a>
                         </div>
                     </div>
+                    <%
+                        } else {
+                    %>
+
+                    <div class="cart__container" id="cartContainer" style="display: flex; justify-content: center; align-items: center">
+                        <h6 style="color: #fff; margin: 0; padding-top: 20px; padding-bottom: 20px">Your Shopping Cart is Empty</h6>
+                    </div>
+
                     <%
                         }
                     %>

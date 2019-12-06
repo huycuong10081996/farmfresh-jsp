@@ -20,7 +20,7 @@ if (cartItem && cartContainer) {
 const viewCartButtonHeader = document.querySelector('#viewCartHeader');
 const checkoutButtonHeader = document.querySelector('#checkoutButtonHeader');
 viewCartButtonHeader.addEventListener('click', (e) => {
-  window.location.href = 'cart-page.jsp';
+  window.location.href = 'localhost:8080/final_project/ShowCartServlet';
 })
 checkoutButtonHeader.addEventListener('click', (e) => {
   window.location.href = 'checkout.jsp';
