@@ -17,6 +17,7 @@ if (cartItem && cartContainer) {
   })
 }
 
+/*
 const viewCartButtonHeader = document.querySelector('#viewCartHeader');
 const checkoutButtonHeader = document.querySelector('#checkoutButtonHeader');
 viewCartButtonHeader.addEventListener('click', (e) => {
@@ -24,4 +25,4 @@ viewCartButtonHeader.addEventListener('click', (e) => {
 })
 checkoutButtonHeader.addEventListener('click', (e) => {
   window.location.href = 'checkout.jsp';
-})
+})*/

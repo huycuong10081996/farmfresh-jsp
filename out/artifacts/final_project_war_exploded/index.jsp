@@ -327,7 +327,7 @@
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
 
-<script>
+<script async>
     const productItem = document.querySelectorAll(".product-item");
     for (let i = 0; i < productItem.length; i++) {
         productItem[i].addEventListener("click", function () {

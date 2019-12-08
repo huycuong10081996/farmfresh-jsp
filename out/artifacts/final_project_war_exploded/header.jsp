@@ -17,7 +17,7 @@
                     <ul class="language-currency__ul">
                         <li>Language
                             <ul class="sub-menu menu">
-                                <li>Việt Nam</li>
+                                <li>Viet Nam</li>
                                 <li>English</li>
                             </ul>
                         </li>
@@ -89,7 +89,7 @@
                                 <div class="cart-info__price">$<%=item.getPrice()%></div>
                             </div>
                             <div class="cart__button--remove">
-                                <a href="<%=Utils.fullPath("DeleteServlet")%>">✖</a>
+                                <a href="<%=Utils.fullPath("DeleteServlet")%>">X</a>
                             </div>
                         </div>
 
@@ -108,8 +108,8 @@
                             </div>
                         </div>
                         <div class="total-button__wrapper">
-                            <a class="go__to view__cart" href="<%=Utils.fullPath("shopping-cart")%>" style="padding: 6px 12px; background: #7fba00; color: #fff">View Cart</a>
-                            <a class="go__to" href="#">Checkout</a>
+                            <a class="go__to view__cart" href="<%=Utils.fullPath("shopping-cart")%>" style="padding: 6px 12px; background: #7fba00; color: #fff; border-radius: 12px">View Cart</a>
+                            <a class="go__to" href="#" style="padding: 6px 12px; background: #7fba00; color: #fff; border-radius: 12px">Checkout</a>
                         </div>
                     </div>
                     <%

@@ -1,4 +1,5 @@
 <%@ page import="java.util.Random" %>
+<%@ page import="java.util.StringTokenizer" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +64,7 @@
                         </li>
                         <li class="breadcrumb-item"><a class="color-green"
                                                        href="<%=Utils.fullPath("ListProductServlet?category="+resultSetproductDetail.getString(15)+"&pages=1")%>"><%=resultSetproductDetail.getString(9)%>
-                            </a></li>
+                        </a></li>
                         <li class="breadcrumb-item" aria-current="page"><%=resultSetproductDetail.getString(2)%>
                         </li>
                     </ol>
@@ -172,7 +173,8 @@
                                     <input type="text" name="" value="1" id="">
                                 </div>
                                 <div class="add__to__cart">
-                                    <a href="cart-page.jsp">Add to cart</a>
+                                    <a href="<%=Utils.fullPath("AddCartFromProductDetailServlet?productDetailId="+resultSetproductDetail.getString(1))%>">Add
+                                        to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -261,35 +263,78 @@
                             }
                         %>
 
+                        <%
+                            if (u != null) {
+                        %>
                         <div class="add__review">
                             <h4>Write a review</h4>
-                            <form action="">
-                                <div class="review__name">
-                                    <p><span>*</span>&nbsp;Your Name</p>
-                                    <input type="text">
+                            <%
+                                int counter = 0;
+                                resultSetproductDetail.beforeFirst();
+                                while (resultSetproductDetail.next()) {
+                                    counter++;
+                            %>
+                            <form action="<%=Utils.fullPath("AddReviewServlet?productId="+resultSetproductDetail.getString(1))%>"
+                                  method="post">
+
+                                <%
+                                    String errReview = (String) request.getAttribute("errReview");
+                                    if (errReview != null) {
+                                %>
+
+                                <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errReview%></span>
                                 </div>
+
+                                <%
+                                    }
+                                %>
 
                                 <div class="review__main">
                                     <p><span>*</span>&nbsp;Your Review</p>
-                                    <textarea name="" cols="30" rows="10"></textarea>
+                                    <textarea name="reviewContent" cols="30" rows="10"></textarea>
                                 </div>
 
                                 <div class="review__rate">
                                     <label class="review__rate__lbl"><span>*</span>&nbsp;Rating</label>
                                     <label for="">Bad</label>
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
+                                    <input type="radio" name="rating" value="1">
+                                    <input type="radio" name="rating" value="2">
+                                    <input type="radio" name="rating" value="3">
+                                    <input type="radio" name="rating" value="4">
+                                    <input type="radio" name="rating" value="5">
                                     <label for="">Good</label>
                                 </div>
 
-                                <div class="continue__btn">
-                                    <a href="">Continue</a>
-                                </div>
+                                <button class="continue_btn" type="submit"
+                                        style="border: none; height: 40px; width: 107px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                                    Continue
+                                </button>
                             </form>
+                            <%
+                                    if (counter == 1) {
+                                        break;
+                                    }
+                                }
+                            %>
                         </div>
+
+                        <%
+                        } else {
+                        %>
+
+                        <div class="message__review"
+                             style=" display: flex; justify-content: center; align-items: center; padding: 20px 0 0 0">
+                            <h6 style=" font-weight: 600">You need to <a href="login.jsp" style=" font-weight: 600">log
+                                in</a> to post a comment about the product.</h6>
+                        </div>
+
+                        <%
+                            }
+                        %>
 
                     </div>
                 </div>
@@ -345,17 +390,16 @@
                             }
                         %>
                         <ul class="star-rank">
-
                             <%
                                 if (otherResultSet.getInt(6) == 0) {
                                     for (int i = 1; i <= 5; i++) {
                             %>
                             <li><i class="fas fa-star"></i></li>
-                                    <%
-                                    }
-                                } else {
-                                    for (int i = 1; i <= otherResultSet.getInt(6); i++) {
-                                %>
+                            <%
+                                }
+                            } else {
+                                for (int i = 1; i <= otherResultSet.getInt(6); i++) {
+                            %>
                             <li><i class="fas fa-star"></i></li>
                             <%
                                     }
@@ -363,7 +407,9 @@
                             %>
 
                         </ul>
-                        <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
+                        <a class="add-to-cart__btn"
+                           href="<%=Utils.fullPath("AddCartFromProductDetailServlet?productDetailId="+otherResultSet.getString(1))%>">add
+                            to cart</a>
                     </div>
                 </div>
 

@@ -53,31 +53,94 @@
                         <h2>REGISTER ACCOUNT</h2>
                         <p>If you already have an account with us, please login at the login page.</p>
                     </div>
-                    <form action="">
+                    <form action="<%=Utils.fullPath("RegisterServlet")%>" method="post">
                         <div class="register__title">
                             <h5>Your Personal Details</h5>
                         </div>
 
                         <div class="information">
                             <div>
-                                <label for=""><span>*</span>First Name</label>
-                                <input type="text" name="" id="" placeholder="First Name">
+                                <label><span>*</span>First Name</label>
+                                <input type="text" name="firstNameRegister" required="required" placeholder="First Name">
                             </div>
 
-                            <div>
-                                <label for=""><span>*</span>Last Name</label>
-                                <input type="text" name="" id="" placeholder="Last Name">
+                            <%
+                                String errFirstName = (String) request.getAttribute("errFirstName");
+                                if (errFirstName != null) {
+                            %>
+
+                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errFirstName%></span>
                             </div>
 
-                            <div>
-                                <label for=""><span>*</span>E-Mail</label>
-                                <input type="text" name="" id="" placeholder="E-Mail">
-                            </div>
+                            <%
+                                }
+                            %>
 
                             <div>
-                                <label for=""><span>*</span>Telephone</label>
-                                <input type="text" name="" id="" placeholder="Telephone">
+                                <label><span>*</span>Last Name</label>
+                                <input type="text" name="lastNameRegister" required="required" placeholder="Last Name">
                             </div>
+
+                            <%
+                                String errLastName = (String) request.getAttribute("errLastName");
+                                if (errLastName != null) {
+                            %>
+
+                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errLastName%></span>
+                            </div>
+
+                            <%
+                                }
+                            %>
+
+                            <div>
+                                <label><span>*</span>E-Mail</label>
+                                <input type="text" name="emailRegister" required="required" placeholder="E-Mail">
+                            </div>
+
+                            <%
+                                String errEmail = (String) request.getAttribute("errEmailRegister");
+                                if (errEmail != null) {
+                            %>
+
+                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errEmail%></span>
+                            </div>
+
+                            <%
+                                }
+                            %>
+
+                            <div>
+                                <label><span>*</span>Telephone</label>
+                                <input type="text" name="phoneRegister" required="required" placeholder="Telephone">
+                            </div>
+
+                            <%
+                                String errPhone = (String) request.getAttribute("errPhone");
+                                if (errPhone != null) {
+                            %>
+
+                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errPhone%></span>
+                            </div>
+
+                            <%
+                                }
+                            %>
 
                             <div class="register__title">
                                 <h5>Your Password</h5>
@@ -85,40 +148,60 @@
 
                             <div class="information">
                                 <div>
-                                    <label for=""><span>*</span>Password</label>
-                                    <input type="text" name="" id="" placeholder="Password">
+                                    <label><span>*</span>Password</label>
+                                    <input type="password" name="passwordRegister" required="required" placeholder="Password">
                                 </div>
+
+                                <%
+                                    String errPass = (String) request.getAttribute("errPassRegister");
+                                    if (errPass != null) {
+                                %>
+
+                                <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errPass%></span>
+                                </div>
+
+                                <%
+                                    }
+                                %>
 
                                 <div>
-                                    <label for=""><span>*</span>Password Confirm</label>
-                                    <input type="text" name="" id="" placeholder="Password Confirm">
+                                    <label><span>*</span>Password Confirm</label>
+                                    <input type="password" name="passwordConfirmRegister" required="required" placeholder="Password Confirm">
                                 </div>
-                            </div>
 
-                            <div class="register__title">
-                                <h5>Newsletter</h5>
-                            </div>
+                                <%
+                                    String errPassConfirm = (String) request.getAttribute("errPassConfirmRegister");
+                                    if (errPassConfirm != null) {
+                                %>
 
-                            <div class="subscribe">
-                                <label for="">Subscribe</label>
-                                <label for="">
-                                    <input type="radio" name="sub" id="" value="Yes">
-                                    Yes
-                                </label>
-                                <label for="">
-                                    <input type="radio" name="sub" id="" value="No">
-                                    No
-                                </label>
+                                <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errPassConfirm%></span>
+                                </div>
+
+                                <%
+                                    }
+                                %>
+
                             </div>
 
                             <div class="bottom__register">
                                 <div class="pull__right">
                                     I have read and agree to the
-                                    <a href="">Privacy Policy</a>
+                                    <a href="privacy-policy.jsp">Privacy Policy</a>
                                     &nbsp;
-                                    <input type="checkbox">
+                                    <input type="checkbox" required="required" oninvalid="setCustomValidity('Xin vui lòng chấp nhận điều khoản của chúng tôi nếu bạn muốn tiếp tục')" oninput="setCustomValidity('')"/>
                                     &nbsp;
-                                    <a href="index.jsp" class="continue">Continue</a>
+                                    <button class="continue" type="submit"
+                                            style="border: none; height: 40px; width: 107px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                                        Continue
+                                    </button>
                                 </div>
                             </div>
 

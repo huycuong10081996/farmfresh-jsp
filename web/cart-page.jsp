@@ -93,8 +93,7 @@
                                             <%
                                                 String err = "The input character must be a number and be less than " + item.getProduct().getProductQuantity();
                                             %>
-                                            <input name="quantityItem" type="text" value="<%=item.getQuantity()%>"
-                                                   pattern="[1-9]" min="1"
+                                            <input name="quantityItem" type="number" value="<%=item.getQuantity()%>" min="1"
                                                    max="<%=item.getProduct().getProductQuantity()%>" required="required"
                                                    oninvalid="setCustomValidity('The input character must be a number, larger than 0 and less than ' + <%=item.getProduct().getProductQuantity()%>)"
                                                    oninput="setCustomValidity('')"/>
@@ -123,7 +122,7 @@
                             </table>
 
                             <%
-                            } else {
+                                } else {
                             %>
 
                             <div class="list_is__empty" style="display: flex; justify-content: center; padding: 24px 0">
@@ -132,7 +131,7 @@
 
                             <%
                                 }
-                            } else {
+                            } else if (order == null) {
                             %>
 
                             <div class="cart_empty">
@@ -142,6 +141,7 @@
                             <%
                                 }
                             %>
+
                         </div>
 
                         <div class="cart__body__options">

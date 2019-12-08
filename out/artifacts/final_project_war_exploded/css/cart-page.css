@@ -7,7 +7,7 @@
 }
 
 .quantity__tablerow input {
-    width: 30px;
+    width: 44px;
     text-align: center;
 }
 
@@ -123,22 +123,23 @@
     color: #fff;
 }
 
-.delete__cart {
+a.delete__cart {
     padding: 2px 7px;
     background: #d9534f;
     color: white;
 }
 
-.delete__cart:hover {
+a.delete__cart:hover {
     background: #bd2d28;
 }
 
-.update__cart {
+button.update__cart {
     padding: 2px 7px;
     background: #4d4d4d;
     color: white;
+    border: none;
 }
 
-.update__cart:hover {
+button.update__cart:hover {
     background: #7fba00;
 }
