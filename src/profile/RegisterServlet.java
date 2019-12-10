@@ -21,7 +21,6 @@ import java.util.regex.Pattern;
 
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private UserDAOImp userDAO = new UserDAOImp();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -70,7 +69,7 @@ public class RegisterServlet extends HttpServlet {
         if (!emailMatcher.matches()) {
             emailError = "Email không hợp lệ";
         } else if (userDAO.checkUser(emailRegister)) {
-            emailError = "Tài khoản đã tồn tại";
+            emailError = "Email không hợp lệ hoặc ài khoản đã tồn tại";
             request.setAttribute("errEmailRegister", emailError);
             request.getRequestDispatcher("register.jsp").forward(request, response);
         }

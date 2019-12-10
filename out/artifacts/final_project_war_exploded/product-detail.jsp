@@ -274,7 +274,7 @@
                                 while (resultSetproductDetail.next()) {
                                     counter++;
                             %>
-                            <form action="<%=Utils.fullPath("AddReviewServlet?productId="+resultSetproductDetail.getString(1))%>"
+                            <form action="<%=Utils.fullPath("AddReviewServlet?productDetailId="+resultSetproductDetail.getString(1))%>"
                                   method="post">
 
                                 <%
@@ -378,7 +378,7 @@
                         <%
                             if (otherResultSet.getString(5) == null) {
                         %>
-                        <p><strong>$<%=otherResultSet.getString(4)%>
+                        <p><strong>$<%=otherResultSet.getString(4)%></strong></p>
                                 <%
                             } else {
                         %>

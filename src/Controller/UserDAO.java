@@ -9,7 +9,11 @@ public interface UserDAO {
 
     public boolean login(String email, String password);
 
-    public void updateUser(User u);
+    public void updateUserInformation(User u);
+
+    public void updateEmail(User user);
+
+    public void updatePassword(User user);
 
     public User getUser(String username);
 }

@@ -33,7 +33,6 @@ public class LoginServlet extends HttpServlet {
 
     }
 
-
     public void toDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             request.setCharacterEncoding("utf8");

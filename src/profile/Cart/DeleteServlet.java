@@ -42,11 +42,6 @@ public class DeleteServlet extends HttpServlet {
                         }
                     }
                 }
-                /*for (Item item : list) {
-                    if (item.getProduct().getProductId().equals(id)) {
-                        list.remove(item);
-                    }
-                }*/
                 orders.setItems(list);
             }
             session.setAttribute("order", orders);

@@ -43,12 +43,12 @@
 .bottom__register .continue {
   padding: 8px 16px;
   border-radius: 40px;
-  background-color: #4d4d4d;
+  background-color: #7fba00;
   color: #fff;
   transition: all 0.35s;
   text-decoration: none;
 }
 
 .bottom__register .continue:hover {
-  background-color: #7fba00;
+  background-color: #4d4d4d;
 }

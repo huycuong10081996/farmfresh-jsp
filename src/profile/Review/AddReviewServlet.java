@@ -19,7 +19,6 @@ import java.util.UUID;
 
 @WebServlet("/AddReviewServlet")
 public class AddReviewServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
     private ReviewDAOImp reviewDAOImp = new ReviewDAOImp();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,22 +26,26 @@ public class AddReviewServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String reviewProductId = request.getParameter("productId");
+        String reviewProductId = request.getParameter("productDetailId");
 
-        String reviewContent = request.getParameter("reviewContent");
-        int ratingStar = Integer.parseInt(request.getParameter("rating"));
+        int rating;
+        String reviewContent = request.getParameter("reviewContent").trim();
+        String ratingStar = request.getParameter("rating");
+
+        if (ratingStar != null) {
+            rating = Integer.parseInt(ratingStar);
+        } else {
+            rating = 5;
+        }
+
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-        String reviewCreateBy = "";
-        if (user != null) {
-            reviewCreateBy = user.getUserId();
-        }
 
         UUID uuid = UUID.randomUUID();
         String reviewId = uuid.toString();
 
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
         SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
 
         String date = dateFormat.format(calendar.getTime());
@@ -54,15 +57,18 @@ public class AddReviewServlet extends HttpServlet {
             String errReview = "Please write here your review.";
             request.setAttribute("errReview", errReview);
             request.getRequestDispatcher(Utils.fullPath("ProductDetailServlet?productDetailId=" + reviewProductId)).forward(request, response);
-        } else {
+        }
+
+        if (!reviewContent.equals("")) {
             try {
-                reviewDAOImp.addReview(new Review(reviewId, reviewCreateBy, reviewCreateAt, ratingStar, reviewContent, reviewProductId));
-                response.sendRedirect(Utils.fullPath("ProductDetailServlet?productDetailId=" + reviewProductId));
+                if (user != null) {
+                    reviewDAOImp.addReview(new Review(reviewId, user.getUserId(), reviewCreateAt, rating, reviewContent, reviewProductId));
+                    response.sendRedirect(Utils.fullPath("ProductDetailServlet?productDetailId=" + reviewProductId));
+                }
             } catch (Exception e) {
                 e.printStackTrace();
                 request.getRequestDispatcher(Utils.fullPath("ProductDetailServlet?productDetailId=" + reviewProductId)).forward(request, response);
             }
         }
-
     }
 }

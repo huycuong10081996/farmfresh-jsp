@@ -52,7 +52,7 @@
                                     User u = (User) session.getAttribute("user");
                                     if (u != null) {
                                 %>
-                                <li><a href="#"><%=u.getFullName()%></a></li>
+                                <li><a href="my-account.jsp"><%=u.getFullName()%></a></li>
                                 <li><a href="<%=Utils.fullPath("LogoutServlet")%>">Logout</a></li>
                                 <%
                                     } else {
