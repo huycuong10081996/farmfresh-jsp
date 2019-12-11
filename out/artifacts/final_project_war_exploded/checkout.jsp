@@ -53,6 +53,23 @@
                     </div>
 
                     <div class="checkout__tag__wrapper">
+
+                        <%
+                            if (u != null) {
+                        %>
+                        <div class="step">
+                            <!-- Collapse buttons -->
+                            <div>
+                                <button class="btn btn__step" type="button" data-toggle="collapse"
+                                        data-target="#collapseExample" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                    Step 1: Checkout Options
+                                </button>
+                            </div>
+                        </div>
+                        <%
+                            } else {
+                        %>
                         <div class="step" id="step1">
                             <!-- Collapse buttons -->
                             <div>
@@ -75,16 +92,7 @@
 
                                             <div class="option">
                                                 <p>Checkout Options</p>
-                                                <div>
-                                                    <input id="registerAccout" type="radio" name="user"
-                                                           checked="checked">
-                                                    <label for="registerAccout">Register Account</label>
-                                                </div>
-                                                <div>
-                                                    <input id="guestCheckout" type="radio" name="user">
-                                                    <label for="guestCheckout">Guest Checkout</label>
-                                                </div>
-
+                                                <p style="color: #5f5f5f; font-weight: 600; font-size: 17px" class="text__level2">Register Account</p>
                                                 <div>
                                                     <p>
                                                         By creating an account you will be able to shop faster, be
@@ -95,7 +103,7 @@
                                                 </div>
 
                                                 <div class="step2__btn">
-                                                    <a href="">Continue</a>
+                                                    <a href="register.jsp">Continue</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,6 +139,10 @@
                             <!-- / Collapsible element -->
                         </div>
 
+                        <%
+                            }
+                        %>
+
                         <div class="step" id="step2">
                             <!-- Collapse buttons -->
                             <div>
@@ -147,6 +159,9 @@
                                 <div class="mt-3">
                                     <div class="step2__container">
                                         <div class="step2__wrapper">
+                                            <%
+                                                if (u != null) {
+                                            %>
                                             <div class="personal__detail">
                                                 <div class="personal__detail__title">
                                                     <h4>Personal Details</h4>
@@ -154,46 +169,44 @@
 
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;First Name</p>
-                                                    <input type="text">
+                                                    <input type="text" value="<%=u.getFirstName()%>" required="required">
                                                 </div>
 
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;Last Name</p>
-                                                    <input type="text">
+                                                    <input type="text" value="<%=u.getLastName()%>" required="required">
                                                 </div>
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;E-Mail</p>
-                                                    <input type="text">
+                                                    <input type="text" value="<%=u.getEmail()%>" required="required">
                                                 </div>
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;Telephone</p>
-                                                    <input type="text">
+                                                    <input type="text" value="<%=u.getUserPhone()%>" required="required">
                                                 </div>
                                             </div>
-
                                             <div class="your__address">
                                                 <div class="your__address__title">
                                                     <h4>Your Address</h4>
                                                 </div>
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;Address</p>
-                                                    <input type="text">
+                                                    <input type="text" required="required">
                                                 </div>
 
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;City</p>
-                                                    <input type="text">
+                                                    <input type="text" required="required">
                                                 </div>
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;Post Code</p>
-                                                    <input type="text">
+                                                    <input type="text" required="required">
                                                 </div>
 
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;Province</p>
                                                     <select class="browser-default custom-select"
-                                                            aria-label="Example select with button addon" name=""
-                                                            id="#">
+                                                            aria-label="Example select with button addon" name="" required="required">
                                                         <option selected value="">---Please Select---</option>
                                                         <option value="">An Giang</option>
                                                     </select>
@@ -202,25 +215,90 @@
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;Ward/District</p>
                                                     <select class="browser-default custom-select"
-                                                            aria-label="Example select with button addon" name=""
-                                                            id="#">
+                                                            aria-label="Example select with button addon" name="" required="required">
                                                         <option selected value="">---Please Select---</option>
                                                         <option value="">Chau Thanh</option>
                                                     </select>
                                                 </div>
                                             </div>
+                                            <%
+                                                } else {
+                                            %>
+                                            <div class="personal__detail">
+                                                <div class="personal__detail__title">
+                                                    <h4>Personal Details</h4>
+                                                </div>
+
+                                                <div class="input__personal">
+                                                    <p><span>*</span>&nbsp;First Name</p>
+                                                    <input type="text" required="required">
+                                                </div>
+
+                                                <div class="input__personal">
+                                                    <p><span>*</span>&nbsp;Last Name</p>
+                                                    <input type="text" required="required">
+                                                </div>
+                                                <div class="input__personal">
+                                                    <p><span>*</span>&nbsp;E-Mail</p>
+                                                    <input type="text" required="required">
+                                                </div>
+                                                <div class="input__personal">
+                                                    <p><span>*</span>&nbsp;Telephone</p>
+                                                    <input type="text" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="your__address">
+                                                <div class="your__address__title">
+                                                    <h4>Your Address</h4>
+                                                </div>
+                                                <div class="input__personal">
+                                                    <p><span>*</span>&nbsp;Address</p>
+                                                    <input type="text" required="required">
+                                                </div>
+
+                                                <div class="input__personal">
+                                                    <p><span>*</span>&nbsp;City</p>
+                                                    <input type="text" required="required">
+                                                </div>
+                                                <div class="input__personal">
+                                                    <p><span>*</span>&nbsp;Post Code</p>
+                                                    <input type="text" required="required">
+                                                </div>
+
+                                                <div class="input__personal" required="required">
+                                                    <p><span>*</span>&nbsp;Province</p>
+                                                    <select class="browser-default custom-select"
+                                                            aria-label="Example select with button addon" name="" required="required">
+                                                        <option selected value="">---Please Select---</option>
+                                                        <option value="">An Giang</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="input__personal">
+                                                    <p><span>*</span>&nbsp;Ward/District</p>
+                                                    <select class="browser-default custom-select"
+                                                            aria-label="Example select with button addon" name="" required="required">
+                                                        <option selected value="">---Please Select---</option>
+                                                        <option value="">Chau Thanh</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <%
+                                                }
+                                            %>
                                         </div>
 
                                         <div class="address__agree">
-                                            <input type="checkbox" id="agreement">
+                                            <input type="checkbox" id="agreement" required="required">
                                             <label for="agreement">
                                                 My delivery and billing addresses are the same.
                                             </label>
                                         </div>
 
-                                        <div class="step2__btn">
-                                            <a href="">Continue</a>
-                                        </div>
+                                        <button class="continue" type="submit"
+                                                style="border: none; height: 40px; width: 107px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                                            Continue
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +374,7 @@
 
                                         <div class="add__comment">
                                             <h6>Add Comments About Your Order</h6>
-                                            <textarea name="" id="#" cols="30" rows="10"></textarea>
+                                            <textarea name="" cols="30" rows="10"></textarea>
                                         </div>
 
                                         <div class="step2__btn">
@@ -323,26 +401,36 @@
                             <div class="collapse" id="collapseExample4">
                                 <div class="mt-3">
                                     <div class="step5__container">
+                                        <%
+                                            if (orders != null) {
+                                        %>
                                         <table>
                                             <tr>
                                                 <th>Product Name</th>
-                                                <th>Model</th>
+                                                <th>Category</th>
                                                 <th>Quantity</th>
                                                 <th>Unit Price</th>
                                                 <th>Total</th>
                                             </tr>
 
+                                            <%
+                                                List<Item> list = orders.getItems();
+                                                for (Item item: list) {
+                                            %>
                                             <tr>
-                                                <td>Accusantium Doloremque</td>
-                                                <td>Product 21</td>
-                                                <td>1</td>
-                                                <td>$128.00</td>
-                                                <td>$128.00</td>
+                                                <td><%=item.getProduct().getProductName()%></td>
+                                                <td><%=item.getProduct().getProductCategoryTitle()%></td>
+                                                <td><%=item.getQuantity()%></td>
+                                                <td>$<%=item.getProduct().getProductPrice()%></td>
+                                                <td>$<%=item.totalPrice()%></td>
                                             </tr>
+                                            <%
+                                                }
+                                            %>
 
                                             <tr>
                                                 <td colspan="4">Sub-Total:</td>
-                                                <td>$105.00</td>
+                                                <td>$<%=orders.totalOrder()%></td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4">Flat Shipping Rate:</td>
@@ -354,13 +442,16 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="4">VAT (20%):</td>
-                                                <td>$22.00</td>
+                                                <td>$<%=orders.totalOrder() * 0.2%></td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4">Total:</td>
-                                                <td>$136.00</td>
+                                                <td>$<%=(orders.totalOrder() * 0.2) + 4 + 5 + orders.totalOrder()%></td>
                                             </tr>
                                         </table>
+                                        <%
+                                            }
+                                        %>
 
                                         <div class="step2__btn">
                                             <a href="checkout-success.jsp">Confirm Order</a>
@@ -372,6 +463,7 @@
                         </div>
 
                     </div>
+
                 </div>
             </div>
         </div>

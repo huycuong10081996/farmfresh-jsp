@@ -41,8 +41,6 @@ public class RegisterServlet extends HttpServlet {
         UUID uuid = UUID.randomUUID();
         String idRegister = uuid.toString();
 
-        String emailError;
-
         Pattern namePattern = Pattern.compile("[A-Za-z. ]{3,30}");
         Pattern emailPattern = Pattern.compile("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
         Pattern phonePattern = Pattern.compile("^[0-9]{6,16}$");
@@ -66,10 +64,13 @@ public class RegisterServlet extends HttpServlet {
             request.getRequestDispatcher("register.jsp").forward(request, response);
         }
 
+        String emailError;
         if (!emailMatcher.matches()) {
             emailError = "Email không hợp lệ";
+            request.setAttribute("errEmailRegister", emailError);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         } else if (userDAO.checkUser(emailRegister)) {
-            emailError = "Email không hợp lệ hoặc ài khoản đã tồn tại";
+            emailError = "Tài khoản đã tồn tại";
             request.setAttribute("errEmailRegister", emailError);
             request.getRequestDispatcher("register.jsp").forward(request, response);
         }
@@ -101,6 +102,5 @@ public class RegisterServlet extends HttpServlet {
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         }
-
     }
 }

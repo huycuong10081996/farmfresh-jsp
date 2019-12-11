@@ -168,69 +168,21 @@
                                     <div class="collapse" id="collapseExample2">
                                         <div class="mt-3">
                                             <div class="coupon__code__container">
-                                                <div class="enter__coupon">
-                                                    <p>Enter your coupon here</p>
-                                                </div>
+                                                <form action="#" style="display: flex; justify-content: space-between; width: 100%;">
+                                                    <div class="enter__coupon">
+                                                        <p>Enter your coupon here</p>
+                                                    </div>
+                                                    <div class="input__coupon">
+                                                        <input type="text" name="couponCode" required="required">
+                                                    </div>
 
-                                                <div class="input__coupon"><input type="text"></div>
-
-                                                <div class="apply__coupon__button">
-                                                    <a href="">Apply Coupon</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="coupon__code">
-                                    <div>
-                                        <button class="btn btn__step" type="button" data-toggle="collapse"
-                                                data-target="#collapseExample1"
-                                                aria-expanded="false" aria-controls="collapseExample1">
-                                            Estimate Shipping & Taxes
-                                        </button>
-                                    </div>
-                                    <!-- / Collapse buttons -->
-
-                                    <!-- Collapsible element -->
-                                    <div class="collapse" id="collapseExample1">
-                                        <div class="mt-3">
-                                            <div class="shipping__taxes__container">
-                                                <div>
-                                                    <p>Enter your destination to get a shipping estimate.</p>
-                                                </div>
-
-                                                <div class="province__container">
-                                                    <label for="province"><span>*</span>&nbsp;Provice</label>
-                                                    <select id="province" class="browser-default custom-select"
-                                                            aria-label="Example select with button addon">
-                                                        <option selected>---Please Select---</option>
-                                                        <option value="1">An Giang</option>
-                                                        <option value="2">Bắc Giang</option>
-                                                        <option value="3">Cà Mau</option>
-                                                    </select>
-                                                </div>
-
-
-                                                <div class="ward__container">
-                                                    <label for="ward"><span>*</span>&nbsp;Ward/District</label>
-                                                    <select id="ward" class="browser-default custom-select"
-                                                            aria-label="Example select with button addon">
-                                                        <option selected>---Please Select---</option>
-                                                        <option value="1">An Giang</option>
-                                                        <option value="2">Bắc Giang</option>
-                                                        <option value="3">Cà Mau</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="coupon__codes">
-                                                    <label for="postcode">Post Code</label>
-                                                    <input id="postcode" type="text">
-                                                </div>
-
-                                                <div class="apply__coupon__button get__quotes">
-                                                    <a href="">Get Quotes</a>
-                                                </div>
+                                                    <div class="apply__coupon__button">
+                                                        <button class="continue" type="submit"
+                                                                style="border: none; height: 40px; width: 100px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                                                            Apply Coupon
+                                                        </button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -249,11 +201,9 @@
                                         <%
                                         } else {
                                         %>
-
                                         <th>Total :</th>
                                         <td>$00.0
                                         </td>
-
                                         <%
                                             }
                                         %>

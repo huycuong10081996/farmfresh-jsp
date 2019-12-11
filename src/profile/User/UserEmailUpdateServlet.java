@@ -35,6 +35,8 @@ public class UserEmailUpdateServlet extends HttpServlet {
         String emailError;
         if (!emailMatcher.matches()) {
             emailError = "Email không hợp lệ";
+            request.setAttribute("errEmailUpdate", emailError);
+            request.getRequestDispatcher("change-email.jsp").forward(request, response);
         } else if (userDAO.checkUser(emailUpdate)) {
             emailError = "Email không hợp lệ hoặc tài khoản đã tồn tại";
             request.setAttribute("errEmailUpdate", emailError);

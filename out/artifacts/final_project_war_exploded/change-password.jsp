@@ -51,7 +51,7 @@
 
                 <div class="register__content__wrapper">
                     <div class="register__header">
-                        <h2>CHANGE PASSWORD</h2>
+                        <h2 style="margin-top: 8px">CHANGE YOUR PASSWORD</h2>
                     </div>
                     <%
                         if (u != null) {

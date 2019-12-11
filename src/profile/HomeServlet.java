@@ -27,8 +27,8 @@ public class HomeServlet extends HttpServlet {
             ResultSet resultSet = homeStatement.executeQuery();
             request.setAttribute("homeResultSet", resultSet);
 
-            sql = "select blogs_id, blogs_title, blog_content, blogs_image, blogs_createAt from blogs";
-            PreparedStatement blog = ConnectionDB.getPreparedStatement(sql);
+            String sql2 = "select blogs_id, blogs_title, blog_content, blogs_image, blogs_createAt from blogs";
+            PreparedStatement blog = ConnectionDB.getPreparedStatement(sql2);
             ResultSet resultSet1 = blog.executeQuery();
             request.setAttribute("blogHome", resultSet1);
 
@@ -36,6 +36,5 @@ public class HomeServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
     }
 }

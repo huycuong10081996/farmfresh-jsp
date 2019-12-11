@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @WebServlet("/AddReviewServlet")
@@ -53,13 +55,16 @@ public class AddReviewServlet extends HttpServlet {
 
         String reviewCreateAt = date + " " + time;
 
-        if (reviewContent.equals("")) {
+        Pattern namePattern = Pattern.compile("[A-Za-z. $|?*+()]{3,600}");
+        Matcher reviewMatcher = namePattern.matcher(reviewContent);
+
+        if (!reviewMatcher.matches()) {
             String errReview = "Please write here your review.";
             request.setAttribute("errReview", errReview);
             request.getRequestDispatcher(Utils.fullPath("ProductDetailServlet?productDetailId=" + reviewProductId)).forward(request, response);
         }
 
-        if (!reviewContent.equals("")) {
+        if (reviewMatcher.matches()) {
             try {
                 if (user != null) {
                     reviewDAOImp.addReview(new Review(reviewId, user.getUserId(), reviewCreateAt, rating, reviewContent, reviewProductId));

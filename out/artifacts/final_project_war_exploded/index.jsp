@@ -107,15 +107,14 @@
                                 %>
                                 <ul class="star-rank">
                                     <%
-                                        int ratingStart = homeResultSet.getInt(6);
-                                        if (ratingStart == 0) {
+                                        if (homeResultSet.getInt(6) == 0) {
                                             for (int i = 1; i <= 5; i++) {
                                     %>
                                     <li><i class="fas fa-star"></i></li>
                                     <%
                                         }
                                     } else {
-                                        for (int i = 1; i <= ratingStart; i++) {
+                                        for (int i = 1; i <= homeResultSet.getInt(6); i++) {
                                     %>
                                     <li><i class="fas fa-star"></i></li>
                                     <%

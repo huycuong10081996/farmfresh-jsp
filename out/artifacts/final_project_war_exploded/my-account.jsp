@@ -51,7 +51,7 @@
 
                 <div class="register__content__wrapper">
                     <div class="register__header">
-                        <h2>MY ACCOUNT INFORMATION</h2>
+                        <h2 style="margin-top: 8px">MY ACCOUNT INFORMATION</h2>
                     </div>
 
                     <form action="<%=Utils.fullPath("UserInformationUpdateServlet")%>" method="post">

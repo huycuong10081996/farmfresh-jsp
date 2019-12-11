@@ -51,7 +51,7 @@
 
                 <div class="register__content__wrapper">
                     <div class="register__header">
-                        <h2>CHANGE EMAIL</h2>
+                        <h2 style="margin-top: 8px">CHANGE YOUR EMAIL</h2>
                     </div>
                     <%
                         if (u != null) {

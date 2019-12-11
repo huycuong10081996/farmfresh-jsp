@@ -109,7 +109,7 @@
                         </div>
                         <div class="total-button__wrapper">
                             <a class="go__to view__cart" href="<%=Utils.fullPath("shopping-cart")%>" style="padding: 6px 12px; background: #7fba00; color: #fff; border-radius: 12px">View Cart</a>
-                            <a class="go__to" href="#" style="padding: 6px 12px; background: #7fba00; color: #fff; border-radius: 12px">Checkout</a>
+                            <a class="go__to" href="checkout.jsp" style="padding: 6px 12px; background: #7fba00; color: #fff; border-radius: 12px">Checkout</a>
                         </div>
                     </div>
                     <%

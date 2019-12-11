@@ -1,5 +1,5 @@
 <%@ page import="java.util.Random" %>
-<%@ page import="java.util.StringTokenizer" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -281,23 +281,25 @@
                                     String errReview = (String) request.getAttribute("errReview");
                                     if (errReview != null) {
                                 %>
-
+                                <div class="review__main">
+                                    <p><span>*</span>&nbsp;Your Review</p>
+                                    <textarea name="reviewContent" cols="30" rows="10" required="required"></textarea>
+                                </div>
                                 <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
-
                                 <span>
                                     <i class="fas fa-exclamation-circle" aria-hidden="true"
                                        style="height: 100%; padding: 5px;text-align: start"></i><%=errReview%></span>
                                 </div>
-
+                                <%
+                                    } else {
+                                %>
+                                <div class="review__main">
+                                    <p><span>*</span>&nbsp;Your Review</p>
+                                    <textarea name="reviewContent" cols="30" rows="10" required="required"></textarea>
+                                </div>
                                 <%
                                     }
                                 %>
-
-                                <div class="review__main">
-                                    <p><span>*</span>&nbsp;Your Review</p>
-                                    <textarea name="reviewContent" cols="30" rows="10"></textarea>
-                                </div>
-
                                 <div class="review__rate">
                                     <label class="review__rate__lbl"><span>*</span>&nbsp;Rating</label>
                                     <label for="">Bad</label>
@@ -328,7 +330,7 @@
 
                         <div class="message__review"
                              style=" display: flex; justify-content: center; align-items: center; padding: 20px 0 0 0">
-                            <h6 style=" font-weight: 600">You need to <a href="login.jsp" style=" font-weight: 600">log
+                            <h6 style=" font-weight: 600">You need to <a href="login.jsp" style=" font-weight: 600; text-decoration: solid 1px #292929">log
                                 in</a> to post a comment about the product.</h6>
                         </div>
 

@@ -339,7 +339,8 @@
                                     for (int i = 1; i <= numPager; i++) {
                                 %>
                                 <li>
-                                    <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages="+i)%>"
+                                    <a class="<%= (i+"").equals(request.getParameter("pages"))? "active" : ""%>"
+                                       href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages="+i)%>"
                                        id="<%=i%>" name="<%=i%>"><%=i%>
                                     </a></li>
 
@@ -382,7 +383,7 @@
     }
 </script>
 
-<script>
+<%--<script>
 
     console.log(window.location.search);
     const urlParams = new URLSearchParams(window.location.search);
@@ -396,7 +397,7 @@
         }
     }
 
-</script>
+</script>--%>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
