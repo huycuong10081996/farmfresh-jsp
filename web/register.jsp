@@ -59,9 +59,10 @@
                         </div>
 
                         <div class="information">
+
                             <div>
                                 <label><span>*</span>First Name</label>
-                                <input type="text" name="firstNameRegister" required="required" placeholder="First Name">
+                                <input type="text" name="firstNameRegister" required="required" placeholder="First Name" pattern="[A-Za-z. ]{3,30}" oninvalid="setCustomValidity('**First Name phải tối thiểu 3 ký tự, tối đa 30 ký tự, không có số, không có ký tự đặc biệt.')" oninput="setCustomValidity('')"/>
                             </div>
 
                             <%
@@ -81,7 +82,7 @@
 
                             <div>
                                 <label><span>*</span>Last Name</label>
-                                <input type="text" name="lastNameRegister" required="required" placeholder="Last Name">
+                                <input type="text" name="lastNameRegister" required="required" placeholder="Last Name" pattern="[A-Za-z. ]{3,30}" oninvalid="setCustomValidity('**Last Name phải tối thiểu 3 ký tự, tối đa 30 ký tự, không có số, không có ký tự đặc biệt.')" oninput="setCustomValidity('')"/>
                             </div>
 
                             <%
@@ -102,7 +103,7 @@
 
                             <div>
                                 <label><span>*</span>E-Mail</label>
-                                <input type="text" name="emailRegister" required="required" placeholder="E-Mail">
+                                <input type="text" name="emailRegister" required="required" placeholder="E-Mail" pattern="^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$" oninvalid="setCustomValidity('**Địa chỉ email không hợp lệ, phải có một và chỉ một ký tự @.')" oninput="setCustomValidity('')"/>
                             </div>
 
                             <%
@@ -123,7 +124,7 @@
 
                             <div>
                                 <label><span>*</span>Telephone</label>
-                                <input type="text" name="phoneRegister" required="required" placeholder="Telephone">
+                                <input type="text" name="phoneRegister" required="required" placeholder="Telephone" pattern="^[0-9]{9,11}$" oninvalid="setCustomValidity('**Số điện thoại phải là ký tự số và tối thiểu 9 ký tự và tối đa 11 ký tự.')" oninput="setCustomValidity('')"/>
                             </div>
 
                             <%
@@ -149,7 +150,7 @@
                             <div class="information">
                                 <div>
                                     <label><span>*</span>Password</label>
-                                    <input type="password" name="passwordRegister" required="required" placeholder="Password">
+                                    <input type="password" name="passwordRegister" required="required" placeholder="Password" pattern="^(?=.*?[A-Za-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$" oninvalid="setCustomValidity('**Password phải có ít nhất một ký tự viết hoa, một ký tự đặc biệt, một ký tự số. ')" oninput="setCustomValidity('')"/>
                                 </div>
 
                                 <%
@@ -198,8 +199,7 @@
                                     &nbsp;
                                     <input type="checkbox" required="required" oninvalid="setCustomValidity('Xin vui lòng chấp nhận điều khoản của chúng tôi nếu bạn muốn tiếp tục')" oninput="setCustomValidity('')"/>
                                     &nbsp;
-                                    <button class="continue" type="submit"
-                                            style="border: none; height: 40px; width: 107px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                                    <button class="continue__button" type="submit">
                                         Continue
                                     </button>
                                 </div>

@@ -15,12 +15,14 @@ public class Product implements  Comparable<Product> {
     private double productPrice;
     private double productSalePrice;
     private String productDescription;
-    private Category productCategory;
-    private Admin productCreateBy;
+   /* private Category productCategory;
+    private Admin productCreateBy;*/
+    private String productCreateById;
     private int productQuantity;
     private String productCreateAt;
     private String categoryId;
     private String productCategoryTitle;
+    private String productCategoryId;
 
     public Product() {
     }
@@ -34,17 +36,6 @@ public class Product implements  Comparable<Product> {
         this.categoryId = productCategory;
     }
 
-    public Product(String productId, String productName, String productImageURL, int productStatus, double productPrice, double productSalePrice, String productDescription, Category productCategory, Admin productCreateBy) {
-        this.productId = productId;
-        this.productName = productName;
-        this.productImageURL = productImageURL;
-        this.productStatus = productStatus;
-        this.productPrice = productPrice;
-        this.productSalePrice = productSalePrice;
-        this.productDescription = productDescription;
-        this.productCategory = productCategory;
-        this.productCreateBy = productCreateBy;
-    }
 
     public Product(String productId, String productName, String productImageURL, int productStatus, double productPrice, double productSalePrice, int productQuantity) {
         this.productId = productId;
@@ -54,6 +45,21 @@ public class Product implements  Comparable<Product> {
         this.productPrice = productPrice;
         this.productSalePrice = productSalePrice;
         this.productQuantity = productQuantity;
+    }
+
+    // Constructor thêm product trong phần admin
+    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String categoryId, String productCreateById, String productCreateAt, int productQuantity, String productDescription,  int productStatus) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productImageURL = productImageURL;
+        this.productPrice = productPrice;
+        this.productSalePrice = productSalePrice;
+        this.categoryId = categoryId;
+        this.productCreateById = productCreateById;
+        this.productCreateAt = productCreateAt;
+        this.productQuantity = productQuantity;
+        this.productDescription = productDescription;
+        this.productStatus = productStatus;
     }
 
     public static Product findById(String productId) {
@@ -138,7 +144,7 @@ public class Product implements  Comparable<Product> {
         this.productDescription = productDescription;
     }
 
-    public Category getProductCategory() {
+ /*   public Category getProductCategory() {
         return productCategory;
     }
 
@@ -152,7 +158,7 @@ public class Product implements  Comparable<Product> {
 
     public void setProductCreateBy(Admin productCreateBy) {
         this.productCreateBy = productCreateBy;
-    }
+    }*/
 
     public int getProductQuantity() {
         return productQuantity;
@@ -184,6 +190,22 @@ public class Product implements  Comparable<Product> {
 
     public void setProductCategoryTitle(String productCategoryTitle) {
         this.productCategoryTitle = productCategoryTitle;
+    }
+
+    public String getProductCreateById() {
+        return productCreateById;
+    }
+
+    public void setProductCreateById(String productCreateById) {
+        this.productCreateById = productCreateById;
+    }
+
+    public String getProductCategoryId() {
+        return productCategoryId;
+    }
+
+    public void setProductCategoryId(String productCategoryId) {
+        this.productCategoryId = productCategoryId;
     }
 
     @Override

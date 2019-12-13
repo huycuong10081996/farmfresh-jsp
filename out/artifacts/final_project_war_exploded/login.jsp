@@ -106,7 +106,6 @@
                                 if (errEmail != null) {
                             %>
                             <div style="display: flex;justify-content: center;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
-
                                 <span>
                                     <i class="fas fa-exclamation-circle" aria-hidden="true"
                                        style="height: 100%; padding: 5px;text-align: start"></i><%=errEmail%></span>
@@ -134,8 +133,7 @@
                             <div class="forgot">
                                 <a href="forgot-password.jsp">Forgotten Password</a>
                             </div>
-                            <button class="button__level21" type="submit"
-                                    style="border: none; height: 40px; width: 107px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                            <button class="continue__button" type="submit">
                                 Login
                             </button>
                         </form>

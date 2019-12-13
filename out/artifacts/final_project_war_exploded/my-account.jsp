@@ -70,7 +70,7 @@
                             %>
                             <div>
                                 <label><span>*</span>First Name</label>
-                                <input type="text" name="firstNameUpdate" placeholder="First Name" value="<%=request.getParameter("firstNameUpdate")%>">
+                                <input type="text" name="firstNameUpdate" placeholder="First Name" value="<%=request.getParameter("firstNameUpdate")%>" style="border: 1px solid #DB3c31; color: #DB3c31">
                             </div>
                             <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
 
@@ -95,7 +95,7 @@
                             %>
                             <div>
                                 <label><span>*</span>Last Name</label>
-                                <input type="text" name="lastNameUpdate" placeholder="Last Name" value="<%=request.getParameter("lastNameUpdate")%>">
+                                <input type="text" name="lastNameUpdate" placeholder="Last Name" value="<%=request.getParameter("lastNameUpdate")%>" style="border: 1px solid #DB3c31; color: #DB3c31">
                             </div>
                             <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
                                 <span>
@@ -119,7 +119,7 @@
                             %>
                             <div>
                                 <label><span>*</span>Telephone</label>
-                                <input type="text" name="phoneUpdate" placeholder="Telephone" value="<%=request.getParameter("phoneUpdate")%>">
+                                <input type="text" name="phoneUpdate" placeholder="Telephone" value="<%=request.getParameter("phoneUpdate")%>" style="border: 1px solid #DB3c31; color: #DB3c31">
                             </div>
                             <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
 
@@ -132,21 +132,31 @@
                             %>
                             <div>
                                 <label><span>*</span>Telephone</label>
-                                <input type="text" name="phoneUpdate" placeholder="Telephone" value="<%=u.getUserPhone()%>">
+                                <input type="text" name="phoneUpdate" placeholder="Telephone" value="<%=u.getUserPhone()%>" >
                             </div>
                             <%
                                 }
                             %>
 
                             <div class="bottom__register">
-                                <div class="pull__right">
-                                    <button type="submit"
-                                            style="border: none; height: 40px; width: 107px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                                <div class="pull__right" style="width:100%;display: flex;justify-content: space-between">
+                                    <div class="step2__btn">
+                                        <a href="<%=Utils.fullPath("HomeServlet")%>" class="continue">Back</a>
+                                    </div>
+                                    <button type="submit" class="continue__button">
                                         Continue
                                     </button>
                                 </div>
                             </div>
 
+                        </div>
+                        <%
+                            } else {
+                        %>
+                        <div class="message__review"
+                             style=" display: flex; justify-content: center; align-items: center; padding: 20px 0 0 0">
+                            <h4 style=" font-weight: 600">You need to <a href="login.jsp" style=" font-weight: 600">log
+                                in</a>.</h4>
                         </div>
                         <%
                             }

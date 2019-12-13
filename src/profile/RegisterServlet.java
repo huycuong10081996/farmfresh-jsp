@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
     private UserDAOImp userDAO = new UserDAOImp();
+    ArrayList<String> err = new ArrayList<>();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
@@ -43,7 +44,7 @@ public class RegisterServlet extends HttpServlet {
 
         Pattern namePattern = Pattern.compile("[A-Za-z. ]{3,30}");
         Pattern emailPattern = Pattern.compile("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
-        Pattern phonePattern = Pattern.compile("^[0-9]{6,16}$");
+        Pattern phonePattern = Pattern.compile("^[0-9]{9,11}$");
         Pattern passPattern = Pattern.compile("^(?=.*?[A-Za-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
 
         Matcher firstNameMatcher = namePattern.matcher(firstNameRegister);

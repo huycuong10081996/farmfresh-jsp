@@ -87,10 +87,11 @@
                             %>
                             <div class="bottom__register">
                                 <div class="pull__right" style="width:100%;display: flex;justify-content: space-between">
-                                    <a href="my-account.jsp" class="continue">Back</a>
+                                    <div class="step2__btn">
+                                        <a href="my-account.jsp" class="continue">Back</a>
+                                    </div>
 
-                                    <button class="continue" type="submit"
-                                            style="border: none; height: 40px; width: 107px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                                    <button type="submit" class="continue__button">
                                         Continue
                                     </button>
                                 </div>
@@ -98,6 +99,14 @@
 
                         </div>
                     </form>
+                    <%
+                    } else {
+                    %>
+                    <div class="message__review"
+                         style=" display: flex; justify-content: center; align-items: center; padding: 20px 0 0 0">
+                        <h4 style=" font-weight: 600">You need to <a href="login.jsp" style=" font-weight: 600">log
+                            in</a>.</h4>
+                    </div>
                     <%
                         }
                     %>

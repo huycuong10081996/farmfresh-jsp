@@ -136,7 +136,7 @@
                             <div class="option__item">
                                 <h6 class="row"><span>*</span>&nbsp;Delivery Date</h6>
                                 <div class="calendar row">
-                                    <span><%=resultSetproductDetail.getString(7)%></span>
+                                    <span style="padding: 10px;"><%=resultSetproductDetail.getString(7)%></span>
                                 </div>
                             </div>
 
@@ -330,7 +330,7 @@
 
                         <div class="message__review"
                              style=" display: flex; justify-content: center; align-items: center; padding: 20px 0 0 0">
-                            <h6 style=" font-weight: 600">You need to <a href="login.jsp" style=" font-weight: 600; text-decoration: solid 1px #292929">log
+                            <h6 style=" font-weight: 600">You need to <a href="login.jsp" style=" font-weight: 600; color: #7fba00">log
                                 in</a> to post a comment about the product.</h6>
                         </div>
 

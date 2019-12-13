@@ -82,7 +82,7 @@
 
 
 .your__address {
-  width: 50%;
+  width: 100%;
   padding: 0 16px;
 }
 
@@ -94,16 +94,17 @@
 
 .step2__btn>a {
   padding: 8px 16px;
-  background-color: #4d4d4d;
   /* border: 1px solid #4d4d4d; */
   color: #ffffff;
+  background-color: #7fba00;
   border-radius: 40px;
   text-decoration: none;
   transition: all 0.35s;
 }
 
 .step2__btn>a:hover {
-  background-color: #7fba00;
+  background-color: #4d4d4d;
+
 }
 
 .personal__detail>div>input,
@@ -168,4 +169,18 @@ table tr td {
 .checkoutsuccess__content a {
   color: #7fba00;
   text-decoration: none;
+}
+
+.continue__button {
+  border: none;
+  height: 40px;
+  width: 107px;
+  background: #7fba00;
+  color: #ffffff;
+  border-radius: 40px;
+  transition: all .35s;
+}
+
+.continue__button:hover {
+  background-color: #4d4d4d;
 }
