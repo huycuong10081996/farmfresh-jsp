@@ -221,3 +221,17 @@ form .review__main>textarea {
 .product-item:hover {
   cursor: pointer;
 }
+
+.continue__button {
+  border: none;
+  height: 40px;
+  width: 107px;
+  background: #7fba00;
+  color: #ffffff;
+  border-radius: 40px;
+  transition: all .35s;
+}
+
+.continue__button:hover {
+  background-color: #4d4d4d;
+}

@@ -62,6 +62,20 @@ public class Product implements  Comparable<Product> {
         this.productStatus = productStatus;
     }
 
+    // Constructor thêm product trong phần admin
+    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String categoryId, String productCreateAt, int productQuantity, String productDescription,  int productStatus) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productImageURL = productImageURL;
+        this.productPrice = productPrice;
+        this.productSalePrice = productSalePrice;
+        this.categoryId = categoryId;
+        this.productCreateAt = productCreateAt;
+        this.productQuantity = productQuantity;
+        this.productDescription = productDescription;
+        this.productStatus = productStatus;
+    }
+
     public static Product findById(String productId) {
         try {
             PreparedStatement preparedStatement = ConnectionDB.getPreparedStatement("select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, p.product_quantity, p.product_createAt, p.product_description, c.category_title from product p inner join category c on p.product_categoryId = c.category_id where product_id = ? and product_status = 1");

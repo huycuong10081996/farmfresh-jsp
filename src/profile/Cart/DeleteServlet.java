@@ -1,5 +1,7 @@
 package profile.Cart;
 
+import Controller.ItemDAOImp;
+import Controller.OrdersDAOImp;
 import Model.Item;
 import Model.Orders;
 import Model.Product;
@@ -18,6 +20,9 @@ import java.util.List;
 
 @WebServlet("/DeleteServlet")
 public class DeleteServlet extends HttpServlet {
+    private OrdersDAOImp ordersDAOImp = new OrdersDAOImp();
+    private ItemDAOImp itemDAOImp = new ItemDAOImp();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -37,10 +42,15 @@ public class DeleteServlet extends HttpServlet {
                     if (item.getProduct().getProductId().equals(id)) {
                         if (item.getQuantity() != 1) {
                             item.setQuantity(item.getQuantity() - 1);
+                            itemDAOImp.updateItem(item.getQuantity() - 1, item.getItemID());
                         } else {
                             itemIterator.remove();
+                            itemDAOImp.deleteItem(item);
                         }
                     }
+                }
+                if (list.isEmpty()) {
+                    ordersDAOImp.deleteOrders(orders.getOrderId());
                 }
                 orders.setItems(list);
             }

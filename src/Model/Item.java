@@ -9,6 +9,7 @@ public class Item implements Serializable {
     private int quantity;
     private double price;
     private double salePrice;
+    private String ordersId;
 
     public Item () {
         super();
@@ -56,6 +57,14 @@ public class Item implements Serializable {
 
     public double getSalePrice() {
         return salePrice;
+    }
+
+    public String getOrdersId() {
+        return ordersId;
+    }
+
+    public void setOrdersId(String ordersId) {
+        this.ordersId = ordersId;
     }
 
     public void setSalePrice(double salePrice) {

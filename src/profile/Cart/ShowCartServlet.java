@@ -17,7 +17,6 @@ public class ShowCartServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         Orders orders = (Orders) request.getSession().getAttribute("order");
         request.setAttribute("order", orders);
         request.getRequestDispatcher("cart-page.jsp").forward(request, response);

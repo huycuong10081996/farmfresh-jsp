@@ -7,170 +7,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/ProductDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ProductDAOImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/AddressDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/District.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Province.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profile/Admin/Product/AddProductServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profile/Admin/Product/AdminHomeProductServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profile/Admin/Product/DeleteProductServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/profile/LoginServletFromCheckout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/.idea/admin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/admin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/INSANITY.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/License.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/Useful_Resources.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/addons/datatables-select.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/addons/datatables.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/addons/directives.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/addons/flag.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/addons/jquery.zmd.hierarchical-display.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/addons/rating.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/mdb.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/mdb.lite.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/mdb.lite.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/mdb.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/modules/animations-extended.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Bold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Light.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Medium.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Medium.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Medium.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Thin.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Thin.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/font/roboto/Roboto-Thin.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/mdb-favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/overlays/01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/overlays/02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/overlays/03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/overlays/04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/overlays/05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/overlays/06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/overlays/07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/overlays/08.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/overlays/09.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/svg/arrow_left.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/img/svg/arrow_right.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/addons/datatables-select.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/addons/datatables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/addons/directives.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/addons/flag.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/addons/imagesloaded.pkgd.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/addons/jquery.zmd.hierarchical-display.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/addons/masonry.pkgd.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/addons/rating.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/mdb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/mdb.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/modules/animations-extended.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/modules/forms-free.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/modules/scrolling-navbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/modules/treeview.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/modules/wow.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/_custom-styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/_custom-variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/addons/_datatables-select.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/addons/_datatables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/addons/_directives.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/addons/_flag.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/addons/_hierarchical-display.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/addons/_rating.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/_colors.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/_global.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/_helpers.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/_masks.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/_waves.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/bootstrap/_functions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/bootstrap/_rfs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/core/bootstrap/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_animations-basic.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_badges.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_cards.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_carousels.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_depreciated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_dropdowns.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_footers.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_input-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_list-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_loader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_modals.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_msc.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_navbars.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_pagination.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_steppers.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_tables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/_treeview.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/modules/animations-extended/_module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/free/modules/animations-extended/animations-extended.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/mdb-free.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/admin/libs/MDB-Free/scss/mdb-lite-free.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ItemDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ItemDAOImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/OrdersDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/OrdersDAOImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/admin2.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Orders.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Product/AddProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Product/AddProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/AddCartFromProductDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/AddCartFromProductDetailServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/AddCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/AddCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/DeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/DeleteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/ShowCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/ShowCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/UpdateCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Cart/UpdateCartServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/change-email.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/change-email.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/change-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/change-password.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/checkout.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/checkout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/my-account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/my-account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/cart-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/cart-page.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/Model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Model/Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/final_project/Model/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Model/Orders.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/final_project/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Product/AddProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Product/AddProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Cart/AddCartFromProductDetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Cart/AddCartFromProductDetailServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Cart/AddCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Cart/AddCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Cart/DeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Cart/DeleteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Cart/ShowCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Cart/ShowCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Cart/UpdateCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Cart/UpdateCartServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ReviewDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReviewDAOImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Orders.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Product/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Product/AddProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Cart/AddCartFromProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Cart/AddCartFromProductDetailServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Cart/AddCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Cart/AddCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Cart/DeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Cart/DeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Cart/ShowCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Cart/ShowCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Cart/UpdateCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Cart/UpdateCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/LoginServletFromCheckout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/LoginServletFromCheckout.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/profile/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Review/AddReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Review/AddReviewServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/cart-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/cart-page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/change-email.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/change-email.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/change-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/change-password.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/checkout.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/checkout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/my-account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/my-account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/product-detail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/product-detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
     </list>
@@ -198,9 +82,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -267,6 +151,7 @@
   <component name="RunManager">
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="final_project:war exploded">
@@ -278,9 +163,9 @@
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_final_project" />
       </server-settings>
+      <log_file alias="Tomcat Manager Log" path="%IDEA_RUN:CATALINA_BASE%/logs/manager.*" />
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
@@ -416,6 +301,20 @@
       <workItem from="1576245812730" duration="1781000" />
       <workItem from="1576247757958" duration="1754000" />
       <workItem from="1576249840089" duration="1784000" />
+      <workItem from="1576286287868" duration="1647000" />
+      <workItem from="1576288005766" duration="1769000" />
+      <workItem from="1576289857219" duration="1787000" />
+      <workItem from="1576291732118" duration="1825000" />
+      <workItem from="1576293758642" duration="1779000" />
+      <workItem from="1576295648888" duration="1777000" />
+      <workItem from="1576297514324" duration="625000" />
+      <workItem from="1576315404865" duration="1684000" />
+      <workItem from="1576317132312" duration="1789000" />
+      <workItem from="1576325538867" duration="1666000" />
+      <workItem from="1576327860035" duration="1768000" />
+      <workItem from="1576329830604" duration="5590000" />
+      <workItem from="1576380875055" duration="4210000" />
+      <workItem from="1576464609148" duration="7801000" />
     </task>
     <servers />
   </component>

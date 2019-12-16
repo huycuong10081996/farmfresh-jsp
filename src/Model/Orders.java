@@ -9,17 +9,17 @@ public class Orders implements Serializable {
     private User customer;
     private List<Item> items;
     private int orderStatus;
-
+    private String ordersCreateAt;
+    private String userId;
 
     public Orders() {
         super();
     }
 
-    public Orders(String orderId, User customer, List<Item> items, int orderStatus) {
+    public Orders(String orderId, User customer, List<Item> items) {
         this.orderId = orderId;
         this.customer = customer;
         this.items = items;
-        this.orderStatus = orderStatus;
     }
 
     public String getOrderId() {
@@ -52,6 +52,23 @@ public class Orders implements Serializable {
 
     public void setOrderStatus(int orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+
+    public String getOrdersCreateAt() {
+        return ordersCreateAt;
+    }
+
+    public void setOrdersCreateAt(String ordersCreateAt) {
+        this.ordersCreateAt = ordersCreateAt;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public int totalOrder () {

@@ -313,11 +313,7 @@ ul.main-nav__menu > li:hover .sub__main__menu {
     transition: all 0.5s;
 }
 
-.total-button__wrapper .active {
-    background: #7fba00;
-}
-
-.total-button__wrapper .active:hover {
+.total-button__wrapper > a:hover {
     background: #888888;
 }
 

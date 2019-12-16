@@ -1,8 +1,11 @@
 package profile.Cart;
 
+import Controller.ItemDAOImp;
+import Controller.OrdersDAOImp;
 import Model.Item;
 import Model.Orders;
 import Model.Product;
+import Model.User;
 import vn.edu.nlu.fit.Utils.Utils;
 
 import javax.servlet.http.HttpServlet;
@@ -18,6 +21,9 @@ import java.util.List;
 
 @WebServlet("/AddCartFromProductDetailServlet")
 public class AddCartFromProductDetailServlet extends HttpServlet {
+    private OrdersDAOImp ordersDAOImp = new OrdersDAOImp();
+    private ItemDAOImp itemDAOImp = new ItemDAOImp();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -29,37 +35,86 @@ public class AddCartFromProductDetailServlet extends HttpServlet {
         if (product != null) {
             HttpSession session = request.getSession();
             if (session.getAttribute("order") == null) {
-                Orders orders = new Orders();
-                List<Item> listItem = new ArrayList<>();
-                Item item = new Item();
-                item.setQuantity(quantity);
-                item.setProduct(product);
-                item.setPrice(product.getProductPrice());
-                item.setSalePrice(product.getProductSalePrice());
-                listItem.add(item);
-                orders.setItems(listItem);
-                session.setAttribute("order", orders);
-            } else {
-                Orders orders = (Orders) session.getAttribute("order");
-                List<Item> listItem = orders.getItems();
-                boolean check = false;
-                for (Item item : listItem) {
-                    if (item.getProduct().getProductId().equals(product.getProductId())) {
-                        item.setQuantity(item.getQuantity() + quantity);
-                        check = true;
-                    }
-                }
-                if (!check) {
+                if (session.getAttribute("user") == null) {
+                    Orders orders = new Orders();
+                    ordersDAOImp.addOrder(orders);
+                    List<Item> listItem = new ArrayList<>();
                     Item item = new Item();
                     item.setQuantity(quantity);
                     item.setProduct(product);
+                    item.setOrdersId(orders.getOrderId());
+                    itemDAOImp.addItem(item);
                     item.setPrice(product.getProductPrice());
                     item.setSalePrice(product.getProductSalePrice());
                     listItem.add(item);
+                    orders.setItems(listItem);
+                    session.setAttribute("order", orders);
+                } else {
+                    Orders orders = new Orders();
+                    orders.setCustomer((User) session.getAttribute("user"));
+                    ordersDAOImp.addOrdersWithUser(orders);
+                    List<Item> listItem = new ArrayList<>();
+                    Item item = new Item();
+                    item.setQuantity(quantity);
+                    item.setProduct(product);
+                    item.setOrdersId(orders.getOrderId());
+                    itemDAOImp.addItem(item);
+                    item.setPrice(product.getProductPrice());
+                    item.setSalePrice(product.getProductSalePrice());
+                    listItem.add(item);
+                    orders.setItems(listItem);
+                    session.setAttribute("order", orders);
                 }
-                session.setAttribute("order", orders);
+            } else {
+                if (session.getAttribute("user") == null) {
+                    Orders orders = (Orders) session.getAttribute("order");
+                    List<Item> listItem = orders.getItems();
+                    boolean check = false;
+                    for (Item item : listItem) {
+                        if (item.getProduct().getProductId().equals(product.getProductId())) {
+                            item.setQuantity(item.getQuantity() + quantity);
+                            itemDAOImp.updateItem(item.getQuantity() + quantity, item.getItemID());
+                            check = true;
+                        }
+                    }
+                    if (!check) {
+                        Item item = new Item();
+                        item.setQuantity(quantity);
+                        item.setProduct(product);
+                        item.setOrdersId(orders.getOrderId());
+                        itemDAOImp.addItem(item);
+                        item.setPrice(product.getProductPrice());
+                        item.setSalePrice(product.getProductSalePrice());
+                        listItem.add(item);
+                    }
+                    session.setAttribute("order", orders);
+                } else {
+                    Orders orders = (Orders) session.getAttribute("order");
+                    orders.setCustomer((User) request.getAttribute("user"));
+                    //ordersDAOImp.updateOrder(orders);
+                    List<Item> listItem = orders.getItems();
+                    boolean check = false;
+                    for (Item item : listItem) {
+                        if (item.getProduct().getProductId().equals(product.getProductId())) {
+                            item.setQuantity(item.getQuantity() + quantity);
+                            itemDAOImp.updateItem(item.getQuantity() + quantity, item.getItemID());
+                            check = true;
+                        }
+                    }
+                    if (!check) {
+                        Item item = new Item();
+                        item.setQuantity(quantity);
+                        item.setProduct(product);
+                        item.setOrdersId(orders.getOrderId());
+                        itemDAOImp.addItem(item);
+                        item.setPrice(product.getProductPrice());
+                        item.setSalePrice(product.getProductSalePrice());
+                        listItem.add(item);
+                    }
+                    session.setAttribute("order", orders);
+                }
             }
+            response.sendRedirect(Utils.fullPath("ProductDetailServlet?productDetailId=" + id));
         }
-        response.sendRedirect(Utils.fullPath("ProductDetailServlet?productDetailId=" + id));
     }
 }

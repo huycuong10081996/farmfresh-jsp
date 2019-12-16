@@ -42,11 +42,9 @@
             </nav>
         </div>
         <div class="main__category__container">
+
             <%@include file="nav-menu.jsp" %>
 
-            <%
-                if (u != null) {
-            %>
             <div class="cart__body__wrapper">
                 <div class="cart__body">
                     <div class="blog__titles">
@@ -229,19 +227,6 @@
                 </div>
             </div>
 
-            <%
-                } else {
-            %>
-
-            <div class="message__review"
-                 style=" display: flex; justify-content: center; align-items: center; padding: 20px 0 0 0">
-                <h4 style=" font-weight: 600">You need to <a href="login.jsp" style=" font-weight: 600">log
-                    in</a>.</h4>
-            </div>
-
-            <%
-                }
-            %>
         </div>
     </section>
 </main>

@@ -1,4 +1,5 @@
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="vn.edu.nlu.fit.Utils.Utils" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -135,75 +136,81 @@
                 <div class="modal fade addNewInputs" id="productAdd" tabindex="-1" role="dialog"
                      aria-labelledby="modalAdd" aria-hidden="true">
                     <div class="modal-dialog" role="document">
-                        <form action="" class="modal-content">
+                        <div class="modal-content">
                             <div class="modal-header text-center">
-                                <h4 class="modal-title w-100 font-weight-bold text-primary ml-5">ADD NEW PRODUCT</h4>
+                                <h4 class="modal-title w-100 font-weight-bold text-primary ml-5">ADD NEW
+                                    PRODUCT</h4>
                                 <button type="button" class="close text-primary" data-dismiss="modal"
                                         aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body mx-3">
-                                <%--<div class="md-form mb-5">
-                                    <input type="text" id="productId" class="form-control validate" placeholder="ID">
-                                    <!--
-                                                                            <label data-error="wrong" data-success="right" for="inputName1"></label>
-                                    -->
-                                </div>--%>
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productName" class="form-control validate"
-                                           placeholder="Name" name="productName" required="required">
-                                </div>
+<%--
+                            <form action="<%=Utils.fullPath("AddProductServlet")%>" method="post">
+                                <div class="modal-body mx-3">
+                                    <div class="md-form mb-5">
+                                        <input type="text" id="productId" name="productId" class="form-control validate"
+                                               placeholder="ID">
+                                        <!--
+                                                                                <label data-error="wrong" data-success="right" for="inputName1"></label>
+                                        -->
+                                    </div>
+                                    <div class="md-form mb-5">
+                                        <input type="text" id="productName" class="form-control validate"
+                                               placeholder="Name" name="productName" required="required">
+                                    </div>
 
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productImage" class="form-control validate"
-                                           placeholder="Image" name="productImage" required="required">
-                                </div>
+                                    <div class="md-form mb-5">
+                                        <input type="text" id="productImage" class="form-control validate"
+                                               placeholder="Image" name="productImage" required="required">
+                                    </div>
 
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productPrice" class="form-control validate"
-                                           placeholder="Price" name="productPrice" required="required">
-                                </div>
+                                    <div class="md-form mb-5">
+                                        <input type="text" id="productPrice" class="form-control validate"
+                                               placeholder="Price" name="productPrice" required="required">
+                                    </div>
 
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productSalePrice" class="form-control validate"
-                                           placeholder="Sale Price" name="productSalePrice" required="required">
-                                </div>
+                                    <div class="md-form mb-5">
+                                        <input type="text" id="productSalePrice" class="form-control validate"
+                                               placeholder="Sale Price" name="productSalePrice" required="required">
+                                    </div>
 
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productCategoryId" class="form-control validate"
-                                           placeholder="Category Id" name="productCategoryId" required="required">
-                                </div>
+                                    <div class="md-form mb-5">
+                                        <input type="text" id="productCategoryId" class="form-control validate"
+                                               placeholder="Category Id" name="productCategoryId" required="required">
+                                    </div>
 
-                                <div class="md-form mb-5">
-                                    <input type="date" id="productCreateAt" class="form-control"
-                                           placeholder="Select Date">
-                                </div>
+                                    &lt;%&ndash;<div class="md-form mb-5">
+                                        <input type="date" id="productCreateAt" class="form-control"
+                                               placeholder="Select Date">
+                                    </div>&ndash;%&gt;
 
-                                <div class="md-form mb-5">
-                                    <input type="number" min="1" id="productQuantity" class="form-control validate"
-                                           placeholder="Quantity" name="productQuantity" required="required">
-                                </div>
+                                    <div class="md-form mb-5">
+                                        <input type="number" min="1" id="productQuantity" class="form-control validate"
+                                               placeholder="Quantity" name="productQuantity" required="required">
+                                    </div>
 
-                                <div class="md-form mb-5">
+                                    <div class="md-form mb-5">
                                     <textarea class="form-control validate" id="productDescription" cols="30"
                                               rows="10" placeholder="Description" name="productDescription"></textarea>
-                                </div>
+                                    </div>
 
-                                <div class="md-form mb-5">
-                                    <input type="number" min="0" max="1" id="productStatus"
-                                           class="form-control validate"
-                                           placeholder="Status" name="productStatus" required="required">
-                                </div>
+                                    <div class="md-form mb-5">
+                                        <input type="number" min="0" max="1" id="productStatus"
+                                               class="form-control validate"
+                                               placeholder="Status" name="productStatus" required="required">
+                                    </div>
 
-                            </div>
-                            <div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
-                                <button class="btn btn-outline-primary btn-block buttonAdd" data-dismiss="modal"
-                                        onclick="" type="submit">Add Product
-                                    <i class="fas fa-paper-plane-o ml-1"></i>
-                                </button>
-                            </div>
-                        </form>
+                                </div>
+                                <div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
+                                    <button class="btn btn-outline-primary btn-block buttonAdd" data-dismiss="modal"
+                                            type="submit">Add Product
+                                        <i class="fas fa-paper-plane-o ml-1"></i>
+                                    </button>
+                                </div>
+                            </form>
+--%>
+                        </div>
                     </div>
                 </div>
 
@@ -378,7 +385,8 @@
                     <%
                         if (resultSet.getString(10) != null) {
                     %>
-                    <td width="400px"><%=resultSet.getString(10)%>
+                    <td width="400px"><span
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 50px;display: -webkit-box; -webkit-box-orient: vertical;-webkit-line-clamp: 2;"><%=resultSet.getString(10)%></span>
                     </td>
                     <%
                     } else {
@@ -735,9 +743,7 @@
             var currentRow = table.rows[i];
             var createClickHandler = function (row) {
                 return function () {
-/*
-                    row.style.backgroundColor = "red";
-*/
+                    //row.style.backgroundColor = "red";
                     var cell = row.getElementsByTagName("td")[0];
                     var id = cell.innerHTML;
                     alert("id:" + id);

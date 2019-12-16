@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.UUID;
@@ -46,14 +47,9 @@ public class AddReviewServlet extends HttpServlet {
         UUID uuid = UUID.randomUUID();
         String reviewId = uuid.toString();
 
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
-        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
-
-        String date = dateFormat.format(calendar.getTime());
-        String time = timeFormat.format(calendar.getTime());
-
-        String reviewCreateAt = date + " " + time;
+        Calendar calendars = Calendar.getInstance();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String reviewCreateAt =  dateFormat.format(calendars.getTime());
 
         Pattern namePattern = Pattern.compile("[A-Za-z. $|?*+()]{3,600}");
         Matcher reviewMatcher = namePattern.matcher(reviewContent);
@@ -76,4 +72,5 @@ public class AddReviewServlet extends HttpServlet {
             }
         }
     }
+
 }

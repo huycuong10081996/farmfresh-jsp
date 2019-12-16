@@ -1,5 +1,6 @@
 package profile.Cart;
 
+import Controller.ItemDAOImp;
 import Model.Item;
 import Model.Orders;
 import vn.edu.nlu.fit.Utils.Utils;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @WebServlet("/UpdateCartServlet")
 public class UpdateCartServlet extends HttpServlet {
+    private ItemDAOImp itemDAOImp = new ItemDAOImp();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -34,6 +36,7 @@ public class UpdateCartServlet extends HttpServlet {
                 for (Item item : list) {
                     if (item.getProduct().getProductId().equals(id)) {
                         item.setQuantity(quantity);
+                        itemDAOImp.updateItem(item.getQuantity(), item.getItemID());
                     }
                 }
                 orders.setItems(list);

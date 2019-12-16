@@ -311,8 +311,7 @@
                                     <label for="">Good</label>
                                 </div>
 
-                                <button class="continue_btn" type="submit"
-                                        style="border: none; height: 40px; width: 107px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                                <button type="submit" class="continue__button">
                                     Continue
                                 </button>
                             </form>

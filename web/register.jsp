@@ -103,7 +103,7 @@
 
                             <div>
                                 <label><span>*</span>E-Mail</label>
-                                <input type="text" name="emailRegister" required="required" placeholder="E-Mail" pattern="^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$" oninvalid="setCustomValidity('**Địa chỉ email không hợp lệ, phải có một và chỉ một ký tự @.')" oninput="setCustomValidity('')"/>
+                                <input type="text" name="emailRegister" required="required" placeholder="E-Mail" <%--pattern="/^[-a-z0-9~!$%^&*_=+}{'?]+(\.[-a-z0-9~!$%^&*_=+}{'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i" oninvalid="setCustomValidity('**Địa chỉ email không hợp lệ, phải có một và chỉ một ký tự @.')" oninput="setCustomValidity('')"--%>/>
                             </div>
 
                             <%

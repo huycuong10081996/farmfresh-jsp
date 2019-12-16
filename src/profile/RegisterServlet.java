@@ -22,7 +22,6 @@ import java.util.regex.Pattern;
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
     private UserDAOImp userDAO = new UserDAOImp();
-    ArrayList<String> err = new ArrayList<>();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
