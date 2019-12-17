@@ -1,5 +1,6 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="vn.edu.nlu.fit.Utils.Utils" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,81 +33,13 @@
 
 <body>
 <div class="wrapper">
-    <!-- Sidebar  -->
-    <nav id="sidebar">
-        <div class="sidebar-header custom__sidebar">
-            <img src="img/logo.png" alt="">
-        </div>
 
-        <ul class="list-unstyled components">
-            <p>Farm Fresh</p>
-            <li class="">
-                <a href="<%=Utils.fullPath("AdminHomeProductServlet")%>" data-toggle="collapse" aria-expanded="false">Home</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                   class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li class="active">
-                        <a href="<%=Utils.fullPath("AdminHomeProductServlet")%>">Product</a>
-                    </li>
-                    <li>
-                        <a href="#">User</a>
-                    </li>
-
-                </ul>
-            </li>
-
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-
-        <ul class="list-unstyled CTAs">
-            <li>
-                <a href="http://localhost:8080/final-project/HomeSerlet" class="article">Back to article</a>
-            </li>
-        </ul>
-    </nav>
-
+    <%@include file="slide-bar.jsp"%>
     <!-- Page Content  -->
     <div id="content">
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i class="fas fa-align-left"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
-                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Admin
-                                </a>
-
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Setting</a>
-                                    <a class="dropdown-item" href="#">Logout</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+        <%@include file="nav-bar.jsp"%>
         <!-- Product -->
-        <div class="wrapper-editor" id="page1">
+        <div class="wrapper-editor">
 
             <div class="block my-4">
 
@@ -125,12 +58,12 @@
                 </div>
             </div>
 
-            <script>
+            <%--<script>
                 function findProduct() {
                     const inputElement = document.getElementById('find');
                     const valueInput = inputElement.value;
                 }
-            </script>
+            </script>--%>
 
             <div class="row d-flex justify-content-center modalWrapper">
                 <div class="modal fade addNewInputs" id="productAdd" tabindex="-1" role="dialog"
@@ -153,19 +86,19 @@
                                     </div>
                                     <div class="md-form mb-5">
                                         <input type="text" id="productName" class="form-control validate"
-                                               placeholder="Name" name="productName" required="required"
+                                               placeholder="Name" name="productName"
                                                required="required">
                                     </div>
 
                                     <div class="md-form mb-5">
                                         <input type="text" id="productImage" class="form-control validate"
-                                               placeholder="Image" name="productImage" required="required"
+                                               placeholder="Image" name="productImage"
                                                required="required">
                                     </div>
 
                                     <div class="md-form mb-5">
                                         <input type="text" id="productPrice" class="form-control validate"
-                                               placeholder="Price" name="productPrice" required="required"
+                                               placeholder="Price" name="productPrice"
                                                required="required"
                                                pattern="^[0-9]{1,100}$"
                                                oninvalid="setCustomValidity('**Giá sản phẩm phải là ký tự số')"
@@ -174,7 +107,7 @@
 
                                     <div class="md-form mb-5">
                                         <input type="text" id="productSalePrice" class="form-control validate"
-                                               placeholder="Sale Price" name="productSalePrice" required="required"
+                                               placeholder="Sale Price" name="productSalePrice"
                                                required="required"
                                                pattern="^[0-9]{1,100}$"
                                                oninvalid="setCustomValidity('**Giá sản phẩm phải là ký tự số')"
@@ -183,13 +116,13 @@
 
                                     <div class="md-form mb-5">
                                         <input type="text" id="productCategoryId" class="form-control validate"
-                                               placeholder="Category Id" name="productCategoryId" required="required"
+                                               placeholder="Category Id" name="productCategoryId"
                                                required="required">
                                     </div>
 
                                     <div class="md-form mb-5">
                                         <input type="number" min="1" id="productQuantity" class="form-control validate"
-                                               placeholder="Quantity" name="productQuantity" required="required"
+                                               placeholder="Quantity" name="productQuantity"
                                                required="required">
                                     </div>
 
@@ -224,8 +157,7 @@
 
             </div>
 
-            <table id="dt-more-columns" onclick="addRowHandlers()" class="table table-striped table-bordered"
-                   cellspacing="0" width="100%">
+            <table class="table table-striped table-bordered" width="100%">
                 <thead style="text-align: center">
                 <tr>
                     <th class="th-sm">Id</th>
@@ -246,20 +178,31 @@
                 <%
                     ResultSet resultSet = (ResultSet) request.getAttribute("productAdmin");
                     while (resultSet.next()) {
+                        String productId = resultSet.getString(1);
+                        String productName = resultSet.getString(2);
+                        String productImage = resultSet.getString(3);
+                        double productPrice = resultSet.getDouble(4);
+                        double productSalePrice = resultSet.getDouble(5);
+                        String productCategoryTitle = resultSet.getString(6);
+                        String productCreateAt = resultSet.getString(8);
+                        int productQuantity = resultSet.getInt(9);
+                        String productDescription = resultSet.getString(10);
+                        int productStatus = resultSet.getInt(11);
+                        String productCategoryId = resultSet.getString(12);
                 %>
                 <tr>
                     <td style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; border: none; margin: 0">
-                        <%=resultSet.getString(1)%>
+                        <%=productId%>
                     </td>
-                    <td><%=resultSet.getString(2)%>
+                    <td><%=productName%>
                     </td>
-                    <td><img src="<%=resultSet.getString(3)%>" alt="" style="width: 100px"></td>
-                    <td>$<%=resultSet.getDouble(4)%>
+                    <td><img src="<%=productImage%>" alt="" style="width: 100px"></td>
+                    <td>$<%=productPrice%>
                     </td>
                     <%
-                        if (resultSet.getDouble(5) != 0) {
+                        if (productSalePrice != 0) {
                     %>
-                    <td>$<%=resultSet.getDouble(5)%>
+                    <td>$<%=productSalePrice%>
                     </td>
                     <%
                     } else {
@@ -268,17 +211,17 @@
                     <%
                         }
                     %>
-                    <td><%=resultSet.getString(6)%>
+                    <td><%=productCategoryTitle%>
                     </td>
-                    <td><%=resultSet.getString(8)%>
+                    <td><%=productCreateAt%>
                     </td>
-                    <td><%=resultSet.getInt(9)%>
+                    <td><%=productQuantity%>
                     </td>
                     <%
-                        if (resultSet.getString(10) != null) {
+                        if (productDescription != null) {
                     %>
                     <td width="400px"><span
-                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 50px;display: -webkit-box; -webkit-box-orient: vertical;-webkit-line-clamp: 2;"><%=resultSet.getString(10)%></span>
+                            style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 50px;display: -webkit-box; -webkit-box-orient: vertical;-webkit-line-clamp: 2;"><%=productDescription%></span>
                     </td>
                     <%
                     } else {
@@ -288,17 +231,17 @@
                         }
                     %>
                     <%
-                        if (resultSet.getInt(11) == -1) {
+                        if (productStatus == -1) {
                     %>
                     <td>Out of quantity
                     </td>
                     <%
-                    } else if (resultSet.getInt(11) == 0) {
+                    } else if (productStatus == 0) {
                     %>
                     <td>Disable
                     </td>
                     <%
-                    } else if (resultSet.getInt(11) == 1) {
+                    } else if (productStatus == 1) {
                     %>
                     <td>Active
                     </td>
@@ -306,7 +249,7 @@
                         }
                     %>
                     <td class="edit__product">
-                        <div class="modal fade modalEditClass" id="productEdit" tabindex="-1" role="dialog"
+                        <div class="modal fade modalEditClass" id="<%=productId%>" tabindex="-1" role="dialog"
                              aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -318,51 +261,65 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="<%=Utils.fullPath("EditProductServlet?productIdEdit="+ resultSet.getString(1))%>" method="post">
+                                    <form action="<%=Utils.fullPath("EditProductServlet?productIdEdit="+ productId)%>"
+                                          method="post">
                                         <div class="modal-body mx-3">
                                             <div class="md-form mb-5">
-                                                <input type="text" id="productNameEdit" name="productNameEdit" class="form-control validate"
-                                                       placeholder="Name" required="required" value="<%=resultSet.getString(2)%>">
-                                            </div>
-
-                                            <div class="md-form mb-5">
-                                                <input type="text" id="productImageEdit" name="productImageEdit" class="form-control validate"
-                                                       placeholder="Image" required="required" value="<%=resultSet.getString(3)%>">
-                                            </div>
-
-                                            <div class="md-form mb-5">
-                                                <input type="text" id="productPriceEdit" name="productPriceEdit" class="form-control validate"
-                                                       placeholder="Price" required="required" value="<%=resultSet.getDouble(4)%>">
-                                            </div>
-
-                                            <div class="md-form mb-5">
-                                                <input type="text" id="productSalePriceEdit" name="productSalePriceEdit"
+                                                <input type="text" name="productNameEdit"
                                                        class="form-control validate"
-                                                       placeholder="Sale Price" required="required" value="<%=resultSet.getDouble(5)%>">
+                                                       placeholder="Name" required="required"
+                                                       value="<%=productName%>">
                                             </div>
 
                                             <div class="md-form mb-5">
-                                                <input type="text" id="productCategoryIdEdit" name="productCategoryIdEdit"
+                                                <input type="text" name="productImageEdit"
                                                        class="form-control validate"
-                                                       placeholder="Category" required="required" value="<%=resultSet.getString(12)%>">
+                                                       placeholder="Image" required="required"
+                                                       value="<%=productImage%>">
                                             </div>
 
                                             <div class="md-form mb-5">
-                                                <input type="number" min="1" id="productQuantityEdit" name="productQuantityEdit"
+                                                <input type="text" name="productPriceEdit"
                                                        class="form-control validate"
-                                                       placeholder="Quantity" required="required" value="<%=resultSet.getInt(9)%>">
+                                                       placeholder="Price" required="required"
+                                                       value="<%=productPrice%>">
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <input type="text" name="productSalePriceEdit"
+                                                       class="form-control validate"
+                                                       placeholder="Sale Price" required="required"
+                                                       value="<%=productSalePrice%>">
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <input type="text"
+                                                       name="productCategoryIdEdit"
+                                                       class="form-control validate"
+                                                       placeholder="Category" required="required"
+                                                       value="<%=productCategoryId%>">
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <input type="number" min="1"
+                                                       name="productQuantityEdit"
+                                                       class="form-control validate"
+                                                       placeholder="Quantity" required="required"
+                                                       value="<%=productQuantity%>">
                                             </div>
 
                                             <div class="md-form mb-5">
                                                 <textarea name="productDescriptionEdit" class="form-control validate"
-                                                          id="productDescriptionEdit" cols="30" rows="10"
-                                                          placeholder="Description" <%--required="required"--%> <%--value=""--%>><%=resultSet.getString(10)%></textarea>
+                                                          cols="30" rows="10"
+                                                          placeholder="Description"><%=productDescription%></textarea>
                                             </div>
 
                                             <div class="md-form mb-5">
-                                                <input type="number" min="-1" max="1" id="productStatusEdit" name="productStatusEdit"
+                                                <input type="number" min="-1" max="1"
+                                                       name="productStatusEdit"
                                                        class="form-control"
-                                                       placeholder="Status" required="required" value="<%=resultSet.getInt(11)%>">
+                                                       placeholder="Status" required="required"
+                                                       value="<%=productStatus%>">
                                             </div>
                                             <div class="modal-footer d-flex justify-content-center editInsideWrapper">
                                                 <button class="btn btn-outline-secondary btn-block editInside"
@@ -378,13 +335,14 @@
                         </div>
 
                         <div class="text-center">
-                            <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                               data-target="#productEdit" style="width: 85px">Edit<i
+                            <a href="#" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
+                               data-target="#<%=productId%>" style="width: 85px">Edit<i
                                     class="fas fa-plus-square ml-1"></i></a>
                         </div>
                     </td>
+
                     <td class="remove__product">
-                        <div class="modal fade" id="productDelete" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="<%="remove" + productId%>" tabindex="-1" role="dialog"
                              aria-labelledby="modalDelete1"
                              aria-hidden="true">
 
@@ -398,13 +356,13 @@
                                         </button>
                                     </div>
                                     <div class="modal-body mx-3">
-                                        <p class="text-center h4">Are you sure to delete selected row?</p>
+                                        <p class="text-center h4">Are you sure to delete this product?</p>
 
                                     </div>
                                     <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
-                                        <button type="button" class="btn btn-danger btnYesClass" id="yesDeleteProduct"
-                                                data-dismiss="modal" type="submit">Yes
-                                        </button>
+                                        <a href="<%=Utils.fullPath("DeleteProductServlet?productDeleteId=" + productId)%>"
+                                           class="btn btn-danger btnYesClass">Yes
+                                        </a>
                                         <button type="button" class="btn btn-primary btnNoClass" id="noDeleteProduct"
                                                 data-dismiss="modal">No
                                         </button>
@@ -414,8 +372,8 @@
                         </div>
 
                         <div class="text-center">
-                            <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                               data-target="#productDelete" style="width: 97px">Delete<i
+                            <a href="#" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
+                               data-target="#<%="remove" + productId%>" style="width: 97px">Delete<i
                                     class="fas fa-plus-square ml-1"></i></a>
                         </div>
                     </td>
@@ -444,14 +402,15 @@
         </div>
     </div>
 </div>
+
 <!-- jQuery CDN - Slim version (=without AJAX) -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>
 <!-- Popper.JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
-</script>
+</script>--%>
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
@@ -472,48 +431,6 @@
             $('a[aria-expanded=true]').attr('aria-expanded', 'false');
         });
     });
-</script>
-
-<script src="libs/MDB-Free/js/mdb.min.js"></script>
-
-<!--
-<script>
-    $('#dt-more-columns').mdbEditor({
-        modalEditor: true,
-        headerLength: 7,
-    });
-    $('.dataTables_length').addClass('bs-select');
-</script>
--->
-<%--<script>
-    function addRowHandlers() {
-        var table = document.getElementById("dt-more-columns");
-        var rows = table.getElementsByTagName("tr");
-        for (i = 0; i < rows.length; i++) {
-            var currentRow = table.rows[i];
-            var createClickHandler = function (row) {
-                return function () {
-                    //row.style.backgroundColor = "red";
-                    var cell = row.getElementsByTagName("td")[0];
-                    var id = cell.innerHTML;
-                    alert("id:" + id);
-                };
-            };
-            currentRow.onclick = createClickHandler(currentRow);
-        }
-    }
-</script>--%>
-
-
-<script>
-    function addField(n) {
-        var tr = n.parentNode.parentNode.cloneNode(true);
-        document.getElementById('dt-more-columns').appendChild(tr);
-    }
-</script>
-
-<script>
-
 </script>
 </body>
 

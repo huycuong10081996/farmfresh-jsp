@@ -224,7 +224,6 @@ public class Product implements  Comparable<Product> {
 
     @Override
     public int compareTo(Product o) {
-        int value = this.productName.compareTo(o.getProductName());
-        return value;
+        return this.productName.compareTo(o.getProductName());
     }
 }

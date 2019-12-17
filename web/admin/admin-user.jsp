@@ -1,0 +1,393 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="vn.edu.nlu.fit.Utils.Utils" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <!-- Scrollbar Custom CSS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="admin/libs/MDB-Free/css/mdb.min.css">
+    <link rel="stylesheet" href="admin/libs/MDB-Free/css/bootstrap.min.css">
+    <link rel="stylesheet" href="admin/libs/MDB-Free/css/mdb.lite.min.css">
+    <link rel="stylesheet" href="admin/libs/MDB-Free/css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="admin/css/admin.css">
+    <title>Document</title>
+</head>
+
+<body>
+<div class="wrapper">
+
+    <%@include file="slide-bar.jsp" %>
+    <!-- Page Content  -->
+    <div id="content">
+        <%@include file="nav-bar.jsp" %>
+        <!-- Product -->
+
+        <div class="block my-4">
+
+            <div class="input-group mb-3 col-lg-5">
+                <input type="text" id="product_find" class="form-control" placeholder="User Name..."
+                       aria-label="Type something..." aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-info btn-rounded btn-sm" type="button" id="button_find"
+                            onclick="">Find
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <p class="h5 text-primary createShowP">USERS MANAGER</p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center modalWrapper">
+            <div class="modal fade addNewInputs" id="userAdd" tabindex="-1" role="dialog"
+                 aria-labelledby="modalAdd" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title w-100 font-weight-bold text-primary ml-5">ADD NEW
+                                USER</h4>
+                            <button type="button" class="close text-primary" data-dismiss="modal"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form action="<%=Utils.fullPath("AddUserServlet")%>" method="post">
+                            <div class="modal-body mx-3">
+                                <div class="md-form mb-5">
+                                    <input type="text" id="userFirstName" class="form-control validate"
+                                           placeholder="First Name" name="userFirstName" required="required"
+                                           pattern="[A-Za-z. ]{3,30}"
+                                           oninvalid="setCustomValidity('**First Name phải tối thiểu 3 ký tự, tối đa 30 ký tự, không có số, không có ký tự đặc biệt.')"
+                                           oninput="setCustomValidity('')"/>
+                                </div>
+
+                                <%
+                                    String errFirst = (String) request.getAttribute("errFirstNameAdd");
+                                    if (errFirst != null) {
+                                %>
+                                <div class="md-form mb-5">
+                                    <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                        <span><%=errFirst%></span>
+                                    </div>
+                                </div>
+                                <%
+                                    }
+                                %>
+
+                                <div class="md-form mb-5">
+                                    <input type="text" id="userLastName" class="form-control validate"
+                                           placeholder="Last Name" name="userLastName" required="required"
+                                           pattern="[A-Za-z. ]{3,30}"
+                                           oninvalid="setCustomValidity('**Last Name phải tối thiểu 3 ký tự, tối đa 30 ký tự, không có số, không có ký tự đặc biệt.')"
+                                           oninput="setCustomValidity('')"/>
+                                </div>
+
+                                <%
+                                    String errLast = (String) request.getAttribute("errLastNameAdd");
+                                    if (errLast != null) {
+                                %>
+                                <div class="md-form mb-5">
+                                    <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                        <span><%=errLast%></span>
+                                    </div>
+                                </div>
+                                <%
+                                    }
+                                %>
+
+                                <div class="md-form mb-5">
+                                    <input type="text" id="userEmail" class="form-control validate"
+                                           placeholder="Email Address" name="userEmail" required="required">
+                                </div>
+
+                                <%
+                                    String errEmail = (String) request.getAttribute("errEmailAdd");
+                                    if (errEmail != null) {
+                                %>
+                                <div class="md-form mb-5">
+                                    <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                <span><%=errEmail%></span>
+                                    </div>
+                                </div>
+                                <%
+                                    }
+                                %>
+
+                                <div class="md-form mb-5">
+                                    <input type="text" id="userPassword" class="form-control validate"
+                                           placeholder="Password" name="userPassword"
+                                           required="required"
+                                           pattern="^(?=.*?[A-Za-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$"
+                                           oninvalid="setCustomValidity('**Password phải có ít nhất một ký tự viết hoa, một ký tự đặc biệt, một ký tự số. ')"
+                                           oninput="setCustomValidity('')"/>
+                                </div>
+
+                                <%
+                                    String errPass = (String) request.getAttribute("errPassAdd");
+                                    if (errPass != null) {
+                                %>
+                                <div class="md-form mb-5">
+                                    <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                        <span><%=errPass%></span>
+                                    </div>
+                                </div>
+                                <%
+                                    }
+                                %>
+
+                                <div class="md-form mb-5">
+                                    <input type="text" id="userPhone" class="form-control validate"
+                                           placeholder="Phone Number" name="userPhone"
+                                           required="required" pattern="^[0-9]{9,11}$"
+                                           oninvalid="setCustomValidity('**Số điện thoại phải là ký tự số và tối thiểu 9 ký tự và tối đa 11 ký tự.')"
+                                           oninput="setCustomValidity('')"/>
+                                </div>
+
+                                <%
+                                    String errPhone = (String) request.getAttribute("errPhoneAdd");
+                                    if (errPhone != null) {
+                                %>
+                                <div class="md-form mb-5">
+                                    <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                        <span><%=errPhone%></span>
+                                    </div>
+                                </div>
+                                <%
+                                    }
+                                %>
+
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
+                                <button class="btn btn-outline-primary btn-block buttonAdd" type="submit">
+                                    ADD USER
+                                    <i class="fas fa-paper-plane-o ml-1"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
+                   data-target="#userAdd">Add<i class="fas fa-plus-square ml-1"></i></a>
+            </div>
+        </div>
+
+        <table class="table table-striped table-bordered" width="100%">
+            <thead style="text-align: center">
+            <tr>
+                <th class="th-sm">Id</th>
+                <th class="th-sm">First Name</th>
+                <th class="th-sm">Last Name</th>
+                <th class="th-sm">Full Name</th>
+                <th class="th-sm">Email</th>
+                <th class="th-sm">Password</th>
+                <th class="th-sm">Phone</th>
+                <th class="th-sm">Edit</th>
+                <th class="th-sm">Remove</th>
+            </tr>
+            </thead>
+            <tbody id="tableProductBody">
+            <%
+                ResultSet resultSet = (ResultSet) request.getAttribute("userList");
+                while (resultSet.next()) {
+                    String userId = resultSet.getString(1);
+                    String userFirstName = resultSet.getString(2);
+                    String userLastName = resultSet.getString(3);
+                    String userFullName = resultSet.getString(4);
+                    String userEmail = resultSet.getString(5);
+                    String userPassword = resultSet.getString(6);
+                    String userPhone = resultSet.getString(7);
+            %>
+            <tr>
+                <td><%=userId%>
+                </td>
+                <td><%=userFirstName%>
+                </td>
+                <td><%=userLastName%>
+                </td>
+                <td><%=userFullName%>
+                </td>
+                <td><%=userEmail%>
+                </td>
+                <td><%=userPassword%>
+                </td>
+                <td><%=userPhone%>
+                </td>
+                <td class="edit__product">
+                    <div class="modal fade modalEditClass" id="<%=userId%>" tabindex="-1" role="dialog"
+                         aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header text-center">
+                                    <h4 class="modal-title w-100 font-weight-bold text-secondary ml-5">Edit
+                                        form</h4>
+                                    <button type="button" class="close text-secondary" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form action="#"
+                                      method="post">
+                                    <div class="modal-body mx-3">
+                                        <div class="md-form mb-5">
+                                            <input type="text" name="userFirstNameEdit"
+                                                   class="form-control validate"
+                                                   placeholder="Name" required="required"
+                                                   value="<%=userFirstName%>">
+                                        </div>
+
+                                        <div class="md-form mb-5">
+                                            <input type="text" name="userLastNameEdit"
+                                                   class="form-control validate"
+                                                   placeholder="Image" required="required"
+                                                   value="<%=userLastName%>">
+                                        </div>
+
+                                        <div class="md-form mb-5">
+                                            <input type="text" name="userEmailEdit"
+                                                   class="form-control validate"
+                                                   placeholder="Price" required="required"
+                                                   value="<%=userEmail%>">
+                                        </div>
+
+                                        <div class="md-form mb-5">
+                                            <input type="text" name="userPasswordEdit"
+                                                   class="form-control validate"
+                                                   placeholder="Sale Price" required="required"
+                                                   value="<%=userPassword%>">
+                                        </div>
+
+                                        <div class="md-form mb-5">
+                                            <input type="text"
+                                                   name="userPhoneEdit"
+                                                   class="form-control validate"
+                                                   placeholder="Category" required="required"
+                                                   value="<%=userPhone%>">
+                                        </div>
+
+                                        <div class="modal-footer d-flex justify-content-center editInsideWrapper">
+                                            <button class="btn btn-outline-secondary btn-block editInside"
+                                                    type="submit">
+                                                EDIT PRODUCT
+                                                <i class="fas fa-paper-plane-o ml-1"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
+                           data-target="#<%=userId%>" style="width: 85px">Edit<i
+                                class="fas fa-plus-square ml-1"></i></a>
+                    </div>
+                </td>
+
+                <td class="remove__product">
+                    <div class="modal fade" id="<%="remove" + userId%>" tabindex="-1" role="dialog"
+                         aria-labelledby="modalDelete1"
+                         aria-hidden="true">
+
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header text-center">
+                                    <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Delete</h4>
+                                    <button type="button" class="close text-danger" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body mx-3">
+                                    <p class="text-center h4">Are you sure to delete this user?</p>
+
+                                </div>
+                                <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
+                                    <a href="<%=Utils.fullPath("RemoveUserServlet?userDeleteId=" + userId)%>"
+                                       class="btn btn-danger btnYesClass">Yes
+                                    </a>
+                                    <button type="button" class="btn btn-primary btnNoClass" id="noDeleteProduct"
+                                            data-dismiss="modal">No
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
+                           data-target="#<%="remove" + userId%>" style="width: 97px">Delete<i
+                                class="fas fa-plus-square ml-1"></i></a>
+                    </div>
+                </td>
+            </tr>
+            <%
+                }
+            %>
+            </tbody>
+            <tfoot style="text-align: center">
+            <tr>
+                <th class="th-sm">Id</th>
+                <th class="th-sm">First Name</th>
+                <th class="th-sm">Last Name</th>
+                <th class="th-sm">Full Name</th>
+                <th class="th-sm">Email</th>
+                <th class="th-sm">Password</th>
+                <th class="th-sm">Phone</th>
+                <th class="th-sm">Edit</th>
+                <th class="th-sm">Remove</th>
+            </tr>
+            </tfoot>
+        </table>
+
+    </div>
+</div>
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+</script>
+<!-- jQuery Custom Scroller CDN -->
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar, #content').toggleClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+</script>
+</body>
+</html>

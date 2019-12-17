@@ -46,15 +46,9 @@ public class AddProductServlet extends HttpServlet {
 
         try {
             productDAOImp.addProduct(new Product(productId, productName, productImage, productPrice, productSalePrice, productCategoryId, "AD03", productCreateAt, productQuantity, productDescription, productStatus));
-/*
-            response.sendRedirect("admin2.jsp");
-*/
             response.sendRedirect("AdminHomeProductServlet");
         } catch (Exception e) {
             e.printStackTrace();
-/*
-            request.getRequestDispatcher("admin2.jsp").forward(request, response);
-*/
             request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet")).forward(request, response);
         }
     }
