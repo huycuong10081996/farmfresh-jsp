@@ -54,7 +54,7 @@ public class AddReviewServlet extends HttpServlet {
         Pattern namePattern = Pattern.compile("[A-Za-z. $|?*+()]{3,600}");
         Matcher reviewMatcher = namePattern.matcher(reviewContent);
 
-        if (!reviewMatcher.matches()) {
+        if (!reviewMatcher.matches() || reviewContent.equals("")) {
             String errReview = "Please write here your review.";
             request.setAttribute("errReview", errReview);
             request.getRequestDispatcher(Utils.fullPath("ProductDetailServlet?productDetailId=" + reviewProductId)).forward(request, response);

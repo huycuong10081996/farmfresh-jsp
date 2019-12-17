@@ -20,20 +20,20 @@ public class Product implements  Comparable<Product> {
     private String productCreateById;
     private int productQuantity;
     private String productCreateAt;
-    private String categoryId;
+   /* private String categoryId;*/
     private String productCategoryTitle;
     private String productCategoryId;
 
     public Product() {
     }
 
-    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String productCategory) {
+    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String productCategoryId) {
         this.productId = productId;
         this.productName = productName;
         this.productImageURL = productImageURL;
         this.productPrice = productPrice;
         this.productSalePrice = productSalePrice;
-        this.categoryId = productCategory;
+        this.productCategoryId = productCategoryId;
     }
 
 
@@ -48,13 +48,13 @@ public class Product implements  Comparable<Product> {
     }
 
     // Constructor thêm product trong phần admin
-    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String categoryId, String productCreateById, String productCreateAt, int productQuantity, String productDescription,  int productStatus) {
+    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String productCategoryId, String productCreateById, String productCreateAt, int productQuantity, String productDescription,  int productStatus) {
         this.productId = productId;
         this.productName = productName;
         this.productImageURL = productImageURL;
         this.productPrice = productPrice;
         this.productSalePrice = productSalePrice;
-        this.categoryId = categoryId;
+        this.productCategoryId = productCategoryId;
         this.productCreateById = productCreateById;
         this.productCreateAt = productCreateAt;
         this.productQuantity = productQuantity;
@@ -63,13 +63,13 @@ public class Product implements  Comparable<Product> {
     }
 
     // Constructor thêm product trong phần admin
-    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String categoryId, String productCreateAt, int productQuantity, String productDescription,  int productStatus) {
+    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String productCategoryId, String productCreateAt, int productQuantity, String productDescription,  int productStatus) {
         this.productId = productId;
         this.productName = productName;
         this.productImageURL = productImageURL;
         this.productPrice = productPrice;
         this.productSalePrice = productSalePrice;
-        this.categoryId = categoryId;
+        this.productCategoryId = productCategoryId;
         this.productCreateAt = productCreateAt;
         this.productQuantity = productQuantity;
         this.productDescription = productDescription;
@@ -190,14 +190,14 @@ public class Product implements  Comparable<Product> {
         this.productCreateAt = productCreateAt;
     }
 
-    public String getCategoryId() {
+   /* public String getCategoryId() {
         return categoryId;
     }
 
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
-
+*/
     public String getProductCategoryTitle() {
         return productCategoryTitle;
     }

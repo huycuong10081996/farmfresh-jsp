@@ -25,8 +25,8 @@ public class AddProductServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Calendar calendars = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
-        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
         String dates = dateFormat.format(calendars.getTime());
         String times = timeFormat.format(calendars.getTime());
         String productCreateAt = dates + " " + times;
@@ -37,7 +37,6 @@ public class AddProductServlet extends HttpServlet {
         double productPrice = Double.parseDouble(request.getParameter("productPrice"));
         double productSalePrice = Double.parseDouble(request.getParameter("productSalePrice"));
         String productCategoryId = request.getParameter("productCategoryId");
-        //String productCreateAt = request.getParameter("productCreateAt") + " " + times;
         int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
         String productDescription = request.getParameter("productDescription");
         int productStatus = Integer.parseInt(request.getParameter("productStatus"));

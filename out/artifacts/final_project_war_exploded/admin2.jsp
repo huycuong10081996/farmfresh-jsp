@@ -17,7 +17,7 @@
     <input name="productName" type="text"/>
     <input name="productImage" type="text"/>
     <input name="productPrice" type="text"/>
-    <input name="productSalePrice"   type="text"/>
+    <input name="productSalePrice" type="text"/>
     <input name="productCategoryId" type="text"/>
     <input name="productQuantity" type="number"/>
     <input name="productDescription" type="text"/>

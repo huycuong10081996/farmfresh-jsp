@@ -227,9 +227,21 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="time__review">
+                                        <div class="time__review" style="display: flex; justify-content: flex-end; align-items: center">
+                                            <%
+                                                if (u != null && u.getUserId().equals(resultSetproductDetail.getString(16))) {
+                                            %>
+                                            <h6 style="margin: 0"><%=resultSetproductDetail.getString(11)%>
+                                            </h6>
+                                            <a href="<%=Utils.fullPath("RemoveReviewServlet?productDetailId=" + resultSetproductDetail.getString(1) + "&reviewId=" + resultSetproductDetail.getString(14))%>" class="delete_review"><i class="fa fa-trash" style="padding: 10px;"></i></a>
+                                            <%
+                                                } else {
+                                            %>
                                             <h6><%=resultSetproductDetail.getString(11)%>
                                             </h6>
+                                            <%
+                                                }
+                                            %>
                                         </div>
                                     </td>
                                 </tr>

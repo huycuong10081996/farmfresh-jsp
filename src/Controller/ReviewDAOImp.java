@@ -27,4 +27,17 @@ public class ReviewDAOImp implements ReviewDAO {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void removeReview(String reviewId) {
+        String sql = "delete from review where review_id = ?";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = ConnectionDB.getPreparedStatement(sql);
+            preparedStatement.setString(1, reviewId);
+            preparedStatement.executeUpdate();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

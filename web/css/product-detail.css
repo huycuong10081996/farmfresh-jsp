@@ -235,3 +235,7 @@ form .review__main>textarea {
 .continue__button:hover {
   background-color: #4d4d4d;
 }
+
+.delete_review:hover {
+  color: #811b1b;
+}
