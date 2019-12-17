@@ -200,8 +200,18 @@
         <div class="description__content__wrapper" id="desciptions">
             <div class="container">
                 <div id="descriptionContent" class="show description__content">
+                    <% if (resultSetproductDetail.getString(8) != null) {
+                    %>
+                    <p>This product no description. We will update information about it as quickly as possible to
+                        you.</p>
+                    <%
+                    } else {
+                    %>
                     <p><%=resultSetproductDetail.getString(8)%>
                     </p>
+                    <%
+                        }
+                    %>
                 </div>
                 <%
                         if (count == 1) {
@@ -227,15 +237,17 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="time__review" style="display: flex; justify-content: flex-end; align-items: center">
+                                        <div class="time__review"
+                                             style="display: flex; justify-content: flex-end; align-items: center">
                                             <%
                                                 if (u != null && u.getUserId().equals(resultSetproductDetail.getString(16))) {
                                             %>
                                             <h6 style="margin: 0"><%=resultSetproductDetail.getString(11)%>
                                             </h6>
-                                            <a href="<%=Utils.fullPath("RemoveReviewServlet?productDetailId=" + resultSetproductDetail.getString(1) + "&reviewId=" + resultSetproductDetail.getString(14))%>" class="delete_review"><i class="fa fa-trash" style="padding: 10px;"></i></a>
+                                            <a href="<%=Utils.fullPath("RemoveReviewServlet?productDetailId=" + resultSetproductDetail.getString(1) + "&reviewId=" + resultSetproductDetail.getString(14))%>"
+                                               class="delete_review"><i class="fa fa-trash" style="padding: 10px;"></i></a>
                                             <%
-                                                } else {
+                                            } else {
                                             %>
                                             <h6><%=resultSetproductDetail.getString(11)%>
                                             </h6>
@@ -303,7 +315,7 @@
                                        style="height: 100%; padding: 5px;text-align: start"></i><%=errReview%></span>
                                 </div>
                                 <%
-                                    } else {
+                                } else {
                                 %>
                                 <div class="review__main">
                                     <p><span>*</span>&nbsp;Your Review</p>
@@ -341,7 +353,8 @@
 
                         <div class="message__review"
                              style=" display: flex; justify-content: center; align-items: center; padding: 20px 0 0 0">
-                            <h6 style=" font-weight: 600">You need to <a href="login.jsp" style=" font-weight: 600; color: #7fba00">log
+                            <h6 style=" font-weight: 600">You need to <a href="login.jsp"
+                                                                         style=" font-weight: 600; color: #7fba00">log
                                 in</a> to post a comment about the product.</h6>
                         </div>
 
@@ -391,9 +404,10 @@
                         <%
                             if (otherResultSet.getString(5) == null) {
                         %>
-                        <p><strong>$<%=otherResultSet.getString(4)%></strong></p>
-                                <%
-                            } else {
+                        <p><strong>$<%=otherResultSet.getString(4)%>
+                        </strong></p>
+                        <%
+                        } else {
                         %>
                         <p><strong>$<%=otherResultSet.getString(5)%>
                         </strong>

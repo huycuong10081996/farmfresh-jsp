@@ -41,14 +41,14 @@
         <ul class="list-unstyled components">
             <p>Farm Fresh</p>
             <li class="">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <a href="<%=Utils.fullPath("AdminHomeProductServlet")%>" data-toggle="collapse" aria-expanded="false">Home</a>
             </li>
             <li>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
                    class="dropdown-toggle">Pages</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li class="active">
-                        <a href="#page1">Product</a>
+                        <a href="<%=Utils.fullPath("AdminHomeProductServlet")%>">Product</a>
                     </li>
                     <li>
                         <a href="#">User</a>
@@ -121,7 +121,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <p class="h5 text-primary createShowP">0 row selected</p>
+                    <p class="h5 text-primary createShowP">PRODUCTS MANAGER</p>
                 </div>
             </div>
 
@@ -145,49 +145,52 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-<%--
                             <form action="<%=Utils.fullPath("AddProductServlet")%>" method="post">
                                 <div class="modal-body mx-3">
                                     <div class="md-form mb-5">
                                         <input type="text" id="productId" name="productId" class="form-control validate"
-                                               placeholder="ID">
-                                        <!--
-                                                                                <label data-error="wrong" data-success="right" for="inputName1"></label>
-                                        -->
+                                               placeholder="ID" required="required">
                                     </div>
                                     <div class="md-form mb-5">
                                         <input type="text" id="productName" class="form-control validate"
-                                               placeholder="Name" name="productName" required="required">
+                                               placeholder="Name" name="productName" required="required"
+                                               required="required">
                                     </div>
 
                                     <div class="md-form mb-5">
                                         <input type="text" id="productImage" class="form-control validate"
-                                               placeholder="Image" name="productImage" required="required">
+                                               placeholder="Image" name="productImage" required="required"
+                                               required="required">
                                     </div>
 
                                     <div class="md-form mb-5">
                                         <input type="text" id="productPrice" class="form-control validate"
-                                               placeholder="Price" name="productPrice" required="required">
+                                               placeholder="Price" name="productPrice" required="required"
+                                               required="required"
+                                               pattern="^[0-9]{1,100}$"
+                                               oninvalid="setCustomValidity('**Giá sản phẩm phải là ký tự số')"
+                                               oninput="setCustomValidity('')"/>
                                     </div>
 
                                     <div class="md-form mb-5">
                                         <input type="text" id="productSalePrice" class="form-control validate"
-                                               placeholder="Sale Price" name="productSalePrice" required="required">
+                                               placeholder="Sale Price" name="productSalePrice" required="required"
+                                               required="required"
+                                               pattern="^[0-9]{1,100}$"
+                                               oninvalid="setCustomValidity('**Giá sản phẩm phải là ký tự số')"
+                                               oninput="setCustomValidity('')"/>
                                     </div>
 
                                     <div class="md-form mb-5">
                                         <input type="text" id="productCategoryId" class="form-control validate"
-                                               placeholder="Category Id" name="productCategoryId" required="required">
+                                               placeholder="Category Id" name="productCategoryId" required="required"
+                                               required="required">
                                     </div>
-
-                                    &lt;%&ndash;<div class="md-form mb-5">
-                                        <input type="date" id="productCreateAt" class="form-control"
-                                               placeholder="Select Date">
-                                    </div>&ndash;%&gt;
 
                                     <div class="md-form mb-5">
                                         <input type="number" min="1" id="productQuantity" class="form-control validate"
-                                               placeholder="Quantity" name="productQuantity" required="required">
+                                               placeholder="Quantity" name="productQuantity" required="required"
+                                               required="required">
                                     </div>
 
                                     <div class="md-form mb-5">
@@ -196,20 +199,19 @@
                                     </div>
 
                                     <div class="md-form mb-5">
-                                        <input type="number" min="0" max="1" id="productStatus"
+                                        <input type="number" min="-1" max="1" id="productStatus"
                                                class="form-control validate"
                                                placeholder="Status" name="productStatus" required="required">
                                     </div>
 
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
-                                    <button class="btn btn-outline-primary btn-block buttonAdd" data-dismiss="modal"
-                                            type="submit">Add Product
+                                    <button class="btn btn-outline-primary btn-block buttonAdd" type="submit">
+                                        ADD PRODUCT
                                         <i class="fas fa-paper-plane-o ml-1"></i>
                                     </button>
                                 </div>
                             </form>
---%>
                         </div>
                     </div>
                 </div>
@@ -220,118 +222,6 @@
                        data-target="#productAdd">Add<i class="fas fa-plus-square ml-1"></i></a>
                 </div>
 
-                <div class="modal fade modalEditClass" id="productEdit" tabindex="-1" role="dialog"
-                     aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <form action="" class="modal-content">
-                            <div class="modal-header text-center">
-                                <h4 class="modal-title w-100 font-weight-bold text-secondary ml-5">Edit form</h4>
-                                <button type="button" class="close text-secondary" data-dismiss="modal"
-                                        aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body mx-3">
-                                <%--   <div class="md-form mb-5">
-                                       <input type="text" id="productIdEdit" class="form-control validate"
-                                              placeholder="ID">
-                                       <!--
-                                                                               <label data-error="wrong" data-success="right" for="inputName1"></label>
-                                       -->
-                                   </div>--%>
-
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productNameEdit" class="form-control validate"
-                                           placeholder="Name">
-                                </div>
-
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productImageEdit" class="form-control validate"
-                                           placeholder="Image">
-                                </div>
-
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productPriceEdit" class="form-control validate"
-                                           placeholder="Price">
-                                </div>
-
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productSalePriceEdit" class="form-control validate"
-                                           placeholder="Sale Price">
-                                </div>
-
-                                <div class="md-form mb-5">
-                                    <input type="text" id="productCategoryEdit" class="form-control validate"
-                                           placeholder="Category">
-                                </div>
-
-                                <div class="md-form mb-5">
-                                    <input type="date" id="productCreateAtEdit" class="form-control"
-                                           placeholder="Select Date">
-                                </div>
-
-                                <div class="md-form mb-5">
-                                    <input type="number" min="1" id="productQuantityEdit" class="form-control validate"
-                                           placeholder="Quantity">
-                                </div>
-
-                                <div class="md-form mb-5">
-                                    <textarea name="" class="form-control validate" id="productDescriptionEdit"
-                                              cols="30" rows="10" placeholder="Description"></textarea>
-                                </div>
-
-                                <div class="md-form mb-5">
-                                    <input type="number" min="0" max="1" id="productStatusEdit" class="form-control"
-                                           placeholder="Status">
-                                </div>
-
-                            </div>
-                            <div class="modal-footer d-flex justify-content-center editInsideWrapper">
-                                <button class="btn btn-outline-secondary btn-block editInside"
-                                        data-dismiss="modal" type="submit">EDIT PRODUCT
-                                    <i class="fas fa-paper-plane-o ml-1"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                       data-target="#productEdit">Edit<i class="fas fa-plus-square ml-1"></i></a>
-                </div>
-
-                <div class="modal fade" id="productDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete1"
-                     aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header text-center">
-                                <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Delete</h4>
-                                <button type="button" class="close text-danger" data-dismiss="modal"
-                                        aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body mx-3">
-                                <p class="text-center h4">Are you sure to delete selected row?</p>
-
-                            </div>
-                            <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
-                                <button type="button" class="btn btn-danger btnYesClass" id="yesDeleteProduct"
-                                        data-dismiss="modal" type="submit">Yes
-                                </button>
-                                <button type="button" class="btn btn-primary btnNoClass" id="noDeleteProduct"
-                                        data-dismiss="modal">No
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                       data-target="#productDelete">Delete<i class="fas fa-plus-square ml-1"></i></a>
-                </div>
             </div>
 
             <table id="dt-more-columns" onclick="addRowHandlers()" class="table table-striped table-bordered"
@@ -348,6 +238,8 @@
                     <th class="th-sm">Quantity</th>
                     <th class="th-sm">Description</th>
                     <th class="th-sm">Status</th>
+                    <th class="th-sm">Edit</th>
+                    <th class="th-sm">Remove</th>
                 </tr>
                 </thead>
                 <tbody id="tableProductBody">
@@ -395,7 +287,137 @@
                     <%
                         }
                     %>
-                    <td><%=resultSet.getInt(11)%>
+                    <%
+                        if (resultSet.getInt(11) == -1) {
+                    %>
+                    <td>Out of quantity
+                    </td>
+                    <%
+                    } else if (resultSet.getInt(11) == 0) {
+                    %>
+                    <td>Disable
+                    </td>
+                    <%
+                    } else if (resultSet.getInt(11) == 1) {
+                    %>
+                    <td>Active
+                    </td>
+                    <%
+                        }
+                    %>
+                    <td class="edit__product">
+                        <div class="modal fade modalEditClass" id="productEdit" tabindex="-1" role="dialog"
+                             aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header text-center">
+                                        <h4 class="modal-title w-100 font-weight-bold text-secondary ml-5">Edit
+                                            form</h4>
+                                        <button type="button" class="close text-secondary" data-dismiss="modal"
+                                                aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="<%=Utils.fullPath("EditProductServlet?productIdEdit="+ resultSet.getString(1))%>" method="post">
+                                        <div class="modal-body mx-3">
+                                            <div class="md-form mb-5">
+                                                <input type="text" id="productNameEdit" name="productNameEdit" class="form-control validate"
+                                                       placeholder="Name" required="required" value="<%=resultSet.getString(2)%>">
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <input type="text" id="productImageEdit" name="productImageEdit" class="form-control validate"
+                                                       placeholder="Image" required="required" value="<%=resultSet.getString(3)%>">
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <input type="text" id="productPriceEdit" name="productPriceEdit" class="form-control validate"
+                                                       placeholder="Price" required="required" value="<%=resultSet.getDouble(4)%>">
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <input type="text" id="productSalePriceEdit" name="productSalePriceEdit"
+                                                       class="form-control validate"
+                                                       placeholder="Sale Price" required="required" value="<%=resultSet.getDouble(5)%>">
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <input type="text" id="productCategoryIdEdit" name="productCategoryIdEdit"
+                                                       class="form-control validate"
+                                                       placeholder="Category" required="required" value="<%=resultSet.getString(12)%>">
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <input type="number" min="1" id="productQuantityEdit" name="productQuantityEdit"
+                                                       class="form-control validate"
+                                                       placeholder="Quantity" required="required" value="<%=resultSet.getInt(9)%>">
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <textarea name="productDescriptionEdit" class="form-control validate"
+                                                          id="productDescriptionEdit" cols="30" rows="10"
+                                                          placeholder="Description" <%--required="required"--%> <%--value=""--%>><%=resultSet.getString(10)%></textarea>
+                                            </div>
+
+                                            <div class="md-form mb-5">
+                                                <input type="number" min="-1" max="1" id="productStatusEdit" name="productStatusEdit"
+                                                       class="form-control"
+                                                       placeholder="Status" required="required" value="<%=resultSet.getInt(11)%>">
+                                            </div>
+                                            <div class="modal-footer d-flex justify-content-center editInsideWrapper">
+                                                <button class="btn btn-outline-secondary btn-block editInside"
+                                                        type="submit">
+                                                    EDIT PRODUCT
+                                                    <i class="fas fa-paper-plane-o ml-1"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
+                               data-target="#productEdit" style="width: 85px">Edit<i
+                                    class="fas fa-plus-square ml-1"></i></a>
+                        </div>
+                    </td>
+                    <td class="remove__product">
+                        <div class="modal fade" id="productDelete" tabindex="-1" role="dialog"
+                             aria-labelledby="modalDelete1"
+                             aria-hidden="true">
+
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header text-center">
+                                        <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Delete</h4>
+                                        <button type="button" class="close text-danger" data-dismiss="modal"
+                                                aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body mx-3">
+                                        <p class="text-center h4">Are you sure to delete selected row?</p>
+
+                                    </div>
+                                    <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
+                                        <button type="button" class="btn btn-danger btnYesClass" id="yesDeleteProduct"
+                                                data-dismiss="modal" type="submit">Yes
+                                        </button>
+                                        <button type="button" class="btn btn-primary btnNoClass" id="noDeleteProduct"
+                                                data-dismiss="modal">No
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
+                               data-target="#productDelete" style="width: 97px">Delete<i
+                                    class="fas fa-plus-square ml-1"></i></a>
+                        </div>
                     </td>
                 </tr>
                 <%
@@ -414,284 +436,12 @@
                     <th class="th-sm">Quantity</th>
                     <th class="th-sm">Description</th>
                     <th class="th-sm">Status</th>
+                    <th class="th-sm">Edit</th>
+                    <th class="th-sm">Remove</th>
                 </tr>
                 </tfoot>
             </table>
         </div>
-
-        <!-- User -->
-        <!--
-                            <div class="wrapper-editor" id="page2">
-
-                                <div class="block my-4">
-
-                                    <div class="input-group mb-3 col-lg-5">
-                                        <input type="text" id="find" class="form-control" placeholder="Type something..."
-                                            aria-label="Type something..." aria-describedby="button-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-info btn-rounded btn-sm" type="button" id="button-addon2"
-                                                onclick="">Button</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-center">
-                                        <p class="h5 text-primary createShowP">0 row selected</p>
-                                    </div>
-                                </div>
-
-                                <script>
-                                    function findProduct() {
-                                        const inputElement = document.getElementById('find');
-                                        const valueInput = inputElement.value;
-
-                                    }
-                                </script>
-
-                                <div class="row d-flex justify-content-center modalWrapper">
-                                    <div class="modal fade addNewInputs" id="modalAdd1" tabindex="-1" role="dialog"
-                                        aria-labelledby="modalAdd" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header text-center">
-                                                    <h4 class="modal-title w-100 font-weight-bold text-primary ml-5">Add new form</h4>
-                                                    <button type="button" class="close text-primary" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body mx-3">
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="inputName1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right" for="inputName1">Name</label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="inputPosition1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right"
-                                                            for="inputPosition1">Position</label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="inputOfficeInput1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right"
-                                                            for="inputOfficeInput1">Office</label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="inputAge1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right" for="inputAge1">Age</label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="date" id="inputDate1" class="form-control"
-                                                            placeholder="Select Date">
-                                                        <label data-error="wrong" data-success="right" for="inputDate1"></label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="inputSalary1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right" for="inputSalary1">Salary</label>
-                                                    </div>
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="inputSalary1example" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right"
-                                                            for="inputSalary1example">Example</label>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer d-flex justify-content-center buttonAddFormWrapper">
-                                                    <button class="btn btn-outline-primary btn-block buttonAdd" data-dismiss="modal"
-                                                        onclick="">Add
-                                                        form
-                                                        <i class="fas fa-paper-plane-o ml-1"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="text-center">
-                                        <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                                            data-target="#modalAdd1">Add<i class="fas fa-plus-square ml-1"></i></a>
-                                    </div>
-
-                                    <div class="modal fade modalEditClass" id="modalEdit1" tabindex="-1" role="dialog"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header text-center">
-                                                    <h4 class="modal-title w-100 font-weight-bold text-secondary ml-5">Edit form</h4>
-                                                    <button type="button" class="close text-secondary" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body mx-3">
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="formNameEdit1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right" for="formNameEdit1">Name</label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="formPositionEdit1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right"
-                                                            for="formPositionEdit1">Position</label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="formOfficeEdit1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right"
-                                                            for="formOfficeEdit1">Office</label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="formAgeEdit1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right" for="formAgeEdit1">Age</label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="formDateEdit1" class="form-control datepicker">
-                                                        <label data-error="wrong" data-success="right" for="formDateEdit1">Date</label>
-                                                    </div>
-
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="formSalaryEdit1" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right"
-                                                            for="formSalaryEdit1">Salary</label>
-                                                    </div>
-                                                    <div class="md-form mb-5">
-                                                        <input type="text" id="formSalaryEdit1ex" class="form-control validate">
-                                                        <label data-error="wrong" data-success="right"
-                                                            for="formSalaryEdit1ex">Example</label>
-                                                    </div>
-
-
-                                                </div>
-                                                <div class="modal-footer d-flex justify-content-center editInsideWrapper">
-                                                    <button class="btn btn-outline-secondary btn-block editInside"
-                                                        data-dismiss="modal">Edit
-                                                        form
-                                                        <i class="fas fa-paper-plane-o ml-1"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center buttonEditWrapper">
-                                        <button class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal"
-                                            data-target="#modalEdit1" disabled>Edit<i class="fas fa-pencil-square-o ml-1"></i></a>
-                                            </button>
-                                    </div>
-
-                                    <div class="modal fade" id="modalDelete1" tabindex="-1" role="dialog" aria-labelledby="modalDelete1"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header text-center">
-                                                    <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Delete</h4>
-                                                    <button type="button" class="close text-danger" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body mx-3">
-                                                    <p class="text-center h4">Are you sure to delete selected row?</p>
-
-                                                </div>
-                                                <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
-                                                    <button type="button" class="btn btn-danger btnYesClass" id="btnYes1"
-                                                        data-dismiss="modal">Yes</button>
-                                                    <button type="button" class="btn btn-primary btnNoClass" id="btnNo1"
-                                                        data-dismiss="modal">No</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button class="btn btn-danger btn-sm btn-rounded buttonDelete" data-toggle="modal" disabled
-                                            data-target="#modalDelete" disabled>Delete<i class="fas fa-times ml-1"></i></a>
-                                    </div>
-                                </div>
-
-                                <table id="dt-more-columns" onclick="addRowHandlers()" class="table table-striped table-bordered"
-                                    cellspacing="0" width="100%">
-                                    <thead>
-                                        <tr>
-                                            <th class="th-sm">Id
-
-                                            </th>
-                                            <th class="th-sm">Image
-
-                                            </th>
-                                            <th class="th-sm">Name
-
-                                            </th>
-                                            <th class="th-sm">Category
-
-                                            </th>
-                                            <th class="th-sm">Quantity
-
-                                            </th>
-                                            <th class="th-sm">Price
-
-                                            </th>
-                                            <th class="th-sm">SalePrice
-
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tableBody">
-                                        <tr>
-                                            <td>ewifhoi</td>
-                                            <td><img src="img/01-85x85.jpg" alt=""></td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td>Example</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ewifhoi</td>
-                                            <td><img src="img/01-85x85.jpg" alt=""></td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td>Example</td>
-                                        </tr>
-
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th class="th-sm">Id
-
-                                            </th>
-                                            <th class="th-sm">Image
-
-                                            </th>
-                                            <th class="th-sm">Name
-
-                                            </th>
-                                            <th class="th-sm">Category
-
-                                            </th>
-                                            <th class="th-sm">Quantity
-
-                                            </th>
-                                            <th class="th-sm">Price
-
-                                            </th>
-                                            <th class="th-sm">SalePrice
-
-                                            </th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-        -->
     </div>
 </div>
 <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -735,7 +485,7 @@
     $('.dataTables_length').addClass('bs-select');
 </script>
 -->
-<script>
+<%--<script>
     function addRowHandlers() {
         var table = document.getElementById("dt-more-columns");
         var rows = table.getElementsByTagName("tr");
@@ -752,7 +502,7 @@
             currentRow.onclick = createClickHandler(currentRow);
         }
     }
-</script>
+</script>--%>
 
 
 <script>

@@ -67,7 +67,7 @@
                                 </p>
                             </div>
                             <div class="button__level2">
-                                <a href="#">Continue</a>
+                                <a href="register.jsp">Continue</a>
                             </div>
                         </form>
                     </div>

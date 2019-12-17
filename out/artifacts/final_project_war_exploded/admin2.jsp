@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form action="<%=Utils.fullPath("AddProductServlet")%>" method="post">
+<%--<form action="<%=Utils.fullPath("AddProductServlet")%>" method="post">
     <input name="productId" type="text"/>
     <input name="productName" type="text"/>
     <input name="productImage" type="text"/>
@@ -25,7 +25,7 @@
     <button type="submit">
         add
     </button>
-</form>
+</form>--%>
 
 </body>
 </html>

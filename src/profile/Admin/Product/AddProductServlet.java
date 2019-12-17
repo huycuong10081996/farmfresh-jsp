@@ -24,6 +24,9 @@ public class AddProductServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf8");
+        response.setCharacterEncoding("utf8");
+
         Calendar calendars = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
@@ -31,22 +34,28 @@ public class AddProductServlet extends HttpServlet {
         String times = timeFormat.format(calendars.getTime());
         String productCreateAt = dates + " " + times;
 
-        String productId = request.getParameter("productId");
-        String productName = request.getParameter("productName");
-        String productImage = request.getParameter("productImage");
-        double productPrice = Double.parseDouble(request.getParameter("productPrice"));
-        double productSalePrice = Double.parseDouble(request.getParameter("productSalePrice"));
-        String productCategoryId = request.getParameter("productCategoryId");
-        int productQuantity = Integer.parseInt(request.getParameter("productQuantity"));
-        String productDescription = request.getParameter("productDescription");
-        int productStatus = Integer.parseInt(request.getParameter("productStatus"));
+        String productId = request.getParameter("productId").trim();
+        String productName = request.getParameter("productName").trim();
+        String productImage = request.getParameter("productImage").trim();
+        double productPrice = Double.parseDouble(request.getParameter("productPrice").trim());
+        double productSalePrice = Double.parseDouble(request.getParameter("productSalePrice").trim());
+        String productCategoryId = request.getParameter("productCategoryId").trim();
+        int productQuantity = Integer.parseInt(request.getParameter("productQuantity").trim());
+        String productDescription = request.getParameter("productDescription").trim();
+        int productStatus = Integer.parseInt(request.getParameter("productStatus").trim());
 
         try {
-            productDAOImp.addProduct(new Product(productId, productName, productImage, productPrice, productSalePrice, productCategoryId, "AD01", productCreateAt, productQuantity, productDescription, productStatus));
+            productDAOImp.addProduct(new Product(productId, productName, productImage, productPrice, productSalePrice, productCategoryId, "AD03", productCreateAt, productQuantity, productDescription, productStatus));
+/*
             response.sendRedirect("admin2.jsp");
+*/
+            response.sendRedirect("AdminHomeProductServlet");
         } catch (Exception e) {
             e.printStackTrace();
+/*
             request.getRequestDispatcher("admin2.jsp").forward(request, response);
+*/
+            request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet")).forward(request, response);
         }
     }
 }

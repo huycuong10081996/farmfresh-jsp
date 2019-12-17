@@ -7,21 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/profile/Admin/Product/EditProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/ForgotPasswordServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/LoginAdminServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Controller/ProductDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Controller/ProductDAOImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Product/AddProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Product/AddProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/Model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/change-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/change-password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/forgot-password.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/forgot-password.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/forgot-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/forgot-password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/Controller/ProductDAOImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Controller/ProductDAOImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Product/AddProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Product/AddProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReviewDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReviewDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReviewDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReviewDAOImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProductDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/profile/Admin/Product/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Product/AddProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/ProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/ProductDetailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Review/AddReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Review/AddReviewServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Review/RemoveReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Review/RemoveReviewServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/product-detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/change-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/change-password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/forgot-password.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/forgot-password.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/forgot-password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/forgot-password.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/product-detail.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -284,7 +294,8 @@
       <workItem from="1576487676761" duration="164000" />
       <workItem from="1576501318368" duration="589000" />
       <workItem from="1576502675706" duration="1866000" />
-      <workItem from="1576557474796" duration="3425000" />
+      <workItem from="1576557474796" duration="8109000" />
+      <workItem from="1576581462340" duration="4760000" />
     </task>
     <servers />
   </component>

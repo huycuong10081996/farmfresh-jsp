@@ -32,7 +32,7 @@ public class ProductDAOImp implements ProductDAO {
 
     @Override
     public void updateProduct(Product product) {
-        String sql = "update product set product_name = ?, product_image = ?, product_price = ?, product_salePrice = ?, product_categoryId = ?, product_createAt =?, product_quantity = ?, product_description = ?, product_status =?";
+        String sql = "update product set product_name = ?, product_image = ?, product_price = ?, product_salePrice = ?, product_categoryId = ?, product_createAt = ?, product_quantity = ?, product_description = ?, product_status =? where product_id = ?";
         PreparedStatement preparedStatement;
         try {
             preparedStatement = ConnectionDB.getPreparedStatement(sql);
@@ -45,6 +45,7 @@ public class ProductDAOImp implements ProductDAO {
             preparedStatement.setInt(7, product.getProductQuantity());
             preparedStatement.setString(8, product.getProductDescription());
             preparedStatement.setInt(9, product.getProductStatus());
+            preparedStatement.setString(10, product.getProductId());
             preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

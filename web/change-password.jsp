@@ -118,10 +118,10 @@
                                         <a href="my-account.jsp" class="continue">Back</a>
                                     </div>
 
-                                    <button type="submit" class="continue__button">
-                                        Continue
-                                    </button>
-                                </div>
+
+                                </div><button type="submit" class="continue__button">
+                                Continue
+                            </button>
                             </div>
 
                         </div>
