@@ -42,7 +42,8 @@ public class DeleteServlet extends HttpServlet {
                     if (item.getProduct().getProductId().equals(id)) {
                         if (item.getQuantity() != 1) {
                             item.setQuantity(item.getQuantity() - 1);
-                            itemDAOImp.updateItem(item.getQuantity() - 1, item.getItemID());
+                            itemDAOImp.updateItem(item);
+                            ordersDAOImp.updateTotalOrder(orders);
                         } else {
                             itemIterator.remove();
                             itemDAOImp.deleteItem(item);
@@ -53,6 +54,7 @@ public class DeleteServlet extends HttpServlet {
                     ordersDAOImp.deleteOrders(orders.getOrderId());
                 }
                 orders.setItems(list);
+                ordersDAOImp.updateTotalOrder(orders);
             }
             session.setAttribute("order", orders);
         } catch (NumberFormatException e) {

@@ -14,12 +14,20 @@
                class="dropdown-toggle">Pages</a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li class="active">
-                    <a href="<%=Utils.fullPath("AdminHomeProductServlet")%>">Product</a>
+                    <a href="<%=Utils.fullPath("AdminHomeProductServlet")%>">Products</a>
                 </li>
                 <li>
-                    <a href="<%=Utils.fullPath("AdminHomeUserServlet")%>">User</a>
+                    <a href="<%=Utils.fullPath("AdminHomeUserServlet")%>">Users</a>
                 </li>
-
+                <li>
+                    <a href="<%=Utils.fullPath("AdminHomeCategoryServlet")%>">Categories</a>
+                </li>
+                <li>
+                    <a href="<%=Utils.fullPath("AdminHomeOrderServlet")%>">Orders</a>
+                </li>
+                <li>
+                    <a href="<%=Utils.fullPath("AdminHomeItemServlet")%>">Order Items</a>
+                </li>
             </ul>
         </li>
 
@@ -30,7 +38,7 @@
 
     <ul class="list-unstyled CTAs">
         <li>
-            <a href="http://localhost:8080/final-project/HomeSerlet" class="article">Back to article</a>
+            <a href="http://localhost:8080/final_project/HomeServlet" class="article">Back to article</a>
         </li>
     </ul>
 </nav>

@@ -75,13 +75,13 @@ public class UpdateUserServlet extends HttpServlet {
         }
 
         if (firstNameMatcher.matches() && lastNameMatcher.matches() && emailMatcher.matches() && phoneMatcher.matches() && passMatcher.matches()) {
-            */try {
-                userDAOImp.updateUser(new User(userIdEdit, userFirstNameEdit, userLastNameEdit, userEmailEdit, userPasswordEdit, userPhoneEdit));
-                response.sendRedirect("AdminHomeUserServlet");
-            } catch (Exception e) {
-                e.printStackTrace();
-                request.getRequestDispatcher(Utils.fullPath("AdminHomeUserServlet")).forward(request, response);
-        /*    }*/
+        }*/
+        try {
+            userDAOImp.updateUser(new User(userIdEdit, userFirstNameEdit, userLastNameEdit, userEmailEdit, userPasswordEdit, userPhoneEdit));
+            response.sendRedirect("AdminHomeUserServlet");
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.getRequestDispatcher(Utils.fullPath("AdminHomeUserServlet")).forward(request, response);
         }
     }
 }

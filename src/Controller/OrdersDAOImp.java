@@ -13,7 +13,7 @@ import java.util.UUID;
 public class OrdersDAOImp implements OrdersDAO{
     @Override
     public void addOrdersWithUser(Orders orders) {
-        String sql = "insert into orders(orders_id, orders_userId, orders_status, orders_createAt, orders_register) value(?, ?, ?, ?, ?)";
+        String sql = "insert into orders(orders_id, orders_userId, orders_status, orders_createAt) value(?, ?, ?, ?)";
         PreparedStatement preparedStatement;
         try {
             preparedStatement = ConnectionDB.getPreparedStatement(sql);
@@ -24,12 +24,26 @@ public class OrdersDAOImp implements OrdersDAO{
             preparedStatement.setInt(3, 0);
             //Orders status bằng 0 có nghĩa là order của người dùng chưa được đk địa chỉ và xác nhận thanh toán
             preparedStatement.setString(4, orders.getOrdersCreateAt());
-            preparedStatement.setInt(5, 1);
             preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void updateTotalOrder(Orders orders) {
+        String sql = "update orders set orders_totalPrice = ? where orders_id = ? ";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = ConnectionDB.getPreparedStatement(sql);
+            preparedStatement.setDouble(1, orders.totalOrder());
+            preparedStatement.setString(2, orders.getOrderId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public void addOrder(Orders orders) {

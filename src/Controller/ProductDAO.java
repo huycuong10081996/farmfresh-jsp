@@ -9,4 +9,8 @@ public interface ProductDAO {
     public void updateProduct(Product product);
 
     public void deleteProduct(String productId);
+
+    public boolean checkProduct(String productId);
+
+    public void deleteProductFromCategory(String categoryId);
 }

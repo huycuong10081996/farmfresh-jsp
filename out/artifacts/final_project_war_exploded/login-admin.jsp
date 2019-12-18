@@ -24,19 +24,19 @@
             <p class="h4 mb-4">Sign in</p>
 
             <!-- Email -->
-            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" name="adminLogin">
+            <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="name" name="adminNameLogin">
 
             <!-- Password -->
-            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" name="adminPassword">
+            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" name="adminPasswordLogin">
 
             <div class="d-flex justify-content-around">
-                <div>
+                <%--<div>
                     <!-- Remember me -->
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
                         <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
                     </div>
-                </div>
+                </div>--%>
 
                 <div class="forgot">
                     <!-- Forgot password -->

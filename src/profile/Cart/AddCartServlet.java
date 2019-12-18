@@ -42,13 +42,11 @@ public class AddCartServlet extends HttpServlet {
                 if (session.getAttribute("order") == null) {
                     if (session.getAttribute("user") == null) {
                         Orders orders = new Orders();
-                        ordersDAOImp.addOrder(orders);
                         List<Item> listItem = new ArrayList<>();
                         Item item = new Item();
                         item.setQuantity(quantity);
                         item.setProduct(product);
                         item.setOrdersId(orders.getOrderId());
-                        itemDAOImp.addItem(item);
                         item.setPrice(product.getProductPrice());
                         item.setSalePrice(product.getProductSalePrice());
                         listItem.add(item);
@@ -63,11 +61,12 @@ public class AddCartServlet extends HttpServlet {
                         item.setQuantity(quantity);
                         item.setProduct(product);
                         item.setOrdersId(orders.getOrderId());
-                        itemDAOImp.addItem(item);
                         item.setPrice(product.getProductPrice());
                         item.setSalePrice(product.getProductSalePrice());
+                        itemDAOImp.addItem(item);
                         listItem.add(item);
                         orders.setItems(listItem);
+                        ordersDAOImp.updateTotalOrder(orders);
                         session.setAttribute("order", orders);
                     }
                 } else {
@@ -78,7 +77,6 @@ public class AddCartServlet extends HttpServlet {
                         for (Item item : listItem) {
                             if (item.getProduct().getProductId().equals(product.getProductId())) {
                                 item.setQuantity(item.getQuantity() + quantity);
-                                itemDAOImp.updateItem(item.getQuantity() + quantity, item.getItemID());
                                 check = true;
                             }
                         }
@@ -87,7 +85,6 @@ public class AddCartServlet extends HttpServlet {
                             item.setQuantity(quantity);
                             item.setProduct(product);
                             item.setOrdersId(orders.getOrderId());
-                            itemDAOImp.addItem(item);
                             item.setPrice(product.getProductPrice());
                             item.setSalePrice(product.getProductSalePrice());
                             listItem.add(item);
@@ -102,7 +99,8 @@ public class AddCartServlet extends HttpServlet {
                         for (Item item : listItem) {
                             if (item.getProduct().getProductId().equals(product.getProductId())) {
                                 item.setQuantity(item.getQuantity() + quantity);
-                                itemDAOImp.updateItem(item.getQuantity() + quantity, item.getItemID());
+                                itemDAOImp.updateItem(item);
+                                ordersDAOImp.updateTotalOrder(orders);
                                 check = true;
                             }
                         }
@@ -111,10 +109,11 @@ public class AddCartServlet extends HttpServlet {
                             item.setQuantity(quantity);
                             item.setProduct(product);
                             item.setOrdersId(orders.getOrderId());
-                            itemDAOImp.addItem(item);
                             item.setPrice(product.getProductPrice());
                             item.setSalePrice(product.getProductSalePrice());
+                            itemDAOImp.addItem(item);
                             listItem.add(item);
+                            ordersDAOImp.updateTotalOrder(orders);
                         }
                         session.setAttribute("order", orders);
                     }

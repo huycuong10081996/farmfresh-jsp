@@ -57,7 +57,7 @@ public class AddReviewServlet extends HttpServlet {
         if (!reviewMatcher.matches() || reviewContent.equals("")) {
             String errReview = "Please write here your review.";
             request.setAttribute("errReview", errReview);
-            request.getRequestDispatcher(Utils.fullPath("ProductDetailServlet?productDetailId=" + reviewProductId)).forward(request, response);
+            request.getRequestDispatcher("ProductDetailServlet?productDetailId=" + reviewProductId).forward(request, response);
         }
 
         if (reviewMatcher.matches()) {

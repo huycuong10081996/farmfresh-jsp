@@ -1,10 +1,14 @@
 package Controller;
 
+import Model.Category;
 import Model.Product;
+import profile.Review.UpdateReviewServlet;
 import vn.edu.nlu.fit.DB.ConnectionDB;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ProductDAOImp implements ProductDAO {
     @Override
@@ -59,6 +63,41 @@ public class ProductDAOImp implements ProductDAO {
         try {
             preparedStatement = ConnectionDB.getPreparedStatement(sql);
             preparedStatement.setString(1, productId);
+            preparedStatement.executeUpdate();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public boolean checkProduct(String productId) {
+        String sql = "select product_id from product";
+        ArrayList<String> listId = new ArrayList<>();
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = ConnectionDB.getPreparedStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                listId.add(resultSet.getString(1));
+            }
+            for (String ignored : listId) {
+                if (productId.equals(ignored)) {
+                    return true;
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public void deleteProductFromCategory(String categoryId) {
+        String sql = "delete from product where product_categoryId = ?";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = ConnectionDB.getPreparedStatement(sql);
+            preparedStatement.setString(1, categoryId);
             preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
