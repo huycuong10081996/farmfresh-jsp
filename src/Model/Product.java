@@ -15,12 +15,9 @@ public class Product implements  Comparable<Product> {
     private double productPrice;
     private double productSalePrice;
     private String productDescription;
-   /* private Category productCategory;
-    private Admin productCreateBy;*/
     private String productCreateById;
     private int productQuantity;
     private String productCreateAt;
-   /* private String categoryId;*/
     private String productCategoryTitle;
     private String productCategoryId;
 
@@ -158,22 +155,6 @@ public class Product implements  Comparable<Product> {
         this.productDescription = productDescription;
     }
 
- /*   public Category getProductCategory() {
-        return productCategory;
-    }
-
-    public void setProductCategory(Category productCategory) {
-        this.productCategory = productCategory;
-    }
-
-    public Admin getProductCreateBy() {
-        return productCreateBy;
-    }
-
-    public void setProductCreateBy(Admin productCreateBy) {
-        this.productCreateBy = productCreateBy;
-    }*/
-
     public int getProductQuantity() {
         return productQuantity;
     }
@@ -190,14 +171,6 @@ public class Product implements  Comparable<Product> {
         this.productCreateAt = productCreateAt;
     }
 
-   /* public String getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
-*/
     public String getProductCategoryTitle() {
         return productCategoryTitle;
     }

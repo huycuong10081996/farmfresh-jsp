@@ -71,6 +71,7 @@ public class UserDAOImp implements UserDAO {
             preparedStatement.setString(5, u.getUserPassword());
             preparedStatement.setString(6, u.getUserPhone());
             preparedStatement.setString(7, u.getUserId());
+            preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

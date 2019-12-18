@@ -116,7 +116,7 @@
                                 %>
 
                                 <div class="md-form mb-5">
-                                    <input type="text" id="userEmail" class="form-control validate"
+                                    <input type="email" id="userEmail" class="form-control validate"
                                            placeholder="Email Address" name="userEmail" required="required">
                                 </div>
 
@@ -126,7 +126,7 @@
                                 %>
                                 <div class="md-form mb-5">
                                     <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
-                                <span><%=errEmail%></span>
+                                        <span><%=errEmail%></span>
                                     </div>
                                 </div>
                                 <%
@@ -235,7 +235,7 @@
                 </td>
                 <td><%=userPhone%>
                 </td>
-                <td class="edit__product">
+                <td class="edit__user">
                     <div class="modal fade modalEditClass" id="<%=userId%>" tabindex="-1" role="dialog"
                          aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -248,44 +248,120 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form action="#"
+                                <form action="<%=Utils.fullPath("UpdateUserServlet?userIdEdit=" + userId)%>"
                                       method="post">
                                     <div class="modal-body mx-3">
                                         <div class="md-form mb-5">
                                             <input type="text" name="userFirstNameEdit"
                                                    class="form-control validate"
-                                                   placeholder="Name" required="required"
-                                                   value="<%=userFirstName%>">
+                                                   placeholder="First Name" required="required"
+                                                   value="<%=userFirstName%>"
+                                                   pattern="[A-Za-z. ]{3,30}"
+                                                   oninvalid="setCustomValidity('**First Name phải tối thiểu 3 ký tự, tối đa 30 ký tự, không có số, không có ký tự đặc biệt.')"
+                                                   oninput="setCustomValidity('')">
                                         </div>
+
+                                        <%
+                                            String errFirstNameEdit = (String) request.getAttribute("errUserFirstNameEdit");
+                                            if (errFirstNameEdit != null) {
+                                        %>
+                                        <div class="md-form mb-5">
+                                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                                <span><%=errFirstNameEdit%></span>
+                                            </div>
+                                        </div>
+                                        <%
+                                            }
+                                        %>
 
                                         <div class="md-form mb-5">
                                             <input type="text" name="userLastNameEdit"
                                                    class="form-control validate"
-                                                   placeholder="Image" required="required"
-                                                   value="<%=userLastName%>">
+                                                   placeholder="Last Name" required="required"
+                                                   value="<%=userLastName%>"
+                                                   pattern="[A-Za-z. ]{3,30}"
+                                                   oninvalid="setCustomValidity('**Last Name phải tối thiểu 3 ký tự, tối đa 30 ký tự, không có số, không có ký tự đặc biệt.')"
+                                                   oninput="setCustomValidity('')">
                                         </div>
 
+                                        <%
+                                            String errLastNameEdit = (String) request.getAttribute("errUserLastNameEdit");
+                                            if (errLastNameEdit != null) {
+                                        %>
                                         <div class="md-form mb-5">
-                                            <input type="text" name="userEmailEdit"
+                                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                                <span><%=errLastNameEdit%></span>
+                                            </div>
+                                        </div>
+                                        <%
+                                            }
+                                        %>
+
+                                        <div class="md-form mb-5">
+                                            <input type="email" name="userEmailEdit"
                                                    class="form-control validate"
-                                                   placeholder="Price" required="required"
+                                                   placeholder="Email Address" required="required"
                                                    value="<%=userEmail%>">
                                         </div>
+
+                                        <%
+                                            String errEmailEdit = (String) request.getAttribute("errUserEmailEdit");
+                                            if (errEmailEdit != null) {
+                                        %>
+                                        <div class="md-form mb-5">
+                                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                                <span><%=errEmailEdit%></span>
+                                            </div>
+                                        </div>
+                                        <%
+                                            }
+                                        %>
 
                                         <div class="md-form mb-5">
                                             <input type="text" name="userPasswordEdit"
                                                    class="form-control validate"
-                                                   placeholder="Sale Price" required="required"
-                                                   value="<%=userPassword%>">
+                                                   placeholder="Password" required="required"
+                                                   value="<%=userPassword%>"
+                                                   pattern="^(?=.*?[A-Za-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$"
+                                                   oninvalid="setCustomValidity('**Password phải có ít nhất một ký tự viết hoa, một ký tự đặc biệt, một ký tự số. ')"
+                                                   oninput="setCustomValidity('')"/>
                                         </div>
+
+                                        <%
+                                            String errPassEdit = (String) request.getAttribute("errUserPassEdit");
+                                            if (errPassEdit != null) {
+                                        %>
+                                        <div class="md-form mb-5">
+                                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                                <span><%=errPassEdit%></span>
+                                            </div>
+                                        </div>
+                                        <%
+                                            }
+                                        %>
 
                                         <div class="md-form mb-5">
                                             <input type="text"
                                                    name="userPhoneEdit"
                                                    class="form-control validate"
-                                                   placeholder="Category" required="required"
-                                                   value="<%=userPhone%>">
+                                                   placeholder="Phone Number" required="required"
+                                                   value="<%=userPhone%>" pattern="^[0-9]{9,11}$"
+                                                   oninvalid="setCustomValidity('**Số điện thoại phải là ký tự số và tối thiểu 9 ký tự và tối đa 11 ký tự.')"
+                                                   oninput="setCustomValidity('')"/>
                                         </div>
+
+                                        <%
+                                            String errPhoneEdit = (String) request.getAttribute("errUserPhoneEdit");
+                                            if (errPhoneEdit != null) {
+                                        %>
+                                        <div class="md-form mb-5">
+                                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                                <span><%=errPhoneEdit%></span>
+                                            </div>
+                                        </div>
+                                        <%
+                                            }
+                                        %>
 
                                         <div class="modal-footer d-flex justify-content-center editInsideWrapper">
                                             <button class="btn btn-outline-secondary btn-block editInside"
@@ -307,7 +383,7 @@
                     </div>
                 </td>
 
-                <td class="remove__product">
+                <td class="remove__user">
                     <div class="modal fade" id="<%="remove" + userId%>" tabindex="-1" role="dialog"
                          aria-labelledby="modalDelete1"
                          aria-hidden="true">
