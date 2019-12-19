@@ -28,7 +28,6 @@ public class AdminHomeCategoryServlet extends HttpServlet {
             request.setAttribute("adminCategory", resultSet);
 
             request.getRequestDispatcher("admin/admin-category.jsp").forward(request, response);
-
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

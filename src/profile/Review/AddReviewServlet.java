@@ -64,7 +64,7 @@ public class AddReviewServlet extends HttpServlet {
             try {
                 if (user != null) {
                     reviewDAOImp.addReview(new Review(reviewId, user.getUserId(), reviewCreateAt, rating, reviewContent, reviewProductId));
-                    response.sendRedirect(Utils.fullPath("ProductDetailServlet?productDetailId=" + reviewProductId));
+                    response.sendRedirect("ProductDetailServlet?productDetailId=" + reviewProductId);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

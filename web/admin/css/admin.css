@@ -219,6 +219,6 @@ a.article:hover {
 }
 
 /*  */
-.custom__sidebar {
-  background: url(../img/header-bkg.jpg);
+#sidebar {
+  background: url("../img/header-bkg.jpg");
 }

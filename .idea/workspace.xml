@@ -7,44 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/profile/Admin/AdminLogout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/admin/img/header-bkg.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/Model/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Category/AddCategoryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Category/AddCategoryServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Product/AddProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Product/AddProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/loginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/loginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/logoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/logoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-category.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-item.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/adminOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/adminOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/nav-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/nav-bar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/slide-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/slide-bar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/login-admin.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/Model/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/Model/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Category/AddCategoryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Category/AddCategoryServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Product/AddProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Product/AddProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/loginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/loginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/logoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/logoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Category/AddCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Category/AddCategoryServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Product/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Product/AddProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/LoginAdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/AdminLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/admin-category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin-category.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/admin-item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin-item.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/admin-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/adminOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/adminOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/nav-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/nav-bar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/slide-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/slide-bar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/login-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/login-admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login-admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/loginAdmin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Category/AdminHomeCategoryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Category/AdminHomeCategoryServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Category/AdminHomeCategoryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Category/AdminHomeCategoryServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Category/AdminHomeCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Category/AdminHomeCategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Review/AddReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Review/AddReviewServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/css/admin.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +67,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/admin/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -112,16 +82,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\farmfresh-jsp\web" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\farmfresh-jsp\web\admin\img" />
       <recent name="D:\farmfresh-jsp\web" />
       <recent name="D:\farmfresh-jsp\web\img" />
       <recent name="D:\farmfresh-jsp\web\css" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\farmfresh-jsp\web" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -313,6 +284,8 @@
       <workItem from="1576649893324" duration="3858000" />
       <workItem from="1576676240189" duration="17351000" />
       <workItem from="1576728837153" duration="7840000" />
+      <workItem from="1576736849665" duration="319000" />
+      <workItem from="1576745797719" duration="1361000" />
     </task>
     <servers />
   </component>
