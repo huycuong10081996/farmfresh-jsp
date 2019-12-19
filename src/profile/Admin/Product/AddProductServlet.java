@@ -27,6 +27,9 @@ public class AddProductServlet extends HttpServlet {
         request.setCharacterEncoding("utf8");
         response.setCharacterEncoding("utf8");
 
+        HttpSession session = request.getSession();
+        Admin admin = (Admin) session.getAttribute("admin");
+
         Calendar calendars = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
@@ -45,7 +48,7 @@ public class AddProductServlet extends HttpServlet {
         int productStatus = Integer.parseInt(request.getParameter("productStatus").trim());
 
         try {
-            productDAOImp.addProduct(new Product(productId, productName, productImage, productPrice, productSalePrice, productCategoryId, "AD03", productCreateAt, productQuantity, productDescription, productStatus));
+            productDAOImp.addProduct(new Product(productId, productName, productImage, productPrice, productSalePrice, productCategoryId, admin.getAdminId(), productCreateAt, productQuantity, productDescription, productStatus));
             response.sendRedirect("AdminHomeProductServlet");
         } catch (Exception e) {
             e.printStackTrace();

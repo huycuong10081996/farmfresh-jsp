@@ -1,6 +1,7 @@
 package profile.Admin.Category;
 
 import Controller.CategoryDAO;
+import Model.Admin;
 import Model.Category;
 import vn.edu.nlu.fit.Utils.Utils;
 
@@ -9,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -53,9 +55,12 @@ public class AddCategoryServlet extends HttpServlet {
             request.getRequestDispatcher("AdminHomeCategoryServlet").forward(request, response);
         }
 
+        HttpSession session = request.getSession();
+        Admin admin = (Admin) session.getAttribute("admin");
+
         if (idMatcher.matches() && titleMatcher.matches()) {
             try {
-                categoryDAO.addCategory(new Category(categoryId, categoryTitle, "AD03"));
+                categoryDAO.addCategory(new Category(categoryId, categoryTitle, admin.getAdminId()));
                 response.sendRedirect(Utils.fullPath("AdminHomeCategoryServlet"));
             } catch (Exception e) {
                 e.printStackTrace();

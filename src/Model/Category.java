@@ -10,7 +10,7 @@ public class Category {
     private Admin admin;
     private ArrayList<Product> productArrayList;
 
-    public  Category () {}
+    public Category() {}
 
     public Category(String categoryId, String categoryTitle, String categoryCreateBy) {
         this.categoryId = categoryId;

@@ -33,6 +33,10 @@
 </head>
 
 <body>
+<%
+    Admin admin = (Admin) session.getAttribute("admin");
+    if (admin != null) {
+%>
 <div class="wrapper">
 
     <%@include file="slide-bar.jsp" %>
@@ -465,5 +469,10 @@
         });
     });
 </script>
+<%
+    } else {
+        response.sendRedirect("loginAdmin.jsp");
+    }
+%>
 </body>
 </html>

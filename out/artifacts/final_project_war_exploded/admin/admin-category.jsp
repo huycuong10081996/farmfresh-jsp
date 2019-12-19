@@ -33,6 +33,10 @@
 </head>
 
 <body>
+<%
+    Admin admin = (Admin) session.getAttribute("admin");
+    if (admin != null) {
+%>
 <div class="wrapper">
 
     <%@include file="slide-bar.jsp" %>
@@ -139,9 +143,9 @@
                 <th class="th-sm">Id</th>
                 <th class="th-sm">Title</th>
                 <th class="th-sm">Create By</th>
-<%--
-                <th class="th-sm">Product Quantity</th>
---%>
+                <%--
+                                <th class="th-sm">Product Quantity</th>
+                --%>
                 <th class="th-sm">Edit</th>
                 <th class="th-sm">Remove</th>
             </tr>
@@ -202,18 +206,18 @@
                                                    oninput="setCustomValidity('')">
                                         </div>
 
-                                            <%
-                                                String errCategoryTitleEdit = (String) request.getAttribute("errCategoryTitleEdit");
-                                                if (errCategoryTitleEdit != null) {
-                                            %>
-                                            <div class="md-form mb-5">
-                                                <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
-                                                    <span><%=errCategoryTitleEdit%></span>
-                                                </div>
+                                        <%
+                                            String errCategoryTitleEdit = (String) request.getAttribute("errCategoryTitleEdit");
+                                            if (errCategoryTitleEdit != null) {
+                                        %>
+                                        <div class="md-form mb-5">
+                                            <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                                <span><%=errCategoryTitleEdit%></span>
                                             </div>
-                                            <%
-                                                }
-                                            %>
+                                        </div>
+                                        <%
+                                            }
+                                        %>
 
                                         <div class="modal-footer d-flex justify-content-center editInsideWrapper">
                                             <button class="btn btn-outline-secondary btn-block editInside"
@@ -281,9 +285,9 @@
                 <th class="th-sm">Id</th>
                 <th class="th-sm">Title</th>
                 <th class="th-sm">Create By</th>
-<%--
-                <th class="th-sm">Product Quantity</th>
---%>
+                <%--
+                                <th class="th-sm">Product Quantity</th>
+                --%>
                 <th class="th-sm">Edit</th>
                 <th class="th-sm">Remove</th>
             </tr>
@@ -315,5 +319,10 @@
         });
     });
 </script>
+<%
+    } else {
+        response.sendRedirect("loginAdmin.jsp");
+    }
+%>
 </body>
 </html>

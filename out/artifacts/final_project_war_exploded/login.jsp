@@ -94,6 +94,7 @@
                             <%
                                 } else {
                             %>
+
                             <div>
                                 <p>Email Address</p>
                                 <input type="text" name="emailLogin" required="required" id="" placeholder="E-Mail Address..."/>

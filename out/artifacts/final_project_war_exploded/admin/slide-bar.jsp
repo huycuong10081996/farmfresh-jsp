@@ -30,15 +30,14 @@
                 </li>
             </ul>
         </li>
-
-        <li>
+        <%--<li>
             <a href="#">Contact</a>
-        </li>
+        </li>--%>
     </ul>
 
     <ul class="list-unstyled CTAs">
         <li>
-            <a href="http://localhost:8080/final_project/HomeServlet" class="article">Back to article</a>
+            <a href="http://localhost:8080/final_project/HomeServlet" class="article">Back to website</a>
         </li>
     </ul>
 </nav>

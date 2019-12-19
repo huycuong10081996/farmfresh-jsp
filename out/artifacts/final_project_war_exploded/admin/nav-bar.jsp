@@ -1,3 +1,4 @@
+<%@ page import="Model.Admin" %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
 
@@ -16,13 +17,12 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Admin
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=admin.getAdminName()%>
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="#">Setting</a>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="<%=Utils.fullPath("AdminLogout")%>">Logout</a>
                         </div>
                     </div>
                 </li>
