@@ -55,7 +55,9 @@
         <table class="table table-striped table-bordered" width="100%">
             <thead style="text-align: center">
             <tr>
+<%--
                 <th class="th-sm">Order Id</th>
+--%>
                 <th class="th-sm">User Name</th>
                 <th class="th-sm">Status</th>
                 <th class="th-sm">Create At</th>
@@ -74,8 +76,8 @@
                     double ordersTotal = resultSet.getDouble(5);
             %>
             <tr>
-                <td><%=ordersId%>
-                </td>
+              <%--  <td><%=ordersId%>
+                </td>--%>
                 <td><%=userName%>
                 </td>
                 <%
@@ -126,8 +128,8 @@
                     </div>
 
                     <div class="text-center">
-                        <a href="#" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                           data-target="#<%="remove" + ordersId%>">Delete<i
+                        <a href="#" class="btn btn-rounded btn-sm" data-toggle="modal"
+                           data-target="#<%="remove" + ordersId%>" style="width: 97px; background-color: #ff3547; color: white !important">Delete<i
                                 class="fas fa-plus-square ml-1"></i></a>
                     </div>
                 </td>
@@ -138,7 +140,9 @@
             </tbody>
             <tfoot style="text-align: center">
             <tr>
+<%--
                 <th class="th-sm">Order Id</th>
+--%>
                 <th class="th-sm">User Name</th>
                 <th class="th-sm">Status</th>
                 <th class="th-sm">Create At</th>

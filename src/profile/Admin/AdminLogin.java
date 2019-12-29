@@ -52,7 +52,7 @@ public class AdminLogin extends HttpServlet {
                     admin.setAdminEmail(resultSet.getString(5));
                     HttpSession session = request.getSession();
                     session.setAttribute("admin", admin);
-                    response.sendRedirect(Utils.fullPath("AdminHomeProductServlet"));
+                    response.sendRedirect(Utils.fullPath("AdminHomeProductServlet?pages=1"));
                 }
             } else {
                 request.setAttribute("errAdminEmail", "Chúng tôi không tìm thấy email của bạn trong hệ thống.");
@@ -62,7 +62,7 @@ public class AdminLogin extends HttpServlet {
             e.printStackTrace();
             System.out.println("Lỗi kết nối tới CSDL");
             request.setAttribute("errAdmin", "Sai Email hoặc mật khẩu.");
-            request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet")).forward(request, response);
+            request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet?pages=1")).forward(request, response);
         }
     }
 }

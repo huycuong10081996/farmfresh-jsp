@@ -88,18 +88,18 @@
                                 <p><%=homeResultSet.getString(2)%>
                                 </p>
                                 <%
-                                    if (homeResultSet.getString(5) == null) {
+                                    if (homeResultSet.getDouble(5) == 0) {
                                 %>
 
-                                <p><strong>$<%=homeResultSet.getString(4)%></strong></p>
+                                <p><strong>$<%=homeResultSet.getDouble(4)%></strong></p>
 
                                 <%
                                     } else {
                                 %>
 
-                                <p><strong>$<%=homeResultSet.getString(5)%>
+                                <p><strong>$<%=homeResultSet.getDouble(5)%>
                                 </strong>
-                                    <span class="price--line-through">$<%=homeResultSet.getString(4)%></span>
+                                    <span class="price--line-through">$<%=homeResultSet.getDouble(4)%></span>
                                 </p>
 
                                 <%

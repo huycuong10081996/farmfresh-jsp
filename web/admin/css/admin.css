@@ -222,3 +222,49 @@ a.article:hover {
 #sidebar {
   background: url("../img/header-bkg.jpg");
 }
+
+.show__page__container {
+  width: 100%;
+  display: flex;
+  padding: 32px 0;
+}
+
+.show__page {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.show__pagination {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.show__pagination ul>li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show__page__container ul>li>a {
+  margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  width: 36px;
+    height: 36px;
+  border: 1px solid #292929;
+  text-decoration: none;
+  color: white;
+  transition: all .35s;
+  background: #33b5e5;
+}
+
+.show__page__container ul>li>a:hover {
+  background: #292929;
+}
+
+.active__page {
+  background: #292929 !important;
+}

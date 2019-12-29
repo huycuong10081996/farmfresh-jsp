@@ -193,15 +193,17 @@
             </div>
 
             <div class="text-center">
-                <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                   data-target="#userAdd">Add<i class="fas fa-plus-square ml-1"></i></a>
+                <a href="" class="btn btn-rounded btn-sm" data-toggle="modal" style="background-color: #7fba00; color: white !important"
+                   data-target="#userAdd">Add new user<i class="fas fa-plus-square ml-1"></i></a>
             </div>
         </div>
 
         <table class="table table-striped table-bordered" width="100%">
             <thead style="text-align: center">
             <tr>
+<%--
                 <th class="th-sm">Id</th>
+--%>
                 <th class="th-sm">First Name</th>
                 <th class="th-sm">Last Name</th>
                 <th class="th-sm">Full Name</th>
@@ -225,8 +227,8 @@
                     String userPhone = resultSet.getString(7);
             %>
             <tr>
-                <td><%=userId%>
-                </td>
+             <%--   <td><%=userId%>
+                </td>--%>
                 <td><%=userFirstName%>
                 </td>
                 <td><%=userLastName%>
@@ -246,7 +248,7 @@
                             <div class="modal-content">
                                 <div class="modal-header text-center">
                                     <h4 class="modal-title w-100 font-weight-bold text-secondary ml-5">Edit
-                                        form</h4>
+                                        User</h4>
                                     <button type="button" class="close text-secondary" data-dismiss="modal"
                                             aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -322,7 +324,7 @@
                                         %>
 
                                         <div class="md-form mb-5">
-                                            <input type="text" name="userPasswordEdit"
+                                            <input type="password" name="userPasswordEdit"
                                                    class="form-control validate"
                                                    placeholder="Password" required="required"
                                                    value="<%=userPassword%>"
@@ -418,8 +420,8 @@
                     </div>
 
                     <div class="text-center">
-                        <a href="#" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                           data-target="#<%="remove" + userId%>" style="width: 97px">Delete<i
+                        <a href="#" class="btn btn-rounded btn-sm" data-toggle="modal"
+                           data-target="#<%="remove" + userId%>" style="width: 97px; background-color: #ff3547; color: white !important">Delete<i
                                 class="fas fa-plus-square ml-1"></i></a>
                     </div>
                 </td>
@@ -430,7 +432,9 @@
             </tbody>
             <tfoot style="text-align: center">
             <tr>
+<%--
                 <th class="th-sm">Id</th>
+--%>
                 <th class="th-sm">First Name</th>
                 <th class="th-sm">Last Name</th>
                 <th class="th-sm">Full Name</th>

@@ -132,8 +132,8 @@
             </div>
 
             <div class="text-center">
-                <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                   data-target="#categoryAdd">Add<i class="fas fa-plus-square ml-1"></i></a>
+                <a href="" class="btn btn-rounded btn-sm" data-toggle="modal" style="background-color: #7fba00; color: white !important"
+                   data-target="#categoryAdd">Add new category<i class="fas fa-plus-square ml-1"></i></a>
             </div>
         </div>
 
@@ -177,7 +177,7 @@
                             <div class="modal-content">
                                 <div class="modal-header text-center">
                                     <h4 class="modal-title w-100 font-weight-bold text-secondary ml-5">Edit
-                                        form</h4>
+                                        Category</h4>
                                     <button type="button" class="close text-secondary" data-dismiss="modal"
                                             aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -270,8 +270,8 @@
                     </div>
 
                     <div class="text-center">
-                        <a href="#" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                           data-target="#<%="remove" + categoryId%>" style="width: 97px">Delete<i
+                        <a href="#" class="btn btn-rounded btn-sm" data-toggle="modal"
+                           data-target="#<%="remove" + categoryId%>" style="width: 97px; background-color: #ff3547; color: white !important">Delete<i
                                 class="fas fa-plus-square ml-1"></i></a>
                     </div>
                 </td>

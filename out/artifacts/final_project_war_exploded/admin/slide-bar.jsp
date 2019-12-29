@@ -7,14 +7,14 @@
     <ul class="list-unstyled components">
         <p>Farm Fresh</p>
         <li class="">
-            <a href="<%=Utils.fullPath("AdminHomeProductServlet")%>" data-toggle="collapse" aria-expanded="false">Home</a>
+            <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages=1")%>" data-toggle="collapse" aria-expanded="false">Home</a>
         </li>
         <li>
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
                class="dropdown-toggle">Pages</a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li class="active">
-                    <a href="<%=Utils.fullPath("AdminHomeProductServlet")%>">Products</a>
+                    <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages=1")%>">Products</a>
                 </li>
                 <li>
                     <a href="<%=Utils.fullPath("AdminHomeUserServlet")%>">Users</a>
@@ -37,7 +37,7 @@
 
     <ul class="list-unstyled CTAs">
         <li>
-            <a href="http://localhost:8080/final_project/HomeServlet" class="article">Back to website</a>
+            <a href="http://localhost:8080/final_project/HomeServlet" class="article" style="background-color: #7fba00 !important;">Back to website</a>
         </li>
     </ul>
 </nav>

@@ -25,10 +25,10 @@ public class DeleteProductServlet extends HttpServlet {
         if (productDeleteId != null) {
             try {
                 productDAOImp.deleteProduct(productDeleteId);
-                response.sendRedirect("AdminHomeProductServlet");
+                response.sendRedirect("AdminHomeProductServlet?pages=1");
             } catch (Exception e) {
                 e.printStackTrace();
-                request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet")).forward(request, response);
+                request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet?pages=1")).forward(request, response);
             }
         }
     }

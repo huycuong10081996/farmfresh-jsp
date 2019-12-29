@@ -41,10 +41,10 @@ public class EditProductServlet extends HttpServlet {
 
         try {
             productDAOImp.updateProduct(new Product(productIdEdit, productNameEdit, productImageEdit, productPriceEdit, productSalePriceEdit, productCategoryIdEdit, "AD03", productCreateAt, productQuantityEdit, productDescriptionEdit, productStatusEdit));
-            response.sendRedirect("AdminHomeProductServlet");
+            response.sendRedirect("AdminHomeProductServlet?pages=1");
         } catch (Exception e) {
             e.printStackTrace();
-            request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet")).forward(request, response);
+            request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet?pages=1")).forward(request, response);
         }
     }
 }

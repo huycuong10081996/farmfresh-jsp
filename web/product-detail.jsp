@@ -142,10 +142,10 @@
 
 
                             <%
-                                if (resultSetproductDetail.getString(5) == null) {
+                                if (resultSetproductDetail.getDouble(5) == 0) {
                             %>
                             <div class="price row">
-                                <h4>$<%=resultSetproductDetail.getString(4)%>
+                                <h4>$<%=resultSetproductDetail.getDouble(4)%>
                                 </h4>
                             </div>
 
@@ -153,12 +153,12 @@
                             } else {
                             %>
                             <div class="price row">
-                                <h4>$<%=resultSetproductDetail.getString(5)%>
+                                <h4>$<%=resultSetproductDetail.getDouble(5)%>
                                 </h4>
                             </div>
 
                             <div class="row align-items-center">
-                                <h6><strike>$<%=resultSetproductDetail.getString(4)%>
+                                <h6><strike>$<%=resultSetproductDetail.getDouble(4)%>
                                 </strike></h6>
                             </div>
                             <%
@@ -166,12 +166,12 @@
                             %>
 
                             <div class="more__props row align-items-center">
-                                <div class="quantity">
+                                <%--<div class="quantity">
                                     <h6>Quantity</h6>
                                 </div>
                                 <div class="input__quantity">
                                     <input type="text" name="" value="1" id="">
-                                </div>
+                                </div>--%>
                                 <div class="add__to__cart">
                                     <a href="<%=Utils.fullPath("AddCartFromProductDetailServlet?productDetailId="+resultSetproductDetail.getString(1))%>">Add
                                         to cart</a>
@@ -200,7 +200,7 @@
         <div class="description__content__wrapper" id="desciptions">
             <div class="container">
                 <div id="descriptionContent" class="show description__content">
-                    <% if (resultSetproductDetail.getString(8) != null) {
+                    <% if (resultSetproductDetail.getString(8) == null) {
                     %>
                     <p>This product no description. We will update information about it as quickly as possible to
                         you.</p>
@@ -402,16 +402,16 @@
                         <p><%=otherResultSet.getString(2)%>
                         </p>
                         <%
-                            if (otherResultSet.getString(5) == null) {
+                            if (otherResultSet.getDouble(5) == 0) {
                         %>
-                        <p><strong>$<%=otherResultSet.getString(4)%>
+                        <p><strong>$<%=otherResultSet.getDouble(4)%>
                         </strong></p>
                         <%
                         } else {
                         %>
-                        <p><strong>$<%=otherResultSet.getString(5)%>
+                        <p><strong>$<%=otherResultSet.getDouble(5)%>
                         </strong>
-                            <span class="price--line-through">$<%=otherResultSet.getString(4)%></span>
+                            <span class="price--line-through">$<%=otherResultSet.getDouble(4)%></span>
                         </p>
                         <%
                             }

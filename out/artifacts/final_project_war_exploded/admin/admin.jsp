@@ -1,5 +1,7 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="vn.edu.nlu.fit.Utils.Utils" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="vn.edu.nlu.fit.DB.ConnectionDB" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +18,13 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
             integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
     </script>
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
             integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
+
+    <script src="admin/ckeditor/ckeditor.js"></script>
+    <script src="admin/ckfinder/ckfinder.js"></script>
 
     <link rel="stylesheet" href="admin/libs/MDB-Free/css/mdb.min.css">
     <link rel="stylesheet" href="admin/libs/MDB-Free/css/bootstrap.min.css">
@@ -38,23 +44,25 @@
 %>
 <div class="wrapper">
 
-    <%@include file="slide-bar.jsp"%>
+    <%@include file="slide-bar.jsp" %>
     <!-- Page Content  -->
     <div id="content">
-        <%@include file="nav-bar.jsp"%>
+        <%@include file="nav-bar.jsp" %>
         <!-- Product -->
         <div class="wrapper-editor">
 
             <div class="block my-4">
 
                 <div class="input-group mb-3 col-lg-5">
-                    <input type="text" id="product_find" class="form-control" placeholder="Product Name..."
-                           aria-label="Type something..." aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-info btn-rounded btn-sm" type="button" id="button_find"
-                                onclick="">Find
-                        </button>
-                    </div>
+                    <form action="<%=Utils.fullPath("AdminHomeProductServlet?pages=1")%>" method="post" style="display: flex">
+                        <input type="text" id="product_find" class="form-control" placeholder="Product Name..."
+                               aria-label="Type something..." aria-describedby="button-addon2" name="findProduct">
+                        <div class="input-group-append">
+                            <button class="btn btn-info btn-rounded btn-sm" type="submit" id="button_find"
+                                    onclick="">Find
+                            </button>
+                        </div>
+                    </form>
                 </div>
 
                 <div class="d-flex justify-content-center">
@@ -84,10 +92,10 @@
                             </div>
                             <form action="<%=Utils.fullPath("AddProductServlet")%>" method="post">
                                 <div class="modal-body mx-3">
-                                    <div class="md-form mb-5">
-                                        <input type="text" id="productId" name="productId" class="form-control validate"
-                                               placeholder="ID" required="required">
-                                    </div>
+                                    <%-- <div class="md-form mb-5">
+                                         <input type="text" id="productId" name="productId" class="form-control validate"
+                                                placeholder="ID" required="required">
+                                     </div>--%>
                                     <div class="md-form mb-5">
                                         <input type="text" id="productName" class="form-control validate"
                                                placeholder="Name" name="productName"
@@ -155,16 +163,18 @@
 
 
                 <div class="text-center">
-                    <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                       data-target="#productAdd">Add<i class="fas fa-plus-square ml-1"></i></a>
+                    <a href="" class="btn btn-rounded btn-sm" data-toggle="modal" style="background-color: #7fba00; color: white !important"
+                       data-target="#productAdd">Add new product<i class="fas fa-plus-square ml-1"></i></a>
                 </div>
 
             </div>
 
-            <table class="table table-striped table-bordered" width="100%">
+            <table class="table table-striped table-bordered" width="100%" style="overflow: scroll">
                 <thead style="text-align: center">
                 <tr>
-                    <th class="th-sm">Id</th>
+                    <%--
+                                        <th class="th-sm">Id</th>
+                    --%>
                     <th class="th-sm">Name</th>
                     <th class="th-sm">Image</th>
                     <th class="th-sm">Price</th>
@@ -172,13 +182,14 @@
                     <th class="th-sm">Category</th>
                     <th class="th-sm">CreateAt</th>
                     <th class="th-sm">Quantity</th>
-                    <th class="th-sm">Description</th>
                     <th class="th-sm">Status</th>
+                    <th class="th-sm">Product Page</th>
                     <th class="th-sm">Edit</th>
                     <th class="th-sm">Remove</th>
                 </tr>
                 </thead>
                 <tbody id="tableProductBody">
+
                 <%
                     ResultSet resultSet = (ResultSet) request.getAttribute("productAdmin");
                     while (resultSet.next()) {
@@ -195,9 +206,9 @@
                         String productCategoryId = resultSet.getString(12);
                 %>
                 <tr>
-                    <td style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; border: none; margin: 0">
-                        <%=productId%>
-                    </td>
+                    <%-- <td style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; border: none; margin: 0">
+                         <%=productId%>
+                     </td>--%>
                     <td><%=productName%>
                     </td>
                     <td><img src="<%=productImage%>" alt="" style="width: 100px"></td>
@@ -221,7 +232,7 @@
                     </td>
                     <td><%=productQuantity%>
                     </td>
-                    <%
+                    <%--<%
                         if (productDescription != null) {
                     %>
                     <td width="400px"><span
@@ -233,7 +244,7 @@
                     <td>This product no description.</td>
                     <%
                         }
-                    %>
+                    %>--%>
                     <%
                         if (productStatus == -1) {
                     %>
@@ -252,6 +263,14 @@
                     <%
                         }
                     %>
+                    <td>
+                        <div class="text-center">
+                            <a class="btn btn-rounded btn-sm"
+                               href="<%=Utils.fullPath("ProductDetailServlet?productDetailId=" + productId)%>"
+                               style="width: 127px; background-color: #7fba00; color: white !important">Go to page
+                                <i class="fas fa-plus-square ml-1"></i></a>
+                        </div>
+                    </td>
                     <td class="edit__product">
                         <div class="modal fade modalEditClass" id="<%=productId%>" tabindex="-1" role="dialog"
                              aria-hidden="true">
@@ -259,7 +278,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header text-center">
                                         <h4 class="modal-title w-100 font-weight-bold text-secondary ml-5">Edit
-                                            form</h4>
+                                            Product</h4>
                                         <button type="button" class="close text-secondary" data-dismiss="modal"
                                                 aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -313,7 +332,8 @@
                                             </div>
 
                                             <div class="md-form mb-5">
-                                                <textarea name="productDescriptionEdit" class="form-control validate"
+                                                <textarea name="productDescriptionEdit" id="<%=productId + "edit"%>"
+                                                          class="form-control validate"
                                                           cols="30" rows="10"
                                                           placeholder="Description"><%=productDescription%></textarea>
                                             </div>
@@ -376,8 +396,9 @@
                         </div>
 
                         <div class="text-center">
-                            <a href="#" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                               data-target="#<%="remove" + productId%>" style="width: 97px">Delete<i
+                            <a href="#" class="btn btn-rounded btn-sm" data-toggle="modal"
+                               data-target="#<%="remove" + productId%>"
+                               style="width: 97px; background-color: #ff3547; color: white !important">Delete<i
                                     class="fas fa-plus-square ml-1"></i></a>
                         </div>
                     </td>
@@ -388,7 +409,9 @@
                 </tbody>
                 <tfoot style="text-align: center">
                 <tr>
-                    <th class="th-sm">Id</th>
+                    <%--
+                                        <th class="th-sm">Id</th>
+                    --%>
                     <th class="th-sm">Name</th>
                     <th class="th-sm">Image</th>
                     <th class="th-sm">Price</th>
@@ -396,13 +419,69 @@
                     <th class="th-sm">Category</th>
                     <th class="th-sm">CreateAt</th>
                     <th class="th-sm">Quantity</th>
-                    <th class="th-sm">Description</th>
                     <th class="th-sm">Status</th>
+                    <th class="th-sm">Product Page</th>
                     <th class="th-sm">Edit</th>
                     <th class="th-sm">Remove</th>
                 </tr>
                 </tfoot>
             </table>
+
+            <div class="show__page__container">
+                <%
+                    int size = (int) request.getAttribute("size");
+                    resultSet.beforeFirst();
+                    while (resultSet.next()) {
+                        int counter = 0;
+                        int numPager = 1;
+                        int show = 9;
+                        if (size <= 9) {
+                            show = size;
+                        } else {
+                            numPager = size / 9 + 1;
+                        }
+                        counter++;
+                %>
+                <div class="show__page">
+                    <p>Showing 1 to <%=show%> of <%=size%>
+                        (<%=numPager%> Pages)</p>
+                </div>
+                <div class="show__pagination">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end">
+
+                            <li>
+                                <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages=1")%>"><<
+                                </a>
+                            </li>
+                            <%
+                                for (int i = 1; i <= numPager; i++) {
+                            %>
+                            <li>
+                                <a class="<%= (i+"").equals(request.getParameter("pages"))? "active__page" : ""%>"
+                                   href="<%=Utils.fullPath("AdminHomeProductServlet?pages="+i)%>"><%=i%>
+                                </a></li>
+
+                            <%
+                                }
+                            %>
+                            <li>
+                                <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages="+numPager)%>"
+                                   id="<%=numPager%>">
+                                    >>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <%
+                        if (counter == 1) {
+                            break;
+                        }
+                    }
+                %>
+            </div>
+
         </div>
     </div>
 </div>
@@ -423,7 +502,30 @@
 <script
         src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js">
 </script>
+
 <script>
+
+    const ids = document.getElementsByTagName("textarea");
+    for (i = 0; i < ids.length; i++) {
+        let editor = '';
+        let current = ids[i];
+        $(document).ready(function () {
+            editor = CKEDITOR.replace(current);
+            CKFinder.setupCKEditor(editor, '<%=request.getContextPath()%>/admin/ckfinder/');
+        });
+    }
+
+    /*$.fn.modal.Constructor.prototype.enforceFocus = function() {
+        const modal_this = this;
+        $(document).on('focusin.modal', function (e) {
+            if (modal_this.$element[0] !== e.target && !modal_this.$element.has(e.target).length
+                && !$(e.target.parentNode).hasClass('cke_dialog_ui_input_select')
+                && !$(e.target.parentNode).hasClass('cke_dialog_ui_input_text')) {
+                modal_this.$element.focus()
+            }
+        })
+    };*/
+
     $(document).ready(function () {
         $("#sidebar").mCustomScrollbar({
             theme: "minimal"

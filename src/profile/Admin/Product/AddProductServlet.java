@@ -14,11 +14,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.UUID;
 
 
 @WebServlet("/AddProductServlet")
 public class AddProductServlet extends HttpServlet {
     private ProductDAOImp productDAOImp = new ProductDAOImp();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -36,8 +38,11 @@ public class AddProductServlet extends HttpServlet {
         String dates = dateFormat.format(calendars.getTime());
         String times = timeFormat.format(calendars.getTime());
         String productCreateAt = dates + " " + times;
-
+        UUID uuid = UUID.randomUUID();
+        String productId = uuid.toString();
+/*
         String productId = request.getParameter("productId").trim();
+*/
         String productName = request.getParameter("productName").trim();
         String productImage = request.getParameter("productImage").trim();
         double productPrice = Double.parseDouble(request.getParameter("productPrice").trim());
@@ -49,10 +54,10 @@ public class AddProductServlet extends HttpServlet {
 
         try {
             productDAOImp.addProduct(new Product(productId, productName, productImage, productPrice, productSalePrice, productCategoryId, admin.getAdminId(), productCreateAt, productQuantity, productDescription, productStatus));
-            response.sendRedirect("AdminHomeProductServlet");
+            response.sendRedirect("AdminHomeProductServlet?pages=1");
         } catch (Exception e) {
             e.printStackTrace();
-            request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet")).forward(request, response);
+            request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet?pages=1")).forward(request, response);
         }
     }
 }

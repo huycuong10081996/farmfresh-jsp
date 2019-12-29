@@ -54,8 +54,8 @@
         <table class="table table-striped table-bordered" width="100%">
             <thead style="text-align: center">
             <tr>
-                <th class="th-sm">OrderItem Id</th>
-                <th class="th-sm">Order Id</th>
+               <%-- <th class="th-sm">OrderItem Id</th>
+                <th class="th-sm">Order Id</th>--%>
                 <th class="th-sm">Product Name</th>
                 <th class="th-sm">Product Image</th>
                 <th class="th-sm">Product Category</th>
@@ -81,10 +81,10 @@
                     double itemTotalPrice = resultSet.getDouble(9);
             %>
             <tr>
-                <td><%=itemId%>
+               <%-- <td><%=itemId%>
                 </td>
                 <td><%=orderId%>
-                </td>
+                </td>--%>
                 <td><%=productName%>
                 </td>
                 <td><img src="<%=productImage%>" alt="" style="width: 100px">
@@ -130,8 +130,8 @@
                     </div>
 
                     <div class="text-center">
-                        <a href="#" class="btn btn-info btn-rounded btn-sm" data-toggle="modal"
-                           data-target="#<%="remove" + itemId%>">Delete<i
+                        <a href="#" class="btn btn-rounded btn-sm" data-toggle="modal"
+                           data-target="#<%="remove" + itemId%>" style="width: 97px; background-color: #ff3547; color: white !important">Delete<i
                                 class="fas fa-plus-square ml-1"></i></a>
                     </div>
                 </td>
@@ -142,8 +142,8 @@
             </tbody>
             <tfoot style="text-align: center">
             <tr>
-                <th class="th-sm">OrderItem Id</th>
-                <th class="th-sm">Order Id</th>
+              <%--  <th class="th-sm">OrderItem Id</th>
+                <th class="th-sm">Order Id</th>--%>
                 <th class="th-sm">Product Name</th>
                 <th class="th-sm">Product Image</th>
                 <th class="th-sm">Product Category</th>
