@@ -25,10 +25,10 @@ public class RemoveUserServlet extends HttpServlet {
         if (userId != null) {
             try {
                 userDAOImp.removeUser(userId);
-                response.sendRedirect("AdminHomeUserServlet");
+                response.sendRedirect("AdminHomeUserServlet?pages=1");
             } catch (Exception e) {
                 e.printStackTrace();
-                request.getRequestDispatcher(Utils.fullPath("AdminHomeUserServlet")).forward(request, response);
+                request.getRequestDispatcher(Utils.fullPath("AdminHomeUserServlet?pages=1")).forward(request, response);
 
             }
         }

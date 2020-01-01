@@ -48,13 +48,15 @@
         <div class="block my-4">
 
             <div class="input-group mb-3 col-lg-5">
-                <input type="text" id="product_find" class="form-control" placeholder="Category Title..."
-                       aria-label="Type something..." aria-describedby="button-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-info btn-rounded btn-sm" type="button" id="button_find"
-                            onclick="">Find
-                    </button>
-                </div>
+                <form action="<%=Utils.fullPath("AdminHomeCategoryServlet?pages=1")%>" method="post" style="display: flex">
+                    <input type="text" id="product_find" class="form-control" placeholder="Product Name..."
+                           aria-label="Type something..." aria-describedby="button-addon2" name="findCategory">
+                    <div class="input-group-append">
+                        <button class="btn btn-info btn-rounded btn-sm" type="submit" id="button_find"
+                                onclick="">Find
+                        </button>
+                    </div>
+                </form>
             </div>
 
             <div class="d-flex justify-content-center">
@@ -293,6 +295,63 @@
             </tr>
             </tfoot>
         </table>
+
+        <div class="show__page__container">
+            <%
+                int size = (int) request.getAttribute("categorySize");
+                String pPage = request.getParameter("pages");
+                resultSet.beforeFirst();
+                while (resultSet.next()) {
+                    int counter = 0;
+                    int numPager = 1;
+                    int show = 9;
+                    if (size <= 9) {
+                        show = size;
+                    } else {
+                        numPager = size / 9 + 1;
+                    }
+                    counter++;
+            %>
+            <div class="show__page">
+                <p>Showing 1 to <%=show%> of <%=size%>
+                    (<%=numPager%> Pages)</p>
+            </div>
+            <div class="show__pagination">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+
+                        <li>
+                            <a href="<%=Utils.fullPath("AdminHomeCategoryServlet?pages=1")%>"><<
+                            </a>
+                        </li>
+                        <%
+                            for (int i = 1; i <= numPager; i++) {
+                        %>
+                        <li>
+                            <a class="<%= (i+"").equals(request.getParameter("pages"))? "active__page" : ""%>"
+                               href="<%=Utils.fullPath("AdminHomeCategoryServlet?pages="+i)%>"><%=i%>
+                            </a></li>
+
+                        <%
+                            }
+                        %>
+                        <li>
+                            <a href="<%=Utils.fullPath("AdminHomeCategoryServlet?pages="+numPager)%>"
+                               id="<%=numPager%>">
+                                >>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <%
+                    if (counter == 1) {
+                        break;
+                    }
+                }
+            %>
+        </div>
+
     </div>
 </div>
 <!-- jQuery CDN - Slim version (=without AJAX) -->

@@ -24,8 +24,43 @@ public class AdminHomeUserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String sql = "select * from `user`";
+            String pages = request.getParameter("pages");
+            int page = Integer.parseInt(pages);
+            String queries = request.getParameter("findUser");
+
+            String query = "select count(user_id) from `user`";
+            PreparedStatement preparedStatementCount = ConnectionDB.getPreparedStatement(query);
+            ResultSet resultSetCount = preparedStatementCount.executeQuery();
+            int count = 0;
+            int size = 0;
+            while (resultSetCount.next()) {
+                size = resultSetCount.getInt(1);
+                count++;
+                if (count == 1) {
+                    break;
+                }
+            }
+            request.setAttribute("userSize", size);
+            String sql;
+            if (queries != null) {
+                sql = "select * from `user` where user_fullName like '%"+queries+"%' limit ?,?";
+            } else {
+                sql = "select * from `user` limit ?,?";
+            }
             PreparedStatement preparedStatement = ConnectionDB.getPreparedStatement(sql);
+            if (page == 1) {
+                if (size <= 9) {
+                    preparedStatement.setInt(1, 0);
+                    preparedStatement.setInt(2, size);
+                } else {
+                    preparedStatement.setInt(1, 0);
+                    preparedStatement.setInt(2, 9);
+                }
+            } else {
+                preparedStatement.setInt(1, Math.max(page * 9 - 9,9));
+                preparedStatement.setInt(2, Math.min(size - (page * 9 - 9) ,9));
+            }
+
             ResultSet resultSet = preparedStatement.executeQuery();
             request.setAttribute("userList", resultSet);
 

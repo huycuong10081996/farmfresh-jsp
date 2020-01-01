@@ -40,19 +40,19 @@ public class AddCategoryServlet extends HttpServlet {
         if (!idMatcher.matches()) {
             String errCategoryId = "Id sai cú pháp, xin vui lòng nhập lại.";
             request.setAttribute("errCategoryId", errCategoryId);
-            request.getRequestDispatcher("AdminHomeCategoryServlet").forward(request, response);
+            request.getRequestDispatcher("AdminHomeCategoryServlet?pages=1").forward(request, response);
         } else {
             if (categoryDAO.checkCategory(categoryId)) {
                 String errCategoryId = "Category Id đã tồn tại trong hệ thống, xin vui lòng nhập lại.";
                 request.setAttribute("errCategoryId", errCategoryId);
-                request.getRequestDispatcher("AdminHomeCategoryServlet").forward(request, response);
+                request.getRequestDispatcher("AdminHomeCategoryServlet?pages=1").forward(request, response);
             }
         }
 
         if (!titleMatcher.matches()) {
             String errCategoryTitle = "Nhập sai cú pháp, vui lòng nhập lại";
             request.setAttribute("errCategoryTitle", errCategoryTitle);
-            request.getRequestDispatcher("AdminHomeCategoryServlet").forward(request, response);
+            request.getRequestDispatcher("AdminHomeCategoryServlet?pages=1").forward(request, response);
         }
 
         HttpSession session = request.getSession();
@@ -61,10 +61,10 @@ public class AddCategoryServlet extends HttpServlet {
         if (idMatcher.matches() && titleMatcher.matches()) {
             try {
                 categoryDAO.addCategory(new Category(categoryId, categoryTitle, admin.getAdminId()));
-                response.sendRedirect(Utils.fullPath("AdminHomeCategoryServlet"));
+                response.sendRedirect(Utils.fullPath("AdminHomeCategoryServlet?pages=1"));
             } catch (Exception e) {
                 e.printStackTrace();
-                request.getRequestDispatcher(Utils.fullPath("AdminHomeCategoryServlet")).forward(request, response);
+                request.getRequestDispatcher(Utils.fullPath("AdminHomeCategoryServlet?pages=1")).forward(request, response);
             }
         }
     }

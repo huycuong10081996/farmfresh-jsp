@@ -17,10 +17,10 @@
                     <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages=1")%>">Products</a>
                 </li>
                 <li>
-                    <a href="<%=Utils.fullPath("AdminHomeUserServlet")%>">Users</a>
+                    <a href="<%=Utils.fullPath("AdminHomeUserServlet?pages=1")%>">Users</a>
                 </li>
                 <li>
-                    <a href="<%=Utils.fullPath("AdminHomeCategoryServlet")%>">Categories</a>
+                    <a href="<%=Utils.fullPath("AdminHomeCategoryServlet?pages=1")%>">Categories</a>
                 </li>
                 <li>
                     <a href="<%=Utils.fullPath("AdminHomeOrderServlet")%>">Orders</a>

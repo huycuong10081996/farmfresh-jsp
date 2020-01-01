@@ -272,7 +272,7 @@
                         </div>
                     </td>
                     <td class="edit__product">
-                        <div class="modal fade modalEditClass" id="<%=productId%>" tabindex="-1" role="dialog"
+                        <div class="modal fade modalEditClass" id="<%=productId%>" role="dialog"
                              aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -430,6 +430,7 @@
             <div class="show__page__container">
                 <%
                     int size = (int) request.getAttribute("size");
+                    String pPage = request.getParameter("pages");
                     resultSet.beforeFirst();
                     while (resultSet.next()) {
                         int counter = 0;

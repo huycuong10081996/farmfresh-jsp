@@ -31,10 +31,10 @@ public class RemoveCategoryServlet extends HttpServlet {
             try {
                 productDAOImp.deleteProductFromCategory(categoryId);
                 categoryDAO.removeCategory(categoryId);
-                response.sendRedirect(Utils.fullPath("AdminHomeCategoryServlet"));
+                response.sendRedirect(Utils.fullPath("AdminHomeCategoryServlet?pages=1"));
             } catch (Exception e) {
                 e.printStackTrace();
-                request.getRequestDispatcher(Utils.fullPath("AdminHomeCategoryServlet")).forward(request, response);
+                request.getRequestDispatcher(Utils.fullPath("AdminHomeCategoryServlet?pages=1")).forward(request, response);
             }
         }
     }

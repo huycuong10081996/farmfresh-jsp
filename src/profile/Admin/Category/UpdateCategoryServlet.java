@@ -35,14 +35,14 @@ public class UpdateCategoryServlet extends HttpServlet {
         if (!titleMatcher.matches()) {
             String errCategoryTitle = "Nhập sai cú pháp, vui lòng nhập lại";
             request.setAttribute("errCategoryTitleEdit", errCategoryTitle);
-            request.getRequestDispatcher("AdminHomeCategoryServlet").forward(request, response);
+            request.getRequestDispatcher("AdminHomeCategoryServlet?pages=1").forward(request, response);
         } else {
             try {
                 categoryDAO.updateCategory(new Category(categoryId, categoryTitleEdit, "AD03"));
-                response.sendRedirect(Utils.fullPath("AdminHomeCategoryServlet"));
+                response.sendRedirect(Utils.fullPath("AdminHomeCategoryServlet?pages=1"));
             } catch (Exception e) {
                 e.printStackTrace();
-                request.getRequestDispatcher(Utils.fullPath("AdminHomeCategoryServlet")).forward(request, response);
+                request.getRequestDispatcher(Utils.fullPath("AdminHomeCategoryServlet?pages=1")).forward(request, response);
             }
         }
 

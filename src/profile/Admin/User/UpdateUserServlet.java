@@ -78,10 +78,10 @@ public class UpdateUserServlet extends HttpServlet {
         }*/
         try {
             userDAOImp.updateUser(new User(userIdEdit, userFirstNameEdit, userLastNameEdit, userEmailEdit, userPasswordEdit, userPhoneEdit));
-            response.sendRedirect("AdminHomeUserServlet");
+            response.sendRedirect("AdminHomeUserServlet?pages=1");
         } catch (Exception e) {
             e.printStackTrace();
-            request.getRequestDispatcher(Utils.fullPath("AdminHomeUserServlet")).forward(request, response);
+            request.getRequestDispatcher(Utils.fullPath("AdminHomeUserServlet?pages=1")).forward(request, response);
         }
     }
 }
