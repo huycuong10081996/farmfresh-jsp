@@ -46,24 +46,33 @@
                         <li class="search__header"><i class="fas fa-search"></i>
                             <div class="sub__input"><input type="text"></div>
                         </li>
-                        <li class="user"><i class="fas fa-user"></i>
+
+                        <%
+                            User u = (User) session.getAttribute("user");
+                            if (u != null) {
+                        %>
+                        <li class="user"><i class="fas fa-user" style="color: #7fba00"></i>
                             <ul class="sub-menu">
-                                <%
-                                    User u = (User) session.getAttribute("user");
-                                    if (u != null) {
-                                %>
+
                                 <li><a href="my-account.jsp"><%=u.getFullName()%></a></li>
                                 <li><a href="<%=Utils.fullPath("LogoutServlet")%>">Logout</a></li>
-                                <%
-                                    } else {
-                                %>
-                                <li><a href="register.jsp">Register</a></li>
-                                <li><a href="login.jsp">Login</a></li>
-                                <%
-                                    }
-                                %>
+
                             </ul>
                         </li>
+                        <%
+                            } else {
+                        %>
+                        <li class="user"><i class="fas fa-user"></i>
+                            <ul class="sub-menu">
+
+                                <li><a href="register.jsp">Register</a></li>
+                                <li><a href="login.jsp">Login</a></li>
+
+                            </ul>
+                        </li>
+                        <%
+                            }
+                        %>
                         <li id="clickCart"><i class="fas fa-shopping-cart"></i><span class="cart__quantity"><%=ordersQuantity%></span>
                         </li>
                     </ul>

@@ -266,8 +266,8 @@
                                                 if (u != null && u.getUserId().equals(resultSetproductDetail.getString(16))) {
                                             %>
                                             <form action="#" method="post" style="display: flex; flex-direction: column">
-                                                <textarea contenteditable="false" style="outline: none; border: none;" name="editReview" id="editReview"><%=resultSetproductDetail.getString(10)%>
-                                                </textarea>
+                                                <p <%--style="outline: none; border: none;" name="editReview"--%> id="editReview"><%=resultSetproductDetail.getString(10)%>
+                                                </p>
                                                 <button type="submit" id="buttonEditReview" class="button__edit__review">Edit</button>
                                             </form>
                                             <%
@@ -490,7 +490,7 @@
 </script>
 
 <script>
-    const editTextarea = document.getElementById("editReview");
+/*    const editTextarea = document.getElementById("editReview");
     const buttonEditReview = document.getElementById("buttonEditReview");
     const editReviewIcon = document.getElementById("editReviewIcon");
     editReviewIcon.onclick = function () {
@@ -501,7 +501,30 @@
         if (editTextarea.contentEditable === "true") {
             buttonEditReview.style.display = "block";
         }
-    }
+    }*/
+
+function divClicked() {
+    var divHtml = $(this).prev('p').html(); //select's the contents of div immediately previous to the button
+    var editableText = $("<textarea />");
+    editableText.val(divHtml);
+    $(this).prev('p').replaceWith(editableText); //replaces the required div with textarea
+    editableText.focus();
+    // setup the blur event for this new textarea
+    editableText.blur(editableTextBlurred);
+}
+
+function editableTextBlurred() {
+    var html = $(this).val();
+    var viewableText = $("<p>");
+    viewableText.html(html);
+    $(this).replaceWith(viewableText);
+    // setup the click event for this new div
+    viewableText.click(divClicked);
+}
+
+$(document).ready(function () {
+    $("#editReviewIcon").click(divClicked); //calls the function on button click
+});
 
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
