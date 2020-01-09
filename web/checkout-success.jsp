@@ -43,7 +43,7 @@
             </nav>
         </div>
         <div class="main__category__container">
-            <%@include file="menu-main.jsp" %>
+            <%@include file="nav-menu.jsp" %>
 
             <div class="checkout__wrapper">
                 <div class="checkout">

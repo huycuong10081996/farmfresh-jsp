@@ -103,9 +103,9 @@
                                     </div>
 
                                     <div class="md-form mb-5">
-                                        <input type="text" id="productImage" class="form-control validate"
+                                        <textarea type="text" id="productImage" class="form-control validate"
                                                placeholder="Image" name="productImage"
-                                               required="required">
+                                                  required="required"> </textarea>
                                     </div>
 
                                     <div class="md-form mb-5">

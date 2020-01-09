@@ -210,7 +210,9 @@
                 <th class="th-sm">Last Name</th>
                 <th class="th-sm">Full Name</th>
                 <th class="th-sm">Email</th>
+<%--
                 <th class="th-sm">Password</th>
+--%>
                 <th class="th-sm">Phone</th>
                 <th class="th-sm">Edit</th>
                 <th class="th-sm">Remove</th>
@@ -239,8 +241,8 @@
                 </td>
                 <td><%=userEmail%>
                 </td>
-                <td><%=userPassword%>
-                </td>
+               <%-- <td><%=userPassword%>
+                </td>--%>
                 <td><%=userPhone%>
                 </td>
                 <td class="edit__user">
@@ -447,7 +449,9 @@
                 <th class="th-sm">Last Name</th>
                 <th class="th-sm">Full Name</th>
                 <th class="th-sm">Email</th>
+<%--
                 <th class="th-sm">Password</th>
+--%>
                 <th class="th-sm">Phone</th>
                 <th class="th-sm">Edit</th>
                 <th class="th-sm">Remove</th>

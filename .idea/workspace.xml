@@ -6,7 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="" />
+    <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/adminOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/adminOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/admin-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin-user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/adminOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/adminOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/checkout-success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/checkout-success.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/checkout.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/checkout.css" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +300,7 @@
       <workItem from="1577841184284" duration="3834000" />
       <workItem from="1577886198042" duration="10947000" />
       <workItem from="1577940676104" duration="990000" />
-      <workItem from="1578558857541" duration="8692000" />
+      <workItem from="1578558857541" duration="12260000" />
     </task>
     <servers />
   </component>
