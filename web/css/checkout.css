@@ -175,6 +175,7 @@ table tr td {
   border: none;
   height: 40px;
   width: 107px;
+  padding: 5px 15px;
   background: #7fba00;
   color: #ffffff;
   border-radius: 40px;

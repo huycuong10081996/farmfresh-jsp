@@ -83,12 +83,12 @@
                 <%
                     if (ordersStatus == 0) {
                 %>
-                <td>Unpaid Order
+                <td>UNPAID_ORDER
                 </td>
                 <%
                 } else if (ordersStatus == 1) {
                 %>
-                <td>Paid Order
+                <td>PAID_ORDER
                 </td>
                 <%
                     }

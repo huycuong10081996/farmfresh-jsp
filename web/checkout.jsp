@@ -422,7 +422,9 @@
                                             </tr>
                                         </table>
 
-                                        <a href="checkout-success.jsp" class="continue">Continue</a>
+                                        <button type="submit" class="continue__button">
+                                            Continue
+                                        </button>
 
                                         <%
                                             } else {
