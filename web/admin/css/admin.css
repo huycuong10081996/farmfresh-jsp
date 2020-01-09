@@ -248,23 +248,25 @@ a.article:hover {
 }
 
 .show__page__container ul>li>a {
-  margin: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: -4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 36px;
-    height: 36px;
-  border: 1px solid #292929;
+  height: 36px;
+  /* border: 1px solid #292929; */
   text-decoration: none;
-  color: white;
+  /* color: white; */
   transition: all .35s;
-  background: #33b5e5;
+/* background: #33b5e5;*/
 }
 
 .show__page__container ul>li>a:hover {
-  background: #292929;
+  font-weight: bold;
+color: #7fba00;
 }
 
 .active__page {
-  background: #292929 !important;
+  font-weight: bold;
+color: #7fba00 !important;
 }

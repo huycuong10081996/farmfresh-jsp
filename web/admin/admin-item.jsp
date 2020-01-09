@@ -54,10 +54,11 @@
         <table class="table table-striped table-bordered" width="100%">
             <thead style="text-align: center">
             <tr>
-               <%-- <th class="th-sm">OrderItem Id</th>
-                <th class="th-sm">Order Id</th>--%>
+                <%-- <th class="th-sm">OrderItem Id</th>
+                 <th class="th-sm">Order Id</th>--%>
                 <th class="th-sm">Product Name</th>
                 <th class="th-sm">Product Image</th>
+                <th class="th-sm">User Name</th>
                 <th class="th-sm">Product Category</th>
                 <th class="th-sm">Product Price</th>
                 <th class="th-sm">Product SalePrice</th>
@@ -79,15 +80,21 @@
                     double productSalePrice = resultSet.getDouble(7);
                     int quantity = resultSet.getInt(8);
                     double itemTotalPrice = resultSet.getDouble(9);
+                    String userName = resultSet.getString(10);
+/*
+                    String userName = resultSet.getString(10);
+*/
             %>
             <tr>
-               <%-- <td><%=itemId%>
-                </td>
-                <td><%=orderId%>
-                </td>--%>
+                <%-- <td><%=itemId%>
+                 </td>
+                 <td><%=orderId%>
+                 </td>--%>
                 <td><%=productName%>
                 </td>
                 <td><img src="<%=productImage%>" alt="" style="width: 100px">
+                </td>
+                <td><%=userName%>
                 </td>
                 <td><%=productCategoryTitle%>
                 </td>
@@ -131,21 +138,23 @@
 
                     <div class="text-center">
                         <a href="#" class="btn btn-rounded btn-sm" data-toggle="modal"
-                           data-target="#<%="remove" + itemId%>" style="width: 97px; background-color: #ff3547; color: white !important">Delete<i
+                           data-target="#<%="remove" + itemId%>"
+                           style="width: 97px; background-color: #ff3547; color: white !important">Delete<i
                                 class="fas fa-plus-square ml-1"></i></a>
                     </div>
                 </td>
-                </tr>
+            </tr>
             <%
                 }
             %>
             </tbody>
             <tfoot style="text-align: center">
             <tr>
-              <%--  <th class="th-sm">OrderItem Id</th>
-                <th class="th-sm">Order Id</th>--%>
+                <%--  <th class="th-sm">OrderItem Id</th>
+                  <th class="th-sm">Order Id</th>--%>
                 <th class="th-sm">Product Name</th>
                 <th class="th-sm">Product Image</th>
+                <th class="th-sm">User Name</th>
                 <th class="th-sm">Product Category</th>
                 <th class="th-sm">Product Price</th>
                 <th class="th-sm">Product SalePrice</th>
@@ -155,6 +164,61 @@
             </tr>
             </tfoot>
         </table>
+        <div class="show__page__container">
+            <%
+                int size = (int) request.getAttribute("orderItemSize");
+                String pPage = request.getParameter("pages");
+                resultSet.beforeFirst();
+                while (resultSet.next()) {
+                    int counter = 0;
+                    int numPager = 1;
+                    int show = 9;
+                    if (size <= 9) {
+                        show = size;
+                    } else {
+                        numPager = size / 9 + 1;
+                    }
+                    counter++;
+            %>
+            <div class="show__page">
+                <p>Showing 1 to <%=show%> of <%=size%>
+                    (<%=numPager%> Pages)</p>
+            </div>
+            <div class="show__pagination">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+
+                        <li>
+                            <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages=1")%>"><<
+                            </a>
+                        </li>
+                        <%
+                            for (int i = 1; i <= numPager; i++) {
+                        %>
+                        <li>
+                            <a class="<%= (i+"").equals(request.getParameter("pages"))? "active__page" : ""%>"
+                               href="<%=Utils.fullPath("AdminHomeProductServlet?pages="+i)%>"><%=i%>
+                            </a></li>
+
+                        <%
+                            }
+                        %>
+                        <li>
+                            <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages="+numPager)%>"
+                               id="<%=numPager%>">
+                                >>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <%
+                    if (counter == 1) {
+                        break;
+                    }
+                }
+            %>
+        </div>
 
     </div>
 </div>

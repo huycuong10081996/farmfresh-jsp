@@ -269,7 +269,7 @@
                             <!-- / Collapsible element -->
                         </div>
 
-                        <div class="step" id="step3">
+                      <%--  <div class="step" id="step3">
                             <!-- Collapse buttons -->
                             <div>
                                 <button class="btn btn__step" type="button" data-toggle="collapse"
@@ -348,7 +348,7 @@
                                 </div>
                             </div>
                             <!-- / Collapsible element -->
-                        </div>
+                        </div>--%>
 
                         <div class="step" id="step5">
                             <!-- Collapse buttons -->
@@ -356,7 +356,7 @@
                                 <button class="btn btn__step" type="button" data-toggle="collapse"
                                         data-target="#collapseExample4" aria-expanded="false"
                                         aria-controls="collapseExample4">
-                                    Step 5: Confirm Order
+                                    Step 3: Confirm Order
                                 </button>
                             </div>
                             <!-- / Collapse buttons -->
@@ -402,14 +402,14 @@
                                                 <td>$<%=orders.totalOrder()%>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <%--<tr>
                                                 <td colspan="4">Flat Shipping Rate:</td>
                                                 <td>$5.00</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4">Eco Tax (-2.00):</td>
                                                 <td>$4.00</td>
-                                            </tr>
+                                            </tr>--%>
                                             <tr>
                                                 <td colspan="4">VAT (20%):</td>
                                                 <td>$<%=orders.totalOrder() * 0.2%>
@@ -417,7 +417,7 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="4">Total:</td>
-                                                <td>$<%=(orders.totalOrder() * 0.2) + 4 + 5 + orders.totalOrder()%>
+                                                <td>$<%=(orders.totalOrder() * 0.2) + orders.totalOrder()%>
                                                 </td>
                                             </tr>
                                         </table>
@@ -458,7 +458,7 @@
                             </div>
                         </div>
 
-                        <div class="step" id="step3">
+                 <%--       <div class="step" id="step3">
                             <div>
                                 <button class="btn btn__step" type="button" data-toggle="collapse"
                                         data-target="#collapseExample2" aria-expanded="false"
@@ -476,14 +476,14 @@
                                     Step 4: Payment Method
                                 </button>
                             </div>
-                        </div>
+                        </div>--%>
 
                         <div class="step" id="step5">
                             <div>
                                 <button class="btn btn__step" type="button" data-toggle="collapse"
                                         data-target="#collapseExample4" aria-expanded="false"
                                         aria-controls="collapseExample4">
-                                    Step 5: Confirm Order
+                                    Step 3: Confirm Order
                                 </button>
                             </div>
                         </div>

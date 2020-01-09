@@ -24,10 +24,10 @@ public class RemoveItemServlet extends HttpServlet {
         if (itemRemoveId != null) {
             try {
                 itemDAOImp.removeItem(itemRemoveId);
-                response.sendRedirect("AdminHomeItemServlet");
+                response.sendRedirect("AdminHomeItemServlet?pages=1");
             } catch (Exception e) {
                 e.printStackTrace();
-                request.getRequestDispatcher(Utils.fullPath("AdminHomeItemServlet")).forward(request, response);
+                request.getRequestDispatcher(Utils.fullPath("AdminHomeItemServlet?pages=1")).forward(request, response);
             }
         }
     }

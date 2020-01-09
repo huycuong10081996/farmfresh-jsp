@@ -223,19 +223,26 @@
                         %>
                         <div class="short__by__default">
                             <span>Sort by</span>
-                            <select class="custom-select" name="sortSelect" id="inputGroupSelect03">
-                                <option value="name" selected>Name</option>
-                                <option value="price">Sale Price</option>
-                            </select>
+                            <form action="<%=request.getAttribute("javax.servlet.forward.request_uri") + "?" + request.getQueryString()%>" method="post">
+                                <select class="custom-select" name="sortSelect" id="inputGroupSelect03" onchange="this.form.submit()" style="padding: 0 8px">
+                                    <option selected>Choose</option>
+                                    <option value="name">Name</option>
+                                    <option value="price">Price</option>
+                                    <option value="salePrice">Sale Price</option>
+                                </select>
+                               <%-- <button class="submit" style="display: none"> Submit
+                                </button>--%>
+                            </form>
                         </div>
-                        <div class="short__show">
+                        <%--<div class="short__show">
                             <span>Show</span>
-                            <select class="custom-select" id="inputGroupSelect04">
-                                <option value="9" selected>9</option>
+                            <select class="custom-select" id="inputGroupSelect04" style="padding: 0 8px">
+                                <option selected>Choose</option>
+                                <option value="9">9</option>
                                 <option value="12">12</option>
                                 <option value="15">15</option>
                             </select>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
                 <hr/>

@@ -26,6 +26,8 @@ public class UpdateUserServlet extends HttpServlet {
         request.setCharacterEncoding("utf8");
         response.setCharacterEncoding("utf8");
 
+        int page = Integer.parseInt(request.getParameter("pageUserEdit"));
+
         String userIdEdit = request.getParameter("userIdEdit");
         String userFirstNameEdit = request.getParameter("userFirstNameEdit").trim();
         String userLastNameEdit = request.getParameter("userLastNameEdit").trim();
@@ -78,10 +80,10 @@ public class UpdateUserServlet extends HttpServlet {
         }*/
         try {
             userDAOImp.updateUser(new User(userIdEdit, userFirstNameEdit, userLastNameEdit, userEmailEdit, userPasswordEdit, userPhoneEdit));
-            response.sendRedirect("AdminHomeUserServlet?pages=1");
+            response.sendRedirect("AdminHomeUserServlet?pages=" + page);
         } catch (Exception e) {
             e.printStackTrace();
-            request.getRequestDispatcher(Utils.fullPath("AdminHomeUserServlet?pages=1")).forward(request, response);
+            request.getRequestDispatcher(Utils.fullPath("AdminHomeUserServlet?pages=" + page)).forward(request, response);
         }
     }
 }

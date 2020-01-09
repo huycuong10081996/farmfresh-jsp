@@ -112,9 +112,15 @@
   display: block;
 }
 
+.description__content {
+  border: 1px solid #ededed;
+}
+
 .description__content>p {
   padding: 16px;
+  /*
   border: 1px solid #ededed;
+  */
   text-align: center;
 }
 
@@ -238,4 +244,24 @@ form .review__main>textarea {
 
 .delete_review:hover {
   color: #811b1b;
+}
+
+.edit_review:hover {
+  color: #7fba00;
+}
+
+
+.button__edit__review {
+  display: none;
+  font-size: 15px;
+  padding: 5px 12px;
+  width: 66px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  background: #7fb300;
+}
+
+.button__edit__review:hover {
+  background: #4d4d4d;
 }

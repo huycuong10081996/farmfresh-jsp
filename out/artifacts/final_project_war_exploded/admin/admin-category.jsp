@@ -188,16 +188,11 @@
                                 <form action="<%=Utils.fullPath("UpdateCategoryServlet?categoryEditId=" + categoryId)%>"
                                       method="post">
                                     <div class="modal-body mx-3">
-                                        <%--<div class="md-form mb-5">
-                                            <input type="text" name="categoryIdEdit"
-                                                   class="form-control validate"
-                                                   placeholder="First Name" required="required"
-                                                   value="<%=categoryId%>"
-                                                   pattern="[A-Za-z. ]{3,20}"
-                                                   oninvalid="setCustomValidity('**Id phải tối thiểu 3 ký tự, tối đa 20 ký tự, không có số, không có ký tự đặc biệt.')"
-                                                   oninput="setCustomValidity('')">
+                                        <div class="md-form mb-5" style="display: none">
+                                            <input type="number" name="pageCategoryEdit"
+                                                   value="<%=request.getParameter("pages")%>">
                                         </div>
---%>
+
                                         <div class="md-form mb-5">
                                             <input type="text" name="categoryTitleEdit"
                                                    class="form-control validate"

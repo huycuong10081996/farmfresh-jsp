@@ -151,6 +151,61 @@
             </tr>
             </tfoot>
         </table>
+        <div class="show__page__container">
+            <%
+                int size = (int) request.getAttribute("orderSize");
+                resultSet.beforeFirst();
+                while (resultSet.next()) {
+                    int counter = 0;
+                    int numPager = 1;
+                    int show = 9;
+                    if (size <= 9) {
+                        show = size;
+                    } else {
+                        numPager = size / 9 + 1;
+                    }
+                    counter++;
+            %>
+            <div class="show__page">
+                <p>Showing 1 to <%=show%> of <%=size%>
+                    (<%=numPager%> Pages)</p>
+            </div>
+            <div class="show__pagination">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+
+                        <li>
+                            <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages=1")%>"><<
+                            </a>
+                        </li>
+                        <%
+                            for (int i = 1; i <= numPager; i++) {
+                        %>
+                        <li>
+                            <a class="<%= (i+"").equals(request.getParameter("pages"))? "active__page" : ""%>"
+                               href="<%=Utils.fullPath("AdminHomeProductServlet?pages="+i)%>"><%=i%>
+                            </a></li>
+
+                        <%
+                            }
+                        %>
+                        <li>
+                            <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages="+numPager)%>"
+                               id="<%=numPager%>">
+                                >>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <%
+                    if (counter == 1) {
+                        break;
+                    }
+                }
+            %>
+        </div>
+
     </div>
 </div>
 <!-- jQuery CDN - Slim version (=without AJAX) -->

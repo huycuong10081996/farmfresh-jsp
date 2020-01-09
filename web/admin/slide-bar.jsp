@@ -23,10 +23,10 @@
                     <a href="<%=Utils.fullPath("AdminHomeCategoryServlet?pages=1")%>">Categories</a>
                 </li>
                 <li>
-                    <a href="<%=Utils.fullPath("AdminHomeOrderServlet")%>">Orders</a>
+                    <a href="<%=Utils.fullPath("AdminHomeOrderServlet?pages=1")%>">Orders</a>
                 </li>
                 <li>
-                    <a href="<%=Utils.fullPath("AdminHomeItemServlet")%>">Order Items</a>
+                    <a href="<%=Utils.fullPath("AdminHomeItemServlet?pages=1")%>">Order Items</a>
                 </li>
             </ul>
         </li>

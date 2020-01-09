@@ -246,6 +246,8 @@
                                             </h6>
                                             <a href="<%=Utils.fullPath("RemoveReviewServlet?productDetailId=" + resultSetproductDetail.getString(1) + "&reviewId=" + resultSetproductDetail.getString(14))%>"
                                                class="delete_review"><i class="fa fa-trash" style="padding: 10px;"></i></a>
+                                            <a href="#"
+                                               class="edit_review" id="editReviewIcon"><i class="fa fa-edit" style="padding: 10px;"></i></a>
                                             <%
                                             } else {
                                             %>
@@ -259,8 +261,24 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <div><%=resultSetproductDetail.getString(10)%>
+                                        <div>
+                                            <%
+                                                if (u != null && u.getUserId().equals(resultSetproductDetail.getString(16))) {
+                                            %>
+                                            <form action="#" method="post" style="display: flex; flex-direction: column">
+                                                <textarea contenteditable="false" style="outline: none; border: none;" name="editReview" id="editReview"><%=resultSetproductDetail.getString(10)%>
+                                                </textarea>
+                                                <button type="submit" id="buttonEditReview" class="button__edit__review">Edit</button>
+                                            </form>
+                                            <%
+                                                } else {
+                                            %>
+                                            <p><%=resultSetproductDetail.getString(10)%></p>
+                                            <%
+                                                }
+                                            %>
                                         </div>
+
                                         <div>
                                             <ul class="rating__star row">
                                                 <li>
@@ -469,6 +487,22 @@
             window.location.href = "http://localhost:8080/final_project/ProductDetailServlet?productDetailId=" + productItem[i].getAttribute('id').trim();
         });
     }
+</script>
+
+<script>
+    const editTextarea = document.getElementById("editReview");
+    const buttonEditReview = document.getElementById("buttonEditReview");
+    const editReviewIcon = document.getElementById("editReviewIcon");
+    editReviewIcon.onclick = function () {
+        editTextarea.contentEditable = "true";
+    }
+    if (editTextarea){
+        console.log(editTextarea.getAttribute('id'))
+        if (editTextarea.contentEditable === "true") {
+            buttonEditReview.style.display = "block";
+        }
+    }
+
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

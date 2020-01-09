@@ -2,6 +2,7 @@ package profile.Admin.Category;
 
 import Controller.CategoryDAO;
 import Model.Category;
+import Model.Item;
 import vn.edu.nlu.fit.Utils.Utils;
 
 import javax.servlet.http.HttpServlet;
@@ -26,6 +27,8 @@ public class UpdateCategoryServlet extends HttpServlet {
         request.setCharacterEncoding("utf8");
         response.setCharacterEncoding("utf8");
 
+        int page = Integer.parseInt(request.getParameter("pageCategoryEdit"));
+
         String categoryId = request.getParameter("categoryEditId");
         String categoryTitleEdit = request.getParameter("categoryTitleEdit").trim();
 
@@ -39,10 +42,10 @@ public class UpdateCategoryServlet extends HttpServlet {
         } else {
             try {
                 categoryDAO.updateCategory(new Category(categoryId, categoryTitleEdit, "AD03"));
-                response.sendRedirect(Utils.fullPath("AdminHomeCategoryServlet?pages=1"));
+                response.sendRedirect(Utils.fullPath("AdminHomeCategoryServlet?pages=" + page));
             } catch (Exception e) {
                 e.printStackTrace();
-                request.getRequestDispatcher(Utils.fullPath("AdminHomeCategoryServlet?pages=1")).forward(request, response);
+                request.getRequestDispatcher(Utils.fullPath("AdminHomeCategoryServlet?pages=" + page)).forward(request, response);
             }
         }
 

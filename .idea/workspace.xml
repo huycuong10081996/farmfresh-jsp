@@ -7,25 +7,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Category/UpdateCategoryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Category/UpdateCategoryServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Order/AdminHomeItemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Order/AdminHomeItemServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Order/AdminHomeOrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Order/AdminHomeOrderServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Order/RemoveItemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Order/RemoveItemServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Order/RemoveOrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Order/RemoveOrderServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Product/EditProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/Product/EditProductServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/User/UpdateUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/Admin/User/UpdateUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ListProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/profile/ListProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/Utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/WEB-INF/classes/vn/edu/nlu/fit/Utils/Utils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-category.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-item.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-user.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/adminOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/adminOrder.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/slide-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/slide-bar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/category.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/css/product-detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Category/UpdateCategoryServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Category/UpdateCategoryServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Order/AdminHomeItemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Order/AdminHomeItemServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Order/AdminHomeOrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Order/AdminHomeOrderServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Order/RemoveItemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Order/RemoveItemServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Order/RemoveOrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Order/RemoveOrderServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Product/EditProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/Product/EditProductServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/Admin/User/UpdateUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/Admin/User/UpdateUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Category/AddCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Category/AddCategoryServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Category/AdminHomeCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Category/AdminHomeCategoryServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Category/RemoveCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Category/RemoveCategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/profile/ListProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/profile/ListProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/final_project/vn/edu/nlu/fit/Utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/final_project/vn/edu/nlu/fit/Utils/Utils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/profile/Admin/Category/UpdateCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Category/UpdateCategoryServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Admin/User/AddUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/User/AddUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Admin/User/AdminHomeUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/User/AdminHomeUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Admin/User/RemoveUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/User/RemoveUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Order/AdminHomeItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Order/AdminHomeItemServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Order/AdminHomeOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Order/AdminHomeOrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Order/RemoveItemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Order/RemoveItemServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Order/RemoveOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Order/RemoveOrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Admin/Product/EditProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/Product/EditProductServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/profile/Admin/User/UpdateUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Admin/User/UpdateUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/ListProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/ListProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vn/edu/nlu/fit/Utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vn/edu/nlu/fit/Utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin/admin-category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin-category.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/admin-item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin-item.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin/admin-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin-user.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/adminOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/adminOrder.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/css/admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin/slide-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/slide-bar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/category.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/product-detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/product-detail.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,9 +122,8 @@
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\farmfresh-jsp\web\admin" />
-      <recent name="D:\farmfresh-jsp\web" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\farmfresh-jsp\web\WEB-INF" />
@@ -104,8 +132,9 @@
       <recent name="D:\farmfresh-jsp\web\admin\img" />
       <recent name="D:\farmfresh-jsp\web\img" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\farmfresh-jsp\web\admin" />
+      <recent name="D:\farmfresh-jsp\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -305,6 +334,9 @@
       <workItem from="1577586914871" duration="6434000" />
       <workItem from="1577627977516" duration="6454000" />
       <workItem from="1577841184284" duration="3834000" />
+      <workItem from="1577886198042" duration="10947000" />
+      <workItem from="1577940676104" duration="990000" />
+      <workItem from="1578558857541" duration="8235000" />
     </task>
     <servers />
   </component>

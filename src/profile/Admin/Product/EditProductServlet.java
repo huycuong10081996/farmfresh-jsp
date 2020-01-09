@@ -29,6 +29,7 @@ public class EditProductServlet extends HttpServlet {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String productCreateAt = dateFormat.format(calendars.getTime());
 
+        int page = Integer.parseInt(request.getParameter("pageEdit"));
         String productIdEdit = request.getParameter("productIdEdit");
         String productNameEdit = request.getParameter("productNameEdit").trim();
         String productImageEdit = request.getParameter("productImageEdit").trim();
@@ -41,10 +42,10 @@ public class EditProductServlet extends HttpServlet {
 
         try {
             productDAOImp.updateProduct(new Product(productIdEdit, productNameEdit, productImageEdit, productPriceEdit, productSalePriceEdit, productCategoryIdEdit, "AD03", productCreateAt, productQuantityEdit, productDescriptionEdit, productStatusEdit));
-            response.sendRedirect("AdminHomeProductServlet?pages=1");
+            response.sendRedirect("AdminHomeProductServlet?pages="+page);
         } catch (Exception e) {
             e.printStackTrace();
-            request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet?pages=1")).forward(request, response);
+            request.getRequestDispatcher(Utils.fullPath("AdminHomeProductServlet?pages="+page)).forward(request, response);
         }
     }
 }

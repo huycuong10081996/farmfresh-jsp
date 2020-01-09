@@ -259,6 +259,12 @@
                                 <form action="<%=Utils.fullPath("UpdateUserServlet?userIdEdit=" + userId)%>"
                                       method="post">
                                     <div class="modal-body mx-3">
+
+                                        <div class="md-form mb-5" style="display: none">
+                                            <input type="number" name="pageUserEdit"
+                                                   value="<%=request.getParameter("pages")%>">
+                                        </div>
+
                                         <div class="md-form mb-5">
                                             <input type="text" name="userFirstNameEdit"
                                                    class="form-control validate"

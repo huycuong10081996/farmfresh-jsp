@@ -27,10 +27,10 @@ public class RemoveOrderServlet extends HttpServlet {
             try {
                 itemDAOImp.removeItemFromOrders(orderRemoveId);
                 ordersDAOImp.deleteOrders(orderRemoveId);
-                response.sendRedirect("AdminHomeOrderServlet");
+                response.sendRedirect("AdminHomeOrderServlet?pages=1");
             } catch (Exception e) {
                 e.printStackTrace();
-                request.getRequestDispatcher(Utils.fullPath("AdminHomeOrderServlet")).forward(request, response);
+                request.getRequestDispatcher(Utils.fullPath("AdminHomeOrderServlet?pages=1")).forward(request, response);
             }
         }
     }
