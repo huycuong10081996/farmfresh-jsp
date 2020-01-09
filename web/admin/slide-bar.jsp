@@ -17,6 +17,9 @@
                     <a href="<%=Utils.fullPath("AdminHomeProductServlet?pages=1")%>">Products</a>
                 </li>
                 <li>
+                    <a href="<%=Utils.fullPath("AdminHomeAdminServlet?pages=1")%>">Admins</a>
+                </li>
+                <li>
                     <a href="<%=Utils.fullPath("AdminHomeUserServlet?pages=1")%>">Users</a>
                 </li>
                 <li>

@@ -7,18 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a044964f-9cb4-4e0d-a275-b83095cd9fc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminDAOImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/Admin/Admin/AddAdminServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/Admin/Admin/AdminHomeAdminServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/Admin/Admin/DeleteAdminServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/profile/Admin/Admin/EditAdminServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/admin/admin-admin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/adminOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/final_project_war_exploded/admin/adminOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/admin-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/adminOrder.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/adminOrder.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/checkout-success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/checkout-success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/checkout.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/checkout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/slide-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/slide-bar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +113,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
@@ -300,7 +298,9 @@
       <workItem from="1577841184284" duration="3834000" />
       <workItem from="1577886198042" duration="10947000" />
       <workItem from="1577940676104" duration="990000" />
-      <workItem from="1578558857541" duration="12260000" />
+      <workItem from="1578558857541" duration="12869000" />
+      <workItem from="1578578459257" duration="3287000" />
+      <workItem from="1578581790193" duration="5254000" />
     </task>
     <servers />
   </component>

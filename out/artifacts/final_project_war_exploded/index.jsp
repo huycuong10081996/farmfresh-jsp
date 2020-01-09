@@ -68,7 +68,7 @@
                     </ul>
                 </div>
 
-                <div <%--data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500"--%>
+                    <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500"
                      class="product-list">
                     <div class="product-list__container">
 
@@ -222,7 +222,7 @@
                 <h1 class="customer__review__title" data-aos="fade-down" data-aos-duration="1500"
                     data-aos-easing="linear">what they say</h1>
                 <div class="review__container">
-                    <div class="review__description" <%--data-aos="zoom-in-left" data-aos-duration="1700"--%>>
+                    <div class="review__description" data-aos="zoom-in-left" data-aos-duration="1700">
                         <div class="review__top">
                             <div class="review__top__image">
                                 <img src="img/46499158_906532309541687_735503026202083328_n.jpg" alt="">
@@ -244,7 +244,7 @@
                         </div>
                     </div>
 
-                    <div class="review__description" <%--data-aos="zoom-in-right" data-aos-duration="1900"--%>>
+                    <div class="review__description" data-aos="zoom-in-right" data-aos-duration="1900">
                         <div class="review__top">
                             <div class="review__top__image">
                                 <img src="img/46499158_906532309541687_735503026202083328_n.jpg" alt="">
@@ -344,11 +344,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
-<%--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
     AOS.init();
-</script>--%>
+</script>
 
 </body>
 
