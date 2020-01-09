@@ -68,7 +68,7 @@
                     </ul>
                 </div>
 
-                <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500"
+                <div <%--data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1500"--%>
                      class="product-list">
                     <div class="product-list__container">
 
@@ -88,18 +88,18 @@
                                 <p><%=homeResultSet.getString(2)%>
                                 </p>
                                 <%
-                                    if (homeResultSet.getString(5) == null) {
+                                    if (homeResultSet.getDouble(5) == 0) {
                                 %>
 
-                                <p><strong>$<%=homeResultSet.getString(4)%></strong></p>
+                                <p><strong>$<%=homeResultSet.getDouble(4)%></strong></p>
 
                                 <%
                                     } else {
                                 %>
 
-                                <p><strong>$<%=homeResultSet.getString(5)%>
+                                <p><strong>$<%=homeResultSet.getDouble(5)%>
                                 </strong>
-                                    <span class="price--line-through">$<%=homeResultSet.getString(4)%></span>
+                                    <span class="price--line-through">$<%=homeResultSet.getDouble(4)%></span>
                                 </p>
 
                                 <%
@@ -107,15 +107,14 @@
                                 %>
                                 <ul class="star-rank">
                                     <%
-                                        int ratingStart = homeResultSet.getInt(6);
-                                        if (ratingStart == 0) {
+                                        if (homeResultSet.getInt(6) == 0) {
                                             for (int i = 1; i <= 5; i++) {
                                     %>
                                     <li><i class="fas fa-star"></i></li>
                                     <%
                                         }
                                     } else {
-                                        for (int i = 1; i <= ratingStart; i++) {
+                                        for (int i = 1; i <= homeResultSet.getInt(6); i++) {
                                     %>
                                     <li><i class="fas fa-star"></i></li>
                                     <%
@@ -123,7 +122,7 @@
                                         }
                                     %>
                                 </ul>
-                                <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
+                                <a class="add-to-cart__btn" href="<%=Utils.fullPath("AddCartServlet?productId="+homeResultSet.getString(1))%>">add to cart</a>
                             </div>
                         </div>
 
@@ -161,13 +160,24 @@
                                     <span class="price--line-through"><%=homeResultSet.getString(4)%></span>
                                 </p>
                                 <ul class="star-rank">
+                                    <%
+                                        int ratingStart = homeResultSet.getInt(6);
+                                        if (ratingStart == 0) {
+                                            for (int i = 1; i <= 5; i++) {
+                                    %>
                                     <li><i class="fas fa-star"></i></li>
+                                    <%
+                                        }
+                                    } else {
+                                        for (int i = 1; i <= ratingStart; i++) {
+                                    %>
                                     <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
+                                    <%
+                                            }
+                                        }
+                                    %>
                                 </ul>
-                                <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
+                                <a class="add-to-cart__btn" href="<%=Utils.fullPath("AddCartServlet?productId="+homeResultSet.getString(1))%>">add to cart</a>
                             </div>
                         </div>
                         <%
@@ -212,7 +222,7 @@
                 <h1 class="customer__review__title" data-aos="fade-down" data-aos-duration="1500"
                     data-aos-easing="linear">what they say</h1>
                 <div class="review__container">
-                    <div class="review__description" data-aos="zoom-in-left" data-aos-duration="1700">
+                    <div class="review__description" <%--data-aos="zoom-in-left" data-aos-duration="1700"--%>>
                         <div class="review__top">
                             <div class="review__top__image">
                                 <img src="img/46499158_906532309541687_735503026202083328_n.jpg" alt="">
@@ -234,7 +244,7 @@
                         </div>
                     </div>
 
-                    <div class="review__description" data-aos="zoom-in-right" data-aos-duration="1900">
+                    <div class="review__description" <%--data-aos="zoom-in-right" data-aos-duration="1900"--%>>
                         <div class="review__top">
                             <div class="review__top__image">
                                 <img src="img/46499158_906532309541687_735503026202083328_n.jpg" alt="">
@@ -316,7 +326,7 @@
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
 
-<script>
+<script async>
     const productItem = document.querySelectorAll(".product-item");
     for (let i = 0; i < productItem.length; i++) {
         productItem[i].addEventListener("click", function () {
@@ -334,11 +344,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<%--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
     AOS.init();
-</script>
+</script>--%>
 
 </body>
 

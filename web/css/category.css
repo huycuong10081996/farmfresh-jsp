@@ -484,10 +484,10 @@ ul.star-rank>li {
     margin: 3px;
     padding: 5px 12px;
     border: 1px solid #292929;
-    background: #7fb300;
     text-decoration: none;
     color: white;
     transition: all .35s;
+    background: #7fb300;
 }
 
 .show__page__container ul>li>a:hover {
@@ -495,5 +495,5 @@ ul.star-rank>li {
 }
 
 .active {
-    background: #7fba00 !important;
+    background: #292929 !important;
 }

@@ -43,7 +43,8 @@
             %>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb non-bg">
-                    <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a></li>
+                    <li class="breadcrumb-item"><a class="color-green"
+                                                   href="<%=Utils.fullPath("HomeServlet")%>">Home</a></li>
                     <li class="breadcrumb-item" aria-current="page"><%=resultSetProduct.getString(6)%>
                     </li>
 
@@ -154,7 +155,7 @@
                                                     <span>$<%=special.getString(4)%></span>
                                                 </div>
                                                 <%
-                                                    } else {
+                                                } else {
                                                 %>
                                                 <div class="price__sale">
                                                     <span>$<%=special.getString(5)%></span>
@@ -222,19 +223,26 @@
                         %>
                         <div class="short__by__default">
                             <span>Sort by</span>
-                            <select class="custom-select" name="sortSelect" id="inputGroupSelect03">
-                                <option value="name" selected>Name</option>
-                                <option value="price">Sale Price</option>
-                            </select>
+                            <form action="<%=request.getAttribute("javax.servlet.forward.request_uri") + "?" + request.getQueryString()%>" method="post">
+                                <select class="custom-select" name="sortSelect" id="inputGroupSelect03" onchange="this.form.submit()" style="padding: 0 8px">
+                                    <option selected>Choose</option>
+                                    <option value="name">Name</option>
+                                    <option value="price">Price</option>
+                                    <option value="salePrice">Sale Price</option>
+                                </select>
+                               <%-- <button class="submit" style="display: none"> Submit
+                                </button>--%>
+                            </form>
                         </div>
-                        <div class="short__show">
+                        <%--<div class="short__show">
                             <span>Show</span>
-                            <select class="custom-select" id="inputGroupSelect04">
-                                <option value="9" selected>9</option>
+                            <select class="custom-select" id="inputGroupSelect04" style="padding: 0 8px">
+                                <option selected>Choose</option>
+                                <option value="9">9</option>
                                 <option value="12">12</option>
                                 <option value="15">15</option>
                             </select>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
                 <hr/>
@@ -257,7 +265,8 @@
                                         if (p.getProductSalePrice() == 0.0) {
                                     %>
 
-                                    <p><strong>$<%=p.getProductPrice()%></strong></p>
+                                    <p><strong>$<%=p.getProductPrice()%>
+                                    </strong></p>
 
                                     <%
                                     } else {
@@ -290,7 +299,7 @@
                                         %>
                                     </ul>
                                     <a class="add-to-cart__btn"
-                                       href="<%=Utils.fullPath("CartServlet?productId="+p.getProductId())%>">add
+                                       href="<%=Utils.fullPath("AddCartFromProductDetailServlet?productDetailId="+p.getProductId())%>">add
                                         to cart</a>
                                 </div>
                             </div>
@@ -330,19 +339,24 @@
                             <ul class="pagination justify-content-end">
 
                                 <li>
-                                    <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages=1")%>">First</a>
+                                    <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages=1")%>"
+                                       id="0" name="<%=1%>">First</a>
                                 </li>
                                 <%
                                     for (int i = 1; i <= numPager; i++) {
                                 %>
                                 <li>
-                                    <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages="+i)%>"><%=i%>
+                                    <a class="<%= (i+"").equals(request.getParameter("pages"))? "active" : ""%>"
+                                       href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages="+i)%>"
+                                       id="<%=i%>" name="<%=i%>"><%=i%>
                                     </a></li>
+
                                 <%
                                     }
                                 %>
                                 <li>
-                                    <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages="+numPager)%>">Last</a>
+                                    <a href="<%=Utils.fullPath("ListProductServlet?category="+resultSetSize.getString(7)+"&pages="+numPager)%>"
+                                       id="<%=numPager%>" name="<%=numPager%>">Last</a>
                                 </li>
                             </ul>
                         </nav>
@@ -376,21 +390,21 @@
     }
 </script>
 
-<!--
-<script>
-    function sortBy(obj) {
-        var value = obj.value;
-        if (value === 'name') {
-            <%--<%
-            Utils.sortByName(list);
-            %>--%>
-        } else if (value === 'price') {
-           <%-- <%
-            Utils.sortByPrice(list);
-            %>--%>
+<%--<script>
+
+    console.log(window.location.search);
+    const urlParams = new URLSearchParams(window.location.search);
+    const pages = urlParams.get('pages');
+    const pagesItem = document.querySelectorAll('.pagination');
+    for (let i = 0; i < pagesItem.length; i++) {
+
+        const pagesItemA = pagesItem[i].getElementsByTagName('a');
+        for (let j = 0; j < pagesItemA.length; j++) {
+            console.log(pagesItemA[j].getAttribute('name'));
         }
     }
-</script> -->
+
+</script>--%>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

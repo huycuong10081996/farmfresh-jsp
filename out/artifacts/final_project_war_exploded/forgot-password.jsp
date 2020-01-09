@@ -69,17 +69,33 @@
                                 <form action="">
                                     <div class="input__email">
                                         <label for="emailAddress"><span>*</span>&nbsp;E-Mail Address</label>
-                                        <input type="text" placeholder="E-Mail Address..." id="emailAddress">
+                                        <input type="text" placeholder="E-Mail Address..." id="emailAddress" name="emailForgot">
                                     </div>
 
+                                    <%
+                                        String errEmail = (String) request.getAttribute("errEmailForgot");
+                                        if (errEmail != null) {
+                                    %>
+
+                                    <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errEmail%></span>
+                                    </div>
+
+                                    <%
+                                        }
+                                    %>
+
                                     <div class="forgot__button__container row justify-content-between">
-                                        <div class="back__btn read__more__blog__btn">
-                                            <a href="login.jsp">Back</a>
+                                        <div class="step2__btn">
+                                            <a href="login.jsp" class="continue">Back</a>
                                         </div>
 
-                                        <div class="read__more__blog__btn">
-                                            <a href="login.jsp">Continue</a>
-                                        </div>
+                                        <button type="submit" class="continue__button">
+                                            Continue
+                                        </button>
                                     </div>
                                 </form>
                             </div>

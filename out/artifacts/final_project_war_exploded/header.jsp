@@ -1,5 +1,11 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="vn.edu.nlu.fit.Utils.Utils" %>
+<%@ page import="Model.Orders" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Model.Item" %>
+<%@ page import="Model.Product" %>
+<%@ page import="java.util.List" %>
+<%@ page import="Model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header>
 
@@ -11,7 +17,7 @@
                     <ul class="language-currency__ul">
                         <li>Language
                             <ul class="sub-menu menu">
-                                <li>Việt Nam</li>
+                                <li>Viet Nam</li>
                                 <li>English</li>
                             </ul>
                         </li>
@@ -32,74 +38,91 @@
                 </div>
 
                 <div class="user-login-search">
+                    <%
+                        Orders orders = (Orders) session.getAttribute("order");
+                        int ordersQuantity = orders == null ? 0 : orders.getItems().size();
+                    %>
                     <ul class="user-login-search__ul">
                         <li class="search__header"><i class="fas fa-search"></i>
                             <div class="sub__input"><input type="text"></div>
                         </li>
                         <li class="user"><i class="fas fa-user"></i>
                             <ul class="sub-menu">
+                                <%
+                                    User u = (User) session.getAttribute("user");
+                                    if (u != null) {
+                                %>
+                                <li><a href="my-account.jsp"><%=u.getFullName()%></a></li>
+                                <li><a href="<%=Utils.fullPath("LogoutServlet")%>">Logout</a></li>
+                                <%
+                                    } else {
+                                %>
                                 <li><a href="register.jsp">Register</a></li>
                                 <li><a href="login.jsp">Login</a></li>
+                                <%
+                                    }
+                                %>
                             </ul>
                         </li>
-                        <li id="clickCart"><i class="fas fa-shopping-cart"></i><span class="cart__quantity">0</span>
+                        <li id="clickCart"><i class="fas fa-shopping-cart"></i><span class="cart__quantity"><%=ordersQuantity%></span>
                         </li>
                     </ul>
+
+                    <%
+                        if (orders != null) {
+                    %>
                     <div class="cart__container" id="cartContainer">
+                        <%
+                            List<Item> items = (List<Item>) orders.getItems();
+                            for (Item item : items) {
+                        %>
+
                         <div class="cart__wrapper">
-                            <div class="cart__image">
-                                <img src="img/06-85x85.jpg" alt="">
+                            <div class="cart__image" style="height:100px; width: 100px">
+                                <img src="<%=item.getProduct().getProductImageURL()%>" alt="">
                             </div>
                             <div class="cart-info">
                                 <div class="cart-info__name">
-                                    <p>Accusantium Doloremque</p>
+                                    <p><%=item.getProduct().getProductName()%></p>
                                 </div>
-                                <div class="cart-info__quantity">X 1</div>
-                                <div class="cart-info__price">$10</div>
+                                <div class="cart-info__quantity"><%=item.getQuantity()%></div>
+                                <div class="cart-info__price">$<%=item.getPrice()%></div>
                             </div>
                             <div class="cart__button--remove">
-                                <button>X</button>
-                            </div>
-                        </div>
-                        <div class="cart__wrapper">
-                            <div class="cart__image">
-                                <img src="img/06-85x85.jpg" alt="">
-                            </div>
-                            <div class="cart-info">
-                                <div class="cart-info__name">
-                                    <p>Accusantium Doloremque</p>
-                                </div>
-                                <div class="cart-info__quantity">X 1</div>
-                                <div class="cart-info__price">$10</div>
-                            </div>
-                            <div class="cart__button--remove">
-                                <button>X</button>
+                                <a href="<%=Utils.fullPath("DeleteServlet")%>">X</a>
                             </div>
                         </div>
 
-
+                        <%
+                            }
+                        %>
                         <hr>
                         <div class="sub-total__container">
                             <div class="sub-total__content">
                                 <div class="sub-total__info">
-                                    <p>Sub-Total</p>
-                                    <p>Eco Tax (-2.00)</p>
-                                    <p>VAT(20%)</p>
                                     <p>Total</p>
                                 </div>
                                 <div class="sub-total__price">
-                                    <p>$215.00</p>
-                                    <p>$2.00</p>
-                                    <p>$20.00</p>
-                                    <p>$237.00</p>
+                                    <p>$<%=orders.totalOrder()%></p>
                                 </div>
                             </div>
                         </div>
                         <div class="total-button__wrapper">
-                            <button id="viewCartHeader" class="active">View Cart</button>
-                            <button id="checkoutButtonHeader">Checkout</button>
+                            <a class="go__to view__cart" href="<%=Utils.fullPath("shopping-cart")%>" style="padding: 6px 12px; background: #7fba00; color: #fff; border-radius: 12px">View Cart</a>
+                            <a class="go__to" href="checkout.jsp" style="padding: 6px 12px; background: #7fba00; color: #fff; border-radius: 12px">Checkout</a>
                         </div>
                     </div>
+                    <%
+                        } else {
+                    %>
+
+                    <div class="cart__container" id="cartContainer" style="display: flex; justify-content: center; align-items: center">
+                        <h6 style="color: #fff; margin: 0; padding-top: 20px; padding-bottom: 20px">Your Shopping Cart is Empty</h6>
+                    </div>
+
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </div>

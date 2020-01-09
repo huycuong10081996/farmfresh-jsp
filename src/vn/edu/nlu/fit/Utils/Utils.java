@@ -46,4 +46,7 @@ public class Utils {
         a = b;
         b = temp;
     }
+
+    private static class ActionContext {
+    }
 }

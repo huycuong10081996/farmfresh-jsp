@@ -1,3 +1,4 @@
+<%@ page import="Controller.OrdersDAOImp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +54,23 @@
                     </div>
 
                     <div class="checkout__tag__wrapper">
+
+                        <%
+                            if (u != null) {
+                        %>
+                        <div class="step">
+                            <!-- Collapse buttons -->
+                            <div>
+                                <button class="btn btn__step" type="button" data-toggle="collapse"
+                                        data-target="#collapseExample" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                    Step 1: Checkout Options
+                                </button>
+                            </div>
+                        </div>
+                        <%
+                        } else {
+                        %>
                         <div class="step" id="step1">
                             <!-- Collapse buttons -->
                             <div>
@@ -75,16 +93,8 @@
 
                                             <div class="option">
                                                 <p>Checkout Options</p>
-                                                <div>
-                                                    <input id="registerAccout" type="radio" name="user"
-                                                           checked="checked">
-                                                    <label for="registerAccout">Register Account</label>
-                                                </div>
-                                                <div>
-                                                    <input id="guestCheckout" type="radio" name="user">
-                                                    <label for="guestCheckout">Guest Checkout</label>
-                                                </div>
-
+                                                <p style="color: #5f5f5f; font-weight: 600; font-size: 17px"
+                                                   class="text__level2">Register Account</p>
                                                 <div>
                                                     <p>
                                                         By creating an account you will be able to shop faster, be
@@ -95,7 +105,7 @@
                                                 </div>
 
                                                 <div class="step2__btn">
-                                                    <a href="">Continue</a>
+                                                    <a href="register.jsp">Continue</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,29 +117,89 @@
                                             <div>
                                                 <p>I am a returning customer</p>
                                             </div>
+                                            <form action="<%=Utils.fullPath("LoginServletFromCheckout")%>"
+                                                  class="returning__customer__form"
+                                                  method="post">
+                                                <div>
+                                                    <h5>Returning Customer</h5>
+                                                </div>
+                                                <div>
+                                                    <p style="color: #5f5f5f;" class="text__level2">I am a returning
+                                                        Customer</p>
+                                                </div>
 
-                                            <div>
-                                                <p>Email</p>
-                                                <input type="text" placeholder="E-Mail">
-                                            </div>
+                                                <%
+                                                    String emailValue = request.getParameter("emailLoginCheckout");
+                                                    if (emailValue != null) {
+                                                %>
+                                                <div>
+                                                    <p>Email Address</p>
+                                                    <input type="text" name="emailLoginCheckout" required="required"
+                                                           id="emailLogin" placeholder="E-Mail Address..."
+                                                           value='<%=emailValue%>'/>
+                                                </div>
+                                                <%
+                                                } else {
+                                                %>
+                                                <div>
+                                                    <p>Email Address</p>
+                                                    <input type="text" name="emailLoginCheckout" required="required"
+                                                           id="" placeholder="E-Mail Address..."/>
+                                                </div>
+                                                <%
+                                                    }
+                                                %>
+                                                <%
+                                                    String errEmail = (String) request.getAttribute("errEmailCheckout");
+                                                    if (errEmail != null) {
+                                                %>
+                                                <div style="display: flex;justify-content: center;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errEmail%></span>
+                                                </div>
+                                                <%
+                                                    }
+                                                %>
+                                                <div>
+                                                    <p>Password</p>
+                                                    <input type="password" name="passLoginCheckout" id="passLogin"
+                                                           required="required" placeholder="Password...">
+                                                </div>
+                                                <%
+                                                    String errPass = (String) request.getAttribute("errPasswordCheckout");
+                                                    if (errPass != null) {
+                                                %>
+                                                <div style="display: flex;justify-content: center;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px;">
 
-                                            <div>
-                                                <p>Password</p>
-                                                <input type="password" placeholder="Password">
-                                            </div>
-
-                                            <div class="forgot">
-                                                <a href="">Forgotten Password</a>
-                                            </div>
-                                            <div class="step2__btn">
-                                                <a href="">Login</a>
-                                            </div>
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errPass%></span>
+                                                </div>
+                                                <%
+                                                    }
+                                                %>
+                                                <div class="forgot">
+                                                    <a href="forgot-password.jsp">Forgotten Password</a>
+                                                </div>
+                                                <button class="continue__button" type="submit">
+                                                    Login
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- / Collapsible element -->
                         </div>
+
+                        <%
+                            }
+                        %>
+
+                        <%
+                            if (u != null) {
+                        %>
 
                         <div class="step" id="step2">
                             <!-- Collapse buttons -->
@@ -145,55 +215,27 @@
                             <!-- Collapsible element -->
                             <div class="collapse" id="collapseExample1">
                                 <div class="mt-3">
-                                    <div class="step2__container">
+                                    <form class="step2__container" action="#">
                                         <div class="step2__wrapper">
-                                            <div class="personal__detail">
-                                                <div class="personal__detail__title">
-                                                    <h4>Personal Details</h4>
-                                                </div>
-
-                                                <div class="input__personal">
-                                                    <p><span>*</span>&nbsp;First Name</p>
-                                                    <input type="text">
-                                                </div>
-
-                                                <div class="input__personal">
-                                                    <p><span>*</span>&nbsp;Last Name</p>
-                                                    <input type="text">
-                                                </div>
-                                                <div class="input__personal">
-                                                    <p><span>*</span>&nbsp;E-Mail</p>
-                                                    <input type="text">
-                                                </div>
-                                                <div class="input__personal">
-                                                    <p><span>*</span>&nbsp;Telephone</p>
-                                                    <input type="text">
-                                                </div>
-                                            </div>
-
                                             <div class="your__address">
                                                 <div class="your__address__title">
                                                     <h4>Your Address</h4>
                                                 </div>
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;Address</p>
-                                                    <input type="text">
+                                                    <input type="text" required="required">
                                                 </div>
 
                                                 <div class="input__personal">
-                                                    <p><span>*</span>&nbsp;City</p>
-                                                    <input type="text">
-                                                </div>
-                                                <div class="input__personal">
                                                     <p><span>*</span>&nbsp;Post Code</p>
-                                                    <input type="text">
+                                                    <input type="text" required="required">
                                                 </div>
 
                                                 <div class="input__personal">
                                                     <p><span>*</span>&nbsp;Province</p>
                                                     <select class="browser-default custom-select"
                                                             aria-label="Example select with button addon" name=""
-                                                            id="#">
+                                                            required="required">
                                                         <option selected value="">---Please Select---</option>
                                                         <option value="">An Giang</option>
                                                     </select>
@@ -203,7 +245,7 @@
                                                     <p><span>*</span>&nbsp;Ward/District</p>
                                                     <select class="browser-default custom-select"
                                                             aria-label="Example select with button addon" name=""
-                                                            id="#">
+                                                            required="required">
                                                         <option selected value="">---Please Select---</option>
                                                         <option value="">Chau Thanh</option>
                                                     </select>
@@ -212,22 +254,22 @@
                                         </div>
 
                                         <div class="address__agree">
-                                            <input type="checkbox" id="agreement">
+                                            <input type="checkbox" id="agreement" required="required">
                                             <label for="agreement">
                                                 My delivery and billing addresses are the same.
                                             </label>
                                         </div>
 
-                                        <div class="step2__btn">
-                                            <a href="">Continue</a>
-                                        </div>
-                                    </div>
+                                        <button type="submit" class="continue__button">
+                                            Continue
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                             <!-- / Collapsible element -->
                         </div>
 
-                        <div class="step" id="step3">
+                      <%--  <div class="step" id="step3">
                             <!-- Collapse buttons -->
                             <div>
                                 <button class="btn btn__step" type="button" data-toggle="collapse"
@@ -261,9 +303,9 @@
                                             <h6>Add Comments About Your Order</h6>
                                             <textarea name="" id="#" cols="30" rows="10"></textarea>
                                         </div>
-                                        <div class="step2__btn">
-                                            <a href="">Continue</a>
-                                        </div>
+                                        <button type="submit" class="continue__button">
+                                            Continue
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -296,17 +338,17 @@
 
                                         <div class="add__comment">
                                             <h6>Add Comments About Your Order</h6>
-                                            <textarea name="" id="#" cols="30" rows="10"></textarea>
+                                            <textarea name="" cols="30" rows="10"></textarea>
                                         </div>
 
-                                        <div class="step2__btn">
-                                            <a href="">Continue</a>
-                                        </div>
+                                        <button type="submit" class="continue__button">
+                                            Continue
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                             <!-- / Collapsible element -->
-                        </div>
+                        </div>--%>
 
                         <div class="step" id="step5">
                             <!-- Collapse buttons -->
@@ -314,7 +356,7 @@
                                 <button class="btn btn__step" type="button" data-toggle="collapse"
                                         data-target="#collapseExample4" aria-expanded="false"
                                         aria-controls="collapseExample4">
-                                    Step 5: Confirm Order
+                                    Step 3: Confirm Order
                                 </button>
                             </div>
                             <!-- / Collapse buttons -->
@@ -323,55 +365,135 @@
                             <div class="collapse" id="collapseExample4">
                                 <div class="mt-3">
                                     <div class="step5__container">
+                                        <%
+                                            if (orders != null) {
+                                        %>
                                         <table>
                                             <tr>
                                                 <th>Product Name</th>
-                                                <th>Model</th>
+                                                <th>Category</th>
                                                 <th>Quantity</th>
                                                 <th>Unit Price</th>
                                                 <th>Total</th>
                                             </tr>
 
+                                            <%
+                                                List<Item> list = orders.getItems();
+                                                for (Item item : list) {
+                                            %>
                                             <tr>
-                                                <td>Accusantium Doloremque</td>
-                                                <td>Product 21</td>
-                                                <td>1</td>
-                                                <td>$128.00</td>
-                                                <td>$128.00</td>
+                                                <td><%=item.getProduct().getProductName()%>
+                                                </td>
+                                                <td><%=item.getProduct().getProductCategoryTitle()%>
+                                                </td>
+                                                <td><%=item.getQuantity()%>
+                                                </td>
+                                                <td>$<%=item.getProduct().getProductPrice()%>
+                                                </td>
+                                                <td>$<%=item.totalPrice()%>
+                                                </td>
                                             </tr>
+                                            <%
+                                                }
+                                            %>
 
                                             <tr>
                                                 <td colspan="4">Sub-Total:</td>
-                                                <td>$105.00</td>
+                                                <td>$<%=orders.totalOrder()%>
+                                                </td>
                                             </tr>
-                                            <tr>
+                                            <%--<tr>
                                                 <td colspan="4">Flat Shipping Rate:</td>
                                                 <td>$5.00</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4">Eco Tax (-2.00):</td>
                                                 <td>$4.00</td>
-                                            </tr>
+                                            </tr>--%>
                                             <tr>
                                                 <td colspan="4">VAT (20%):</td>
-                                                <td>$22.00</td>
+                                                <td>$<%=orders.totalOrder() * 0.2%>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="4">Total:</td>
-                                                <td>$136.00</td>
+                                                <td>$<%=(orders.totalOrder() * 0.2) + orders.totalOrder()%>
+                                                </td>
                                             </tr>
                                         </table>
 
-                                        <div class="step2__btn">
-                                            <a href="checkout-success.jsp">Confirm Order</a>
+                                        <a href="checkout-success.jsp" class="continue">Continue</a>
+
+                                        <%
+                                            } else {
+                                        %>
+
+                                        <div class="list_is__empty" style="display: flex; justify-content: center; padding: 24px 0">
+                                            <h3>Your Shopping Cart is Empty</h3>
                                         </div>
+
+                                        <div class="step2__btn">
+                                            <a href="<%=Utils.fullPath("HomeServlet")%>" class="continue">Buy now</a>
+                                        </div>
+                                        <%
+                                            }
+                                        %>
                                     </div>
                                 </div>
                             </div>
                             <!-- / Collapsible element -->
                         </div>
 
+                        <%
+                            } else {
+                        %>
+
+                        <div class="step" id="step2">
+                            <div>
+                                <button class="btn btn__step" type="button" data-toggle="collapse"
+                                        data-target="#collapseExample1" aria-expanded="false"
+                                        aria-controls="collapseExample1">
+                                    Step 2: Account & Billing Details
+                                </button>
+                            </div>
+                        </div>
+
+                 <%--       <div class="step" id="step3">
+                            <div>
+                                <button class="btn btn__step" type="button" data-toggle="collapse"
+                                        data-target="#collapseExample2" aria-expanded="false"
+                                        aria-controls="collapseExample2">
+                                    Step 3: Delivery Method
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="step" id="step4">
+                            <div>
+                                <button class="btn btn__step" type="button" data-toggle="collapse"
+                                        data-target="#collapseExample3" aria-expanded="false"
+                                        aria-controls="collapseExample3">
+                                    Step 4: Payment Method
+                                </button>
+                            </div>
+                        </div>--%>
+
+                        <div class="step" id="step5">
+                            <div>
+                                <button class="btn btn__step" type="button" data-toggle="collapse"
+                                        data-target="#collapseExample4" aria-expanded="false"
+                                        aria-controls="collapseExample4">
+                                    Step 3: Confirm Order
+                                </button>
+                            </div>
+                        </div>
+
+                        <%
+                            }
+                        %>
+
                     </div>
+
                 </div>
             </div>
         </div>
@@ -382,7 +504,7 @@
 
 <%@ include file="footer.jsp" %>
 
-<%@ include file="scroll-to-top.jsp"%>
+<%@ include file="scroll-to-top.jsp" %>
 
 <!-- Javascript -->
 <script src="js/main.js"></script>

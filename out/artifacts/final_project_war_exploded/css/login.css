@@ -21,7 +21,7 @@
 }
 
 .returning__customer {
-    height: 400px;
+    height: 450px;
 }
 
 .returning__customer__form input {
@@ -71,6 +71,16 @@ form > h5 {
     transition: all .35s;
 }
 
-.button__level21:hover {
-    background-color: #212529;
+.continue__button {
+    border: none;
+    height: 40px;
+    width: 107px;
+    background: #7fba00;
+    color: #ffffff;
+    border-radius: 40px;
+    transition: all .35s;
+}
+
+.continue__button:hover {
+    background-color: #4d4d4d;
 }

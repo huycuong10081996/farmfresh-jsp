@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
+	<%--<%
 	    User u = (User) session.getAttribute("user");
 	    if (u != null) {
 	%>
@@ -21,6 +21,6 @@
 	<%="Bạn chưa đăng nhập." %>
 	<%
 	    }
-	%>
+	%>--%>
 </body>
 </html>

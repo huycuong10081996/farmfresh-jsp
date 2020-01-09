@@ -36,7 +36,8 @@
                 </div>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb non-bg">
-                        <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a></li>
+                        <li class="breadcrumb-item"><a class="color-green" href="<%=Utils.fullPath("HomeServlet")%>">Home</a>
+                        </li>
                         <li class="breadcrumb-item" aria-current="page">Login</li>
                     </ol>
                 </nav>
@@ -66,7 +67,7 @@
                                 </p>
                             </div>
                             <div class="button__level2">
-                                <a href="#">Continue</a>
+                                <a href="register.jsp">Continue</a>
                             </div>
                         </form>
                     </div>
@@ -80,18 +81,61 @@
                             <div>
                                 <p style="color: #5f5f5f;" class="text__level2">I am a returning Customer</p>
                             </div>
+
+                            <%
+                                String emailValue = request.getParameter("emailLogin");
+                                if (emailValue != null) {
+                            %>
                             <div>
                                 <p>Email Address</p>
-                                <input type="text" name="emailLogin" id="emailLogin" placeholder="E-Mail Address...">
+                                <input type="text" name="emailLogin" required="required" id="emailLogin" placeholder="E-Mail Address..."
+                                       value='<%=emailValue%>'/>
                             </div>
+                            <%
+                                } else {
+                            %>
+
+                            <div>
+                                <p>Email Address</p>
+                                <input type="text" name="emailLogin" required="required" id="" placeholder="E-Mail Address..."/>
+                            </div>
+                            <%
+                                }
+                            %>
+                            <%
+                                String errEmail = (String) request.getAttribute("errEmail");
+                                if (errEmail != null) {
+                            %>
+                            <div style="display: flex;justify-content: center;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errEmail%></span>
+                            </div>
+                            <%
+                                }
+                            %>
                             <div>
                                 <p>Password</p>
-                                <input type="password" name="passLogin" id="passLogin" placeholder="Password...">
+                                <input type="password" name="passLogin" id="passLogin" required="required" placeholder="Password...">
                             </div>
+                            <%
+                                String errPass = (String) request.getAttribute("errPassword");
+                                if (errPass != null) {
+                            %>
+                            <div style="display: flex;justify-content: center;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px;">
+
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errPass%></span>
+                            </div>
+                            <%
+                                }
+                            %>
                             <div class="forgot">
                                 <a href="forgot-password.jsp">Forgotten Password</a>
                             </div>
-                            <button class="button__level21" type="submit" style="border: none; height: 40px; width: 107px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">Login
+                            <button class="continue__button" type="submit">
+                                Login
                             </button>
                         </form>
                     </div>
@@ -103,7 +147,7 @@
 
 <%@ include file="footer.jsp" %>
 
-<%@ include file="scroll-to-top.jsp"%>
+<%@ include file="scroll-to-top.jsp" %>
 
 <!-- Javascript -->
 <script src="js/main.js"></script>

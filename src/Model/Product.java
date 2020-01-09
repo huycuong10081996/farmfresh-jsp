@@ -15,35 +15,24 @@ public class Product implements  Comparable<Product> {
     private double productPrice;
     private double productSalePrice;
     private String productDescription;
-    private Category productCategory;
-    private Admin productCreateBy;
+    private String productCreateById;
     private int productQuantity;
     private String productCreateAt;
-    private String categoryId;
+    private String productCategoryTitle;
+    private String productCategoryId;
 
     public Product() {
     }
 
-    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String productCategory) {
+    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String productCategoryId) {
         this.productId = productId;
         this.productName = productName;
         this.productImageURL = productImageURL;
         this.productPrice = productPrice;
         this.productSalePrice = productSalePrice;
-        this.categoryId = productCategory;
+        this.productCategoryId = productCategoryId;
     }
 
-    public Product(String productId, String productName, String productImageURL, int productStatus, double productPrice, double productSalePrice, String productDescription, Category productCategory, Admin productCreateBy) {
-        this.productId = productId;
-        this.productName = productName;
-        this.productImageURL = productImageURL;
-        this.productStatus = productStatus;
-        this.productPrice = productPrice;
-        this.productSalePrice = productSalePrice;
-        this.productDescription = productDescription;
-        this.productCategory = productCategory;
-        this.productCreateBy = productCreateBy;
-    }
 
     public Product(String productId, String productName, String productImageURL, int productStatus, double productPrice, double productSalePrice, int productQuantity) {
         this.productId = productId;
@@ -55,9 +44,38 @@ public class Product implements  Comparable<Product> {
         this.productQuantity = productQuantity;
     }
 
+    // Constructor thêm product trong phần admin
+    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String productCategoryId, String productCreateById, String productCreateAt, int productQuantity, String productDescription,  int productStatus) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productImageURL = productImageURL;
+        this.productPrice = productPrice;
+        this.productSalePrice = productSalePrice;
+        this.productCategoryId = productCategoryId;
+        this.productCreateById = productCreateById;
+        this.productCreateAt = productCreateAt;
+        this.productQuantity = productQuantity;
+        this.productDescription = productDescription;
+        this.productStatus = productStatus;
+    }
+
+    // Constructor thêm product trong phần admin
+    public Product(String productId, String productName, String productImageURL, double productPrice, double productSalePrice, String productCategoryId, String productCreateAt, int productQuantity, String productDescription,  int productStatus) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productImageURL = productImageURL;
+        this.productPrice = productPrice;
+        this.productSalePrice = productSalePrice;
+        this.productCategoryId = productCategoryId;
+        this.productCreateAt = productCreateAt;
+        this.productQuantity = productQuantity;
+        this.productDescription = productDescription;
+        this.productStatus = productStatus;
+    }
+
     public static Product findById(String productId) {
         try {
-            PreparedStatement preparedStatement = ConnectionDB.getPreparedStatement("select product_id, product_name, product_image, product_price, product_salePrice, product_quantity, product_createAt, product_description from product where product_id = ? and product_status = 1");
+            PreparedStatement preparedStatement = ConnectionDB.getPreparedStatement("select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, p.product_quantity, p.product_createAt, p.product_description, c.category_title from product p inner join category c on p.product_categoryId = c.category_id where product_id = ? and product_status = 1");
             preparedStatement.setString(1, productId);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -70,7 +88,8 @@ public class Product implements  Comparable<Product> {
                 product.productSalePrice = resultSet.getDouble(5);
                 product.productQuantity = resultSet.getInt(6);
                 product.productCreateAt = resultSet.getString(7);
-                product.productDescription = resultSet.getString(7);
+                product.productDescription = resultSet.getString(8);
+                product.productCategoryTitle = resultSet.getString(9);
                 return product;
             }
             return null;
@@ -136,22 +155,6 @@ public class Product implements  Comparable<Product> {
         this.productDescription = productDescription;
     }
 
-    public Category getProductCategory() {
-        return productCategory;
-    }
-
-    public void setProductCategory(Category productCategory) {
-        this.productCategory = productCategory;
-    }
-
-    public Admin getProductCreateBy() {
-        return productCreateBy;
-    }
-
-    public void setProductCreateBy(Admin productCreateBy) {
-        this.productCreateBy = productCreateBy;
-    }
-
     public int getProductQuantity() {
         return productQuantity;
     }
@@ -168,20 +171,32 @@ public class Product implements  Comparable<Product> {
         this.productCreateAt = productCreateAt;
     }
 
-    public String getCategoryId() {
-        return categoryId;
+    public String getProductCategoryTitle() {
+        return productCategoryTitle;
     }
 
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
+    public void setProductCategoryTitle(String productCategoryTitle) {
+        this.productCategoryTitle = productCategoryTitle;
+    }
+
+    public String getProductCreateById() {
+        return productCreateById;
+    }
+
+    public void setProductCreateById(String productCreateById) {
+        this.productCreateById = productCreateById;
+    }
+
+    public String getProductCategoryId() {
+        return productCategoryId;
+    }
+
+    public void setProductCategoryId(String productCategoryId) {
+        this.productCategoryId = productCategoryId;
     }
 
     @Override
     public int compareTo(Product o) {
-        int value = this.productName.compareTo(o.getProductName());
-        if (value != 0) {
-            return value;
-        }
-        return 0;
+        return this.productName.compareTo(o.getProductName());
     }
 }

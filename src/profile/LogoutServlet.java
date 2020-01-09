@@ -1,5 +1,7 @@
 package profile;
 
+import vn.edu.nlu.fit.Utils.Utils;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +18,7 @@ public class LogoutServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        session.invalidate();
-        response.sendRedirect("index2.jsp");
+        session.removeAttribute("user");
+        response.sendRedirect(Utils.fullPath("HomeServlet"));
     }
 }

@@ -1,54 +1,69 @@
 .register__content__wrapper {
-  width: 75%;
-  padding: 0 16px;
+    width: 75%;
+    padding: 0 16px;
 }
 
 .register__title {
-  border-bottom: 1px solid #cccccc;
-  padding: 8px 0;
+    border-bottom: 1px solid #cccccc;
+    padding: 8px 0;
 }
 
 .information {
-  padding: 12px 0;
+    padding: 12px 0;
 }
 
-.information>div {
-  padding: 4px 0;
+.information > div {
+    padding: 4px 0;
 }
 
-.information>div>label {
-  width: 120px;
+.information > div > label {
+    width: 120px;
 }
 
-.information>div>label>span {
-  color: red;
+.information > div > label > span {
+    color: red;
 }
 
-.information>div>input {
-  width: 80%;
-  padding: 6px 12px;
-  border-radius: .35rem;
-  border: 1px solid #e5e5e5;
+.information > div > input {
+    width: 80%;
+    padding: 6px 12px;
+    border-radius: .35rem;
+    border: 1px solid #e5e5e5;
 }
 
 .information .subscribe {
-  padding: 16px 0;
+    padding: 16px 0;
 }
 
 .bottom__register {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.bottom__register .continue {
-  padding: 8px 16px;
-  border-radius: 40px;
-  background-color: #4d4d4d;
-  color: #fff;
-  transition: all 0.35s;
-  text-decoration: none;
+.step2__btn>a {
+    padding: 8px 16px;
+    /* border: 1px solid #4d4d4d; */
+    color: #ffffff;
+    background-color: #7fba00;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: all 0.35s;
 }
 
-.bottom__register .continue:hover {
-  background-color: #7fba00;
+.step2__btn>a:hover {
+    background-color: #4d4d4d;
+}
+
+.continue__button {
+    border: none;
+    height: 40px;
+    width: 107px;
+    background: #7fba00;
+    color: #ffffff;
+    border-radius: 40px;
+    transition: all .35s;
+}
+
+.continue__button:hover {
+    background-color: #4d4d4d;
 }

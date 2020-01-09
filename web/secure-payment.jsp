@@ -85,7 +85,7 @@
                         <div class="secure__content">
                             When we were considering which payment gateways to use on our website, the choice narrowed
                             down to 5 most
-                            universal ones: Visa; MasterCard; PayPal; Discover; Stripe.
+                            universal ones: Visa; Discover; American Express; Google Wallet; PayPal.
                         </div>
                     </div>
 

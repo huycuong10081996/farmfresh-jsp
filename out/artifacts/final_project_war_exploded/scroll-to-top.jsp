@@ -1,16 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: nhath
-  Date: 11/25/2019
-  Time: 5:48 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
 
 <div class="scroll-to-top">
     <p class="scroll-to-top__btn" id="scrollToTopBtn"><i class="fas fa-angle-up"></i></p>
@@ -36,6 +23,3 @@
         document.documentElement.scrollTop = 0;
     });
 </script>
-
-</body>
-</html>

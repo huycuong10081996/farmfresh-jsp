@@ -7,7 +7,7 @@
 }
 
 .quantity__tablerow input {
-    width: 30px;
+    width: 44px;
     text-align: center;
 }
 
@@ -121,4 +121,25 @@
 .apply__coupon__button.get__quotes>a:hover {
     background-color: #5f5f5f;
     color: #fff;
+}
+
+a.delete__cart {
+    padding: 2px 7px;
+    background: #d9534f;
+    color: white;
+}
+
+a.delete__cart:hover {
+    background: #bd2d28;
+}
+
+button.update__cart {
+    padding: 2px 7px;
+    background: #4d4d4d;
+    color: white;
+    border: none;
+}
+
+button.update__cart:hover {
+    background: #7fba00;
 }

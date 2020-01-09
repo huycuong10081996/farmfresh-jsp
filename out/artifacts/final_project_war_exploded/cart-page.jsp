@@ -42,6 +42,7 @@
             </nav>
         </div>
         <div class="main__category__container">
+
             <%@include file="nav-menu.jsp" %>
 
             <div class="cart__body__wrapper">
@@ -51,37 +52,97 @@
                     </div>
 
                     <div class="cart__body__container">
+                        <%
+                            Orders order = (Orders) request.getAttribute("order");
+                            List<Item> list = order.getItems();
+                        %>
+
                         <div class="cart__body__list">
+
+                            <%
+                                if (order != null) {
+                                    if (list.size() != 0) {
+                            %>
+
                             <table>
+
                                 <tr>
                                     <th>Image</th>
                                     <th>Product Name</th>
-                                    <th>Model</th>
+                                    <th>Category</th>
                                     <th class="quantity__table">Quantity</th>
                                     <th>Unit Price</th>
                                     <th>Total</th>
                                 </tr>
 
+                                <%
+                                    for (Item item : list) {
+
+                                %>
+
                                 <tr>
                                     <td>
-                                        <img src="img/01-85x85.jpg" alt="">
+                                        <img src="<%=item.getProduct().getProductImageURL()%>" alt="" width="100px">
                                     </td>
-
-                                    <td>Accusantium Doloremque</td>
-                                    <td>Product 21</td>
+                                    <td><%=item.getProduct().getProductName()%>
+                                    </td>
+                                    <td><%=item.getProduct().getProductCategoryTitle()%>
+                                    </td>
                                     <td class="quantity__tablerow">
-                                        <div>
-                                            <input type="text" value="1">
+                                        <form action="<%=Utils.fullPath("UpdateCartServlet?productId="+item.getProduct().getProductId())%>"
+                                              method="post">
+                                            <%
+                                                String err = "The input character must be a number and be less than " + item.getProduct().getProductQuantity();
+                                            %>
+                                            <input name="quantityItem" type="number" value="<%=item.getQuantity()%>" min="1"
+                                                   max="<%=item.getProduct().getProductQuantity()%>" required="required"
+                                                   oninvalid="setCustomValidity('The input character must be a number, larger than 0 and less than ' + <%=item.getProduct().getProductQuantity()%>)"
+                                                   oninput="setCustomValidity('')"/>
 
-                                            <i class="fa fa-times-circle"></i>
-                                        </div>
+                                            <button type="submit" class="update__cart"><i
+                                                    class="fas fa-sync-alt"></i></button>
+
+                                            <a class="delete__cart"
+                                               href="<%=Utils.fullPath("DeleteServlet?productIdDelete="+item.getProduct().getProductId())%>"><i
+                                                    class="fa fa-times-circle"></i></a>
+
+                                        </form>
                                     </td>
 
-                                    <td>$104.00</td>
+                                    <td>$<%=item.getProduct().getProductPrice()%>
+                                    </td>
 
-                                    <td>$104.00</td>
+                                    <td>$<%=item.totalPrice()%>
+                                    </td>
                                 </tr>
+
+                                <%
+                                    }
+                                %>
+
                             </table>
+
+                            <%
+                                } else {
+                            %>
+
+                            <div class="list_is__empty" style="display: flex; justify-content: center; padding: 24px 0">
+                                <h3>Your Shopping Cart is Empty</h3>
+                            </div>
+
+                            <%
+                                }
+                            } else if (order == null) {
+                            %>
+
+                            <div class="cart_empty">
+                                <h3>Your Shopping Cart is Empty</h3>
+                            </div>
+
+                            <%
+                                }
+                            %>
+
                         </div>
 
                         <div class="cart__body__options">
@@ -108,69 +169,21 @@
                                     <div class="collapse" id="collapseExample2">
                                         <div class="mt-3">
                                             <div class="coupon__code__container">
-                                                <div class="enter__coupon">
-                                                    <p>Enter your coupon here</p>
-                                                </div>
+                                                <form action="#" style="display: flex; justify-content: space-between; width: 100%;">
+                                                    <div class="enter__coupon">
+                                                        <p>Enter your coupon here</p>
+                                                    </div>
+                                                    <div class="input__coupon">
+                                                        <input type="text" name="couponCode" required="required">
+                                                    </div>
 
-                                                <div class="input__coupon"><input type="text"></div>
-
-                                                <div class="apply__coupon__button">
-                                                    <a href="">Apply Coupon</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="coupon__code">
-                                    <div>
-                                        <button class="btn btn__step" type="button" data-toggle="collapse"
-                                                data-target="#collapseExample1"
-                                                aria-expanded="false" aria-controls="collapseExample1">
-                                            Estimate Shipping & Taxes
-                                        </button>
-                                    </div>
-                                    <!-- / Collapse buttons -->
-
-                                    <!-- Collapsible element -->
-                                    <div class="collapse" id="collapseExample1">
-                                        <div class="mt-3">
-                                            <div class="shipping__taxes__container">
-                                                <div>
-                                                    <p>Enter your destination to get a shipping estimate.</p>
-                                                </div>
-
-                                                <div class="province__container">
-                                                    <label for="province"><span>*</span>&nbsp;Provice</label>
-                                                    <select id="province" class="browser-default custom-select"
-                                                            aria-label="Example select with button addon">
-                                                        <option selected>---Please Select---</option>
-                                                        <option value="1">An Giang</option>
-                                                        <option value="2">Bắc Giang</option>
-                                                        <option value="3">Cà Mau</option>
-                                                    </select>
-                                                </div>
-
-
-                                                <div class="ward__container">
-                                                    <label for="ward"><span>*</span>&nbsp;Ward/District</label>
-                                                    <select id="ward" class="browser-default custom-select"
-                                                            aria-label="Example select with button addon">
-                                                        <option selected>---Please Select---</option>
-                                                        <option value="1">An Giang</option>
-                                                        <option value="2">Bắc Giang</option>
-                                                        <option value="3">Cà Mau</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="coupon__codes">
-                                                    <label for="postcode">Post Code</label>
-                                                    <input id="postcode" type="text">
-                                                </div>
-
-                                                <div class="apply__coupon__button get__quotes">
-                                                    <a href="">Get Quotes</a>
-                                                </div>
+                                                    <div class="apply__coupon__button">
+                                                        <button class="continue" type="submit"
+                                                                style="border: none; height: 40px; width: 100px; background: #7fba00; color: #ffffff; border-radius: 40px; transition: all .35s;">
+                                                            Apply Coupon
+                                                        </button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -180,20 +193,28 @@
                             <div class="summarize">
                                 <table>
                                     <tr>
-                                        <th>Sub-Total :</th>
-                                        <td>$85.00</td>
-                                    </tr>
-
-                                    <tr>
+                                        <%
+                                            if (order != null) {
+                                        %>
                                         <th>Total :</th>
-                                        <td>$85.00</td>
+                                        <td>$<%=order.totalOrder()%>
+                                        </td>
+                                        <%
+                                        } else {
+                                        %>
+                                        <th>Total :</th>
+                                        <td>$00.0
+                                        </td>
+                                        <%
+                                            }
+                                        %>
                                     </tr>
                                 </table>
                             </div>
 
                             <div class="checkout__cart">
                                 <div class="continue__shopping apply__coupon__button get__quotes">
-                                    <a href="index.jsp">Continue Shopping</a>
+                                    <a href="<%=Utils.fullPath("HomeServlet")%>">Continue Shopping</a>
                                 </div>
 
                                 <div class="to__checkout apply__coupon__button get__quotes">
@@ -201,16 +222,18 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 </main>
 
 <%@ include file="footer.jsp" %>
 
-<%@ include file="scroll-to-top.jsp"%>
+<%@ include file="scroll-to-top.jsp" %>
 
 <!-- Javascript -->
 <script src="js/main.js"></script>
@@ -226,7 +249,7 @@
 </script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script>
+<script async>
     AOS.init();
 </script>
 </body>

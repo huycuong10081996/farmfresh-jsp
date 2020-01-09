@@ -5,7 +5,36 @@
             <h3>ACCOUNT</h3>
         </div>
 
+
         <div class="list__category">
+            <%
+                if (u != null) {
+            %>
+            <ul>
+                <li>
+                    <a href="my-account.jsp" style="color:#212529">
+                        My account
+                    </a>
+                </li>
+                <li>
+                    <a href="change-email.jsp" style="color:#212529">
+                        Change Your Email
+                    </a>
+                </li>
+                <li>
+                    <a href="change-password.jsp" style="color:#212529">
+                        Change Your Password
+                    </a>
+                </li>
+                <li>
+                    <a href="#" style="color:#212529">
+                        Orders History
+                    </a>
+                </li>
+            </ul>
+            <%
+                } else {
+            %>
             <ul>
                 <li>
                     <a href="login.jsp" style="color:#212529">
@@ -23,7 +52,11 @@
                     </a>
                 </li>
             </ul>
+            <%
+                }
+            %>
         </div>
+
     </div>
     <div class="search__by__refine">
         <div class="search__title">

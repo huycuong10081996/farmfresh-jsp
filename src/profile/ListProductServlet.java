@@ -11,8 +11,6 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.StringTokenizer;
 
 
 @WebServlet("/ListProductServlet")
@@ -24,6 +22,7 @@ public class ListProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String category = request.getParameter("category");
         String pages = request.getParameter("pages");
+        String sortSelect = request.getParameter("sortSelect");
         int page = Integer.parseInt(pages);
         try {
             //Dùng PreparedStatement để lấy id và title của category
@@ -40,7 +39,19 @@ public class ListProductServlet extends HttpServlet {
 
             //Dùng PreparedStatement để lấy được số lượng sản phẩm của categoryId = ?
             if (category != null) {
-                sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title, c.category_id, rv.review_ratingStar from product p inner join category c on c.category_id = p.product_categoryId left join review rv on rv.review_productId = p.product_id where product_status = 1 and p.product_categoryId = ? group by (product_id) order by (p.product_name)";
+                if (sortSelect != null) {
+                    if (sortSelect.equals("name")) {
+                        sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title, c.category_id, rv.review_ratingStar from product p inner join category c on c.category_id = p.product_categoryId left join review rv on rv.review_productId = p.product_id where product_status = 1 and p.product_categoryId = ? group by (product_id) order by (p.product_name) asc";
+                    }
+                    if (sortSelect.equals("price")) {
+                        sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title, c.category_id, rv.review_ratingStar from product p inner join category c on c.category_id = p.product_categoryId left join review rv on rv.review_productId = p.product_id where product_status = 1 and p.product_categoryId = ? group by (product_id) order by (product_price) asc";
+                    }
+                    if (sortSelect.equals("salePrice")) {
+                        sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title, c.category_id, rv.review_ratingStar from product p inner join category c on c.category_id = p.product_categoryId left join review rv on rv.review_productId = p.product_id where product_status = 1 and p.product_categoryId = ? group by (product_id) order by (product_salePrice) asc";
+                    }
+                } else {
+                    sql = "select p.product_id, p.product_name, p.product_image, p.product_price, p.product_salePrice, c.category_title, c.category_id, rv.review_ratingStar from product p inner join category c on c.category_id = p.product_categoryId left join review rv on rv.review_productId = p.product_id where product_status = 1 and p.product_categoryId = ? group by (product_id) order by (p.product_name) asc";
+                }
             }
 
             PreparedStatement statement2 = ConnectionDB.getPreparedStatement(sql);

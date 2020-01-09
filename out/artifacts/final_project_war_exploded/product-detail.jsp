@@ -1,4 +1,5 @@
 <%@ page import="java.util.Random" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +64,7 @@
                         </li>
                         <li class="breadcrumb-item"><a class="color-green"
                                                        href="<%=Utils.fullPath("ListProductServlet?category="+resultSetproductDetail.getString(15)+"&pages=1")%>"><%=resultSetproductDetail.getString(9)%>
-                            ></a></li>
+                        </a></li>
                         <li class="breadcrumb-item" aria-current="page"><%=resultSetproductDetail.getString(2)%>
                         </li>
                     </ol>
@@ -135,16 +136,16 @@
                             <div class="option__item">
                                 <h6 class="row"><span>*</span>&nbsp;Delivery Date</h6>
                                 <div class="calendar row">
-                                    <span><%=resultSetproductDetail.getString(7)%></span>
+                                    <span style="padding: 10px;"><%=resultSetproductDetail.getString(7)%></span>
                                 </div>
                             </div>
 
 
                             <%
-                                if (resultSetproductDetail.getString(5) == null) {
+                                if (resultSetproductDetail.getDouble(5) == 0) {
                             %>
                             <div class="price row">
-                                <h4>$<%=resultSetproductDetail.getString(4)%>
+                                <h4>$<%=resultSetproductDetail.getDouble(4)%>
                                 </h4>
                             </div>
 
@@ -152,12 +153,12 @@
                             } else {
                             %>
                             <div class="price row">
-                                <h4>$<%=resultSetproductDetail.getString(5)%>
+                                <h4>$<%=resultSetproductDetail.getDouble(5)%>
                                 </h4>
                             </div>
 
                             <div class="row align-items-center">
-                                <h6><strike>$<%=resultSetproductDetail.getString(4)%>
+                                <h6><strike>$<%=resultSetproductDetail.getDouble(4)%>
                                 </strike></h6>
                             </div>
                             <%
@@ -165,14 +166,15 @@
                             %>
 
                             <div class="more__props row align-items-center">
-                                <div class="quantity">
+                                <%--<div class="quantity">
                                     <h6>Quantity</h6>
                                 </div>
                                 <div class="input__quantity">
                                     <input type="text" name="" value="1" id="">
-                                </div>
+                                </div>--%>
                                 <div class="add__to__cart">
-                                    <a href="cart-page.jsp">Add to cart</a>
+                                    <a href="<%=Utils.fullPath("AddCartFromProductDetailServlet?productDetailId="+resultSetproductDetail.getString(1))%>">Add
+                                        to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -198,8 +200,18 @@
         <div class="description__content__wrapper" id="desciptions">
             <div class="container">
                 <div id="descriptionContent" class="show description__content">
+                    <% if (resultSetproductDetail.getString(8) == null) {
+                    %>
+                    <p>This product no description. We will update information about it as quickly as possible to
+                        you.</p>
+                    <%
+                    } else {
+                    %>
                     <p><%=resultSetproductDetail.getString(8)%>
                     </p>
+                    <%
+                        }
+                    %>
                 </div>
                 <%
                         if (count == 1) {
@@ -225,16 +237,48 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="time__review">
+                                        <div class="time__review"
+                                             style="display: flex; justify-content: flex-end; align-items: center">
+                                            <%
+                                                if (u != null && u.getUserId().equals(resultSetproductDetail.getString(16))) {
+                                            %>
+                                            <h6 style="margin: 0"><%=resultSetproductDetail.getString(11)%>
+                                            </h6>
+                                            <a href="<%=Utils.fullPath("RemoveReviewServlet?productDetailId=" + resultSetproductDetail.getString(1) + "&reviewId=" + resultSetproductDetail.getString(14))%>"
+                                               class="delete_review"><i class="fa fa-trash" style="padding: 10px;"></i></a>
+                                            <a href="#"
+                                               class="edit_review" id="editReviewIcon"><i class="fa fa-edit" style="padding: 10px;"></i></a>
+                                            <%
+                                            } else {
+                                            %>
                                             <h6><%=resultSetproductDetail.getString(11)%>
                                             </h6>
+                                            <%
+                                                }
+                                            %>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <div><%=resultSetproductDetail.getString(10)%>
+                                        <div>
+                                            <%
+                                                if (u != null && u.getUserId().equals(resultSetproductDetail.getString(16))) {
+                                            %>
+                                            <form action="#" method="post" style="display: flex; flex-direction: column">
+                                                <textarea contenteditable="false" style="outline: none; border: none;" name="editReview" id="editReview"><%=resultSetproductDetail.getString(10)%>
+                                                </textarea>
+                                                <button type="submit" id="buttonEditReview" class="button__edit__review">Edit</button>
+                                            </form>
+                                            <%
+                                                } else {
+                                            %>
+                                            <p><%=resultSetproductDetail.getString(10)%></p>
+                                            <%
+                                                }
+                                            %>
                                         </div>
+
                                         <div>
                                             <ul class="rating__star row">
                                                 <li>
@@ -261,35 +305,80 @@
                             }
                         %>
 
+                        <%
+                            if (u != null) {
+                        %>
                         <div class="add__review">
                             <h4>Write a review</h4>
-                            <form action="">
-                                <div class="review__name">
-                                    <p><span>*</span>&nbsp;Your Name</p>
-                                    <input type="text">
-                                </div>
+                            <%
+                                int counter = 0;
+                                resultSetproductDetail.beforeFirst();
+                                while (resultSetproductDetail.next()) {
+                                    counter++;
+                            %>
+                            <form action="<%=Utils.fullPath("AddReviewServlet?productDetailId="+resultSetproductDetail.getString(1))%>"
+                                  method="post">
 
+                                <%
+                                    String errReview = (String) request.getAttribute("errReview");
+                                    if (errReview != null) {
+                                %>
                                 <div class="review__main">
                                     <p><span>*</span>&nbsp;Your Review</p>
-                                    <textarea name="" cols="30" rows="10"></textarea>
+                                    <textarea name="reviewContent" cols="30" rows="10" required="required"></textarea>
                                 </div>
-
+                                <div style="display: flex;justify-content: left;align-items: center;color: #DB3c31;background: #f5f7f7;padding: 5px">
+                                <span>
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"
+                                       style="height: 100%; padding: 5px;text-align: start"></i><%=errReview%></span>
+                                </div>
+                                <%
+                                } else {
+                                %>
+                                <div class="review__main">
+                                    <p><span>*</span>&nbsp;Your Review</p>
+                                    <textarea name="reviewContent" cols="30" rows="10" required="required"></textarea>
+                                </div>
+                                <%
+                                    }
+                                %>
                                 <div class="review__rate">
                                     <label class="review__rate__lbl"><span>*</span>&nbsp;Rating</label>
                                     <label for="">Bad</label>
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
-                                    <input type="radio" name="rate1">
+                                    <input type="radio" name="rating" value="1">
+                                    <input type="radio" name="rating" value="2">
+                                    <input type="radio" name="rating" value="3">
+                                    <input type="radio" name="rating" value="4">
+                                    <input type="radio" name="rating" value="5">
                                     <label for="">Good</label>
                                 </div>
 
-                                <div class="continue__btn">
-                                    <a href="">Continue</a>
-                                </div>
+                                <button type="submit" class="continue__button">
+                                    Continue
+                                </button>
                             </form>
+                            <%
+                                    if (counter == 1) {
+                                        break;
+                                    }
+                                }
+                            %>
                         </div>
+
+                        <%
+                        } else {
+                        %>
+
+                        <div class="message__review"
+                             style=" display: flex; justify-content: center; align-items: center; padding: 20px 0 0 0">
+                            <h6 style=" font-weight: 600">You need to <a href="login.jsp"
+                                                                         style=" font-weight: 600; color: #7fba00">log
+                                in</a> to post a comment about the product.</h6>
+                        </div>
+
+                        <%
+                            }
+                        %>
 
                     </div>
                 </div>
@@ -331,31 +420,31 @@
                         <p><%=otherResultSet.getString(2)%>
                         </p>
                         <%
-                            if (otherResultSet.getString(5) == null) {
+                            if (otherResultSet.getDouble(5) == 0) {
                         %>
-                        <p><strong>$<%=otherResultSet.getString(4)%>
-                                <%
-                            } else {
+                        <p><strong>$<%=otherResultSet.getDouble(4)%>
+                        </strong></p>
+                        <%
+                        } else {
                         %>
-                        <p><strong>$<%=otherResultSet.getString(5)%>
+                        <p><strong>$<%=otherResultSet.getDouble(5)%>
                         </strong>
-                            <span class="price--line-through">$<%=otherResultSet.getString(4)%></span>
+                            <span class="price--line-through">$<%=otherResultSet.getDouble(4)%></span>
                         </p>
                         <%
                             }
                         %>
                         <ul class="star-rank">
-
                             <%
                                 if (otherResultSet.getInt(6) == 0) {
                                     for (int i = 1; i <= 5; i++) {
                             %>
                             <li><i class="fas fa-star"></i></li>
-                                    <%
-                                    }
-                                } else {
-                                    for (int i = 1; i <= otherResultSet.getInt(6); i++) {
-                                %>
+                            <%
+                                }
+                            } else {
+                                for (int i = 1; i <= otherResultSet.getInt(6); i++) {
+                            %>
                             <li><i class="fas fa-star"></i></li>
                             <%
                                     }
@@ -363,7 +452,9 @@
                             %>
 
                         </ul>
-                        <a class="add-to-cart__btn" href="cart-page.jsp">add to cart</a>
+                        <a class="add-to-cart__btn"
+                           href="<%=Utils.fullPath("AddCartFromProductDetailServlet?productDetailId="+otherResultSet.getString(1))%>">add
+                            to cart</a>
                     </div>
                 </div>
 
@@ -396,6 +487,22 @@
             window.location.href = "http://localhost:8080/final_project/ProductDetailServlet?productDetailId=" + productItem[i].getAttribute('id').trim();
         });
     }
+</script>
+
+<script>
+    const editTextarea = document.getElementById("editReview");
+    const buttonEditReview = document.getElementById("buttonEditReview");
+    const editReviewIcon = document.getElementById("editReviewIcon");
+    editReviewIcon.onclick = function () {
+        editTextarea.contentEditable = "true";
+    }
+    if (editTextarea){
+        console.log(editTextarea.getAttribute('id'))
+        if (editTextarea.contentEditable === "true") {
+            buttonEditReview.style.display = "block";
+        }
+    }
+
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
